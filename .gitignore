@@ -11,7 +11,11 @@ npm-debug.log
 yarn-error.log
 
 /app/Decorators/AccountDecorators
-/app/Decorators/BookDecorators
+
+/app/Decorators/BookDecorators/BorrowBook
+/app/Decorators/BookDecorators/CreateBook
+/app/Decorators/BookDecorators/ImportBook
+
 /app/Decorators/BookHistoryDecorator
 
 
