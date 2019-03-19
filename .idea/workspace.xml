@@ -76,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+            <state relative-caret-position="256">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -288,6 +288,14 @@
               <item name="Decorators" type="462c0819:PsiDirectoryNode" />
               <item name="BookHistoryDecorator" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="LibrarySystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Decorators" type="462c0819:PsiDirectoryNode" />
+              <item name="BookHistoryDecorator" type="462c0819:PsiDirectoryNode" />
+              <item name="RentBook" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -349,12 +357,12 @@
       <workItem from="1552718790031" duration="13200000" />
       <workItem from="1552736951344" duration="1542000" />
       <workItem from="1552821350984" duration="5410000" />
-      <workItem from="1552980388629" duration="2045000" />
+      <workItem from="1552980388629" duration="2082000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90544000" />
+    <option name="totallyTimeSpent" value="90581000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -734,8 +742,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+        <state relative-caret-position="256">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
