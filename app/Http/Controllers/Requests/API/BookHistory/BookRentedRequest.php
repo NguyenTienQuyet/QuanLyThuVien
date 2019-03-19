@@ -18,7 +18,7 @@ class BookRentedRequest extends PatchRequest
         return [
             'user_id' => 'int|required|exists:users,id',
             'bookCopies' => 'array|required',
-            'bookCopies.*' => 'int|required|exists:books,id'
+            'bookCopies.*' => 'int|required|exists:books_copies,id|distinct'
         ];
     }
 }

@@ -118,4 +118,36 @@ Route::prefix('v1')->group(function () {
             'as' => 'api/v1/genres/delete'
         ]);
     });
+
+    Route::prefix('histories')->group(function () {
+        Route::get('get/{id?}', [
+            'uses' => 'API\BookHistoryController@get',
+            'as' => 'api/v1/histories/get'
+        ]);
+
+        Route::post('post', [
+            'uses' => 'API\BookHistoryController@post',
+            'as' => 'api/v1/histories/post'
+        ]);
+
+        Route::patch('patch/{id?}', [
+            'uses' => 'API\BookHistoryController@patch',
+            'as' => 'api/v1/histories/patch'
+        ]);
+
+        Route::delete('delete/{id?}', [
+            'uses' => 'API\BookHistoryController@delete',
+            'as' => 'api/v1/histories/delete'
+        ]);
+
+        Route::patch('rent', [
+            'uses' => 'API\BookHistoryController@rent',
+            'as' => 'api/v1/histories/rent'
+        ]);
+
+        Route::patch('return', [
+            'uses' => 'API\BookHistoryController@returnBook',
+            'as' => 'api/v1/histories/return'
+        ]);
+    });
 });
