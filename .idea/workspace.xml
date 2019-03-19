@@ -76,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+            <state relative-caret-position="224">
+              <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -288,6 +288,14 @@
               <item name="Decorators" type="462c0819:PsiDirectoryNode" />
               <item name="BookDecorators" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="LibrarySystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Decorators" type="462c0819:PsiDirectoryNode" />
+              <item name="BookDecorators" type="462c0819:PsiDirectoryNode" />
+              <item name="ImportBook" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -349,12 +357,12 @@
       <workItem from="1552718790031" duration="13200000" />
       <workItem from="1552736951344" duration="1542000" />
       <workItem from="1552821350984" duration="5410000" />
-      <workItem from="1552980388629" duration="1897000" />
+      <workItem from="1552980388629" duration="1979000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90396000" />
+    <option name="totallyTimeSpent" value="90478000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -369,7 +377,7 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3442953" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3442953" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -382,7 +390,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32867134" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32867134" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -734,8 +742,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        <state relative-caret-position="224">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
         </state>
       </provider>
     </entry>
