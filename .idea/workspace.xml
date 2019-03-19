@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c94c8091-1e73-4656-b802-5144e7c6f00b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="c94c8091-1e73-4656-b802-5144e7c6f00b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +74,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="272">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -288,14 +286,6 @@
               <item name="Decorators" type="462c0819:PsiDirectoryNode" />
               <item name="BookHistoryDecorator" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="LibrarySystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Decorators" type="462c0819:PsiDirectoryNode" />
-              <item name="BookHistoryDecorator" type="462c0819:PsiDirectoryNode" />
-              <item name="RentBook" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -357,12 +347,12 @@
       <workItem from="1552718790031" duration="13200000" />
       <workItem from="1552736951344" duration="1542000" />
       <workItem from="1552821350984" duration="5410000" />
-      <workItem from="1552980388629" duration="2082000" />
+      <workItem from="1552980388629" duration="2106000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90581000" />
+    <option name="totallyTimeSpent" value="90605000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -742,8 +732,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="272">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
