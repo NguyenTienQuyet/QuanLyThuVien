@@ -52,7 +52,7 @@
         <counts>
           <entry key="dummy" value="67" />
           <entry key="env" value="12" />
-          <entry key="gitignore" value="238" />
+          <entry key="gitignore" value="272" />
           <entry key="php" value="22294" />
         </counts>
       </usages-collector>
@@ -60,7 +60,7 @@
         <counts>
           <entry key=".env file" value="12" />
           <entry key="PHP" value="22294" />
-          <entry key="PLAIN_TEXT" value="305" />
+          <entry key="PLAIN_TEXT" value="339" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
@@ -78,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="256">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -296,6 +296,14 @@
               <item name="Decorators" type="462c0819:PsiDirectoryNode" />
               <item name="Handlers" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="LibrarySystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Decorators" type="462c0819:PsiDirectoryNode" />
+              <item name="Handlers" type="462c0819:PsiDirectoryNode" />
+              <item name="Book" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -357,12 +365,12 @@
       <workItem from="1552718790031" duration="13200000" />
       <workItem from="1552736951344" duration="1542000" />
       <workItem from="1552821350984" duration="5410000" />
-      <workItem from="1552980388629" duration="1345000" />
+      <workItem from="1552980388629" duration="1473000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89844000" />
+    <option name="totallyTimeSpent" value="89972000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -743,7 +751,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
         </state>
       </provider>
     </entry>
