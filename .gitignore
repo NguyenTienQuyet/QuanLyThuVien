@@ -13,6 +13,5 @@ yarn-error.log
 /app/Http/Controllers/API
 /app/Http/Controllers/Requests
 /app/Decorators
-/app/Services
 
 
