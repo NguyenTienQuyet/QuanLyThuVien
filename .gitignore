@@ -9,8 +9,7 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/app/Decorators
-/app/Http/Controllers/API
+
 /app/Decorators
 
 
