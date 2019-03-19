@@ -15,7 +15,9 @@ yarn-error.log
 
 
 
-/app/Decorators/BookHistoryDecorator
+/app/Decorators/BookHistoryDecorator/RentBook
+/app/Decorators/BookHistoryDecorator/ReturnBook
+
 
 
 
