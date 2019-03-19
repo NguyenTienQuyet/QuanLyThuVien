@@ -11,7 +11,6 @@ npm-debug.log
 yarn-error.log
 /app/Decorators
 /app/Http/Controllers/API
-/app/Http/Controllers/Requests
 /app/Decorators
 
 
