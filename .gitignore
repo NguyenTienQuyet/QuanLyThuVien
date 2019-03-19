@@ -14,7 +14,7 @@ yarn-error.log
 /app/Decorators/BookDecorators
 /app/Decorators/BookHistoryDecorator
 
-/app/Decorators/Handlers/Book/BookCopy/UpdateBookCopy/UpdateNegativeState
+
 
 /app/Decorators/Handlers/Book/BookQuantity
 /app/Decorators/Handlers/Book/BookHistory
