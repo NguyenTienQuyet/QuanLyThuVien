@@ -17,9 +17,8 @@ class BookReturnRequest extends PatchRequest
     {
         return [
             'user_id' => 'int|required|exists:users,id',
-            'books' => 'array|required',
-            'books.*.book_id' => 'int|required|distinct|exists:books,id',
-            'books.*.quantity' => 'int|required|min:0',
+            'bookCopies' => 'array|required',
+            'bookCopies.*' => 'int|required|distinct|exists:book_copies,id',
         ];
     }
 

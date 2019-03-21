@@ -52,10 +52,10 @@ class ReturnBookDecorator extends EloquentBookHistoryDecorator
             ];
 
             array_push($pairs, $bookCopyPair);
-            unset($pairs[2]);
 
             $history = $bookHistoryService->getBy($pairs, ['bookCopy']);
 
+            unset($pairs[2]);
             if ($history != null) {
                 $handleAttributes['bookCopy'] = $history['bookCopy'];
                 $handleAttributes['historyId'] = $history['id'];
@@ -68,6 +68,6 @@ class ReturnBookDecorator extends EloquentBookHistoryDecorator
 
         }
 
-        return parent::updateModel($attributes, $id);
+        return true;
     }
 }

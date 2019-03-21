@@ -65,7 +65,7 @@ class BookHistoryController extends APIController
         return['Failed'];
     }
 
-    public function returnBook(BookReturnRequest $request, int $id)
+    public function returnBook(BookReturnRequest $request, int $id = null)
     {
         /**
          * @var BookHistoryService $historyService

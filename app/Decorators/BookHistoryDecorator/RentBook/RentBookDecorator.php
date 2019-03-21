@@ -52,9 +52,10 @@ class RentBookDecorator extends EloquentBookHistoryDecorator
             array_push($pairs, $bookCopyPair);
 
             $history = $bookHistoryService->getBy($pairs, ['bookCopy']);
+            unset($pairs[2]);
 
             if ($history != null) {
-                unset($pairs[2]);
+
                 $handleAttributes['bookCopy'] = $history['bookCopy'];
                 $response = $bookCopyUpdateHandler->handle($handleAttributes);
                 if ($response->getResponseStatus() == false) {
