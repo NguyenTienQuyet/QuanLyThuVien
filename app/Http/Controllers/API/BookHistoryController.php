@@ -74,6 +74,10 @@ class BookHistoryController extends APIController
         $enhancedService = new ReturnBookDecorator($historyService);
         $transactionService = new ReturnBookTransactionDecorator($enhancedService);
 
-        return $transactionService->updateModel($request->all(), $id);
+        $updateChecker = $transactionService->updateModel($request->all(), $id);
+        if ($updateChecker == true) {
+            return ['Success'];
+        }
+        return['Failed'];
     }
 }
