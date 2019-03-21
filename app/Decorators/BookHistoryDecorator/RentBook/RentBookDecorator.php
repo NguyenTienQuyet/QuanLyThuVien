@@ -11,6 +11,7 @@ namespace App\Decorators\BookHistoryDecorator\RentBook;
 
 use App\Decorators\BookHistoryDecorator\EloquentBookHistoryDecorator;
 use App\Decorators\Handlers\Book\BookCopy\UpdateBookCopy\UpdateNegativeState\UpdateRentedStateHandler;
+use App\Models\BookHistory;
 use App\Services\BookHistoryService;
 use Illuminate\Support\Facades\DB;
 
@@ -49,11 +50,11 @@ class RentBookDecorator extends EloquentBookHistoryDecorator
             ];
 
             array_push($pairs, $bookCopyPair);
-            unset($pairs[2]);
 
             $history = $bookHistoryService->getBy($pairs, ['bookCopy']);
 
             if ($history != null) {
+                unset($pairs[2]);
                 $handleAttributes['bookCopy'] = $history['bookCopy'];
                 $response = $bookCopyUpdateHandler->handle($handleAttributes);
                 if ($response->getResponseStatus() == false) {
@@ -64,6 +65,6 @@ class RentBookDecorator extends EloquentBookHistoryDecorator
 
         }
 
-        return parent::updateModel($attributes, $id);
+        return true;
     }
 }
