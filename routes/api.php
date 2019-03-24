@@ -51,6 +51,11 @@ Route::prefix('v1')->group(function () {
             'as' => 'api/v1/books/borrow'
         ]);
 
+        Route::get('all', [
+            'uses' => 'API\BookController@all',
+            'as' => 'api/v1/books/all'
+        ]);
+
     });
 
     Route::prefix('authors')->group(function () {
@@ -117,6 +122,11 @@ Route::prefix('v1')->group(function () {
             'uses' => 'API\GenreController@delete',
             'as' => 'api/v1/genres/delete'
         ]);
+
+        Route::get('all', [
+            'uses' => 'API\GenreController@all',
+            'as' => 'api/v1/genres/all'
+        ]);
     });
 
     Route::prefix('histories')->group(function () {
@@ -153,6 +163,11 @@ Route::prefix('v1')->group(function () {
         Route::get('activeHistories', [
             'uses' => 'API\BookHistoryController@getActiveHistories',
             'as' => 'api/v1/histories/activeHistories'
+        ]);
+
+        Route::get('all', [
+            'uses' => 'API\BookHistoryController@all',
+            'as' => 'api/v1/histories/all'
         ]);
     });
 });

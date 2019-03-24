@@ -90,4 +90,9 @@ class BookHistoryController extends APIController
         $historyService = $this->getService();
         return $historyService->getActiveHistories($request->all());
     }
+
+    public function all(BookHistoryGetRequest $request)
+    {
+        return $this->getService()->getAll($request->attributes());
+    }
 };
