@@ -80,7 +80,7 @@ class EloquentRepository implements Repository
         $relations = isset($attributes['relations']) ? $attributes['relations'] : [];
         $order = isset($attributes['order']) ? $attributes['order'] : 'asc';
         $sort = isset($attributes['sort']) ? $attributes['sort'] : 'id';
-        $limit = isset($attributes['limit']) ? $attributes['limit'] : $this->count($relations);
+        $limit = isset($attributes['limit']) ? $attributes['limit'] : 20;
         $offset = isset($attributes['offset']) ? $attributes['offset'] : 0;
 
         return $this->newQuery()->with($relations)->limit($limit)->offset($offset)->orderBy($sort, $order)->get();

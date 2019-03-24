@@ -149,5 +149,10 @@ Route::prefix('v1')->group(function () {
             'uses' => 'API\BookHistoryController@returnBook',
             'as' => 'api/v1/histories/return'
         ]);
+
+        Route::get('activeHistories', [
+            'uses' => 'API\BookHistoryController@getActiveHistories',
+            'as' => 'api/v1/histories/activeHistories'
+        ]);
     });
 });

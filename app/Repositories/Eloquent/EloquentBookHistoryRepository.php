@@ -21,6 +21,7 @@ class EloquentBookHistoryRepository extends EloquentRepository implements BookHi
 
     public function getAllActive(array $attributes = [])
     {
-        return $this->getAll()->where('state', '=', 1);
+        return $this->getAll($attributes)->where('state', '=', 1)
+            ->where('user_id', '=', $attributes['userId']);
     }
 }

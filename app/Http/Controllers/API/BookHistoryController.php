@@ -13,6 +13,7 @@ use App\Decorators\BookHistoryDecorator\RentBook\RentBookDecorator;
 use App\Decorators\BookHistoryDecorator\RentBook\RentBookTransactionDecorator;
 use App\Decorators\BookHistoryDecorator\ReturnBook\ReturnBookDecorator;
 use App\Decorators\BookHistoryDecorator\ReturnBook\ReturnBookTransactionDecorator;
+use App\Http\Controllers\Requests\API\BookHistory\BookHistoryGetActiveRequest;
 use App\Http\Controllers\Requests\API\BookHistory\BookRentedRequest;
 use App\Http\Controllers\Requests\API\BookHistory\BookHistoryDeleteRequest;
 use App\Http\Controllers\Requests\API\BookHistory\BookHistoryGetRequest;
@@ -80,4 +81,13 @@ class BookHistoryController extends APIController
         }
         return['Failed'];
     }
-}
+
+    public function getActiveHistories(BookHistoryGetActiveRequest $request)
+    {
+        /**
+         * @var BookHistoryService $historyService
+         */
+        $historyService = $this->getService();
+        return $historyService->getActiveHistories($request->all());
+    }
+};
