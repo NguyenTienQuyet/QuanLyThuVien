@@ -41,4 +41,9 @@ class GenreController extends APIController
     {
         return parent::_delete($request, $id);
     }
+
+    public function all(GenreGetRequest $request)
+    {
+        return $this->getService()->getAll($request->attributes());
+    }
 }

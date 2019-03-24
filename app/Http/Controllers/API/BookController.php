@@ -95,4 +95,9 @@ class BookController extends APIController
         }
         return ['false'];
     }
+
+    public function all(BookGetRequest $request)
+    {
+        return $this->getService()->getAll($request->attributes());
+    }
 }
