@@ -18,4 +18,13 @@ class EloquentBookHistoryDecorator extends EloquentDecorator implements BookHist
     {
         parent::__construct($service);
     }
+
+    public function getActiveHistory(array $attributes = [])
+    {
+        /**
+         * @var BookHistoryService $service
+         */
+        $service = $this->getService();
+        return $service->getActiveHistory($attributes);
+    }
 }
