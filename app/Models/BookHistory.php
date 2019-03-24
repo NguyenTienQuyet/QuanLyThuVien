@@ -20,7 +20,7 @@ class BookHistory extends Model
         'state' => true,
     ];
 
-    public function bookCopies()
+    public function bookCopy()
     {
         return $this->belongsTo(BookCopy::class, 'book_copies_id');
     }
