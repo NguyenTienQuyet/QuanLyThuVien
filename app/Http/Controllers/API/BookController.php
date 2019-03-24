@@ -98,6 +98,6 @@ class BookController extends APIController
 
     public function all(BookGetRequest $request)
     {
-        return $this->getService()->getAll($request->attributes());
+        return $this->getService()->getAll($request->all());
     }
 }
