@@ -29,7 +29,7 @@ class APIController extends Controller
     public function _get(GetRequest $request, int $id = null)
     {
         $id = ($id == null) ? $request->getId(): $id;
-        return $this->service->getModel($request->all(), $id);
+        return $this->service->getModel($request->getrelations(), $id);
     }
 
     public function _post(PostRequest $request)
