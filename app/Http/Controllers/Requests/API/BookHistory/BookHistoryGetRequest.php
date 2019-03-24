@@ -26,6 +26,6 @@ class BookHistoryGetRequest extends GetRequest
 
     function relations(): array
     {
-        return ['users', 'bookCopies'];
+        return ['users', 'bookCopy'];
     }
 }
