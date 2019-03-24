@@ -11,5 +11,5 @@ namespace App\Services;
 
 interface BookHistoryService extends Service
 {
-
+    public function getActiveHistory(array $attributes = []);
 }

@@ -11,5 +11,5 @@ namespace App\Repositories;
 
 interface BookHistoryRepository extends Repository
 {
-
+    public function getAllActive(array $attributes = []);
 }

@@ -83,7 +83,7 @@ class EloquentRepository implements Repository
         $limit = isset($attributes['limit']) ? $attributes['limit'] : $this->count($relations);
         $offset = isset($attributes['offset']) ? $attributes['offset'] : 0;
 
-        return $this->newQuery()->with($relations)->limit($limit)->offset($offset)->orderBy($sort, $order) ->get();
+        return $this->newQuery()->with($relations)->limit($limit)->offset($offset)->orderBy($sort, $order)->get();
     }
 
     public function getBetween($needle, array $duration,  array $relations = [])

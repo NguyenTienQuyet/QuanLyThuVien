@@ -18,4 +18,13 @@ class EloquentBookHistoryService extends EloquentService implements BookHistoryS
     {
         parent::__construct($repository);
     }
+
+    public function getActiveHistory(array $attributes = [])
+    {
+        /**
+         * @var BookHistoryRepository $repository
+         */
+        $repository = $this->getRepository();
+        return $repository->getAllActive($attributes);
+    }
 }

@@ -18,4 +18,9 @@ class EloquentBookHistoryRepository extends EloquentRepository implements BookHi
     {
         parent::__construct($model);
     }
+
+    public function getAllActive(array $attributes = [])
+    {
+        return $this->getAll()->where('state', '=', 1);
+    }
 }
