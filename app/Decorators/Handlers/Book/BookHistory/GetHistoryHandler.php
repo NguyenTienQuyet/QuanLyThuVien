@@ -21,7 +21,7 @@ class GetHistoryHandler extends BookHistoryHandler
          */
         $historyService = $this->createHandlerService();
 
-        $attributes['activeHistory'] = $historyService->getActiveHistory($attributes);
+        $attributes['activeHistory'] = $historyService->getActiveHistories($attributes);
 
         return parent::handle($attributes);
     }
