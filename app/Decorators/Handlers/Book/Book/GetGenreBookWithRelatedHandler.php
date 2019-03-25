@@ -11,7 +11,7 @@ namespace App\Decorators\Handlers\Book\Book;
 
 use App\Decorators\Handlers\HandlerResponseCreators\HandlerResponse;
 
-class GetBookWithRelatedHandler extends BookHandler
+class GetGenreBookWithRelatedHandler extends BookHandler
 {
     public function handle(array &$attributes): HandlerResponse
     {
