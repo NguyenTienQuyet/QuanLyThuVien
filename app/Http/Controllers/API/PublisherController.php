@@ -28,7 +28,7 @@ class PublisherController extends APIController
         $relations = $request->getRelations();
         if ($relations != null) {
             /**
-             * @var PublisherService $genreService
+             * @var PublisherService $publisherService
              */
             $publisherService = $this->getService();
             $enhancedService = new GetPublisherDecorator($publisherService);
