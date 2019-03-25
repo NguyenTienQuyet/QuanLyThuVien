@@ -9,7 +9,7 @@
 namespace App\Decorators\GenreDecorators;
 
 
-use App\Decorators\Handlers\Book\Book\GetGenreBookHandler;
+use App\Decorators\Handlers\Book\Book\GetBook\GetGenreBookHandler;
 use Illuminate\Database\Eloquent\Model;
 
 class GetGenreDecorator extends EloquentGenreDecorator

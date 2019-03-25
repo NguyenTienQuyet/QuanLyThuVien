@@ -6,8 +6,10 @@
  * Time: 12:07 PM
  */
 
-namespace App\Decorators\Handlers\Book\Book;
+namespace App\Decorators\Handlers\Book\Book\GetBook;
 
+
+use App\Decorators\Handlers\Book\Book\GetBookWithRelatedHandler;
 
 class GetPublisherBookHandler extends GetBookWithRelatedHandler
 {

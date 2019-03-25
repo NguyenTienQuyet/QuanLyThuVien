@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c94c8091-1e73-4656-b802-5144e7c6f00b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetAuthorBookHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetPublisherBookHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Decorators/GenreDecorators/GetGenreDecorator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Decorators/GenreDecorators/GetGenreDecorator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetAuthorBookHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBook/GetAuthorBookHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetGenreBookHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBook/GetGenreBookHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetPublisherBookHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBook/GetPublisherBookHandler.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +45,7 @@
           <entry key="env" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="1" />
-          <entry key="php" value="868" />
+          <entry key="php" value="872" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -51,7 +53,7 @@
           <entry key=".env file" value="1" />
           <entry key="Blade" value="2" />
           <entry key="HTML" value="1" />
-          <entry key="PHP" value="866" />
+          <entry key="PHP" value="870" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -60,14 +62,14 @@
           <entry key="dummy" value="87" />
           <entry key="env" value="12" />
           <entry key="gitignore" value="381" />
-          <entry key="php" value="24454" />
+          <entry key="php" value="24478" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="12" />
           <entry key="Blade" value="4" />
-          <entry key="PHP" value="24450" />
+          <entry key="PHP" value="24474" />
           <entry key="PLAIN_TEXT" value="468" />
         </counts>
       </usages-collector>
@@ -82,25 +84,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Decorators/BookDecorators/EloquentBookDecorator.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetAuthorBookHandler.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetPublisherBookHandler.php">
+        <entry file="file://$PROJECT_DIR$/app/Decorators/GenreDecorators/GetGenreDecorator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="15" column="64" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
+            <state relative-caret-position="96">
+              <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -122,9 +110,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Requests/API/BookHistoryRequest/BookBorrowRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Requests/API/BookHistory/BookHistoryDeleteRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Requests/API/BookHistory/BookHistoryPatchRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Requests/API/BookHistory/BookHistoryPostRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Requests/API/Book/BookBorrowRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Requests/API/Book/BookImportRequest.php" />
@@ -170,9 +155,12 @@
         <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetGenreBookWithRelatedHandler.php" />
         <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBookWithRelatedHandler.php" />
         <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetGenreBook.php" />
-        <option value="$PROJECT_DIR$/app/Decorators/GenreDecorators/GetGenreDecorator.php" />
         <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetAuthorBookHandler.php" />
         <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetPublisherBookHandler.php" />
+        <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBook/GetGenreBookHandler.php" />
+        <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBook/GetPublisherBookHandler.php" />
+        <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBook/GetAuthorBookHandler.php" />
+        <option value="$PROJECT_DIR$/app/Decorators/GenreDecorators/GetGenreDecorator.php" />
       </list>
     </option>
   </component>
@@ -370,6 +358,16 @@
               <item name="LibrarySystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Decorators" type="462c0819:PsiDirectoryNode" />
+              <item name="Handlers" type="462c0819:PsiDirectoryNode" />
+              <item name="Book" type="462c0819:PsiDirectoryNode" />
+              <item name="Book" type="462c0819:PsiDirectoryNode" />
+              <item name="GetBook" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LibrarySystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -392,11 +390,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\XAMPP\htdocs\LibrarySystem\app\Decorators\Handlers\Book\Book\GetBook" />
       <recent name="E:\XAMPP\htdocs\LibrarySystem\app\Http\Controllers\Requests\API\Book" />
       <recent name="E:\XAMPP\htdocs\LibrarySystem\app\Http\Controllers\Requests\API\BookHistory" />
       <recent name="E:\XAMPP\htdocs\LibrarySystem\app\Http\Controllers\Requests\API\BookHistoryRequest" />
       <recent name="E:\XAMPP\htdocs\LibrarySystem\app\Decorators\Handlers\Book\BookCopy\UpdateBookCopy\UpdateNegativeState" />
-      <recent name="E:\XAMPP\htdocs\LibrarySystem\app\Decorators\BookDecorators\CreateBook" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -445,12 +443,12 @@
       <workItem from="1553160092066" duration="5588000" />
       <workItem from="1553307137592" duration="198000" />
       <workItem from="1553309137103" duration="1687000" />
-      <workItem from="1553428366387" duration="14391000" />
+      <workItem from="1553428366387" duration="14576000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115774000" />
+    <option name="totallyTimeSpent" value="115959000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -787,16 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/GenreDecorators/GetGenreDecorator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="12" column="39" lean-forward="true" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding>
-            <element signature="e#135#193#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBookWithRelatedHandler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -804,27 +792,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetGenreBookHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="16" column="67" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Decorators/BookDecorators/EloquentBookDecorator.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetAuthorBookHandler.php">
+    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBook/GetAuthorBookHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+        <state relative-caret-position="128">
+          <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetPublisherBookHandler.php">
+    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBook/GetGenreBookHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="15" column="64" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
+        <state relative-caret-position="240">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBook/GetPublisherBookHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Decorators/GenreDecorators/GetGenreDecorator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
         </state>
       </provider>
     </entry>
