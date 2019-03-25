@@ -3,28 +3,28 @@
  * Created by PhpStorm.
  * User: admin
  * Date: 3/25/2019
- * Time: 10:44 AM
+ * Time: 12:54 PM
  */
 
-namespace App\Decorators\GenreDecorators;
+namespace App\Decorators\AuthorDecorators;
 
 
 use App\Decorators\GetDetailModel;
-use App\Decorators\Handlers\Book\Book\GetBook\GetGenreBookHandler;
+use App\Decorators\Handlers\Book\Book\GetBook\GetAuthorBookHandler;
 use App\Decorators\Handlers\Handlerable;
 use Illuminate\Database\Eloquent\Model;
 
-class GetGenreDecorator extends EloquentGenreDecorator
+class GetAuthorDecorator extends EloquentAuthorDecorator
 {
     use GetDetailModel;
     public function getModel(array $attributes, $id): ?Model
     {
-        $genre = parent::getModel($attributes, $id);
-        return $this->getDetailModel($genre);
+        $author = parent::getModel($attributes, $id);
+        return $this->getDetailModel($author);
     }
 
     public function createGetHandler(): Handlerable
     {
-        return new GetGenreBookHandler();
+        return new GetAuthorBookHandler();
     }
 }
