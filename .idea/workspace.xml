@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c94c8091-1e73-4656-b802-5144e7c6f00b" name="Default Changelist" comment="" />
+    <list default="true" id="c94c8091-1e73-4656-b802-5144e7c6f00b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetGenreBookHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Decorators/GenreDecorators/GetGenreDecorator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Decorators/GenreDecorators/GetGenreDecorator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetGenreBookWithRelatedHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBookWithRelatedHandler.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +44,7 @@
           <entry key="env" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="1" />
-          <entry key="php" value="864" />
+          <entry key="php" value="866" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -48,29 +52,29 @@
           <entry key=".env file" value="1" />
           <entry key="Blade" value="2" />
           <entry key="HTML" value="1" />
-          <entry key="PHP" value="862" />
+          <entry key="PHP" value="864" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="74" />
+          <entry key="dummy" value="87" />
           <entry key="env" value="12" />
           <entry key="gitignore" value="381" />
-          <entry key="php" value="24351" />
+          <entry key="php" value="24421" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="12" />
           <entry key="Blade" value="4" />
-          <entry key="PHP" value="24347" />
-          <entry key="PLAIN_TEXT" value="455" />
+          <entry key="PHP" value="24417" />
+          <entry key="PLAIN_TEXT" value="468" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
         <counts>
-          <entry key="PHP Class.type" value="145" />
+          <entry key="PHP Class.type" value="146" />
           <entry key="PHP Interface.type" value="13" />
           <entry key="PHP Trait.type" value="2" />
         </counts>
@@ -87,23 +91,29 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Decorators/GenreDecorators/GetGenreDecorator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+            <state relative-caret-position="272">
+              <caret line="22" column="43" lean-forward="true" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
               <folding>
-                <element signature="e#135#199#0#PHP" expanded="true" />
+                <element signature="e#135#193#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/GenreController.php">
+        <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBookWithRelatedHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-              <folding>
-                <element signature="e#128#181#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="208">
+              <caret line="18" column="77" selection-start-line="18" selection-start-column="77" selection-end-line="18" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetGenreBookHandler.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="16" column="67" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -125,8 +135,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Decorators/BookDecorators/CreateBook/CreateBookDecorator.php" />
-        <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/BookHistory/UpdateHistoryHandler.php" />
         <option value="$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/RentBook/RentBookTransactionDecorator.php" />
         <option value="$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/ReturnBook/ReturnBookTransactionDecorator.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Requests/API/BookHistoryRequest/BookBorrowRequest.php" />
@@ -174,7 +182,9 @@
         <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/BookHandler.php" />
         <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBookWithRelated.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/GenreController.php" />
+        <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetGenreBookWithRelatedHandler.php" />
         <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBookWithRelatedHandler.php" />
+        <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetGenreBook.php" />
         <option value="$PROJECT_DIR$/app/Decorators/GenreDecorators/GetGenreDecorator.php" />
       </list>
     </option>
@@ -373,15 +383,6 @@
               <item name="LibrarySystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Decorators" type="462c0819:PsiDirectoryNode" />
-              <item name="Handlers" type="462c0819:PsiDirectoryNode" />
-              <item name="Book" type="462c0819:PsiDirectoryNode" />
-              <item name="BookCopy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LibrarySystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -457,12 +458,12 @@
       <workItem from="1553160092066" duration="5588000" />
       <workItem from="1553307137592" duration="198000" />
       <workItem from="1553309137103" duration="1687000" />
-      <workItem from="1553428366387" duration="13700000" />
+      <workItem from="1553428366387" duration="14253000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115083000" />
+    <option name="totallyTimeSpent" value="115636000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -475,8 +476,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27986577" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27986577" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -489,7 +491,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32867134" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32867134" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -525,13 +527,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Decorators/BookDecorators/BorrowBook/BorrowBookDecorator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="46" column="10" lean-forward="true" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Requests/API/Book/BookGetRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -805,13 +800,6 @@
         <state relative-caret-position="-144" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBookWithRelatedHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Decorators/BookDecorators/EloquentBookDecorator.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -825,12 +813,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetBookWithRelatedHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="18" column="77" selection-start-line="18" selection-start-column="77" selection-end-line="18" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/Book/GetGenreBookHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="16" column="67" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Decorators/GenreDecorators/GetGenreDecorator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+        <state relative-caret-position="272">
+          <caret line="22" column="43" lean-forward="true" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
           <folding>
-            <element signature="e#135#199#0#PHP" expanded="true" />
+            <element signature="e#135#193#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
