@@ -9,6 +9,7 @@
 namespace App\Http\Controllers\API;
 
 
+use App\Decorators\PublisherDecorators\GetPublisherDecorator;
 use App\Http\Controllers\Requests\API\Publisher\PublisherDeleteRequest;
 use App\Http\Controllers\Requests\API\Publisher\PublisherGetRequest;
 use App\Http\Controllers\Requests\API\Publisher\PublisherPatchRequest;
@@ -24,6 +25,15 @@ class PublisherController extends APIController
 
     public function get(PublisherGetRequest $request, int $id = null)
     {
+        $relations = $request->getRelations();
+        if ($relations != null) {
+            /**
+             * @var PublisherService $genreService
+             */
+            $publisherService = $this->getService();
+            $enhancedService = new GetPublisherDecorator($publisherService);
+            return $enhancedService->getModel($relations, $id);
+        }
         return parent::_get($request, $id);
     }
 

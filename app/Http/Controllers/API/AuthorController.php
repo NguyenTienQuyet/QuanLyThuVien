@@ -9,6 +9,7 @@
 namespace App\Http\Controllers\API;
 
 
+use App\Decorators\AuthorDecorators\GetAuthorDecorator;
 use App\Http\Controllers\Requests\API\Author\AuthorDeleteRequest;
 use App\Http\Controllers\Requests\API\Author\AuthorGetRequest;
 use App\Http\Controllers\Requests\API\Author\AuthorPatchRequest;
@@ -24,6 +25,15 @@ class AuthorController extends APIController
 
     public function get(AuthorGetRequest $request, int $id = null)
     {
+        $relations = $request->getRelations();
+        if ($relations != null) {
+            /**
+             * @var AuthorService $genreService
+             */
+            $authorService = $this->getService();
+            $enhancedService = new GetAuthorDecorator($authorService);
+            return $enhancedService->getModel($relations, $id);
+        }
         return parent::_get($request, $id);
     }
 
