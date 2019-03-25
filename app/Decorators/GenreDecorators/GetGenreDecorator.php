@@ -9,6 +9,7 @@
 namespace App\Decorators\GenreDecorators;
 
 
+use App\Decorators\Handlers\Book\Book\GetBookWithRelatedHandler;
 use Illuminate\Database\Eloquent\Model;
 
 class GetGenreDecorator extends EloquentGenreDecorator
@@ -18,9 +19,17 @@ class GetGenreDecorator extends EloquentGenreDecorator
         $genre = parent::getModel($attributes, $id);
         $books = $genre['books'];
 
-        foreach ($books as $book) {
+        $bookRelated = [];
+        $bookHandler = new GetBookWithRelatedHandler();
 
+        foreach ($books as $book) {
+            $bookAttributes['id'] = $book['id'];
+            $bookAttributes['related'] = null;
+            $bookHandler->handle($bookAttributes);
+            array_push($bookRelated, $bookAttributes['related']);
         }
+        unset($genre['books']);
+        $genre['books'] = $bookRelated;
 
         return $genre;
     }

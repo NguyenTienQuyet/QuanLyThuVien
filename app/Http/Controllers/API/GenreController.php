@@ -9,6 +9,7 @@
 namespace App\Http\Controllers\API;
 
 
+use App\Decorators\GenreDecorators\GetGenreDecorator;
 use App\Http\Controllers\Requests\API\Genre\GenreDeleteRequest;
 use App\Http\Controllers\Requests\API\Genre\GenreGetRequest;
 use App\Http\Controllers\Requests\API\Genre\GenrePatchRequest;
@@ -24,6 +25,15 @@ class GenreController extends APIController
 
     public function get(GenreGetRequest $request, int $id = null)
     {
+        $relations = $request->getRelations();
+        if ($relations != null) {
+            /**
+             * @var GenreService $genreService
+             */
+            $genreService = $this->getService();
+            $enhancedService = new GetGenreDecorator($genreService);
+            return $enhancedService->getModel($relations, $id);
+        }
         return parent::_get($request, $id);
     }
 
