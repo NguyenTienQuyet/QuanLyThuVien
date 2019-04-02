@@ -11,15 +11,21 @@ namespace App\Decorators;
 
 use Illuminate\Support\Facades\DB;
 
-class EloquentUpdateTransactionDecorator extends EloquentDecorator
+abstract class EloquentUpdateTransactionDecorator extends EloquentDecorator
 {
     public function updateModel(array $attributes, $id): bool
     {
         $model = null;
         DB::transaction(function () use ($attributes, $id, &$model) {
             $model = parent::updateModel($attributes, $id);
+            $attachedChecker = $this->attachUpdate($model, $attributes);
+            if (!$attachedChecker) {
+                DB::rollBack();
+            }
         });
 
         return $model;
     }
+
+    abstract public function attachUpdate(bool $model, array $attributes): bool;
 }
