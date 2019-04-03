@@ -15,6 +15,6 @@ class GetPublisherBookHandler extends GetBookWithRelatedHandler
 {
     public function setRelations(): array
     {
-        return ['bookImages','authors','genres','bookQuantity'];
+        return ['images','authors','genres','bookQuantity'];
     }
 }

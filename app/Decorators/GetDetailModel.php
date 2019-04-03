@@ -23,7 +23,7 @@ trait GetDetailModel
         $bookHandler = $this->createGetHandler();
 
         foreach ($books as $book) {
-            $bookAttributes['id'] = $book['id'];
+            $bookAttributes['bookId'] = $book['id'];
             $bookAttributes['related'] = null;
             $bookHandler->handle($bookAttributes);
             array_push($bookRelated, $bookAttributes['related']);
