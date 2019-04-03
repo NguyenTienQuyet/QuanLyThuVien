@@ -170,4 +170,17 @@ Route::prefix('v1')->group(function () {
             'as' => 'api/v1/histories/all'
         ]);
     });
+
+    Route::prefix('cards')->group(function () {
+
+        Route::post('post', [
+            'uses' => 'API\CardController@post',
+            'as' => 'api/v1/cards/post'
+        ]);
+
+        Route::patch('patch/{id?}', [
+            'uses' => 'API\CardController@renewed',
+            'as' => 'api/v1/cards/renewed'
+        ]);
+    });
 });

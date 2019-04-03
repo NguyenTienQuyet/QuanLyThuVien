@@ -13,6 +13,8 @@ use App\Decorators\Handlers\HandlerResponseCreators\HandlerResponse;
 
 class CreateBookCopyHandler extends BookCopyHandler
 {
+    use CreateBookID;
+
     public function handle(array &$attributes): HandlerResponse
     {
         $bookCopyService = $this->createHandlerService();
@@ -20,10 +22,10 @@ class CreateBookCopyHandler extends BookCopyHandler
 
         //set up updated data
         $bookCopyAttributes['book_id'] = $attributes['bookId'];
-//        $bookCopyAttributes['title'] =
         $bookCopyAttributes['state_detail'] = 'available';
 
         for ($i = 0; $i < $importNumber; $i++) {
+            $bookCopyAttributes['title'] = $this->createSecret();
             $bookCopyService->createNewModel($bookCopyAttributes);
         }
 

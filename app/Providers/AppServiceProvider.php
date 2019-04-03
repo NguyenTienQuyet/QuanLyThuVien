@@ -8,12 +8,14 @@ use App\Repositories\BookHistoryRepository;
 use App\Repositories\BookImageRepository;
 use App\Repositories\BookQuantityRepository;
 use App\Repositories\BookRepository;
+use App\Repositories\CardRepository;
 use App\Repositories\Eloquent\EloquentAuthorRepository;
 use App\Repositories\Eloquent\EloquentBookCopyRepository;
 use App\Repositories\Eloquent\EloquentBookHistoryRepository;
 use App\Repositories\Eloquent\EloquentBookImageRepository;
 use App\Repositories\Eloquent\EloquentBookQuantityRepository;
 use App\Repositories\Eloquent\EloquentBookRepository;
+use App\Repositories\Eloquent\EloquentCardRepository;
 use App\Repositories\Eloquent\EloquentGenreRepository;
 use App\Repositories\Eloquent\EloquentImageRepository;
 use App\Repositories\Eloquent\EloquentPublisherRepository;
@@ -31,12 +33,14 @@ use App\Services\BookHistoryService;
 use App\Services\BookImageService;
 use App\Services\BookQuantityService;
 use App\Services\BookService;
+use App\Services\CardService;
 use App\Services\Eloquent\EloquentAuthorService;
 use App\Services\Eloquent\EloquentBookCopyService;
 use App\Services\Eloquent\EloquentBookHistoryService;
 use App\Services\Eloquent\EloquentBookImageService;
 use App\Services\Eloquent\EloquentBookQuantityService;
 use App\Services\Eloquent\EloquentBookService;
+use App\Services\Eloquent\EloquentCardService;
 use App\Services\Eloquent\EloquentGenreService;
 use App\Services\Eloquent\EloquentImageService;
 use App\Services\Eloquent\EloquentPublisherService;
@@ -84,6 +88,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(RoleService::class, EloquentRoleService::class);
         $this->app->singleton(UserService::class, EloquentUserService::class);
         $this->app->singleton(BookQuantityService::class, EloquentBookQuantityService::class);
+        $this->app->singleton(CardService::class, EloquentCardService::class);
 
         //repositories
         $this->app->singleton(Repository::class, EloquentRepository::class);
@@ -98,6 +103,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(RoleRepository::class, EloquentRoleRepository::class);
         $this->app->singleton(UserRepository::class, EloquentUserRepository::class);
         $this->app->singleton(BookQuantityRepository::class, EloquentBookQuantityRepository::class);
-
+        $this->app->singleton(CardRepository::class, EloquentCardRepository::class);
     }
 }

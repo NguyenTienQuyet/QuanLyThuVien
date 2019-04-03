@@ -12,6 +12,7 @@ namespace App\Decorators\BookDecorators\BorrowBook;
 use App\Decorators\EloquentDecorator;
 use App\Decorators\Handlers\Book\BookCopy\GetBookCopy\CheckAvailableBookCopyHandler;
 use App\Decorators\Handlers\Book\BookHistory\CheckHistoryHandler;
+use App\Decorators\Handlers\Card\CheckCardLimitHandler;
 
 class BorrowBookProxy extends EloquentDecorator
 {
@@ -32,9 +33,11 @@ class BorrowBookProxy extends EloquentDecorator
     {
         $handleAttributes['userId'] = $id;
 
+        $checkCardHandler = new CheckCardLimitHandler();
         $checkHistoryHandler = new CheckHistoryHandler();
         $checkCopyHandler = new CheckAvailableBookCopyHandler();
 
+        $checkCardHandler->setNextHandler($checkHistoryHandler);
         $checkHistoryHandler->setNextHandler($checkCopyHandler);
 
         //set up total quantity for checking history
@@ -42,7 +45,7 @@ class BorrowBookProxy extends EloquentDecorator
 
         $handleAttributes['books'] = $attributes['books'];
 
-        $handlerResponse = $checkHistoryHandler->handle($handleAttributes);
+        $handlerResponse = $checkCardHandler->handle($handleAttributes);
 
         if ($handlerResponse->getResponseStatus() == true) {
             return true;
