@@ -24,11 +24,11 @@ class ImportBookDecorator extends EloquentQuantityDecorator
     public function updateModel(array $attributes, $id): bool
     {
         $quantityHandler = new IncreaseQuantityHandler();
+        $attributes['bookId'] = $id;
 
-        $quantityHandler->setNextHandler($bookCopyHandler);
         $handlerResult = $quantityHandler->handle($attributes);
         if ($handlerResult->getResponseStatus() == false) {
-            $this->setMessage($this->getService(), $handlerResult->getResponseMessage());
+            $this->setMessage($handlerResult->getResponseMessage());
             return false;
         }
         return true;

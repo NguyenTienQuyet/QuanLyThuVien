@@ -24,12 +24,13 @@ class ImportBookTransactionDecorator extends EloquentUpdateTransactionDecorator
     {
         if ($updateChecker == true) {
             $bookCopyHandler = new CreateBookCopyHandler();
+            $attributes['bookId'] = $id;
 
             $handlerResult = $bookCopyHandler->handle($attributes);
             if ($handlerResult->getResponseStatus() == true) {
                 return true;
             }
-            $this->setMessage($this->getService(), $handlerResult->getResponseMessage());
+            $this->setMessage($handlerResult->getResponseMessage());
             return false;
         }
         return false;

@@ -10,64 +10,28 @@ namespace App\Decorators\BookHistoryDecorator\ReturnBook;
 
 
 use App\Decorators\BookHistoryDecorator\EloquentBookHistoryDecorator;
+use App\Decorators\BookHistoryDecorator\UpdateHistoryDecorator;
 use App\Decorators\Handlers\Book\BookCopy\UpdateBookCopy\UpdatePositiveStateHandler;
 use App\Decorators\Handlers\Book\BookHistory\UpdateHistoryHandler;
+use App\Decorators\Handlers\Handlerable;
 use Illuminate\Support\Facades\DB;
 
-class ReturnBookDecorator extends EloquentBookHistoryDecorator
+class ReturnBookDecorator extends UpdateHistoryDecorator
 {
-    public function updateModel(array $attributes, $id): bool
+    public function arrangedHandler(): Handlerable
     {
-        $bookHistoryService = $this->getService();
         $bookCopyUpdateHandler = new UpdatePositiveStateHandler();
         $bookHistoryUpdateHandler = new UpdateHistoryHandler();
 
         $bookHistoryUpdateHandler->setNextHandler($bookCopyUpdateHandler);
+        return $bookHistoryUpdateHandler;
+    }
 
-        //gather input information
-        $userId = $attributes['user_id'];
-        $bookCopies = $attributes['bookCopies'];
+    public function setHandlerAttribute($history): array
+    {
+        $handleAttributes['bookCopy'] = $history['bookCopy'];
+        $handleAttributes['historyId'] = $history['id'];
 
-        //set up for searching
-        $userPair = [
-            'needle' => 'user_id',
-            'value' =>  $userId
-        ];
-
-        $statePair = [
-            'needle' => 'state',
-            'value' => true
-        ];
-
-        $pairs = [];
-
-        array_push($pairs, $userPair);
-        array_push($pairs, $statePair);
-
-        foreach ($bookCopies as $bookCopy) {
-
-            $bookCopyPair = [
-                'needle' => 'book_copies_id',
-                'value' =>  $bookCopy
-            ];
-
-            array_push($pairs, $bookCopyPair);
-
-            $history = $bookHistoryService->getBy($pairs, ['bookCopy']);
-
-            unset($pairs[2]);
-            if ($history != null) {
-                $handleAttributes['bookCopy'] = $history['bookCopy'];
-                $handleAttributes['historyId'] = $history['id'];
-                $response = $bookHistoryUpdateHandler->handle($handleAttributes);
-                if ($response->getResponseStatus() == false) {
-                    DB::rollBack();
-                    return false;
-                }
-            }
-
-        }
-
-        return true;
+        return $handleAttributes;
     }
 }

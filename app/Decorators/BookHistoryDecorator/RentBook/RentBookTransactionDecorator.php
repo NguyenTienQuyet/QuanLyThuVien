@@ -17,4 +17,9 @@ class RentBookTransactionDecorator extends EloquentUpdateTransactionDecorator
     {
         parent::__construct($service);
     }
+
+    public function attachUpdate(bool $updateChecker, array $attributes, int $id): bool
+    {
+        return $updateChecker;
+    }
 }

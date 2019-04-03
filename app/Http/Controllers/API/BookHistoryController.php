@@ -55,6 +55,8 @@ class BookHistoryController extends APIController
         /**
          * @var BookHistoryService $historyService
          */
+        $id = ($id == null) ? $request->get('user_id') : $id;
+
         $historyService = $this->getService();
         $enhancedService = new RentBookDecorator($historyService);
         $transactionService = new RentBookTransactionDecorator($enhancedService);
@@ -71,6 +73,8 @@ class BookHistoryController extends APIController
         /**
          * @var BookHistoryService $historyService
          */
+
+        $id = ($id == null) ? $request->get('user_id') : $id;
         $historyService = $this->getService();
         $enhancedService = new ReturnBookDecorator($historyService);
         $transactionService = new ReturnBookTransactionDecorator($enhancedService);

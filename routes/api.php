@@ -42,7 +42,7 @@ Route::prefix('v1')->group(function () {
         ]);
 
         Route::patch('import/{id?}', [
-            'uses' => 'API\BookQuantityController@import',
+            'uses' => 'API\QuantityController@import',
             'as' => 'api/v1/books/import'
         ]);
 
@@ -150,12 +150,12 @@ Route::prefix('v1')->group(function () {
             'as' => 'api/v1/histories/delete'
         ]);
 
-        Route::patch('rent', [
+        Route::patch('rent/{id?}', [
             'uses' => 'API\BookHistoryController@rent',
             'as' => 'api/v1/histories/rent'
         ]);
 
-        Route::patch('return', [
+        Route::patch('return/{id?}', [
             'uses' => 'API\BookHistoryController@returnBook',
             'as' => 'api/v1/histories/return'
         ]);
