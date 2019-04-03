@@ -183,4 +183,31 @@ Route::prefix('v1')->group(function () {
             'as' => 'api/v1/cards/renewed'
         ]);
     });
+
+    Route::prefix('users')->group(function () {
+        Route::get('get/{id?}', [
+            'uses' => 'API\UserController@get',
+            'as' => 'api/v1/users/get'
+        ]);
+
+        Route::post('register', [
+            'uses' => 'API\UserController@post',
+            'as' => 'api/v1/users/register'
+        ]);
+
+        Route::patch('patch/{id?}', [
+            'uses' => 'API\UserController@patch',
+            'as' => 'api/v1/users/patch'
+        ]);
+
+        Route::delete('delete/{id?}', [
+            'uses' => 'API\UserController@delete',
+            'as' => 'api/v1/users/delete'
+        ]);
+
+        Route::post('login', [
+            'uses' => 'API\UserController@login',
+            'as' => 'api/v1/users/login'
+        ]);
+    });
 });

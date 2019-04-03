@@ -9,8 +9,10 @@
 namespace App\Http\Controllers\API;
 
 
+use App\Decorators\AccountDecorators\LoginDecorator;
 use App\Http\Controllers\Requests\API\User\UserDeleteRequest;
 use App\Http\Controllers\Requests\API\User\UserGetRequest;
+use App\Http\Controllers\Requests\API\User\UserLoginRequest;
 use App\Http\Controllers\Requests\API\User\UserPatchRequest;
 use App\Http\Controllers\Requests\API\User\UserPostRequest;
 use App\Services\UserService;
@@ -40,5 +42,15 @@ class UserController extends APIController
     public function delete(UserDeleteRequest $request, int $id = null)
     {
         return parent::_delete($request, $id);
+    }
+
+    public function login(UserLoginRequest $request)
+    {
+        /**
+         * @var UserService $userService
+         */
+        $userService = $this->getService();
+        $enhancedService = new LoginDecorator($userService);
+        return $enhancedService->getModel($request->all(), null);
     }
 }
