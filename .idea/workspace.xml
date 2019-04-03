@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c94c8091-1e73-4656-b802-5144e7c6f00b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Decorators/CardDecorator/EloquentCardDecorator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Decorators/CardDecorator/RenewedCardDecorator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Decorators/CardDecorator/RenewedCardTransactionDecorator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Decorators/Handlers/Book/BookCopy/CreateBookID.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Decorators/Handlers/Card/CardHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Decorators/Handlers/Card/CheckCardLimitHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Decorators/Handlers/Card/CreateCardHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Decorators/Handlers/Card/RenewedCardHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Decorators/ImageDecorator/EloquentImageDecorator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/API/CardController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Requests/API/Card/CardPostRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Requests/API/Card/CardRenewedRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/CardRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Eloquent/EloquentCardRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/CardService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Eloquent/EloquentCardService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Decorators/BookDecorators/BorrowBook/BorrowBookProxy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Decorators/BookDecorators/BorrowBook/BorrowBookProxy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Decorators/Handlers/Book/BookCopy/CreateBookCopyHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Decorators/Handlers/Book/BookCopy/CreateBookCopyHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_16_094232_add_title_to_book_copies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_16_094232_add_title_to_book_copies_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-    </list>
+    <list default="true" id="c94c8091-1e73-4656-b802-5144e7c6f00b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -459,12 +435,12 @@
       <workItem from="1554219889913" duration="16230000" />
       <workItem from="1554276062161" duration="7646000" />
       <workItem from="1554296866307" duration="1082000" />
-      <workItem from="1554297986209" duration="17230000" />
+      <workItem from="1554297986209" duration="17502000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175638000" />
+    <option name="totallyTimeSpent" value="175910000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
