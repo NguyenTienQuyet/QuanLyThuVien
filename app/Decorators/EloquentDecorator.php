@@ -14,7 +14,7 @@ use App\Services\Message;
 use App\Services\Service;
 use Illuminate\Database\Eloquent\Model;
 
-class EloquentDecorator implements Decorator
+class EloquentDecorator implements Decorator, Message
 {
     private $service;
 
@@ -73,11 +73,21 @@ class EloquentDecorator implements Decorator
         return $this->service;
     }
 
-    public function setMessage(Service &$message, string $content)
+    public function setMessage(string $content)
     {
         /**
          * @var Message $message
          */
+        $message = $this->service;
         $message->setMessage($content);
+    }
+
+    public function getMessage(): string
+    {
+        /**
+         * @var Message $message
+         */
+        $message = $this->service;
+        return $message->getMessage();
     }
 }

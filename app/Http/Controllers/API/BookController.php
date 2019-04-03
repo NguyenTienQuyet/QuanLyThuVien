@@ -10,15 +10,12 @@ namespace App\Http\Controllers\API;
 
 
 use App\Decorators\BookDecorators\BorrowBook\BorrowBookDecorator;
+use App\Decorators\BookDecorators\BorrowBook\BorrowBookProxy;
 use App\Decorators\BookDecorators\BorrowBook\BorrowBookTransactionDecorator;
-use App\Decorators\BookDecorators\CreateBook\CreateBookDecorator;
-use App\Decorators\BookDecorators\CreateBook\CreateBookTransactionDecorator;
-use App\Decorators\BookDecorators\ImportBook\ImportBookDecorator;
-use App\Decorators\BookDecorators\ImportBook\ImportBookTransactionDecorator;
+use App\Decorators\BookDecorators\CreateBookDecorator;
 use App\Http\Controllers\Requests\API\Book\BookBorrowRequest;
 use App\Http\Controllers\Requests\API\Book\BookDeleteRequest;
 use App\Http\Controllers\Requests\API\Book\BookGetRequest;
-use App\Http\Controllers\Requests\API\Book\BookImportRequest;
 use App\Http\Controllers\Requests\API\Book\BookPatchRequest;
 use App\Http\Controllers\Requests\API\Book\BookPostRequest;
 use App\Services\BookService;
@@ -43,15 +40,11 @@ class BookController extends APIController
          */
         $bookService = $this->getService();
         $enhancedService = new CreateBookDecorator($bookService);
-        $transactionService = new CreateBookTransactionDecorator($enhancedService);
-        $a = $transactionService->createNewModel($request->all());
-        if ($a == null) {
-            /**
-             * @var Message $transactionService
-             */
-            return $this->message($transactionService);
+        $model = $enhancedService->createNewModel($request->all());
+        if ($model == null) {
+            return $this->message($enhancedService);
         }
-        return $a;
+        return $model;
     }
 
     public function patch(BookPatchRequest $request, int $id = null)
@@ -64,22 +57,6 @@ class BookController extends APIController
         return parent::_delete($request, $id);
     }
 
-    public function import(BookImportRequest $request, int $id = null)
-    {
-        $id = ($id == null) ? $request->get('id') : $id;
-        /**
-         * @var BookService $bookService
-         */
-        $bookService = $this->getService();
-        $enhancedService = new ImportBookDecorator($bookService);
-        $transactionService = new ImportBookTransactionDecorator($enhancedService);
-        $a = $transactionService->updateModel($request->all(), $id);
-        if ($a) {
-            return ['success'];
-        }
-        return ['false'];
-    }
-
     public function borrow(BookBorrowRequest $request)
     {
         $id =  $request->get('user_id');
@@ -88,12 +65,16 @@ class BookController extends APIController
          */
         $bookService = $this->getService();
         $enhancedService = new BorrowBookDecorator($bookService);
-        $transactionService = new BorrowBookTransactionDecorator($enhancedService);
-        $a = $transactionService->updateModel($request->all(), $id);
-        if ($a) {
+        $proxyService = new BorrowBookProxy($enhancedService);
+        $transactionService = new BorrowBookTransactionDecorator($proxyService);
+        $status = $transactionService->updateModel($request->all(), $id);
+        if ($status) {
             return ['success'];
         }
-        return ['false'];
+        /**
+         * @var Message $transactionService;
+         */
+        return $this->message($transactionService);
     }
 
     public function all(BookGetRequest $request)

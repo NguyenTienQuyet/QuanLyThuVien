@@ -14,9 +14,9 @@ use App\Decorators\Handlers\HandlerResponseCreators\HandlerResponse;
 class CheckHistoryHandler extends BookHistoryHandler
 {
     private static $MISSING_USER_ID_ERROR_MESSAGE = 'Missing userId key in handler attributes';
-    private static $MISSING_QUANTITY_ERROR_MESSAGE = 'Missing quantity key in handler attributes';
+    private static $MISSING_BOOKS_ERROR_MESSAGE = 'Missing books key in handler attributes';
     private static $INVALID_QUANTITY_ERROR_MESSAGE = 'Invalid input quantity';
-    private static $ALLOWED_BORROW_NUMBER = 5;
+    private static $ALLOWED_BORROW_NUMBER = 1;
 
     public function handle(array &$attributes): HandlerResponse
     {
@@ -24,14 +24,22 @@ class CheckHistoryHandler extends BookHistoryHandler
             return $this->createHandlerResponse(self::$MISSING_USER_ID_ERROR_MESSAGE, false);
         }
 
-        if (!array_key_exists('totalQuantity', $attributes)) {
-            return $this->createHandlerResponse(self::$MISSING_QUANTITY_ERROR_MESSAGE, false);
+        if (!array_key_exists('books', $attributes)) {
+            return $this->createHandlerResponse(self::$MISSING_BOOKS_ERROR_MESSAGE, false);
         }
 
+        //count desirable
+        $requiredBooks = $attributes['books'];
+        $desirableQuantity = 0;
+        foreach ($requiredBooks as $requiredBook) {
+            $desirableQuantity += $requiredBook['quantity'];
+
+        }
+
+        //count existing
         $historyService = $this->createHandlerService();
         //gather information
         $userId = $attributes['userId'];
-        $desirableQuantity = $attributes['totalQuantity'];
         //set up for searching
         $pairs = [
             [
@@ -43,7 +51,6 @@ class CheckHistoryHandler extends BookHistoryHandler
                 'value' => $userId
             ],
         ];
-        //count
         $currentBorrow = $historyService->count($pairs);
 
         // terminate if input borrow number comes over allowing number

@@ -20,24 +20,27 @@ class CheckAvailableBookCopyHandler extends BookCopyHandler
         $bookCopyService = $this->createHandlerService();
 
         //gather get information
-        $bookId = $attributes['bookId'];
-        $desiredQuantity = $attributes['quantity'];
-        //set up searching information
-        $pairs = [
-            [
-                'needle' => 'book_id',
-                'value' => $bookId
-            ],
-            [
-                'needle' => 'state',
-                'value' => true
-            ],
-        ];
+        $books = $attributes['books'];
 
-        $availableQuantity = $bookCopyService->count($pairs);
+        foreach ($books as $book) {
+            $desiredQuantity = $book['quantity'];
+            //set up searching information
+            $pairs = [
+                [
+                    'needle' => 'book_id',
+                    'value' => $book['book_id']
+                ],
+                [
+                    'needle' => 'state',
+                    'value' => true
+                ],
+            ];
 
-        if ($desiredQuantity > $availableQuantity) {
-            return $this->createHandlerResponse(self::$ERROR_MESSAGE, false);
+            $availableQuantity = $bookCopyService->count($pairs);
+
+            if ($desiredQuantity > $availableQuantity) {
+                return $this->createHandlerResponse(self::$ERROR_MESSAGE, false);
+            }
         }
 
         return parent::handle($attributes);

@@ -18,14 +18,13 @@ abstract class EloquentUpdateTransactionDecorator extends EloquentDecorator
         $model = null;
         DB::transaction(function () use ($attributes, $id, &$model) {
             $model = parent::updateModel($attributes, $id);
-            $attachedChecker = $this->attachUpdate($model, $attributes);
-            if (!$attachedChecker) {
+            $checker = $this->attachUpdate($model, $attributes, $id);
+            if (!$checker) {
                 DB::rollBack();
             }
         });
-
         return $model;
     }
 
-    abstract public function attachUpdate(bool $model, array $attributes): bool;
+    abstract public function attachUpdate(bool $updateChecker, array $attributes, int $id) :bool ;
 }

@@ -6,7 +6,7 @@
  * Time: 12:53 AM
  */
 
-namespace App\Decorators\Handlers\Book\BookQuantity\GetQuantiy;
+namespace App\Decorators\Handlers\Book\BookQuantity;
 
 
 use App\Decorators\Handlers\Book\BookQuantity\BookQuantityHandler;

@@ -14,8 +14,6 @@ use App\Decorators\Handlers\HandlerResponseCreators\HandlerResponse;
 
 abstract class UpdateQuantityHandler extends BookQuantityHandler
 {
-    private static $ERROR_MESSAGE = 'Update book quantity failed';
-
     public function handle(array &$attributes): HandlerResponse
     {
         $bookQuantityService = $this->createHandlerService();
@@ -35,19 +33,15 @@ abstract class UpdateQuantityHandler extends BookQuantityHandler
         $bookQuantityId = $bookQuantity['id'];
         $currentQuantity = $bookQuantity['quantity'];
         $additionQuantity = $attributes['quantity'];
-
         //calculate update quantity
         $updatedQuantity = $this->calculate($currentQuantity, $additionQuantity);
-
         //set up data and update database
         $bookQuantityAttributes['quantity'] = $updatedQuantity;
         $updateChecker = $bookQuantityService->updateModel($bookQuantityAttributes, $bookQuantityId);
-
         //return error message if update failed
         if (!$updateChecker) {
             return $this->createHandlerResponse($this->getServiceMessage($bookQuantityService), false);
         }
-
         return parent::handle($attributes);
     }
 

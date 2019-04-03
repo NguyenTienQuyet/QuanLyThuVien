@@ -19,13 +19,14 @@ abstract class EloquentCreateTransactionDecorator extends EloquentDecorator
         $model = null;
         DB::transaction(function () use ($attributes, &$model) {
             $model = parent::createNewModel($attributes);
-            $attachedChecker = $this->attachCreate($model, $attributes);
-            if (!$attachedChecker) {
+            $checker = $this->attachCreate($model, $attributes);
+
+            if (!$checker) {
                 DB::rollBack();
             }
         });
         return $model;
     }
 
-    abstract function attachCreate(Model $model, array $attributes) : bool;
+    abstract public function attachCreate(Model &$model, $attributes): bool;
 }

@@ -42,7 +42,7 @@ Route::prefix('v1')->group(function () {
         ]);
 
         Route::patch('import/{id?}', [
-            'uses' => 'API\BookController@import',
+            'uses' => 'API\BookQuantityController@import',
             'as' => 'api/v1/books/import'
         ]);
 
