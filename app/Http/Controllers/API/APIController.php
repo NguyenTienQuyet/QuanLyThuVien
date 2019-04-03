@@ -52,8 +52,8 @@ class APIController extends Controller
         return $this->service;
     }
 
-    public function message(Message $message): string
+    public function message(Message $message): array
     {
-        return $message->getMessage();
+        return [$message->getMessage()];
     }
 }

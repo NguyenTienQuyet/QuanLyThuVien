@@ -11,8 +11,8 @@ class Image extends Model
         'imageName', 'imageURL'
     ];
 
-    public function bookImage()
+    public function books()
     {
-        return $this->hasOne(BookImage::class);
+        return $this->belongsToMany(Book::class, 'book_images');
     }
 }

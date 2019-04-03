@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c94c8091-1e73-4656-b802-5144e7c6f00b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/UpdateHistoryDecorator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Decorators/Handlers/Image/Create/CreateBookImageHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Decorators/Handlers/Image/Upload/UploadBookImageHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Decorators/Handlers/Image/Upload/UploadImageHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/RentBook/RentBookDecorator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/RentBook/RentBookDecorator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/RentBook/RentBookTransactionDecorator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/RentBook/RentBookTransactionDecorator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/ReturnBook/ReturnBookDecorator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/ReturnBook/ReturnBookDecorator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/ReturnBook/ReturnBookTransactionDecorator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/ReturnBook/ReturnBookTransactionDecorator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Decorators/QuantityDecorators/ImportBook/ImportBookDecorator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Decorators/QuantityDecorators/ImportBook/ImportBookDecorator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Decorators/QuantityDecorators/ImportBook/ImportBookTransactionDecorator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Decorators/QuantityDecorators/ImportBook/ImportBookTransactionDecorator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/BookHistoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/BookHistoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Decorators/BookDecorators/CreateBookDecorator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Decorators/BookDecorators/CreateBookDecorator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/APIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/APIController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Requests/API/Book/BookPostRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Requests/API/Book/BookPostRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Image.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Eloquent/EloquentBookService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Eloquent/EloquentBookService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Eloquent/EloquentImageService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Eloquent/EloquentImageService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_11_041540_create_books_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_11_041540_create_books_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +28,8 @@
     <session id="932812466">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="33" />
-          <entry key="project.open.time.0" value="4" />
+          <entry key="project.closed" value="35" />
+          <entry key="project.open.time.0" value="6" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="1" />
@@ -45,7 +47,7 @@
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="34" />
+          <entry key="project.opened" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -53,7 +55,8 @@
           <entry key="env" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="1" />
-          <entry key="php" value="1173" />
+          <entry key="php" value="1215" />
+          <entry key="png" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -61,29 +64,30 @@
           <entry key=".env file" value="1" />
           <entry key="Blade" value="2" />
           <entry key="HTML" value="1" />
-          <entry key="PHP" value="1171" />
+          <entry key="Image" value="1" />
+          <entry key="PHP" value="1213" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="148" />
+          <entry key="dummy" value="160" />
           <entry key="env" value="12" />
           <entry key="gitignore" value="381" />
-          <entry key="php" value="28786" />
+          <entry key="php" value="30278" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="12" />
           <entry key="Blade" value="4" />
-          <entry key="PHP" value="28782" />
-          <entry key="PLAIN_TEXT" value="529" />
+          <entry key="PHP" value="30274" />
+          <entry key="PLAIN_TEXT" value="541" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
         <counts>
-          <entry key="PHP Class.type" value="165" />
+          <entry key="PHP Class.type" value="169" />
           <entry key="PHP Interface.type" value="13" />
           <entry key="PHP Trait.type" value="3" />
         </counts>
@@ -91,42 +95,33 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/api.php">
+        <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Image/Create/CreateBookImageHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="157" column="34" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
+            <state relative-caret-position="226">
+              <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
               <folding>
-                <element signature="e#7#35#0#PHP" expanded="true" />
+                <element signature="e#139#187#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/UpdateHistoryDecorator.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Image/Upload/UploadImageHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="560">
+              <caret line="42" selection-start-line="42" selection-end-line="42" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/ReturnBook/ReturnBookDecorator.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Image/Upload/UploadBookImageHandler.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/BookHistory/UpdateHistoryHandler.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -148,20 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Decorators/PublisherDecorator/EloquentPublisherDecorators.php" />
-        <option value="$PROJECT_DIR$/app/Decorators/PublisherDecorator/GetPublisherDecorator.php" />
-        <option value="$PROJECT_DIR$/app/Decorators/PublisherDecorators/EloquentPublisherDecorators.php" />
-        <option value="$PROJECT_DIR$/app/Decorators/PublisherDecorators/EloquentPublisherDecorator.php" />
-        <option value="$PROJECT_DIR$/app/Decorators/PublisherDecorators/GetPublisherDecorator.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/AuthorController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/PublisherController.php" />
-        <option value="$PROJECT_DIR$/app/Decorators/Handlers/User/UserHandler.php" />
-        <option value="$PROJECT_DIR$/app/Decorators/Handlers/User/CreateUserHandler.php" />
-        <option value="$PROJECT_DIR$/app/Decorators/AccountDecorators/UserDecorator.php" />
-        <option value="$PROJECT_DIR$/app/Decorators/AccountDecorators/EloquentUserDecorator.php" />
-        <option value="$PROJECT_DIR$/app/Decorators/BookDecorators/ImportBookDecorator.php" />
-        <option value="$PROJECT_DIR$/app/Decorators/BookDecorators/ImportBook/ImportBookTransactionDecorator.php" />
-        <option value="$PROJECT_DIR$/app/Decorators/QuantityDecorators/EloquentQuantityDecorator.php" />
         <option value="$PROJECT_DIR$/app/Decorators/BookDecorators/ImportBook/ImportBookDecorator.php" />
         <option value="$PROJECT_DIR$/app/Services/BookHistoryService.php" />
         <option value="$PROJECT_DIR$/app/Services/Eloquent/EloquentBookHistoryService.php" />
@@ -179,7 +160,6 @@
         <option value="$PROJECT_DIR$/app/Decorators/EloquentCreateTransactionDecorator.php" />
         <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/BookQuantity/UpdateQuantity/UpdateQuantityHandler.php" />
         <option value="$PROJECT_DIR$/app/Decorators/EloquentUpdateTransactionDecorator.php" />
-        <option value="$PROJECT_DIR$/app/Decorators/BookDecorators/CreateBookDecorator.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/QuantityController.php" />
         <option value="$PROJECT_DIR$/app/Decorators/BookDecorators/BorrowBook/BorrowBookTransactionDecorator.php" />
         <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/BookCopy/GetBookCopy/CheckAvailableBookCopyHandler.php" />
@@ -187,7 +167,6 @@
         <option value="$PROJECT_DIR$/app/Decorators/EloquentDecorator.php" />
         <option value="$PROJECT_DIR$/app/Decorators/BookDecorators/BorrowBook/BorrowBookProxy.php" />
         <option value="$PROJECT_DIR$/app/Decorators/Handlers/Book/BookHistory/CheckHistoryHandler.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/APIController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/BookController.php" />
         <option value="$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/EloquentBookHistoryDecorator.php" />
         <option value="$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/RentBook/RentBookTransactionDecorator.php" />
@@ -199,6 +178,22 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/BookHistoryController.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/ReturnBook/ReturnBookDecorator.php" />
+        <option value="$PROJECT_DIR$/app/Decorators/Handlers/Image/ImageHandler.php" />
+        <option value="$PROJECT_DIR$/app/Decorators/Handlers/Image/BookImageHandler.php" />
+        <option value="$PROJECT_DIR$/app/Decorators/Handlers/Image/Upload/BookImageHandler.php" />
+        <option value="$PROJECT_DIR$/app/Decorators/Handlers/Image/Upload/ImageHandler.php" />
+        <option value="$PROJECT_DIR$/app/Decorators/Handlers/Image/Create/BookImageHandler.php" />
+        <option value="$PROJECT_DIR$/app/Services/Eloquent/EloquentBookService.php" />
+        <option value="$PROJECT_DIR$/app/Services/Eloquent/EloquentImageService.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Requests/API/Book/BookPostRequest.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_03_11_041540_create_books_table.php" />
+        <option value="$PROJECT_DIR$/app/Decorators/BookDecorators/CreateBookDecorator.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/APIController.php" />
+        <option value="$PROJECT_DIR$/app/Models/Book.php" />
+        <option value="$PROJECT_DIR$/app/Models/Image.php" />
+        <option value="$PROJECT_DIR$/app/Decorators/Handlers/Image/Upload/UploadBookImageHandler.php" />
+        <option value="$PROJECT_DIR$/app/Decorators/Handlers/Image/Create/CreateBookImageHandler.php" />
+        <option value="$PROJECT_DIR$/app/Decorators/Handlers/Image/Upload/UploadImageHandler.php" />
       </list>
     </option>
   </component>
@@ -302,8 +297,8 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
-    <option name="width" value="1203" />
-    <option name="height" value="1043" />
+    <option name="width" value="1205" />
+    <option name="height" value="1045" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -313,6 +308,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -336,77 +332,38 @@
               <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Decorators" type="462c0819:PsiDirectoryNode" />
-              <item name="BookHistoryDecorator" type="462c0819:PsiDirectoryNode" />
+              <item name="Handlers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LibrarySystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Decorators" type="462c0819:PsiDirectoryNode" />
-              <item name="BookHistoryDecorator" type="462c0819:PsiDirectoryNode" />
-              <item name="RentBook" type="462c0819:PsiDirectoryNode" />
+              <item name="Handlers" type="462c0819:PsiDirectoryNode" />
+              <item name="Image" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LibrarySystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Decorators" type="462c0819:PsiDirectoryNode" />
-              <item name="BookHistoryDecorator" type="462c0819:PsiDirectoryNode" />
-              <item name="ReturnBook" type="462c0819:PsiDirectoryNode" />
+              <item name="Handlers" type="462c0819:PsiDirectoryNode" />
+              <item name="Image" type="462c0819:PsiDirectoryNode" />
+              <item name="Create" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LibrarySystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LibrarySystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LibrarySystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="API" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LibrarySystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Requests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LibrarySystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Requests" type="462c0819:PsiDirectoryNode" />
-              <item name="API" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LibrarySystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LibrarySystem" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Requests" type="462c0819:PsiDirectoryNode" />
-              <item name="API" type="462c0819:PsiDirectoryNode" />
-              <item name="BookHistory" type="462c0819:PsiDirectoryNode" />
+              <item name="Decorators" type="462c0819:PsiDirectoryNode" />
+              <item name="Handlers" type="462c0819:PsiDirectoryNode" />
+              <item name="Image" type="462c0819:PsiDirectoryNode" />
+              <item name="Upload" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -419,11 +376,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\XAMPP\htdocs\LibrarySystem\app\Decorators\Handlers\Image\Upload" />
       <recent name="E:\XAMPP\htdocs\LibrarySystem\app\Decorators\BookDecorators" />
       <recent name="E:\XAMPP\htdocs\LibrarySystem\app\Decorators\BookDecorators\BorrowBook" />
       <recent name="E:\XAMPP\htdocs\LibrarySystem\app\Decorators\BookDecorators\CreateBook" />
       <recent name="E:\XAMPP\htdocs\LibrarySystem\app\Decorators\QuantityDecorators\ImportBook" />
-      <recent name="E:\XAMPP\htdocs\LibrarySystem\app\Decorators\Handlers\Book\BookQuantity" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -481,12 +438,14 @@
       <workItem from="1553768445842" duration="446000" />
       <workItem from="1554203159569" duration="11237000" />
       <workItem from="1554219889913" duration="16230000" />
-      <workItem from="1554276062161" duration="7393000" />
+      <workItem from="1554276062161" duration="7646000" />
+      <workItem from="1554296866307" duration="1082000" />
+      <workItem from="1554297986209" duration="7338000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157073000" />
+    <option name="totallyTimeSpent" value="165746000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -501,13 +460,13 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27114093" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27919462" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32867134" />
@@ -522,7 +481,7 @@
       <window_info anchor="right" id="Database" order="3" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27114093" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27919462" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -535,7 +494,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32867134" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32867134" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -553,110 +512,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/UpdateHistoryDecorator.php</url>
-          <line>54</line>
+          <url>file://$PROJECT_DIR$/app/Services/Eloquent/EloquentService.php</url>
+          <line>45</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Decorators/QuantityDecorators/EloquentQuantityDecorator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="44" />
-          <folding>
-            <element signature="e#136#173#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/BookQuantity/UpdateQuantity/DecreaseQuantityHandler.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/BookQuantity/CheckQuantityHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="29" column="10" lean-forward="true" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/BookDecorators/CreateBook/CreateBookTransactionDecorator.php" />
-    <entry file="file://$PROJECT_DIR$/app/Decorators/EloquentCreateTransactionDecorator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/BookCopy/GetBookCopy/GetAvailableBookCopyHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/AuthorDecorators/EloquentAuthorDecorator.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/AuthorDecorators/GetAuthorDecorator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/EloquentBaseHandler.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/BaseHandler.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/BookHistory/CreateBookHistoryHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/BookCopy/UpdateBookCopy/UpdateNegativeStateHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/BookCopy/UpdateBookCopy/UpdateNegativeState/UpdateBorrowedStateHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/BookDecorators/EloquentBookDecorator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/HandlerResponseCreators/HandlerResponse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Requests/API/Book/BookBorrowRequest.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../phpMyAdmin/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -671,20 +534,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/BookDecorators/CreateBookDecorator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Decorators/BookDecorators/BorrowBook/BorrowBookTransactionDecorator.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-          <folding>
-            <element signature="e#144#198#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -698,27 +551,10 @@
     <entry file="file://$PROJECT_DIR$/app/Decorators/Decorator.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/APIController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/BookHistory/CheckHistoryHandler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/BookController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="74" column="44" lean-forward="true" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
-          <folding>
-            <element signature="e#128#193#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -740,9 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="35" column="43" lean-forward="true" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-          <folding>
-            <element signature="e#144#181#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -750,9 +583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="43">
           <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="e#144#200#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -770,20 +600,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Requests/API/Book/BookImportRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/QuantityController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
           <caret line="30" column="47" lean-forward="true" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
-          <folding>
-            <element signature="e#127#196#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -846,16 +666,6 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Requests/API/BookHistory/BookRentedRequest.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="157" column="34" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
-          <folding>
-            <element signature="e#7#35#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Requests/API/BookHistory/BookReturnRequest.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -873,6 +683,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/BookCopy/UpdateBookCopy/UpdateBookCopyStateHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/BookHistory/UpdateHistoryHandler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -880,10 +697,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Book/BookCopy/UpdateBookCopy/UpdateBookCopyStateHandler.php">
+    <entry file="file://$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/ReturnBook/ReturnBookDecorator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="80">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -894,10 +711,154 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Decorators/BookHistoryDecorator/ReturnBook/ReturnBookDecorator.php">
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="157" column="34" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="78" column="20" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Image/Create/BookImageHandler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
+          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+          <folding>
+            <element signature="e#139#187#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/Eloquent/EloquentImageService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Requests/API/Book/BookImportRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Requests/API/Author/AuthorPostRequest.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Requests/API/Publisher/PublisherPostRequest.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/Eloquent/EloquentBookService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="16" column="66" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_11_041540_create_books_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Concerns/ManagesTransactions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Eloquent/EloquentRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/Eloquent/EloquentService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="56" column="9" lean-forward="true" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Requests/API/Book/BookPostRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/app/public/book/339px-Daenerys_targaryen_by_regochan-d7hfi57.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/BookController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="74" column="44" lean-forward="true" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/APIController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="54" column="52" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Book.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="42" column="51" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Decorators/BookDecorators/CreateBookDecorator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+          <folding>
+            <element signature="e#133#187#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Image/Create/CreateBookImageHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+          <folding>
+            <element signature="e#139#187#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Image/Upload/UploadBookImageHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Decorators/Handlers/Image/Upload/UploadImageHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="42" selection-start-line="42" selection-end-line="42" selection-end-column="52" />
         </state>
       </provider>
     </entry>

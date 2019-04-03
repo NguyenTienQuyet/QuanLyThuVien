@@ -14,6 +14,8 @@ use App\Services\ImageService;
 
 class EloquentImageService extends EloquentService implements ImageService
 {
+    protected $manyToManyRelations = ['books'];
+
     public function __construct(ImageRepository $repository)
     {
         parent::__construct($repository);

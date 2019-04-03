@@ -22,7 +22,8 @@ class BookPostRequest extends PostRequest
             'publisher_id' => 'int|required|exists:publishers,id',
             'genres' => 'array|required',
             'genres.*' => 'int|required|exists:genres,id|distinct',
-            'publishedYear' => 'string|required'
+            'publishedYear' => 'string|required',
+            'image' => 'file|mimes:jpeg,bmp,png'
         ];
     }
 }

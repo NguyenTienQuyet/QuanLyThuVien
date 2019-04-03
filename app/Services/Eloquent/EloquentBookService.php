@@ -14,7 +14,7 @@ use App\Services\BookService;
 
 class EloquentBookService extends EloquentService implements BookService
 {
-    protected $manyToManyRelations = ['authors', 'genres', 'image'];
+    protected $manyToManyRelations = ['authors', 'genres', 'images'];
 
     public function __construct(BookRepository $repository)
     {

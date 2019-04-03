@@ -38,9 +38,9 @@ class Book extends Model
         return $this->hasMany(BookCopy::class);
     }
 
-    public function bookImages()
+    public function images()
     {
-        return $this->hasMany(BookImage::class);
+        return $this->belongsToMany(Image::class, 'book_images');
     }
 
     public function bookQuantity()

@@ -17,7 +17,7 @@ class CreateBooksTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->unsignedBigInteger('publisher_id');
-            $table->time('publishedYear');
+            $table->year('publishedYear');
 
             $table->foreign('publisher_id')->references('id')->on('publishers')->onDelete('cascade');
             $table->timestamps();
