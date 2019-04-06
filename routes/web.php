@@ -18,3 +18,6 @@ Route::get('/', function () {
 Route::get('homeAdmin',
  	['as'=>'homeAdmin', 'uses'=>'AdminController@getHome']
 );
+Route::get('listRole',
+	['as'=>'listRole', 'uses'=>'AdminController@getListRole']
+);
