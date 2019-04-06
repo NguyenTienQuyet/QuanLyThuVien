@@ -10,18 +10,19 @@
                     <a href="">Home</a>
                 </li>
 
-                <li>
-                    <a href="">Manage User</a>
-                </li>
-                <li class="active">List Role</li>
+                
+                <li class="active">Genre</li>
 
             </ul><!-- /.breadcrumb -->
 
         </div>
 
+        
+        <!-- /.box -->
+
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><b>List Role</b></h3>
+                <h3 class="box-title"><b>List Genre</b></h3>
                 <button class="btn btn-sm btn-success" data-toggle="modal" id="addRole" style="float: right;">
                     <i class=" "></i>
                     Add
@@ -34,7 +35,7 @@
                 <thead>
                   <tr>
                     <th class="text-center">ID</th>
-                    <th class="text-center">Role Type</th>
+                    <th class="text-center">Genre Name</th>
                     
                     <th class="text-center">Edit</th>
                     <th class="text-center">Delete</th>

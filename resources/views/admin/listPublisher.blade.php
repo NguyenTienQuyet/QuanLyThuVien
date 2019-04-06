@@ -9,11 +9,7 @@
                     <i class="ace-icon fa fa-home home-icon"></i>
                     <a href="">Home</a>
                 </li>
-
-                <li>
-                    <a href="">Manage User</a>
-                </li>
-                <li class="active">List Role</li>
+                <li class="active">Publisher</li>
 
             </ul><!-- /.breadcrumb -->
 
@@ -21,8 +17,8 @@
 
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><b>List Role</b></h3>
-                <button class="btn btn-sm btn-success" data-toggle="modal" id="addRole" style="float: right;">
+                <h3 class="box-title"><b>List Publisher</b></h3>
+                <button class="btn btn-sm btn-success" data-toggle="modal" id="addPublisher" style="float: right;">
                     <i class=" "></i>
                     Add
                       
@@ -34,7 +30,7 @@
                 <thead>
                   <tr>
                     <th class="text-center">ID</th>
-                    <th class="text-center">Role Type</th>
+                    <th class="text-center">Publisher Name</th>
                     
                     <th class="text-center">Edit</th>
                     <th class="text-center">Delete</th>

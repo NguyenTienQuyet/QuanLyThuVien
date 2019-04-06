@@ -11,18 +11,21 @@
                 </li>
 
                 <li>
-                    <a href="">Manage User</a>
+                    <a href="">Manage Book</a>
                 </li>
-                <li class="active">List Role</li>
+                <li class="active">Book Quantity</li>
 
             </ul><!-- /.breadcrumb -->
 
         </div>
 
+      
+        <!-- /.box -->
+
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><b>List Role</b></h3>
-                <button class="btn btn-sm btn-success" data-toggle="modal" id="addRole" style="float: right;">
+                <h3 class="box-title"><b>Book Quantity</b></h3>
+                <button class="btn btn-sm btn-success" data-toggle="modal" id="addBookQuantity" style="float: right;">
                     <i class=" "></i>
                     Add
                       
@@ -34,7 +37,8 @@
                 <thead>
                   <tr>
                     <th class="text-center">ID</th>
-                    <th class="text-center">Role Type</th>
+                    <th class="text-center">Book ID</th>
+                    <th class="text-center">Quantity</th>
                     
                     <th class="text-center">Edit</th>
                     <th class="text-center">Delete</th>
@@ -47,6 +51,7 @@
                     <td class="text-center">Internet
                       Explorer 4.0
                     </td>
+                    <td class="text-center">100</td>
                     
                     <td class="text-center">
                       <a href="#" class="text-blue edit-role" data-toggle="modal">

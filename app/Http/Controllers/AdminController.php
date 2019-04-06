@@ -16,5 +16,32 @@ class AdminController extends Controller
     	return view('admin.listRole');
     }
 
+    public function getListUser(){
+    	return view('admin.listUser');
+    }
+
+    public function getListBookQuantity(){
+    	return view('admin.listBookQuantity');
+    }
+
+    public function getListAuthorBook(){
+    	return view('admin.listAuthorBook');
+    }
+
+    public function getListBookGenre(){
+    	return view('admin.listBookGenre');
+    }
+
+    public function getListPublisher(){
+    	return view('admin.listPublisher');
+    }
+
+    public function getListAuthor(){
+    	return view('admin.listAuthor');
+    }
+
+    public function getListGenre(){
+    	return view('admin.listGenre');
+    }
 
 }
