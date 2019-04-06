@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('homeAdmin',
- 	['as'=>'homeAdmin', 'uses'=>'AdminController@getHome']
+    ['as'=>'homeAdmin', 'uses'=>'AdminController@getHome']
 );
