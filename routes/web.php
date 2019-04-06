@@ -50,3 +50,23 @@ Route::get('listAuthor',
 Route::get('listGenre',
 	['as'=>'listGenre', 'uses'=>'AdminController@getListGenre']
 );
+
+Route::get('listBookImage',
+	['as'=>'listBookImage', 'uses'=>'AdminController@getListBookImage']
+);
+
+Route::get('listImageUser',
+	['as'=>'listImageUser', 'uses'=>'AdminController@getListImageUser']
+);
+
+Route::get('listImage',
+	['as'=>'listImage', 'uses'=>'AdminController@getListImage']
+);
+
+Route::get('listBookCopy',
+	['as'=>'listBookCopy', 'uses'=>'AdminController@getListBookCopy']
+);
+
+Route::get('listBookHistory',
+	['as'=>'listBookHistory', 'uses'=>'AdminController@getListBookHistory']
+);
