@@ -23,7 +23,7 @@
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title"><b>List Genre</b></h3>
-                <button class="btn btn-sm btn-success" data-toggle="modal" id="addRole" style="float: right;">
+                <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal-genre" id="addRole" style="float: right;">
                     <i class=" "></i>
                     Add
 
@@ -50,12 +50,12 @@
                     </td>
 
                     <td class="text-center">
-                      <a href="#" class="text-blue edit-role" data-toggle="modal">
+                      <a href="#" class="text-blue edit-role" data-toggle="modal" data-target="#editModal-genre">
                         <i class="ace-icon fa fa-pencil bigger-130"></i>
                       </a>
                     </td>
                     <td class="text-center">
-                      <a class="text-red" href="#" data-toggle="modal">
+                      <a class="text-red" href="#" data-toggle="modal" data-target="#deleteModal-genre">
                         <i class="ace-icon fa fa-trash-o bigger-130"></i>
                       </a>
                     </td>

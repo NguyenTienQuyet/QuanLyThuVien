@@ -21,7 +21,7 @@
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title"><b>List Author</b></h3>
-                <button class="btn btn-sm btn-success" data-toggle="modal" id="addAuthor" style="float: right;">
+                <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal-author" id="addAuthor" style="float: right;">
                     <i class=" "></i>
                     Add
 
@@ -53,7 +53,7 @@
                       </a>
                     </td>
                     <td class="text-center">
-                      <a class="text-red" href="#" data-toggle="modal">
+                      <a class="text-red" href="#" data-toggle="modal" data-target="#deleteModal-author">
                         <i class="ace-icon fa fa-trash-o bigger-130"></i>
                       </a>
                     </td>

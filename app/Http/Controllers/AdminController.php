@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     //
-
+    
     public function getHome(){
     	return view('admin.home');
     }
@@ -42,6 +42,26 @@ class AdminController extends Controller
 
     public function getListGenre(){
     	return view('admin.listGenre');
+    }
+
+    public function getListImage(){
+    	return view('admin.listImage');
+    }
+
+    public function getListImageUser(){
+    	return view('admin.listImageUser');
+    }
+
+    public function getListBookImage(){
+    	return view('admin.listBookImage');
+    }
+
+    public function getListBookCopy(){
+    	return view('admin.listBookCopy');
+    }
+
+    public function getListBookHistory(){
+    	return view('admin.listBookHistory');
     }
 
 }
