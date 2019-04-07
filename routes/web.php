@@ -16,5 +16,57 @@ Route::get('/', function () {
 });
 
 Route::get('homeAdmin',
-    ['as'=>'homeAdmin', 'uses'=>'AdminController@getHome']
+ 	['as'=>'homeAdmin', 'uses'=>'AdminController@getHome']
+);
+
+Route::get('listRole',
+	['as'=>'listRole', 'uses'=>'AdminController@getListRole']
+);
+
+Route::get('listUser',
+	['as'=>'listUser', 'uses'=>'AdminController@getListUser']
+);
+
+Route::get('listBookQuantity',
+	['as'=>'listBookQuantity', 'uses'=>'AdminController@getListBookQuantity']
+);
+
+Route::get('listAuthorBook',
+	['as'=>'listAuthorBook', 'uses'=>'AdminController@getListAuthorBook']
+);
+
+Route::get('listBookGenre',
+	['as'=>'listBookGenre', 'uses'=>'AdminController@getListBookGenre']
+);
+
+Route::get('listPublisher',
+	['as'=>'listPublisher', 'uses'=>'AdminController@getListPublisher']
+);
+
+Route::get('listAuthor',
+	['as'=>'listAuthor', 'uses'=>'AdminController@getListAuthor']
+);
+
+Route::get('listGenre',
+	['as'=>'listGenre', 'uses'=>'AdminController@getListGenre']
+);
+
+Route::get('listBookImage',
+	['as'=>'listBookImage', 'uses'=>'AdminController@getListBookImage']
+);
+
+Route::get('listImageUser',
+	['as'=>'listImageUser', 'uses'=>'AdminController@getListImageUser']
+);
+
+Route::get('listImage',
+	['as'=>'listImage', 'uses'=>'AdminController@getListImage']
+);
+
+Route::get('listBookCopy',
+	['as'=>'listBookCopy', 'uses'=>'AdminController@getListBookCopy']
+);
+
+Route::get('listBookHistory',
+	['as'=>'listBookHistory', 'uses'=>'AdminController@getListBookHistory']
 );
