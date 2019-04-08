@@ -70,3 +70,5 @@ Route::get('listBookCopy',
 Route::get('listBookHistory',
 	['as'=>'listBookHistory', 'uses'=>'AdminController@getListBookHistory']
 );
+
+Route::get('register','RegisterController@getRegister');
