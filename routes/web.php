@@ -72,3 +72,6 @@ Route::get('listBookHistory',
 );
 
 Route::get('login','LoginController@login');
+
+Route::get('register','RegisterController@getRegister');
+
