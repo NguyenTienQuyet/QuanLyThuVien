@@ -13,19 +13,17 @@
                 <li>
                     <a href="">Manage Book</a>
                 </li>
-                <li class="active">Book Quantity</li>
+                <li class="active">List Book</li>
 
             </ul><!-- /.breadcrumb -->
 
         </div>
 
-      
-        <!-- /.box -->
-
+       
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><b>Book Quantity</b></h3>
-                <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal-BookQuantity" id="addBookQuantity" style="float: right;">
+                <h3 class="box-title"><b>List Book</b></h3>
+                <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal-book" id="addUser" style="float: right;">
                     <i class=" "></i>
                     Add
                       
@@ -35,35 +33,36 @@
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                  <tr>
-                    <th class="text-center">ID</th>
-                    <th class="text-center">Book ID</th>
-                    <th class="text-center">Quantity</th>
-                    
-                    <th class="text-center">Edit</th>
-                    <th class="text-center">Delete</th>
-                  </tr>
+                    <tr>
+                      <th class="text-center">ID</th>
+                      <th class="text-center">Title</th>
+                      <th class="text-center">Publisher ID</th>
+                      <th class="text-center">Published Year</th>
+                      
+                      <th class="text-center">Edit</th>
+                      <th class="text-center">Delete</th>
+                    </tr>
                 </thead>
                 <tbody>
-            
-                  <tr>
-                    <td class="text-center">Trident</td>
-                    <td class="text-center">Internet
-                      Explorer 4.0
-                    </td>
-                    <td class="text-center">100</td>
-                    
-                    <td class="text-center">
-                      <a href="#" class="text-blue edit-role" data-toggle="modal" data-target="#editModal-BookQuantity">
+                    <tr>
+                      <td class="text-center">Trident</td>
+                      <td class="text-center">Internet
+                        Explorer 4.0
+                      </td>
+                      
+                      <td class="text-center">1234</td>
+                      <td class="text-center">1</td>
+                      <td class="text-center">
+                      <a href="#" class="text-blue edit-role" data-toggle="modal" data-target="#editModal-book">
                         <i class="ace-icon fa fa-pencil bigger-130"></i>
                       </a>
                     </td>
                     <td class="text-center">
-                      <a class="text-red" href="#" data-toggle="modal" data-target="#deleteModal-BookQuantity">
+                      <a class="text-red" href="#" data-toggle="modal" data-target="#deleteModal-book">
                         <i class="ace-icon fa fa-trash-o bigger-130"></i>
                       </a>
                     </td>
-                  </tr>
+                    </tr>
                     
                 </tbody>
                 
@@ -75,7 +74,7 @@
     
     <!-- /.content -->
 
-<div class="modal fade" id="myModal-BookQuantity" role="dialog">
+<div class="modal fade" id="myModal-book" role="dialog">
     <div class="modal-dialog">
 
         <form action="" method="get" id="form-member">
@@ -84,16 +83,28 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Add Book Quantity</h4>
+                    <h4 class="modal-title">Add Book</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-xs-12">
                             <!-- PAGE CONTENT BEGINS -->
 
+                            <div class="col-sm-11">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Title: </label>
+
+                                    <div class="col-sm-9" style="margin-left: -15px; width: 380px;">
+                                        <input type="text" id="email-member" placeholder="Enter name ..." class="form-control" name="email-member"/>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+
                              <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Book ID:</label>
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Publisher ID:</label>
                                     
 
                                     <div class="input-group " style="width: 350px;" >
@@ -117,7 +128,7 @@
 
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Quantity: </label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Published Year: </label>
 
                                     <div class="col-sm-9" style="margin-left: -15px; width: 380px;">
                                         <input type="text" id="password-member" placeholder="Enter email ..." class="form-control" name="password-member"/>
@@ -143,7 +154,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="editModal-BookQuantity" role="dialog">
+<div class="modal fade" id="editModal-book" role="dialog">
     <div class="modal-dialog">
 
         <form method="get" action="">
@@ -153,16 +164,28 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Edit Book Quantity</h4>
+                    <h4 class="modal-title">Edit Book</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-xs-12">
                             <!-- PAGE CONTENT BEGINS -->
 
+                            <div class="col-sm-11">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Title: </label>
+
+                                    <div class="col-sm-9" style="margin-left: -15px; width: 380px;">
+                                        <input type="text" id="email-member" placeholder="Enter name ..." class="form-control" name="email-member"/>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+
                              <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Book ID:</label>
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Publisher ID:</label>
                                     <!-- <div class="col-xs-12 col-sm-9" style="width: 300px;">
                                         <select class="form-control" id="role_id-member" name="role_id-member">
                                             <option value="">1</option>
@@ -193,7 +216,7 @@
 
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Quantity: </label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Published Year: </label>
 
                                     <div class="col-sm-9" style="margin-left: -15px; width: 380px;">
                                         <input type="text" id="password-member" placeholder="Enter email ..." class="form-control" name="password-member"/>
@@ -226,7 +249,7 @@
 </div>
 
 
-<div class="modal fade" id="deleteModal-BookQuantity" role="dialog">
+<div class="modal fade" id="deleteModal-book" role="dialog">
     <div class="modal-dialog">
         
         <div class="modal-content">
@@ -271,6 +294,8 @@
         </div>
     </div>
 </div>
+
+
 
 @endsection
 

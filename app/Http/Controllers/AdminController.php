@@ -64,4 +64,8 @@ class AdminController extends Controller
     	return view('admin.listBookHistory');
     }
 
+    public function getListBook(){
+        return view('admin.listBook');
+    }
+
 }

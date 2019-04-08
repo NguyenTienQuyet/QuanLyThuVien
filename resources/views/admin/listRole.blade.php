@@ -30,39 +30,38 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                  <tr>
-                    <th class="text-center">ID</th>
-                    <th class="text-center">Role Type</th>
-                    
-                    <th class="text-center">Edit</th>
-                    <th class="text-center">Delete</th>
-                  </tr>
-                </thead>
-                <tbody>
-            
-                  <tr>
-                    <td class="text-center">Trident</td>
-                    <td class="text-center">Internet
-                      Explorer 4.0
-                    </td>
-                    
-                    <td class="text-center">
-                      <a href="#" class="text-blue edit-role" data-toggle="modal" data-target="#editModal-role">
-                        <i class="ace-icon fa fa-pencil bigger-130"></i>
-                      </a>
-                    </td>
-                    <td class="text-center">
-                      <a class="text-red" href="#" data-toggle="modal" data-target="#deleteModal-role">
-                        <i class="ace-icon fa fa-trash-o bigger-130"></i>
-                      </a>
-                    </td>
-                  </tr>
-                    
-                </tbody>
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Role Type</th>
+                        
+                        <th class="text-center">Edit</th>
+                        <th class="text-center">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody id="body_list_role">
                 
-              </table>
+                      <tr>
+                        <td class="text-center">Trident</td>
+                        <td class="text-center">Internet
+                          Explorer 4.0
+                        </td>
+                        
+                        <td class="text-center">
+                          <a href="#" class="text-blue edit-role" data-toggle="modal" data-target="#editModal-role">
+                            <i class="ace-icon fa fa-pencil bigger-130"></i>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a class="text-red" href="#" data-toggle="modal" data-target="#deleteModal-role">
+                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                          </a>
+                        </td>
+                      </tr>
+                        
+                    </tbody>
+                </table>
             </div>
             <!-- /.box-body -->
         </div>

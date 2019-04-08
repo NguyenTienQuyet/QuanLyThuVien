@@ -70,3 +70,7 @@ Route::get('listBookCopy',
 Route::get('listBookHistory',
 	['as'=>'listBookHistory', 'uses'=>'AdminController@getListBookHistory']
 );
+
+Route::get('listBook',
+	['as'=>'listBook', 'uses'=>'AdminController@getListBook']
+);
