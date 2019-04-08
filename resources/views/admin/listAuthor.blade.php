@@ -1,6 +1,7 @@
 @extends('admin.master')
 @section('content')
 
+<script type="text/javascript" src="js/Author.js"></script>
     <!-- Main content -->
 
     <div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -21,7 +22,7 @@
     <div class="box">
         <div class="box-header">
             <h3 class="box-title"><b>List Author</b></h3>
-            <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal-author" id="addAuthor" style="float: right;">
+            <button class="btn btn-sm btn-success" data-toggle="modal" id="addAuthor" style="float: right;">
                 <i class=" "></i>
                 Add
 
@@ -32,21 +33,6 @@
         <div class="box-body">
             <table id="example1" class="table table-bordered table-striped">
 
-        
-
-        <div class="box">
-            <div class="box-header">
-                <h3 class="box-title"><b>List Author</b></h3>
-                <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal-author" id="addAuthor" style="float: right;">
-                    <i class=" "></i>
-                    Add
-                      
-                </button>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-
                 <thead>
                 <tr>
                     <th class="text-center">ID</th>
@@ -56,37 +42,9 @@
                     <th class="text-center">Delete</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="body_list_author">
 
-                <tr>
-                    <td class="text-center">Trident</td>
-                    <td class="text-center">Internet
-                        Explorer 4.0
-                    </td>
-
-                    <td class="text-center">
-
-                        <a href="#" class="text-blue edit-role" data-toggle="modal" data-target="#editModal-author">
-                            <i class="ace-icon fa fa-pencil bigger-130"></i>
-                        </a>
-                    </td>
-                    <td class="text-center">
-                        <a class="text-red" href="#" data-toggle="modal" data-target="#deleteModal-author">
-                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
-                        </a>
-
-                      <a href="#" class="text-blue edit-role" data-toggle="modal" data-target="#editModal-author">
-                        <i class="ace-icon fa fa-pencil bigger-130"></i>
-                      </a>
-                    </td>
-                    <td class="text-center">
-                      <a class="text-red" href="#" data-toggle="modal" data-target="#deleteModal-author">
-                        <i class="ace-icon fa fa-trash-o bigger-130"></i>
-                      </a>
-
-                    </td>
-                </tr>
-
+                
                 </tbody>
 
             </table>
@@ -236,6 +194,43 @@
             </div>
 </div>
 
+<!-- <script>
+    jQuery(function($) {
+        $.ajax({
+                    
+                url: '/api/v1/authors/'+'all',
+                type: 'get',
+                dataType: 'json',
+                success: function(data) {
+                    var output = "";
+                    for(var i = 0; i < data.length; i++){
+
+                        output +=   "<tr>"
+                                        +"<td class='text-center'>"+data[i].id+"</td>"
+                                        +"<td class='text-center'>"+data[i].name+"</td>"
+                                        
+                                        +"<td class='text-center'>"
+                                            +"<a href='#' class='text-blue' data-toggle='modal' id_edit_author="+data[i].id+" name="+data[i].name+" data-type='update-author' >"
+                                                +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
+                                            +"</a>"
+                                        +"</td>"
+                                        +"<td class='text-center'>"
+                                            +"<a class='text-red' href='#' data-toggle='modal' id_delete_author="+data[i].id+" data-type='delete-author'>"
+                                                +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
+                                            +"</a>"
+                                        +"</td>"
+                                    +"</tr>";
+
+                    }
+                    $('#body_list_author').html(output);
+                    // alert('success');
+                },
+                error: function(err){
+                    alert(1);
+                }
+        });
+    });
+</script> -->
 
 
 @endsection

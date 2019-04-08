@@ -33,7 +33,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{route('listRole')}}"><i class="fa fa-circle-o"></i> List Role </a></li>
+            <li><a href="#" id="list_role"><i class="fa fa-circle-o"></i> List Role </a></li>
             <li><a href="{{route('listUser')}}"><i class="fa fa-circle-o"></i> List User </a></li>
             <li><a href="{{route('listImageUser')}}"><i class="fa fa-circle-o"></i> Image User </a></li>
           </ul>
@@ -61,7 +61,7 @@
         <li><a href="{{route('listBookHistory')}}"><i class="fa fa-book"></i> <span>Book History</span></a></li>
         <li class="header">LABELS</li>
         <li><a href="{{route('listPublisher')}}"><i class="fa fa-circle-o text-red"></i> <span>Publisher</span></a></li>
-        <li><a href="{{route('listAuthor')}}"><i class="fa fa-circle-o text-yellow"></i> <span>Author</span></a></li>
+        <li><a href="{{route('listAuthor')}}" id="list_author"><i class="fa fa-circle-o text-yellow"></i> <span>Author</span></a></li>
         <li><a href="{{route('listGenre')}}"><i class="fa fa-circle-o text-green"></i> <span>Genre</span></a></li>
         <li><a href="{{route('listImage')}}"><i class="fa fa-circle-o text-aqua"></i> <span>Image</span></a></li>
       </ul>
