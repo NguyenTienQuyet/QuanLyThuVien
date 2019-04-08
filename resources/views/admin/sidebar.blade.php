@@ -23,7 +23,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-group"></i>
@@ -57,7 +57,7 @@
             <!-- <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Image Book </a></li> -->
           </ul>
         </li>
-       
+
         <li><a href="{{route('listBookHistory')}}"><i class="fa fa-book"></i> <span>Book History</span></a></li>
         <li class="header">LABELS</li>
         <li><a href="{{route('listPublisher')}}"><i class="fa fa-circle-o text-red"></i> <span>Publisher</span></a></li>
