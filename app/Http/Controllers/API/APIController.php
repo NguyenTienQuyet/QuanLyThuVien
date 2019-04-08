@@ -56,4 +56,9 @@ class APIController extends Controller
     {
         return [$message->getMessage()];
     }
+
+    public function _all(GetRequest $request)
+    {
+        return $this->service->getAll($request->all());
+    }
 }
