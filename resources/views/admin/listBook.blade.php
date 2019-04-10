@@ -52,11 +52,12 @@
 
                         <tr>
                             <td class="text-center">{{$book->id}}</td>
+                            <td class="text-center">{{$book->title}}</td>
                             <td class="text-center">{{$book->publisher_id}}</td>
                             <td class="text-center">{{$book->publishedYear}}</td>
                             
                             <td class="text-center">
-                                <a href="#" class="text-blue" id="<?php echo $book->id; ?>" publisher_id="{{$book->publisher_id}}" publishedYear="{{$book->publishedYear}}"  data-type="update-book" data-toggle="modal">
+                                <a href="#" class="text-blue" id="<?php echo $book->id; ?>" title="{{$book->title}}" publisher_id="{{$book->publisher_id}}" publishedYear="{{$book->publishedYear}}"  data-type="update-book" data-toggle="modal">
                                     <i class="ace-icon fa fa-pencil bigger-130"></i>
                                 </a>
                             </td>
@@ -104,11 +105,64 @@
 
                                     <div class="col-sm-9" style="margin-left: -15px; width: 380px;">
 
-                                        <input type="text" id="title-book" placeholder="Enter data input ..." class="form-control" name="title-book"/>
+                                        <input type="text" id="title" placeholder="Enter data input ..." class="form-control" name="title-book"/>
 
                                     </div>
                                 </div>
 
+                            </div>
+
+
+                            <div class="col-sm-11" style="margin-top: 5px;">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Author ID:</label>
+
+                                    <div class="input-group " style="width: 350px;" >
+                                      <div class="input-group-btn" style="margin-left: 30px;">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
+                                          <span class="fa fa-caret-down"></span></button>
+                                        <ul class="dropdown-menu" id="dropdown_author">
+                                            @foreach($listA as $author)
+
+                                                <li><a id="{{$author->id}}" href="#">{{$author->name}}</a></li>
+                                                <li class="divider"></li>
+
+                                            @endforeach
+                                        </ul>
+                                      </div>
+                                      <!-- /btn-group -->
+
+                                      <input type="text" class="form-control" id="author_id">
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-11" style="margin-top: 5px;">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Genre ID:</label>
+
+                                    <div class="input-group " style="width: 350px;" >
+                                      <div class="input-group-btn" style="margin-left: 30px;">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
+                                          <span class="fa fa-caret-down"></span></button>
+                                        <ul class="dropdown-menu" id="dropdown_genre">
+                                            @foreach($listG as $genre)
+
+                                                <li><a id="{{$genre->id}}" href="#">{{$genre->genreType}}</a></li>
+                                                <li class="divider"></li>
+
+                                            @endforeach
+                                        </ul>
+                                      </div>
+                                      <!-- /btn-group -->
+
+                                      <input type="text" class="form-control" id="genre_id">
+
+                                    </div>
+
+                                </div>
                             </div>
                             
                              <div class="col-sm-11" style="margin-top: 5px;">
@@ -117,14 +171,17 @@
                                     
                                     <div class="input-group " style="width: 350px;" >
                                       <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
                                           <span class="fa fa-caret-down"></span></button>
-                                        <ul class="dropdown-menu">
-                                          <li><a href="#">Action</a></li>
-                                          <li><a href="#">Another action</a></li>
-                                          <li><a href="#">Something else here</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="#">Separated link</a></li>
+                                        <ul class="dropdown-menu" id="dropdown_publisher">
+
+                                            @foreach($listP as $publisher)
+
+                                                <li><a id="{{$publisher->id}}" href="#">{{$publisher->publisherName}}</a></li>
+                                                <li class="divider"></li>
+
+                                            @endforeach
+
                                         </ul>
                                       </div>
                                       <!-- /btn-group -->
@@ -197,32 +254,33 @@
                                     <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Title: </label>
 
                                     <div class="col-sm-9" style="margin-left: -15px; width: 380px;">
-                                        <input type="text" id="book-title" placeholder="Enter data input ..." class="form-control" name="title-book"/>
+                                        <input type="text" id="edit_title" placeholder="Enter data input ..." class="form-control" name="title-book"/>
 
                                     </div>
                                 </div>
 
                             </div>
-                            
-                             <div class="col-sm-11" style="margin-top: 5px;">
+
+                            <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Publisher ID:</label>
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Author ID:</label>
 
                                     <div class="input-group " style="width: 350px;" >
                                       <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
                                           <span class="fa fa-caret-down"></span></button>
-                                        <ul class="dropdown-menu">
-                                          <li><a href="#">Action</a></li>
-                                          <li><a href="#">Another action</a></li>
-                                          <li><a href="#">Something else here</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="#">Separated link</a></li>
+                                        <ul class="dropdown-menu" >
+                                            @foreach($listA as $author)
+
+                                                <li><a id="{{$author->id}}" href="#">{{$author->name}}</a></li>
+                                                <li class="divider"></li>
+
+                                            @endforeach
                                         </ul>
                                       </div>
                                       <!-- /btn-group -->
 
-                                      <input type="text" class="form-control" id="id_publisher">
+                                      <input type="text" class="form-control" id="edit_author_id">
 
                                     </div>
 
@@ -231,10 +289,64 @@
 
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Genre ID:</label>
+
+                                    <div class="input-group " style="width: 350px;" >
+                                      <div class="input-group-btn" style="margin-left: 30px;">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
+                                          <span class="fa fa-caret-down"></span></button>
+                                        <ul class="dropdown-menu" >
+                                            @foreach($listG as $genre)
+
+                                                <li><a id="{{$genre->id}}" href="#">{{$genre->genreType}}</a></li>
+                                                <li class="divider"></li>
+
+                                            @endforeach
+                                        </ul>
+                                      </div>
+                                      <!-- /btn-group -->
+
+                                      <input type="text" class="form-control" id="edit_genre_id">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-11" style="margin-top: 5px;">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Publisher ID:</label>
+
+                                    <div class="input-group " style="width: 350px;" >
+                                      <div class="input-group-btn" style="margin-left: 30px;">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
+                                          <span class="fa fa-caret-down"></span></button>
+                                        <ul class="dropdown-menu" >
+                                            @foreach($listP as $publisher)
+
+                                                <li><a id="{{$publisher->id}}" href="#">{{$publisher->publisherName}}</a></li>
+                                                <li class="divider"></li>
+
+                                            @endforeach
+                                        </ul>
+                                      </div>
+                                      <!-- /btn-group -->
+
+                                      <input type="text" class="form-control" id="edit_publisher_id">
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-sm-11" style="margin-top: 5px;">
+                                <div class="form-group">
                                     <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Published Year: </label>
 
                                     <div class="col-sm-9" style="margin-left: -15px; width: 380px;">
-                                        <input type="text" id="publishedYear" placeholder="Enter data input ..." class="form-control" name="year_publisher"/>
+                                        <input type="text" id="edit_published_year" placeholder="Enter data input ..." class="form-control" name="year_publisher"/>
 
                                     </div>
                                 </div>
@@ -248,10 +360,10 @@
                 <br/>
                 <div class="modal-footer">
                     <input type="hidden" id="book-id" name="book-id" value="" />
-                </div>   
+                  
                 
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                    <button class="btn btn-info" type="submit" id="edit-book">
+                    <button class="btn btn-info" type="submit" id="edit-book" style="float: right;">
                         <i class="ace-icon fa fa-check bigger-110"></i>
                         Edit
                     </button>
@@ -270,7 +382,7 @@
                 
                 <div class="modal-content">
                     <!-- <form > -->
-                        <input type="hidden" name="_method" value="delete">
+                        <!-- <input type="hidden" name="_method" value="delete"> -->
                         <!-- {{csrf_field()}} -->
                     
                 <!-- Modal content-->

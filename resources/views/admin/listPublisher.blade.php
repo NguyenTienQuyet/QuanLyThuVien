@@ -18,7 +18,7 @@
     <div class="box">
         <div class="box-header">
             <h3 class="box-title"><b>List Publisher</b></h3>
-            <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal-publisher" id="addPublisher" style="float: right;">
+            <button class="btn btn-sm btn-success" data-toggle="modal" id="addPublisher" style="float: right;">
                 <i class=" "></i>
                 Add
 

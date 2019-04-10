@@ -5,7 +5,7 @@ jQuery(function($) {
 	$('#addGenre').click(function(){
 
         $('#myModal-genre').modal('show');
-        $('#form-genre')[0].reset();
+        $('#type-genre').val("");
         
     });
 
@@ -72,7 +72,23 @@ jQuery(function($) {
                             var id = $(this).attr("id_edit_genre");
                             var name = $(this).attr("name");
 
-                            $('#genre-type').val(name);
+                            $.ajax({
+                    
+                                url: '/api/v1/genres/get/'+id,
+                                type: 'get',
+                                dataType: 'json',
+                                success: function(data) {
+                                    name = data.genreType;
+                                    // alert(name);
+                                    $('#genre-type').val(name);
+                                },
+                                error: function(mess){
+                                    alert("Loi gi nay");
+                                    console.log(mess);
+                                }
+                            });
+
+                            
                             $('#genre-id').val(id);
                             $('#editModal-genre').modal('show');
                         });
@@ -170,7 +186,23 @@ jQuery(function($) {
                             var id = $(this).attr("id_edit_genre");
                             var name = $(this).attr("name");
 
-                            $('#genre-type').val(name);
+                            $.ajax({
+                    
+                                url: '/api/v1/genres/get/'+id,
+                                type: 'get',
+                                dataType: 'json',
+                                success: function(data) {
+                                    name = data.genreType;
+                                    // alert(name);
+                                    $('#genre-type').val(name);
+                                },
+                                error: function(mess){
+                                    alert("Loi gi nay");
+                                    console.log(mess);
+                                }
+                            });
+
+                            
                             $('#genre-id').val(id);
                             $('#editModal-genre').modal('show');
                         });
@@ -230,7 +262,23 @@ jQuery(function($) {
                             var id = $(this).attr("id_edit_genre");
                             var name = $(this).attr("name");
 
-                            $('#genre-type').val(name);
+                            $.ajax({
+                    
+                                url: '/api/v1/genres/get/'+id,
+                                type: 'get',
+                                dataType: 'json',
+                                success: function(data) {
+                                    name = data.genreType;
+                                    // alert(name);
+                                    $('#genre-type').val(name);
+                                },
+                                error: function(mess){
+                                    alert("Loi gi nay");
+                                    console.log(mess);
+                                }
+                            });
+
+                            
                             $('#genre-id').val(id);
                             $('#editModal-genre').modal('show');
                         });
@@ -329,7 +377,23 @@ jQuery(function($) {
                             var id = $(this).attr("id_edit_genre");
                             var name = $(this).attr("name");
 
-                            $('#genre-type').val(name);
+                            $.ajax({
+                    
+                                url: '/api/v1/genres/get/'+id,
+                                type: 'get',
+                                dataType: 'json',
+                                success: function(data) {
+                                    name = data.genreType;
+                                    // alert(name);
+                                    $('#genre-type').val(name);
+                                },
+                                error: function(mess){
+                                    alert("Loi gi nay");
+                                    console.log(mess);
+                                }
+                            });
+
+                            
                             $('#genre-id').val(id);
                             $('#editModal-genre').modal('show');
                         });

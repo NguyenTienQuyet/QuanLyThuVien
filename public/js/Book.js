@@ -4,11 +4,29 @@ jQuery(function($) {
     $('#addBook').click(function(){
 
         $('#myModal-book').modal('show');
-        $('#form-book')[0].reset();
+        $('#title').val("");
+        $('#publisher_id').val("");
+        $('#publishedYear').val("");
         
     });
 
-   
+    $('#dropdown_publisher li').click(function(){
+        $('#publisher_id').val($(this).text());
+        $('#edit_publisher_id').val($(this).text());
+        
+    });
+
+    $('#dropdown_author li').click(function(){
+        $('#author_id').val($(this).text());
+        $('#edit_author_id').val($(this).text());
+        
+    });
+
+    $('#dropdown_genre li').click(function(){
+        $('#genre_id').val($(this).text());
+        $('#edit_genre_id').val($(this).text());
+        
+    });
 
     $('#add-book').on('click', function(){
 
@@ -19,7 +37,12 @@ jQuery(function($) {
 
         });
         
-        var data = $('#type-book').val();
+        var title = $('#title').val();
+
+        var publisher_id = $('#publisher_id').val();
+        var author_id = $('#author_id').val();
+        var genre_id = $('#genre_id').val();
+        var publishedYear = $('#publishedYear').val();
         // alert(data);
         
         $.ajax({
@@ -29,7 +52,11 @@ jQuery(function($) {
             dataType: "json",
             data:{
                 
-                name: data
+                title: title,
+                author_id: author_id,
+                genre_id: genre_id,
+                publisher_id: publisher_id,
+                publishedYear: publishedYear
                 
             },
             success: function () {
@@ -46,10 +73,11 @@ jQuery(function($) {
 
                             output +=   "<tr>"
                                             +"<td class='text-center'>"+data[i].id+"</td>"
-                                            +"<td class='text-center'>"+data[i].name+"</td>"
-                                            
+                                            +"<td class='text-center'>"+data[i].title+"</td>"
+                                            +"<td class='text-center'>"+data[i].publisher_id+"</td>"
+                                            +"<td class='text-center'>"+data[i].publishedYear+"</td>"
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' name="+data[i].name+">"
+                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" publishedYear="+data[i].publishedYear+">"
                                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
@@ -66,12 +94,28 @@ jQuery(function($) {
                         $('a[data-type=update-book]').on('click', function(){
 
 
-                            var id = $(this).attr("id_edit_book");
-                            var name = $(this).attr("name");
-                            // alert(name);
+                            var id = $(this).attr("id");
+                            var edit_title = $(this).attr("title");
+                            var edit_publisher_id = $(this).attr("publisher_id");
+                            var edit_published_year = $(this).attr("publishedYear");
 
-                            $('#book-type').val(name);
-                            $('#book-id').val(id);
+                            $.ajax({
+                                        
+                                url: '/api/v1/publishers/get/'+edit_publisher_id,
+                                type: 'get',
+                                dataType: 'json',
+                                success: function(data) {
+                                    edit_publisher_id = data.publisherName;
+                                    $('#edit_publisher_id').val(edit_publisher_id);
+                                },
+                                error: function(){
+                                    alert("Loi gi do");
+                                }
+                            });
+
+                            $('#edit_title').val(edit_title);
+                            
+                            $('#edit_published_year').val(edit_published_year);
                             $('#editModal-book').modal('show');
                         });
 
@@ -105,11 +149,27 @@ jQuery(function($) {
 
 
         var id = $(this).attr("id");
-        var name = $(this).attr("name");
-        // alert(name);
+        var edit_title = $(this).attr("title");
+        var edit_publisher_id = $(this).attr("publisher_id");
+        var edit_published_year = $(this).attr("publishedYear");
 
-        $('#book-type').val(name);
-        $('#book-id').val(id);
+        $.ajax({
+                    
+            url: '/api/v1/publishers/get/'+edit_publisher_id,
+            type: 'get',
+            dataType: 'json',
+            success: function(data) {
+                edit_publisher_id = data.publisherName;
+                $('#edit_publisher_id').val(edit_publisher_id);
+            },
+            error: function(){
+                alert("Loi gi do");
+            }
+        });
+
+        $('#edit_title').val(edit_title);
+        
+        $('#edit_published_year').val(edit_published_year);
         $('#editModal-book').modal('show');
     });
 
@@ -144,10 +204,11 @@ jQuery(function($) {
 
                             output +=   "<tr>"
                                             +"<td class='text-center'>"+data[i].id+"</td>"
-                                            +"<td class='text-center'>"+data[i].name+"</td>"
-                                            
+                                            +"<td class='text-center'>"+data[i].title+"</td>"
+                                            +"<td class='text-center'>"+data[i].publisher_id+"</td>"
+                                            +"<td class='text-center'>"+data[i].publishedYear+"</td>"
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' name="+data[i].name+">"
+                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" publishedYear="+data[i].publishedYear+">"
                                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
@@ -164,12 +225,28 @@ jQuery(function($) {
                         $('a[data-type=update-book]').on('click', function(){
 
 
-                            var id = $(this).attr("id_edit_book");
-                            var name = $(this).attr("name");
-                            // alert(name);
+                            var id = $(this).attr("id");
+                            var edit_title = $(this).attr("title");
+                            var edit_publisher_id = $(this).attr("publisher_id");
+                            var edit_published_year = $(this).attr("publishedYear");
 
-                            $('#book-type').val(name);
-                            $('#book-id').val(id);
+                            $.ajax({
+                                        
+                                url: '/api/v1/publishers/get/'+edit_publisher_id,
+                                type: 'get',
+                                dataType: 'json',
+                                success: function(data) {
+                                    edit_publisher_id = data.publisherName;
+                                    $('#edit_publisher_id').val(edit_publisher_id);
+                                },
+                                error: function(){
+                                    alert("Loi gi do");
+                                }
+                            });
+
+                            $('#edit_title').val(edit_title);
+                            
+                            $('#edit_published_year').val(edit_published_year);
                             $('#editModal-book').modal('show');
                         });
 
@@ -205,10 +282,11 @@ jQuery(function($) {
 
                             output +=   "<tr>"
                                             +"<td class='text-center'>"+data[i].id+"</td>"
-                                            +"<td class='text-center'>"+data[i].name+"</td>"
-                                            
+                                            +"<td class='text-center'>"+data[i].title+"</td>"
+                                            +"<td class='text-center'>"+data[i].publisher_id+"</td>"
+                                            +"<td class='text-center'>"+data[i].publishedYear+"</td>"
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' name="+data[i].name+">"
+                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" publishedYear="+data[i].publishedYear+">"
                                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
@@ -225,12 +303,28 @@ jQuery(function($) {
                         $('a[data-type=update-book]').on('click', function(){
 
 
-                            var id = $(this).attr("id_edit_book");
-                            var name = $(this).attr("name");
-                            // alert(name);
+                            var id = $(this).attr("id");
+                            var edit_title = $(this).attr("title");
+                            var edit_publisher_id = $(this).attr("publisher_id");
+                            var edit_published_year = $(this).attr("publishedYear");
 
-                            $('#book-type').val(name);
-                            $('#book-id').val(id);
+                            $.ajax({
+                                        
+                                url: '/api/v1/publishers/get/'+edit_publisher_id,
+                                type: 'get',
+                                dataType: 'json',
+                                success: function(data) {
+                                    edit_publisher_id = data.publisherName;
+                                    $('#edit_publisher_id').val(edit_publisher_id);
+                                },
+                                error: function(){
+                                    alert("Loi gi do");
+                                }
+                            });
+
+                            $('#edit_title').val(edit_title);
+                            
+                            $('#edit_published_year').val(edit_published_year);
                             $('#editModal-book').modal('show');
                         });
 
@@ -267,7 +361,7 @@ jQuery(function($) {
     $('#_delete-book').on('click', function(){
 
         var id = $('#book-delete').val();
-        // alert(id);
+        alert(id);
 
         $.ajaxSetup({
             headers: {
@@ -295,10 +389,11 @@ jQuery(function($) {
 
                             output +=   "<tr>"
                                             +"<td class='text-center'>"+data[i].id+"</td>"
-                                            +"<td class='text-center'>"+data[i].name+"</td>"
-                                            
+                                            +"<td class='text-center'>"+data[i].title+"</td>"
+                                            +"<td class='text-center'>"+data[i].publisher_id+"</td>"
+                                            +"<td class='text-center'>"+data[i].publishedYear+"</td>"
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' name="+data[i].name+">"
+                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" publishedYear="+data[i].publishedYear+">"
                                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
@@ -315,12 +410,28 @@ jQuery(function($) {
                         $('a[data-type=update-book]').on('click', function(){
 
 
-                            var id = $(this).attr("id_edit_book");
-                            var name = $(this).attr("name");
-                            // alert(name);
+                            var id = $(this).attr("id");
+                            var edit_title = $(this).attr("title");
+                            var edit_publisher_id = $(this).attr("publisher_id");
+                            var edit_published_year = $(this).attr("publishedYear");
 
-                            $('#book-type').val(name);
-                            $('#book-id').val(id);
+                            $.ajax({
+                                        
+                                url: '/api/v1/publishers/get/'+edit_publisher_id,
+                                type: 'get',
+                                dataType: 'json',
+                                success: function(data) {
+                                    edit_publisher_id = data.publisherName;
+                                    $('#edit_publisher_id').val(edit_publisher_id);
+                                },
+                                error: function(){
+                                    alert("Loi gi do");
+                                }
+                            });
+
+                            $('#edit_title').val(edit_title);
+                            
+                            $('#edit_published_year').val(edit_published_year);
                             $('#editModal-book').modal('show');
                         });
 
