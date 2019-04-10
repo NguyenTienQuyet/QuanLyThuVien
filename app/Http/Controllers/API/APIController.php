@@ -39,7 +39,11 @@ class APIController extends Controller
 
     public function _patch(PatchRequest $request, int $id = null)
     {
-        return $this->service->updateModel($request->all(), $id);
+        $checker = $this->service->updateModel($request->all(), $id);
+        if ($checker == true) {
+            return ['Message' => 'Update success'];
+        }
+        return ['Message' => 'Update failed'];
     }
 
     public function _delete(DeleteRequest $request, int $id = null)
