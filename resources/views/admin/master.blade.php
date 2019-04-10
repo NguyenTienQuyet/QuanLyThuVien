@@ -35,7 +35,6 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-
   <!-- jQuery 3 -->
 <script src="backend/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -75,7 +74,6 @@
 <script src="backend/dist/js/demo.js"></script>
 
 
-
 <script type="text/javascript" src="js/Author.js"></script>
 <script type="text/javascript" src="js/Role.js"></script>
 <script type="text/javascript" src="js/Publisher.js"></script>
@@ -87,6 +85,12 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+
+  <script type="text/javascript" src="js/Role.js"></script>
+
+
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -132,9 +136,6 @@
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
-
-
 
 </body>
 </html>
