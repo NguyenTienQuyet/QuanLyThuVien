@@ -1,20 +1,17 @@
 
 jQuery(function($) {
 
-    $('td .delete_author').click(function(){
-        alert(99);
-    });
 
-	$('#addAuthor').click(function(){
+	$('#addGenre').click(function(){
 
-        $('#myModal-author').modal('show');
-        $('#form-author')[0].reset();
+        $('#myModal-genre').modal('show');
+        $('#form-genre')[0].reset();
         
     });
 
    
 
-	$('#add-author').on('click', function(){
+	$('#add-genre').on('click', function(){
 
 		$.ajaxSetup({
 	        headers: {
@@ -23,25 +20,25 @@ jQuery(function($) {
 
         });
 		
-		var data = $('#type-author').val();
+		var data = $('#type-genre').val();
         // alert(data);
 		
 		$.ajax({
             
-            url: "/api/v1/authors/post",
+            url: "/api/v1/genres/post",
             type: 'post',
             dataType: "json",
             data:{
                 
-                name: data
+                genreType: data
                 
             },
             success: function () {
                 alert("success!");
-                $('#myModal-author').modal('hide');
+                $('#myModal-genre').modal('hide');
                 $.ajax({
                     
-                    url: '/api/v1/authors/'+'all',
+                    url: '/api/v1/genres/'+'all',
                     type: 'get',
                     dataType: 'json',
                     success: function(data) {
@@ -50,15 +47,15 @@ jQuery(function($) {
 
                             output +=   "<tr>"
                                             +"<td class='text-center'>"+data[i].id+"</td>"
-                                            +"<td class='text-center'>"+data[i].name+"</td>"
+                                            +"<td class='text-center'>"+data[i].genreType+"</td>"
                                             
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_author="+data[i].id+" data-type='update-author' name="+data[i].name+">"
+                                                +"<a href='' class='text-blue' data-toggle='modal' id_edit_genre="+data[i].id+" data-type='update-genre' name="+data[i].genreType+">"
                                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-red delete_author' id_delete_author="+data[i].id+" data-type='delete-author'>"
+                                                +"<a href='' class='text-red' data-toggle='modal' id_delete_genre="+data[i].id+" data-type='delete-genre'>"
                                                     +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
@@ -66,33 +63,32 @@ jQuery(function($) {
                                         +"</tr>";
 
                         }
-                        $('#body_list_author').html(output);
-                        $('a[data-type=update-author]').on('click', function(){
+                        $('#body_list_genre').html(output);
+                        
+
+                        $('a[data-type=update-genre]').on('click', function(){
 
 
-                            var id = $(this).attr("id_edit_author");
+                            var id = $(this).attr("id_edit_genre");
                             var name = $(this).attr("name");
-                            // alert(name);
 
-                            $('#author-type').val(name);
-                            $('#author-id').val(id);
-                            $('#editModal-author').modal('show');
+                            $('#genre-type').val(name);
+                            $('#genre-id').val(id);
+                            $('#editModal-genre').modal('show');
                         });
 
-                        $('a[data-type=delete-author]').on('click', function(){
+                        $('a[data-type=delete-genre]').on('click', function(){
 
-                            var id = $(this).attr("id_delete_author");
+                            var id = $(this).attr("id_delete_genre");
+                            alert(id);
 
-                            $('#author-delete').val(id);
-                            $('#deleteModal-author').modal('show');
+                            $('#genre-delete').val(id);
+                            $('#deleteModal-genre').modal('show');
                             
                         });
-
-
-                        // alert('success');
                     },
                     error: function(err){
-                        alert(1);
+                        alert(err);
                     }
                 });
             },
@@ -105,21 +101,22 @@ jQuery(function($) {
 
     
 
-    $('a[data-type=update-author]').on('click', function(){
+    $('a[data-type=update-genre]').on('click', function(){
 
 
     	var id = $(this).attr("id");
     	var name = $(this).attr("name");
     	// alert(name);
 
-    	$('#author-type').val(name);
-    	$('#author-id').val(id);
-    	$('#editModal-author').modal('show');
+    	$('#genre-type').val(name);
+    	$('#genre-id').val(id);
+    	$('#editModal-genre').modal('show');
     });
 
-    $('#edit-author').on('click', function () {
-        var id=$('#author-id').val();
-        var data = $('#author-type').val();
+    $('#edit-genre').on('click', function () {
+        var id=$('#genre-id').val();
+        var data = $('#genre-type').val();
+        // alert(id + data);
 
         $.ajaxSetup({
             headers: {
@@ -130,16 +127,16 @@ jQuery(function($) {
 
         $.ajax({
                 
-            url: '/api/v1/authors/patch/'+id,
+            url: '/api/v1/genres/patch/'+id,
             type: 'patch',
             dataType: "json",
-            data: {name: data, _method: "patch"},
+            data: {genreType: data, _method: "patch"},
             success: function () {
                 alert('success!');
-                $('#editModal-author').modal('hide');
+                $('#editModal-genre').modal('hide');
                 $.ajax({
                     
-                    url: '/api/v1/authors/'+'all',
+                    url: '/api/v1/genres/'+'all',
                     type: 'get',
                     dataType: 'json',
                     success: function(data) {
@@ -148,15 +145,15 @@ jQuery(function($) {
 
                             output +=   "<tr>"
                                             +"<td class='text-center'>"+data[i].id+"</td>"
-                                            +"<td class='text-center'>"+data[i].name+"</td>"
+                                            +"<td class='text-center'>"+data[i].genreType+"</td>"
                                             
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_author="+data[i].id+" data-type='update-author' name="+data[i].name+">"
+                                                +"<a href='' class='text-blue' data-toggle='modal' id_edit_genre="+data[i].id+" data-type='update-genre' name="+data[i].genreType+">"
                                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-red delete_author' id_delete_author="+data[i].id+" data-type='delete-author'>"
+                                                +"<a href='' class='text-red' data-toggle='modal' id_delete_genre="+data[i].id+" data-type='delete-genre'>"
                                                     +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
@@ -164,43 +161,42 @@ jQuery(function($) {
                                         +"</tr>";
 
                         }
-                        $('#body_list_author').html(output);
-                        $('a[data-type=update-author]').on('click', function(){
+                        $('#body_list_genre').html(output);
+                        
+
+                        $('a[data-type=update-genre]').on('click', function(){
 
 
-                            var id = $(this).attr("id_edit_author");
+                            var id = $(this).attr("id_edit_genre");
                             var name = $(this).attr("name");
-                            // alert(name);
 
-                            $('#author-type').val(name);
-                            $('#author-id').val(id);
-                            $('#editModal-author').modal('show');
+                            $('#genre-type').val(name);
+                            $('#genre-id').val(id);
+                            $('#editModal-genre').modal('show');
                         });
 
-                        $('a[data-type=delete-author]').on('click', function(){
+                        $('a[data-type=delete-genre]').on('click', function(){
 
-                            var id = $(this).attr("id_delete_author");
+                            var id = $(this).attr("id_delete_genre");
+                            alert(id);
 
-                            $('#author-delete').val(id);
-                            $('#deleteModal-author').modal('show');
+                            $('#genre-delete').val(id);
+                            $('#deleteModal-genre').modal('show');
                             
                         });
-
-
-                        // alert('success');
                     },
                     error: function(err){
-                        alert(1);
+                        alert(err);
                     }
                 });
             },
             error: function(mess){
                 alert("error! Please, try again.");
                 // alert(mess);
-                $('#editModal-author').modal('hide');
+                $('#editModal-genre').modal('hide');
                 $.ajax({
                     
-                    url: '/api/v1/authors/'+'all',
+                    url: '/api/v1/genres/'+'all',
                     type: 'get',
                     dataType: 'json',
                     success: function(data) {
@@ -209,15 +205,15 @@ jQuery(function($) {
 
                             output +=   "<tr>"
                                             +"<td class='text-center'>"+data[i].id+"</td>"
-                                            +"<td class='text-center'>"+data[i].name+"</td>"
+                                            +"<td class='text-center'>"+data[i].genreType+"</td>"
                                             
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_author="+data[i].id+" data-type='update-author' name="+data[i].name+">"
+                                                +"<a href='' class='text-blue' data-toggle='modal' id_edit_genre="+data[i].id+" data-type='update-genre' name="+data[i].genreType+">"
                                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-red delete_author' id_delete_author="+data[i].id+" data-type='delete-author'>"
+                                                +"<a href='' class='text-red' data-toggle='modal' id_delete_genre="+data[i].id+" data-type='delete-genre'>"
                                                     +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
@@ -225,52 +221,61 @@ jQuery(function($) {
                                         +"</tr>";
 
                         }
-                        $('#body_list_author').html(output);
-                        $('a[data-type=update-author]').on('click', function(){
+                        $('#body_list_genre').html(output);
+                        
+
+                        $('a[data-type=update-genre]').on('click', function(){
 
 
-                            var id = $(this).attr("id_edit_author");
+                            var id = $(this).attr("id_edit_genre");
                             var name = $(this).attr("name");
-                            // alert(name);
 
-                            $('#author-type').val(name);
-                            $('#author-id').val(id);
-                            $('#editModal-author').modal('show');
+                            $('#genre-type').val(name);
+                            $('#genre-id').val(id);
+                            $('#editModal-genre').modal('show');
                         });
 
-                        $('a[data-type=delete-author]').on('click', function(){
+                        $('a[data-type=delete-genre]').on('click', function(){
 
-                            var id = $(this).attr("id_delete_author");
+                            var id = $(this).attr("id_delete_genre");
+                            alert(id);
 
-                            $('#author-delete').val(id);
-                            $('#deleteModal-author').modal('show');
+                            $('#genre-delete').val(id);
+                            $('#deleteModal-genre').modal('show');
                             
                         });
-
-
-                        // alert('success');
                     },
                     error: function(err){
-                        alert(1);
+                        alert(err);
                     }
                 });
             }
         });
     });
 
+  //   $('.delete_genre').on('click', function(){
 
-    $('a[data-type=delete-author]').on('click', function(){
+  //   	var id = $(this).attr("id");
+
+  //       $('#genre-delete').val(id);
+		// $('#deleteModal-genre').modal('show');
+		
+
+
+  //   });
+
+    $('a[data-type=delete-genre]').on('click', function(){
 
         var id = $(this).attr("id");
 
-        $('#author-delete').val(id);
-        $('#deleteModal-author').modal('show');
+        $('#genre-delete').val(id);
+        $('#deleteModal-genre').modal('show');
         
     });
 
-    $('#_delete-author').on('click', function(){
+    $('#_delete-genre').on('click', function(){
 
-    	var id = $('#author-delete').val();
+    	var id = $('#genre-delete').val();
         // alert(id);
 
         $.ajaxSetup({
@@ -282,15 +287,15 @@ jQuery(function($) {
 
         $.ajax({
                 
-                url: '/api/v1/authors/delete/'+id,
+                url: '/api/v1/genres/delete/'+id,
                 type: 'delete',
                 data: {id: id, _method: "delete"},
             success: function () {
                 alert('success!');
-                $('#deleteModal-author').modal('hide');
+                $('#deleteModal-genre').modal('hide');
                 $.ajax({
                     
-                    url: '/api/v1/authors/'+'all',
+                    url: '/api/v1/genres/'+'all',
                     type: 'get',
                     dataType: 'json',
                     success: function(data) {
@@ -299,15 +304,15 @@ jQuery(function($) {
 
                             output +=   "<tr>"
                                             +"<td class='text-center'>"+data[i].id+"</td>"
-                                            +"<td class='text-center'>"+data[i].name+"</td>"
+                                            +"<td class='text-center'>"+data[i].genreType+"</td>"
                                             
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_author="+data[i].id+" data-type='update-author' name="+data[i].name+">"
+                                                +"<a href='' class='text-blue' data-toggle='modal' id_edit_genre="+data[i].id+" data-type='update-genre' name="+data[i].genreType+">"
                                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-red delete_author' id_delete_author="+data[i].id+" data-type='delete-author'>"
+                                                +"<a href='' class='text-red' data-toggle='modal' id_delete_genre="+data[i].id+" data-type='delete-genre'>"
                                                     +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
@@ -315,35 +320,37 @@ jQuery(function($) {
                                         +"</tr>";
 
                         }
-                        $('#body_list_author').html(output);
-                        $('a[data-type=update-author]').on('click', function(){
+                        $('#body_list_genre').html(output);
+                        
+
+                        $('a[data-type=update-genre]').on('click', function(){
 
 
-                            var id = $(this).attr("id_edit_author");
+                            var id = $(this).attr("id_edit_genre");
                             var name = $(this).attr("name");
-                            // alert(name);
 
-                            $('#author-type').val(name);
-                            $('#author-id').val(id);
-                            $('#editModal-author').modal('show');
+                            $('#genre-type').val(name);
+                            $('#genre-id').val(id);
+                            $('#editModal-genre').modal('show');
                         });
 
-                        $('a[data-type=delete-author]').on('click', function(){
+                        $('a[data-type=delete-genre]').on('click', function(){
 
-                            var id = $(this).attr("id_delete_author");
+                            var id = $(this).attr("id_delete_genre");
+                            alert(id);
 
-                            $('#author-delete').val(id);
-                            $('#deleteModal-author').modal('show');
+                            $('#genre-delete').val(id);
+                            $('#deleteModal-genre').modal('show');
                             
                         });
-
-
-                        // alert('success');
                     },
                     error: function(err){
-                        alert(1);
+                        alert(err);
                     }
                 });
+
+                
+
             },
             error: function(mess){
                 alert("error! Please, try again.");

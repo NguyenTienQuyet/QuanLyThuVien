@@ -27,6 +27,10 @@ Route::get('listUser',
 	['as'=>'listUser', 'uses'=>'AdminController@getListUser']
 );
 
+Route::get('listBook',
+	['as'=>'listBook', 'uses'=>'AdminController@getListBook']
+);
+
 Route::get('listBookQuantity',
 	['as'=>'listBookQuantity', 'uses'=>'AdminController@getListBookQuantity']
 );

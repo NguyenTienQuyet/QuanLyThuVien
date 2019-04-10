@@ -78,6 +78,12 @@
 
 <script type="text/javascript" src="js/Author.js"></script>
 <script type="text/javascript" src="js/Role.js"></script>
+<script type="text/javascript" src="js/Publisher.js"></script>
+<script type="text/javascript" src="js/Genre.js"></script>
+<script type="text/javascript" src="js/User.js"></script>
+<!-- <script type="text/javascript" src="js/Card.js"></script>
+<script type="text/javascript" src="js/BookHistory.js"></script> -->
+<script type="text/javascript" src="js/Book.js"></script>
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -126,6 +132,8 @@
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+
+
 
 
 </body>

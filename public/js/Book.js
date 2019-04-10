@@ -1,34 +1,30 @@
 
 jQuery(function($) {
 
-    $('td .delete_author').click(function(){
-        alert(99);
-    });
+    $('#addBook').click(function(){
 
-	$('#addAuthor').click(function(){
-
-        $('#myModal-author').modal('show');
-        $('#form-author')[0].reset();
+        $('#myModal-book').modal('show');
+        $('#form-book')[0].reset();
         
     });
 
    
 
-	$('#add-author').on('click', function(){
+    $('#add-book').on('click', function(){
 
-		$.ajaxSetup({
-	        headers: {
-	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-	        }
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
 
         });
-		
-		var data = $('#type-author').val();
+        
+        var data = $('#type-book').val();
         // alert(data);
-		
-		$.ajax({
+        
+        $.ajax({
             
-            url: "/api/v1/authors/post",
+            url: "/api/v1/books/post",
             type: 'post',
             dataType: "json",
             data:{
@@ -38,10 +34,10 @@ jQuery(function($) {
             },
             success: function () {
                 alert("success!");
-                $('#myModal-author').modal('hide');
+                $('#myModal-book').modal('hide');
                 $.ajax({
                     
-                    url: '/api/v1/authors/'+'all',
+                    url: '/api/v1/books/'+'all',
                     type: 'get',
                     dataType: 'json',
                     success: function(data) {
@@ -53,12 +49,12 @@ jQuery(function($) {
                                             +"<td class='text-center'>"+data[i].name+"</td>"
                                             
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_author="+data[i].id+" data-type='update-author' name="+data[i].name+">"
+                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' name="+data[i].name+">"
                                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-red delete_author' id_delete_author="+data[i].id+" data-type='delete-author'>"
+                                                +"<a href='#' class='text-red delete_book' id_delete_book="+data[i].id+" data-type='delete-book'>"
                                                     +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
@@ -66,25 +62,25 @@ jQuery(function($) {
                                         +"</tr>";
 
                         }
-                        $('#body_list_author').html(output);
-                        $('a[data-type=update-author]').on('click', function(){
+                        $('#body_list_book').html(output);
+                        $('a[data-type=update-book]').on('click', function(){
 
 
-                            var id = $(this).attr("id_edit_author");
+                            var id = $(this).attr("id_edit_book");
                             var name = $(this).attr("name");
                             // alert(name);
 
-                            $('#author-type').val(name);
-                            $('#author-id').val(id);
-                            $('#editModal-author').modal('show');
+                            $('#book-type').val(name);
+                            $('#book-id').val(id);
+                            $('#editModal-book').modal('show');
                         });
 
-                        $('a[data-type=delete-author]').on('click', function(){
+                        $('a[data-type=delete-book]').on('click', function(){
 
-                            var id = $(this).attr("id_delete_author");
+                            var id = $(this).attr("id_delete_book");
 
-                            $('#author-delete').val(id);
-                            $('#deleteModal-author').modal('show');
+                            $('#book-delete').val(id);
+                            $('#deleteModal-book').modal('show');
                             
                         });
 
@@ -101,25 +97,25 @@ jQuery(function($) {
                 console.log(mess);
             }
         });
-	});
+    });
 
     
 
-    $('a[data-type=update-author]').on('click', function(){
+    $('a[data-type=update-book]').on('click', function(){
 
 
-    	var id = $(this).attr("id");
-    	var name = $(this).attr("name");
-    	// alert(name);
+        var id = $(this).attr("id");
+        var name = $(this).attr("name");
+        // alert(name);
 
-    	$('#author-type').val(name);
-    	$('#author-id').val(id);
-    	$('#editModal-author').modal('show');
+        $('#book-type').val(name);
+        $('#book-id').val(id);
+        $('#editModal-book').modal('show');
     });
 
-    $('#edit-author').on('click', function () {
-        var id=$('#author-id').val();
-        var data = $('#author-type').val();
+    $('#edit-book').on('click', function () {
+        var id=$('#book-id').val();
+        var data = $('#book-type').val();
 
         $.ajaxSetup({
             headers: {
@@ -130,16 +126,16 @@ jQuery(function($) {
 
         $.ajax({
                 
-            url: '/api/v1/authors/patch/'+id,
+            url: '/api/v1/books/patch/'+id,
             type: 'patch',
             dataType: "json",
             data: {name: data, _method: "patch"},
             success: function () {
                 alert('success!');
-                $('#editModal-author').modal('hide');
+                $('#editModal-book').modal('hide');
                 $.ajax({
                     
-                    url: '/api/v1/authors/'+'all',
+                    url: '/api/v1/books/'+'all',
                     type: 'get',
                     dataType: 'json',
                     success: function(data) {
@@ -151,12 +147,12 @@ jQuery(function($) {
                                             +"<td class='text-center'>"+data[i].name+"</td>"
                                             
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_author="+data[i].id+" data-type='update-author' name="+data[i].name+">"
+                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' name="+data[i].name+">"
                                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-red delete_author' id_delete_author="+data[i].id+" data-type='delete-author'>"
+                                                +"<a href='#' class='text-red delete_book' id_delete_book="+data[i].id+" data-type='delete-book'>"
                                                     +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
@@ -164,25 +160,25 @@ jQuery(function($) {
                                         +"</tr>";
 
                         }
-                        $('#body_list_author').html(output);
-                        $('a[data-type=update-author]').on('click', function(){
+                        $('#body_list_book').html(output);
+                        $('a[data-type=update-book]').on('click', function(){
 
 
-                            var id = $(this).attr("id_edit_author");
+                            var id = $(this).attr("id_edit_book");
                             var name = $(this).attr("name");
                             // alert(name);
 
-                            $('#author-type').val(name);
-                            $('#author-id').val(id);
-                            $('#editModal-author').modal('show');
+                            $('#book-type').val(name);
+                            $('#book-id').val(id);
+                            $('#editModal-book').modal('show');
                         });
 
-                        $('a[data-type=delete-author]').on('click', function(){
+                        $('a[data-type=delete-book]').on('click', function(){
 
-                            var id = $(this).attr("id_delete_author");
+                            var id = $(this).attr("id_delete_book");
 
-                            $('#author-delete').val(id);
-                            $('#deleteModal-author').modal('show');
+                            $('#book-delete').val(id);
+                            $('#deleteModal-book').modal('show');
                             
                         });
 
@@ -197,10 +193,10 @@ jQuery(function($) {
             error: function(mess){
                 alert("error! Please, try again.");
                 // alert(mess);
-                $('#editModal-author').modal('hide');
+                $('#editModal-book').modal('hide');
                 $.ajax({
                     
-                    url: '/api/v1/authors/'+'all',
+                    url: '/api/v1/books/'+'all',
                     type: 'get',
                     dataType: 'json',
                     success: function(data) {
@@ -212,12 +208,12 @@ jQuery(function($) {
                                             +"<td class='text-center'>"+data[i].name+"</td>"
                                             
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_author="+data[i].id+" data-type='update-author' name="+data[i].name+">"
+                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' name="+data[i].name+">"
                                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-red delete_author' id_delete_author="+data[i].id+" data-type='delete-author'>"
+                                                +"<a href='#' class='text-red delete_book' id_delete_book="+data[i].id+" data-type='delete-book'>"
                                                     +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
@@ -225,25 +221,25 @@ jQuery(function($) {
                                         +"</tr>";
 
                         }
-                        $('#body_list_author').html(output);
-                        $('a[data-type=update-author]').on('click', function(){
+                        $('#body_list_book').html(output);
+                        $('a[data-type=update-book]').on('click', function(){
 
 
-                            var id = $(this).attr("id_edit_author");
+                            var id = $(this).attr("id_edit_book");
                             var name = $(this).attr("name");
                             // alert(name);
 
-                            $('#author-type').val(name);
-                            $('#author-id').val(id);
-                            $('#editModal-author').modal('show');
+                            $('#book-type').val(name);
+                            $('#book-id').val(id);
+                            $('#editModal-book').modal('show');
                         });
 
-                        $('a[data-type=delete-author]').on('click', function(){
+                        $('a[data-type=delete-book]').on('click', function(){
 
-                            var id = $(this).attr("id_delete_author");
+                            var id = $(this).attr("id_delete_book");
 
-                            $('#author-delete').val(id);
-                            $('#deleteModal-author').modal('show');
+                            $('#book-delete').val(id);
+                            $('#deleteModal-book').modal('show');
                             
                         });
 
@@ -259,18 +255,18 @@ jQuery(function($) {
     });
 
 
-    $('a[data-type=delete-author]').on('click', function(){
+    $('a[data-type=delete-book]').on('click', function(){
 
         var id = $(this).attr("id");
 
-        $('#author-delete').val(id);
-        $('#deleteModal-author').modal('show');
+        $('#book-delete').val(id);
+        $('#deleteModal-book').modal('show');
         
     });
 
-    $('#_delete-author').on('click', function(){
+    $('#_delete-book').on('click', function(){
 
-    	var id = $('#author-delete').val();
+        var id = $('#book-delete').val();
         // alert(id);
 
         $.ajaxSetup({
@@ -282,15 +278,15 @@ jQuery(function($) {
 
         $.ajax({
                 
-                url: '/api/v1/authors/delete/'+id,
+                url: '/api/v1/books/delete/'+id,
                 type: 'delete',
                 data: {id: id, _method: "delete"},
             success: function () {
                 alert('success!');
-                $('#deleteModal-author').modal('hide');
+                $('#deleteModal-book').modal('hide');
                 $.ajax({
                     
-                    url: '/api/v1/authors/'+'all',
+                    url: '/api/v1/books/'+'all',
                     type: 'get',
                     dataType: 'json',
                     success: function(data) {
@@ -302,12 +298,12 @@ jQuery(function($) {
                                             +"<td class='text-center'>"+data[i].name+"</td>"
                                             
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_author="+data[i].id+" data-type='update-author' name="+data[i].name+">"
+                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' name="+data[i].name+">"
                                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-red delete_author' id_delete_author="+data[i].id+" data-type='delete-author'>"
+                                                +"<a href='#' class='text-red delete_book' id_delete_book="+data[i].id+" data-type='delete-book'>"
                                                     +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
@@ -315,25 +311,25 @@ jQuery(function($) {
                                         +"</tr>";
 
                         }
-                        $('#body_list_author').html(output);
-                        $('a[data-type=update-author]').on('click', function(){
+                        $('#body_list_book').html(output);
+                        $('a[data-type=update-book]').on('click', function(){
 
 
-                            var id = $(this).attr("id_edit_author");
+                            var id = $(this).attr("id_edit_book");
                             var name = $(this).attr("name");
                             // alert(name);
 
-                            $('#author-type').val(name);
-                            $('#author-id').val(id);
-                            $('#editModal-author').modal('show');
+                            $('#book-type').val(name);
+                            $('#book-id').val(id);
+                            $('#editModal-book').modal('show');
                         });
 
-                        $('a[data-type=delete-author]').on('click', function(){
+                        $('a[data-type=delete-book]').on('click', function(){
 
-                            var id = $(this).attr("id_delete_author");
+                            var id = $(this).attr("id_delete_book");
 
-                            $('#author-delete').val(id);
-                            $('#deleteModal-author').modal('show');
+                            $('#book-delete').val(id);
+                            $('#deleteModal-book').modal('show');
                             
                         });
 
@@ -350,8 +346,8 @@ jQuery(function($) {
                 console.log(mess);
             }
         });
-    	
-		
-	});
+        
+        
+    });
 
 });

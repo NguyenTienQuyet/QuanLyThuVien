@@ -1,49 +1,39 @@
 
 jQuery(function($) {
 
-    $('#edit').click(function(){
-        alert(1);
-    });
-
-    $('#list_role').click(function(){
-        alert('List Author');
-
-        $.ajax({
-                    
-                url: '/api/v1/authors/'+'all',
-                type: 'get',
-                dataType: 'json',
-                success: function(data) {
-                    var output = "";
-                    for(var i = 0; i < data.length; i++){
-
-                        output +=   "<tr>"
-                                        +"<td class='text-center'>"+data[i].id+"</td>"
-                                        +"<td class='text-center'>"+data[i].name+"</td>"
-                                        
-                                        +"<td class='text-center'>"
-                                            +"<a href='#'' class='text-blue edit-role' data-toggle='modal' id="+data[i].id+" name="+data[i].name+" data-type='update-author' >"
-                                                +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
-                                            +"</a>"
-                                        +"</td>"
-                                        +"<td class='text-center'>"
-                                            +"<a class='text-red' href='#'' data-toggle='modal'  id="+data[i].id+" data-role='delete-author'>"
-                                                +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
-                                            +"</a>"
-                                        +"</td>"
-                                    +"</tr>";
-
-                    }
-                    $('#body_list_author').html(output);
-                },
-                error: function(err){
-                    alert(1);
-                }
-        });
-
-    });
-
     
+        // $.ajax({
+                    
+        //         url: '/api/v1/roles/'+'all',
+        //         type: 'get',
+        //         dataType: 'json',
+        //         success: function(data) {
+        //             var output = "";
+        //             for(var i = 0; i < data.length; i++){
+
+        //                 output +=   "<tr>"
+        //                                 +"<td class='text-center'>"+data[i].id+"</td>"
+        //                                 +"<td class='text-center'>"+data[i].roleType+"</td>"
+                                        
+        //                                 +"<td class='text-center'>"
+        //                                     +"<a href='#'' class='text-blue edit-role' data-toggle='modal' id="+data[i].id+" roleType="+data[i].roleType+" data-type='update-role' >"
+        //                                         +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
+        //                                     +"</a>"
+        //                                 +"</td>"
+        //                                 +"<td class='text-center'>"
+        //                                     +"<a class='text-red' href='#'' data-toggle='modal'  id="+data[i].id+" data-role='delete-role'>"
+        //                                         +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
+        //                                     +"</a>"
+        //                                 +"</td>"
+        //                             +"</tr>";
+
+        //             }
+        //             $('#body_list_role').html(output);
+        //         },
+        //         error: function(err){
+        //             alert(1);
+        //         }
+        // });
 
 	$('#addRole').click(function(){
 
@@ -64,16 +54,16 @@ jQuery(function($) {
         });
 		
 		var data = $('#type-role').val();
-        // alert(data);
+        alert(data);
 		
 		$.ajax({
             type: 'post',
-            url: "/api/v1/roles",
+            url: "/api/v1/roles/post",
             dataType: "json",
             data: {
-                0: {
-                    type: data
-                }
+                
+                roleType: data
+                
             },
             success: function () {
                 alert("success!");
