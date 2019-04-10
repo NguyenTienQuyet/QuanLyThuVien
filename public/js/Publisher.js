@@ -2,10 +2,10 @@
 jQuery(function($) {
 
 
-	$('#addpublisher').click(function(){
+	$('#addPublisher').click(function(){
 
         $('#myModal-publisher').modal('show');
-        $('#form-publisher')[0].reset();
+        $('#type-publisher').val("");
         
     });
 
@@ -72,7 +72,22 @@ jQuery(function($) {
                             var name = $(this).attr("name");
                             // alert(name);
 
-                            $('#publisher-type').val(name);
+                            $.ajax({
+                    
+                                url: '/api/v1/publishers/get/'+id,
+                                type: 'get',
+                                dataType: 'json',
+                                success: function(data) {
+                                    name = data.publisherName;
+                                    $('#publisher-type').val(name);
+                                },
+                                error: function(mess){
+                                    alert("Loi gi nay");
+                                    console.log(mess);
+                                }
+                            });
+
+                            
                             $('#publisher-id').val(id);
                             $('#editModal-publisher').modal('show');
                         });
@@ -167,9 +182,20 @@ jQuery(function($) {
 
                             var id = $(this).attr("id_edit_publisher");
                             var name = $(this).attr("name");
-                            // alert(name);
-
-                            $('#publisher-type').val(name);
+                            $.ajax({
+                    
+                                url: '/api/v1/publishers/get/'+id,
+                                type: 'get',
+                                dataType: 'json',
+                                success: function(data) {
+                                    name = data.publisherName;
+                                    $('#publisher-type').val(name);
+                                },
+                                error: function(mess){
+                                    alert("Loi gi nay");
+                                    console.log(mess);
+                                }
+                            });
                             $('#publisher-id').val(id);
                             $('#editModal-publisher').modal('show');
                         });
@@ -226,9 +252,20 @@ jQuery(function($) {
 
                             var id = $(this).attr("id_edit_publisher");
                             var name = $(this).attr("name");
-                            // alert(name);
-
-                            $('#publisher-type').val(name);
+                            $.ajax({
+                    
+                                url: '/api/v1/publishers/get/'+id,
+                                type: 'get',
+                                dataType: 'json',
+                                success: function(data) {
+                                    name = data.publisherName;
+                                    $('#publisher-type').val(name);
+                                },
+                                error: function(mess){
+                                    alert("Loi gi nay");
+                                    console.log(mess);
+                                }
+                            });
                             $('#publisher-id').val(id);
                             $('#editModal-publisher').modal('show');
                         });
@@ -323,9 +360,20 @@ jQuery(function($) {
 
                             var id = $(this).attr("id_edit_publisher");
                             var name = $(this).attr("name");
-                            // alert(name);
-
-                            $('#publisher-type').val(name);
+                            $.ajax({
+                    
+                                url: '/api/v1/publishers/get/'+id,
+                                type: 'get',
+                                dataType: 'json',
+                                success: function(data) {
+                                    name = data.publisherName;
+                                    $('#publisher-type').val(name);
+                                },
+                                error: function(mess){
+                                    alert("Loi gi nay");
+                                    console.log(mess);
+                                }
+                            });
                             $('#publisher-id').val(id);
                             $('#editModal-publisher').modal('show');
                         });

@@ -4,7 +4,7 @@ jQuery(function($) {
 	$('#addAuthor').click(function(){
 
         $('#myModal-author').modal('show');
-        $('#form-author')[0].reset();
+        $('#type-author').val("");
         
     });
 
@@ -72,7 +72,25 @@ jQuery(function($) {
                             var name = $(this).attr("name");
                             // alert(name);
 
-                            $('#author-type').val(name);
+                            $.ajax({
+                    
+                                url: '/api/v1/authors/get/'+id,
+                                type: 'get',
+                                dataType: 'json',
+                                success: function(data) {
+                                    name = data.name;
+                                    // alert(name);
+                                    $('#author-type').val(name);
+                                },
+                                error: function(mess){
+                                    alert("Loi gi nay");
+                                    console.log(mess);
+                                }
+                            });
+
+                            // alert(name);
+
+                            
                             $('#author-id').val(id);
                             $('#editModal-author').modal('show');
                         });
@@ -85,6 +103,7 @@ jQuery(function($) {
                             $('#deleteModal-author').modal('show');
                             
                         });
+
 
 
                         // alert('success');
@@ -169,7 +188,23 @@ jQuery(function($) {
                             var name = $(this).attr("name");
                             // alert(name);
 
-                            $('#author-type').val(name);
+                            $.ajax({
+                    
+                                url: '/api/v1/authors/get/'+id,
+                                type: 'get',
+                                dataType: 'json',
+                                success: function(data) {
+                                    name = data.name;
+                                    // alert(name);
+                                    $('#author-type').val(name);
+                                },
+                                error: function(mess){
+                                    alert("Loi gi nay");
+                                    console.log(mess);
+                                }
+                            });
+
+                            // $('#author-type').val(name);
                             $('#author-id').val(id);
                             $('#editModal-author').modal('show');
                         });
@@ -195,62 +230,62 @@ jQuery(function($) {
                 alert("error! Please, try again.");
                 // alert(mess);
                 $('#editModal-author').modal('hide');
-                $.ajax({
+                // $.ajax({
                     
-                    url: '/api/v1/authors/'+'all',
-                    type: 'get',
-                    dataType: 'json',
-                    success: function(data) {
-                        var output = "";
-                        for(var i = 0; i < data.length; i++){
+                //     url: '/api/v1/authors/'+'all',
+                //     type: 'get',
+                //     dataType: 'json',
+                //     success: function(data) {
+                //         var output = "";
+                //         for(var i = 0; i < data.length; i++){
 
-                            output +=   "<tr>"
-                                            +"<td class='text-center'>"+data[i].id+"</td>"
-                                            +"<td class='text-center'>"+data[i].name+"</td>"
+                //             output +=   "<tr>"
+                //                             +"<td class='text-center'>"+data[i].id+"</td>"
+                //                             +"<td class='text-center'>"+data[i].name+"</td>"
                                             
-                                            +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_author="+data[i].id+" data-type='update-author' name="+data[i].name+">"
-                                                    +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
-                                                +"</a>"
-                                            +"</td>"
-                                            +"<td class='text-center'>"
-                                                +"<a href='#' class='text-red delete_author' id_delete_author="+data[i].id+" data-type='delete-author'>"
-                                                    +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
-                                                +"</a>"
-                                            +"</td>"
+                //                             +"<td class='text-center'>"
+                //                                 +"<a href='#' class='text-blue' data-toggle='modal' id_edit_author="+data[i].id+" data-type='update-author' name="+data[i].name+">"
+                //                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
+                //                                 +"</a>"
+                //                             +"</td>"
+                //                             +"<td class='text-center'>"
+                //                                 +"<a href='#' class='text-red delete_author' id_delete_author="+data[i].id+" data-type='delete-author'>"
+                //                                     +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
+                //                                 +"</a>"
+                //                             +"</td>"
                                             
-                                        +"</tr>";
+                //                         +"</tr>";
 
-                        }
-                        $('#body_list_author').html(output);
-                        $('a[data-type=update-author]').on('click', function(){
+                //         }
+                //         $('#body_list_author').html(output);
+                //         $('a[data-type=update-author]').on('click', function(){
 
 
-                            var id = $(this).attr("id_edit_author");
-                            var name = $(this).attr("name");
-                            // alert(name);
+                //             var id = $(this).attr("id_edit_author");
+                //             var name = $(this).attr("name");
+                //             // alert(name);
 
-                            $('#author-type').val(name);
-                            $('#author-id').val(id);
-                            $('#editModal-author').modal('show');
-                        });
+                //             $('#author-type').val(name);
+                //             $('#author-id').val(id);
+                //             $('#editModal-author').modal('show');
+                //         });
 
-                        $('a[data-type=delete-author]').on('click', function(){
+                //         $('a[data-type=delete-author]').on('click', function(){
 
-                            var id = $(this).attr("id_delete_author");
+                //             var id = $(this).attr("id_delete_author");
 
-                            $('#author-delete').val(id);
-                            $('#deleteModal-author').modal('show');
+                //             $('#author-delete').val(id);
+                //             $('#deleteModal-author').modal('show');
                             
-                        });
+                //         });
 
 
-                        // alert('success');
-                    },
-                    error: function(err){
-                        alert(1);
-                    }
-                });
+                //         // alert('success');
+                //     },
+                //     error: function(err){
+                //         alert(1);
+                //     }
+                // });
             }
         });
     });
@@ -284,18 +319,18 @@ jQuery(function($) {
             type: 'delete',
             data: {id: id, _method: "delete"},
             success: function () {
-            alert('success!');
-            $('#deleteModal-author').modal('hide');
-            $.ajax({
+                alert('success!');
+                $('#deleteModal-author').modal('hide');
+                $.ajax({
                 
-                url: '/api/v1/authors/'+'all',
-                type: 'get',
-                dataType: 'json',
-                success: function(data) {
-                    var output = "";
-                    for(var i = 0; i < data.length; i++){
+                    url: '/api/v1/authors/'+'all',
+                    type: 'get',
+                    dataType: 'json',
+                    success: function(data) {
+                        var output = "";
+                        for(var i = 0; i < data.length; i++){
 
-                        output +=   "<tr>"
+                            output +=   "<tr>"
                                         +"<td class='text-center'>"+data[i].id+"</td>"
                                         +"<td class='text-center'>"+data[i].name+"</td>"
                                         
@@ -312,36 +347,52 @@ jQuery(function($) {
                                         
                                     +"</tr>";
 
-                    }
-                    $('#body_list_author').html(output);
-                    $('a[data-type=update-author]').on('click', function(){
+                        }
+                        $('#body_list_author').html(output);
+                        $('a[data-type=update-author]').on('click', function(){
 
 
-                        var id = $(this).attr("id_edit_author");
-                        var name = $(this).attr("name");
-                        // alert(name);
+                            var id = $(this).attr("id_edit_author");
+                            var name = $(this).attr("name");
+                            // alert(name);
 
-                        $('#author-type').val(name);
-                        $('#author-id').val(id);
-                        $('#editModal-author').modal('show');
-                    });
-
-                    $('a[data-type=delete-author]').on('click', function(){
-
-                        var id = $(this).attr("id_delete_author");
-
-                        $('#author-delete').val(id);
-                        $('#deleteModal-author').modal('show');
+                            $.ajax({
                         
-                    });
+                                    url: '/api/v1/authors/get/'+id,
+                                    type: 'get',
+                                    dataType: 'json',
+                                    success: function(data) {
+                                        name = data.name;
+                                        // alert(name);
+                                        $('#author-type').val(name);
+                                    },
+                                    error: function(mess){
+                                        alert("Loi gi nay");
+                                        console.log(mess);
+                                    }
+                                });
+
+                            // $('#author-type').val(name);
+                            $('#author-id').val(id);
+                            $('#editModal-author').modal('show');
+                        });
+
+                        $('a[data-type=delete-author]').on('click', function(){
+
+                            var id = $(this).attr("id_delete_author");
+
+                            $('#author-delete').val(id);
+                            $('#deleteModal-author').modal('show');
+                            
+                        });
 
 
-                    // alert('success');
-                },
-                error: function(err){
-                    alert(1);
-                }
-            });
+                        // alert('success');
+                    },
+                    error: function(err){
+                        alert(1);
+                    }
+                });
             },
             error: function(mess){
                 alert("error! Please, try again.");

@@ -9,6 +9,7 @@ use App\Models\Publisher;
 use App\Models\Genre;
 use App\Models\User;
 use App\Models\Book;
+use App\Models\BookHistory;
 
 
 class AdminController extends Controller
@@ -36,6 +37,9 @@ class AdminController extends Controller
     public function getListBook(){
 
         $data['list'] = Book::paginate(10);
+        $data['listP'] = Publisher::all();
+        $data['listA'] = Author::all();
+        $data['listG'] = Genre::all();
         return view('admin.listBook', $data);
         
     }
@@ -88,7 +92,10 @@ class AdminController extends Controller
     }
 
     public function getListBookHistory(){
-    	return view('admin.listBookHistory');
+
+        $data['list'] = BookHistory::paginate(10);
+        return view('admin.listBookHistory', $data);
+    	
     }
 
 }
