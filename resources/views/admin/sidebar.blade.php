@@ -33,19 +33,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#" id="list_role"><i class="fa fa-circle-o"></i> List Role </a></li>
+            <li><a href="{{route('listRole')}}" id="list_role"><i class="fa fa-circle-o"></i> List Role </a></li>
             <li><a href="{{route('listUser')}}"><i class="fa fa-circle-o"></i> List User </a></li>
             <li><a href="{{route('listImageUser')}}"><i class="fa fa-circle-o"></i> Image User </a></li>
           </ul>
         </li>
-        <!-- <script>
-          jQuery(function($) {
-            alert('hello');
-            $('#list_role').click(function(){
-                alert('List Role');
-            });
-          }
-        </script> -->
         <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
