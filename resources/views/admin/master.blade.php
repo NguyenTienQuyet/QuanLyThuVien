@@ -28,6 +28,9 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
+  <script src="backend/bower_components/select2/dist/js/select2.full.min.js"></script>
+<link rel="stylesheet" href="backend/bower_components/select2/dist/css/select2.min.css">
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -132,6 +135,8 @@
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+<script src="backend/bower_components/select2/dist/js/select2.full.min.js"></script>
+<link rel="stylesheet" href="backend/bower_components/select2/dist/css/select2.min.css">
 
 </body>
 </html>

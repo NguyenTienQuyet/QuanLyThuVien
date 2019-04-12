@@ -48,7 +48,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{route('listBook')}}"><i class="fa fa-circle-o"></i> List Book </a></li>
-            <!-- <li><a href="{{route('listBookQuantity')}}"><i class="fa fa-circle-o"></i> Book Quantity </a></li> -->
+            <li><a href="{{route('listBookQuantity')}}"><i class="fa fa-circle-o"></i> Book Quantity </a></li>
             <!-- <li><a href="{{route('listBookImage')}}"><i class="fa fa-circle-o"></i> Book Image </a></li> -->
             <!-- <li><a href="{{route('listAuthorBook')}}"><i class="fa fa-circle-o"></i> Author Book </a></li> -->
             <!-- <li><a href="{{route('listBookGenre')}}"><i class="fa fa-circle-o"></i> Book Genre </a></li> -->
