@@ -78,6 +78,8 @@ Route::get('listBookHistory',
 
 Route::get('login','LoginController@login');
 
-Route::get('register','RegisterController@getRegister');
+Route::get('getRegister','RegisterController@getRegister');
+
+Route::post('register','RegisterController@register');
 
 
