@@ -82,4 +82,10 @@ Route::get('getRegister','RegisterController@getRegister');
 
 Route::post('register','RegisterController@register');
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+Route::get('homePage',
+ 	['as'=>'homePage', 'uses'=>'UserController@getHome']
+);
+
 
