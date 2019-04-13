@@ -23,7 +23,7 @@
     <div class="box">
         <div class="box-header">
             <h3 class="box-title"><b>List Genre</b></h3>
-            <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal-genre" id="addRole" style="float: right;">
+            <button class="btn btn-sm btn-success" data-toggle="modal" id="addGenre" style="float: right;">
                 <i class=" "></i>
                 Add
 
@@ -41,25 +41,29 @@
                     <th class="text-center">Delete</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="body_list_genre">
 
-                <tr>
-                    <td class="text-center">Trident</td>
-                    <td class="text-center">Internet
-                        Explorer 4.0
-                    </td>
+                    @foreach($list as $genre)
 
-                    <td class="text-center">
-                        <a href="#" class="text-blue edit-role" data-toggle="modal" data-target="#editModal-genre">
-                            <i class="ace-icon fa fa-pencil bigger-130"></i>
-                        </a>
-                    </td>
-                    <td class="text-center">
-                        <a class="text-red" href="#" data-toggle="modal" data-target="#deleteModal-genre">
-                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
-                        </a>
-                    </td>
-                </tr>
+                        <tr>
+                            <td class="text-center">{{$genre->id}}</td>
+                            <td class="text-center">{{$genre->genreType}}</td>
+                            <td class="text-center">
+                                <a href="#" class="text-blue" id="<?php echo $genre->id; ?>" name="{{$genre->genreType}}" data-type="update-genre" data-toggle="modal">
+                                    <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                </a>
+                            </td>
+                            
+                            <td class="text-center">
+                                <a class="text-red" href="#" id="<?php echo $genre->id; ?>" data-type="delete-genre" data-toggle="modal">
+                                    <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                </a>
+
+                            </td>
+                        </tr>
+
+                    @endforeach
+
 
                 </tbody>
 
@@ -74,8 +78,8 @@
     <div class="modal fade" id="myModal-genre" role="dialog">
         <div class="modal-dialog">
 
-            <form method="get" id="form-role">
-            {{csrf_field()}}
+            <!-- <form method="get" id="form-genre"> -->
+            <!-- {{csrf_field()}} -->
             <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -87,11 +91,11 @@
                             <div class="col-xs-12">
                                 <!-- PAGE CONTENT BEGINS -->
                                 <div class="col-sm-9" >
-                                    <div class="form-group" >
+                                    <div class="form-group" id="form-genre">
                                         <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top: 22px;">Genre Name:</label>
 
                                         <div class="col-sm-7">
-                                            <input type="text" placeholder="Enter input data ..." class="form-control"  name="type-role" id="type-role" style="width: 350px; margin-top: 15px;"/>
+                                            <input type="text" placeholder="Enter input data ..." class="form-control"  name="type-genre" id="type-genre" style="width: 350px; margin-top: 15px;"/>
                                         </div>
                                     </div>
 
@@ -104,23 +108,23 @@
                     <br/>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                        <button class="btn btn-info" type="submit" id="add-role">
+                        <button class="btn btn-info" type="submit" id="add-genre">
                             <i class="ace-icon fa fa-check bigger-110"></i>
                             Add
                         </button>
                     </div>
                 </div>
-            </form>
+            <!-- </form> -->
         </div>
     </div>
 
     <div class="modal fade" id="editModal-genre" role="dialog">
         <div class="modal-dialog">
 
-            <form action="" method="get">
+            <!-- <form action="" method="get"> -->
 
-                <input type="hidden" name="_method" value="patch">
-            {{csrf_field()}}
+                <!-- <input type="hidden" name="_method" value="patch"> -->
+            <!-- {{csrf_field()}} -->
             <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -138,7 +142,7 @@
                                         <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top:  12px;">Genre Name: </label>
 
                                         <div class="col-sm-8">
-                                            <input type="text" placeholder="Enter input data ..." class="form-control" name="role-type" id="role-type" style="width: 350px; margin-top: 5px;" />
+                                            <input type="text" placeholder="Enter input data ..." class="form-control" name="genre-type" id="genre-type" style="width: 350px; margin-top: 5px;" />
                                         </div>
                                     </div>
 
@@ -150,15 +154,15 @@
                     </div>
                     <br/>
                     <div class="modal-footer">
-                        <input type="hidden" id="role-id" name="role-id" value="" />
+                        <input type="hidden" id="genre-id" name="genre-id" value="" />
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                        <button class="btn btn-info" type="submit" id="edit-role">
+                        <button class="btn btn-info" type="submit" id="edit-genre">
                             <i class="ace-icon fa fa-check bigger-110"></i>
                             Edit
                         </button>
                     </div>
                 </div>
-            </form>
+            <!-- </form> -->
         </div>
     </div>
 
@@ -166,9 +170,9 @@
         <div class="modal-dialog">
 
             <div class="modal-content">
-                <form method="get" class="form-delete">
-                    <input type="hidden" name="_method" value="delete">
-                {{csrf_field()}}
+                <!-- <form class="form-delete"> -->
+                    <!-- <input type="hidden" name="_method" value="delete"> -->
+                <!-- {{csrf_field()}} -->
 
                 <!-- Modal content-->
 
@@ -190,18 +194,18 @@
                     </div>
 
                     <div class="modal-footer">
-                        <input type="hidden" id="role-delete" value="" />
+                        <input type="hidden" id="genre-delete" value="" />
                         <button class="btn btn-white btn-round pull-left" data-dismiss="modal">
                             <i class="ace-icon fa fa-times red2"></i>
                             No
                         </button>
-                        <button class="btn btn-white btn-warning btn-bold" id="_delete-role">
+                        <button class="btn btn-white btn-warning btn-bold" id="_delete-genre">
                             <i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
                             Yes
                         </button>
 
                     </div>
-                </form>
+                <!-- </form> -->
 
 
             </div>

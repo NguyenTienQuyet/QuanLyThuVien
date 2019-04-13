@@ -22,7 +22,7 @@
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title"><b>List Role</b></h3>
-                <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal-role" id="addRole" style="float: right;">
+                <button class="btn btn-sm btn-success" data-toggle="modal" id="addRole" style="float: right;">
                     <i class=" "></i>
                     Add
 
@@ -30,6 +30,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
@@ -40,29 +41,31 @@
                     <th class="text-center">Delete</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="body_list_role">
+                    @foreach($list as $role)
 
-                  <tr>
-                    <td class="text-center">Trident</td>
-                    <td class="text-center">Internet
-                      Explorer 4.0
-                    </td>
+                        <tr>
+                            <td class="text-center">{{$role->id}}</td>
+                            <td class="text-center">{{$role->roleType}}</td>
+                            <td class="text-center">
+                                <a href="#" class="text-blue" id="<?php echo $role->id; ?>" roleType="{{$role->roleType}}" data-type="update-role" data-toggle="modal">
+                                    <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                </a>
+                            </td>
+                            
+                            <td class="text-center">
+                                <a class="text-red" href="#" id="<?php echo $role->id; ?>" data-type="delete-role" data-toggle="modal">
+                                    <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                </a>
 
-                    <td class="text-center">
-                      <a href="#" class="text-blue edit-role" data-toggle="modal" data-target="#editModal-role">
-                        <i class="ace-icon fa fa-pencil bigger-130"></i>
-                      </a>
-                    </td>
-                    <td class="text-center">
-                      <a class="text-red" href="#" data-toggle="modal" data-target="#deleteModal-role">
-                        <i class="ace-icon fa fa-trash-o bigger-130"></i>
-                      </a>
-                    </td>
-                  </tr>
+                            </td>
+                        </tr>
 
+                    @endforeach
                 </tbody>
 
               </table>
+
             </div>
             <!-- /.box-body -->
         </div>
@@ -74,7 +77,7 @@
 <div class="modal fade" id="myModal-role" role="dialog">
     <div class="modal-dialog">
 
-        <form method="get" id="form-role">
+        <form id="form-role">
             {{csrf_field()}}
             <!-- Modal content-->
             <div class="modal-content">

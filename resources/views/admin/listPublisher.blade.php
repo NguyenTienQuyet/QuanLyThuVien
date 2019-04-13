@@ -18,7 +18,7 @@
     <div class="box">
         <div class="box-header">
             <h3 class="box-title"><b>List Publisher</b></h3>
-            <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal-publisher" id="addPublisher" style="float: right;">
+            <button class="btn btn-sm btn-success" data-toggle="modal" id="addPublisher" style="float: right;">
                 <i class=" "></i>
                 Add
 
@@ -36,25 +36,28 @@
                     <th class="text-center">Delete</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="body_list_publisher">
 
-                <tr>
-                    <td class="text-center">Trident</td>
-                    <td class="text-center">Internet
-                        Explorer 4.0
-                    </td>
+                    @foreach($list as $publisher)
 
-                    <td class="text-center">
-                        <a href="#" class="text-blue edit-role" data-toggle="modal" data-target="#editModal-publisher">
-                            <i class="ace-icon fa fa-pencil bigger-130"></i>
-                        </a>
-                    </td>
-                    <td class="text-center">
-                        <a class="text-red" href="#" data-toggle="modal" data-target="#deleteModal-publisher">
-                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
-                        </a>
-                    </td>
-                </tr>
+                        <tr>
+                            <td class="text-center">{{$publisher->id}}</td>
+                            <td class="text-center">{{$publisher->publisherName}}</td>
+                            <td class="text-center">
+                                <a href="#" class="text-blue" id="<?php echo $publisher->id; ?>" name="{{$publisher->publisherName}}" data-type="update-publisher" data-toggle="modal">
+                                    <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                </a>
+                            </td>
+                            
+                            <td class="text-center">
+                                <a class="text-red" href="#" id="<?php echo $publisher->id; ?>" data-type="delete-publisher" data-toggle="modal">
+                                    <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                </a>
+
+                            </td>
+                        </tr>
+
+                    @endforeach
 
                 </tbody>
 
@@ -69,8 +72,8 @@
     <div class="modal fade" id="myModal-publisher" role="dialog">
         <div class="modal-dialog">
 
-            <form method="get" id="form-role">
-            {{csrf_field()}}
+            <!-- <form method="get" id="form-publisher"> -->
+            <!-- {{csrf_field()}} -->
             <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -85,8 +88,8 @@
                                     <div class="form-group" >
                                         <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top: 22px;">Name:</label>
 
-                                        <div class="col-sm-7">
-                                            <input type="text" placeholder="Enter input data ..." class="form-control"  name="type-role" id="type-role" style="width: 350px; margin-top: 15px;"/>
+                                        <div class="col-sm-7" id="form-publisher">
+                                            <input type="text" placeholder="Enter input data ..." class="form-control"  name="type-publisher" id="type-publisher" style="width: 350px; margin-top: 15px;"/>
                                         </div>
                                     </div>
 
@@ -99,23 +102,23 @@
                     <br/>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                        <button class="btn btn-info" type="submit" id="add-role">
+                        <button class="btn btn-info" type="submit" id="add-publisher">
                             <i class="ace-icon fa fa-check bigger-110"></i>
                             Add
                         </button>
                     </div>
                 </div>
-            </form>
+            <!-- </form> -->
         </div>
     </div>
 
     <div class="modal fade" id="editModal-publisher" role="dialog">
         <div class="modal-dialog">
 
-            <form action="" method="get">
+            <!-- <form action="" method="get"> -->
 
                 <input type="hidden" name="_method" value="patch">
-            {{csrf_field()}}
+            <!-- {{csrf_field()}} -->
             <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -133,7 +136,7 @@
                                         <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top:  12px;">Name: </label>
 
                                         <div class="col-sm-8">
-                                            <input type="text" placeholder="Nhập phân quyền" class="form-control" name="role-type" id="role-type" style="width: 350px; margin-top: 5px;" />
+                                            <input type="text" placeholder="Enter data input ..." class="form-control" name="publisher-type" id="publisher-type" style="width: 350px; margin-top: 5px;" />
                                         </div>
                                     </div>
 
@@ -145,15 +148,15 @@
                     </div>
                     <br/>
                     <div class="modal-footer">
-                        <input type="hidden" id="role-id" name="role-id" value="" />
+                        <input type="hidden" id="publisher-id" name="publisher-id" value="" />
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                        <button class="btn btn-info" type="submit" id="edit-role">
+                        <button class="btn btn-info" type="submit" id="edit-publisher">
                             <i class="ace-icon fa fa-check bigger-110"></i>
                             Edit
                         </button>
                     </div>
                 </div>
-            </form>
+            <!-- </form> -->
         </div>
     </div>
 
@@ -161,9 +164,9 @@
         <div class="modal-dialog">
 
             <div class="modal-content">
-                <form method="get" class="form-delete">
+                <!-- <form method="get" class="form-delete"> -->
                     <input type="hidden" name="_method" value="delete">
-                {{csrf_field()}}
+                <!-- {{csrf_field()}} -->
 
                 <!-- Modal content-->
 
@@ -185,12 +188,12 @@
                     </div>
 
                     <div class="modal-footer">
-                        <input type="hidden" id="role-delete" value="" />
+                        <input type="hidden" id="publisher-delete" value="" />
                         <button class="btn btn-white btn-round pull-left" data-dismiss="modal">
                             <i class="ace-icon fa fa-times red2"></i>
                             No
                         </button>
-                        <button class="btn btn-white btn-warning btn-bold" id="_delete-role">
+                        <button class="btn btn-white btn-warning btn-bold" id="_delete-publisher">
                             <i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
                             Yes
                         </button>
