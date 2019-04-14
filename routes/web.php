@@ -75,23 +75,14 @@ Route::get('listBookHistory',
 	['as'=>'listBookHistory', 'uses'=>'AdminController@getListBookHistory']
 );
 
-<<<<<<< HEAD
 Route::get('register','RegisterController@getRegister');
 
 Route::get('login','LoginController@login');
-=======
 
-Route::get('login','LoginController@login');
-
-Route::get('getRegister','RegisterController@getRegister');
-
-Route::post('register','RegisterController@register');
-
-////////////////////////////////////////////////////////////////////////////////////////////////
 
 Route::get('homePage',
  	['as'=>'homePage', 'uses'=>'UserController@getHome']
 );
 
 
->>>>>>> 98b2ce5e961a11c26add871e731b8323f28a82f0
+
