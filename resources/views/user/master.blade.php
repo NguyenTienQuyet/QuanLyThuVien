@@ -46,7 +46,8 @@
 								for a better world			
 							</h1>
 							<p class="pt-10 pb-10">
-								In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telescope known as the Hubble.
+								aaaaaaaaaaaaaaaaaaaaaaaaaaaa
+								
 							</p>
 							<a href="#" class="primary-btn text-uppercase">Get Started</a>
 						</div>										
