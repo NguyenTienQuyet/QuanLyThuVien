@@ -37,9 +37,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
     protected $attributes = [
-        'role_id' => 1,
+        'role_id' => 2,
     ];
 
     public function bookHistories()

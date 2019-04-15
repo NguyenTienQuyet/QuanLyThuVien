@@ -24,7 +24,7 @@ $.ajax({
                     ge.push(data[i].genres[q].genreType);
                 }
                 var publisher = data[i].publisher.publisherName;
-
+                
                 output = 
                             "<div class='single-popular-carusel'>"
                                 +"<div class='thumb-wrap relative'>"
@@ -75,7 +75,6 @@ $.ajax({
         error: function(err){
             console.log(mess);
         }
-
 });
 
 $('#sign_in').click(function(){
@@ -142,5 +141,5 @@ $('#register').click(function(){
         alert('Confirm password is fail');
     }
 
+    
 });
-
