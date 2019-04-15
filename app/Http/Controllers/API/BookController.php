@@ -13,6 +13,7 @@ use App\Decorators\BookDecorators\BorrowBook\BorrowBookDecorator;
 use App\Decorators\BookDecorators\BorrowBook\BorrowBookProxy;
 use App\Decorators\BookDecorators\BorrowBook\BorrowBookTransactionDecorator;
 use App\Decorators\BookDecorators\CreateBookDecorator;
+use App\Decorators\BookDecorators\GetAllBookDecorator;
 use App\Http\Controllers\Requests\API\Book\BookBorrowRequest;
 use App\Http\Controllers\Requests\API\Book\BookDeleteRequest;
 use App\Http\Controllers\Requests\API\Book\BookGetRequest;
@@ -79,6 +80,11 @@ class BookController extends APIController
 
     public function all(BookGetRequest $request)
     {
-        return parent::_all($request);
+        /**
+         * @var BookService $bookService
+         */
+        $bookService = $this->getService();
+        $bookDecorator = new GetAllBookDecorator($bookService);
+        return $bookDecorator->getAll($request->all());
     }
 }

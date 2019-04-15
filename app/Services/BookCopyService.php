@@ -13,4 +13,6 @@ namespace App\Services;
 interface BookCopyService extends Service
 {
     public function getFirst(array $pairs, array $relations = []);
+
+    public function countAvailable(): int;
 }
