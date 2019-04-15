@@ -5,40 +5,38 @@ jQuery(function($) {
 
         $('#myModal-author').modal('show');
         $('#type-author').val("");
-        
-    });
 
-   
+    });
 
 	$('#add-author').on('click', function(){
 
-        
+
 		$.ajaxSetup({
 	        headers: {
 	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	        }
 
         });
-		
+
 
 		var data = $('#type-author').val();
         // alert(data);
-		
+
 		$.ajax({
-            
+
             url: "/api/v1/authors/post",
             type: 'post',
             dataType: "json",
             data:{
-                
+
                 name: data
-                
+
             },
             success: function () {
                 alert("success!");
                 $('#myModal-author').modal('hide');
                 $.ajax({
-                    
+
                     url: '/api/v1/authors/'+'all',
                     type: 'get',
                     dataType: 'json',
@@ -49,7 +47,7 @@ jQuery(function($) {
                             output +=   "<tr>"
                                             +"<td class='text-center'>"+data[i].id+"</td>"
                                             +"<td class='text-center'>"+data[i].name+"</td>"
-                                            
+
                                             +"<td class='text-center'>"
                                                 +"<a href='#' class='text-blue' data-toggle='modal' id_edit_author="+data[i].id+" data-type='update-author' name="+data[i].name+">"
                                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
@@ -60,7 +58,7 @@ jQuery(function($) {
                                                     +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
-                                            
+
                                         +"</tr>";
 
                         }
@@ -73,7 +71,7 @@ jQuery(function($) {
                             // alert(name);
 
                             $.ajax({
-                    
+
                                 url: '/api/v1/authors/get/'+id,
                                 type: 'get',
                                 dataType: 'json',
@@ -90,7 +88,7 @@ jQuery(function($) {
 
                             // alert(name);
 
-                            
+
                             $('#author-id').val(id);
                             $('#editModal-author').modal('show');
                         });
@@ -101,7 +99,7 @@ jQuery(function($) {
 
                             $('#author-delete').val(id);
                             $('#deleteModal-author').modal('show');
-                            
+
                         });
 
 
@@ -119,7 +117,7 @@ jQuery(function($) {
             }
         });
 	});
-    
+
 
     $('a[data-type=update-author]').on('click', function(){
 
@@ -145,7 +143,7 @@ jQuery(function($) {
         });
 
         $.ajax({
-                
+
             url: '/api/v1/authors/patch/'+id,
             type: 'patch',
             dataType: "json",
@@ -154,7 +152,7 @@ jQuery(function($) {
                 alert('success!');
                 $('#editModal-author').modal('hide');
                 $.ajax({
-                    
+
                     url: '/api/v1/authors/'+'all',
                     type: 'get',
                     dataType: 'json',
@@ -165,7 +163,7 @@ jQuery(function($) {
                             output +=   "<tr>"
                                             +"<td class='text-center'>"+data[i].id+"</td>"
                                             +"<td class='text-center'>"+data[i].name+"</td>"
-                                            
+
                                             +"<td class='text-center'>"
                                                 +"<a href='#' class='text-blue' data-toggle='modal' id_edit_author="+data[i].id+" data-type='update-author' name="+data[i].name+">"
                                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
@@ -176,7 +174,7 @@ jQuery(function($) {
                                                     +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
-                                            
+
                                         +"</tr>";
 
                         }
@@ -189,7 +187,7 @@ jQuery(function($) {
                             // alert(name);
 
                             $.ajax({
-                    
+
                                 url: '/api/v1/authors/get/'+id,
                                 type: 'get',
                                 dataType: 'json',
@@ -215,7 +213,7 @@ jQuery(function($) {
 
                             $('#author-delete').val(id);
                             $('#deleteModal-author').modal('show');
-                            
+
                         });
 
 
@@ -231,7 +229,7 @@ jQuery(function($) {
                 // alert(mess);
                 $('#editModal-author').modal('hide');
                 // $.ajax({
-                    
+
                 //     url: '/api/v1/authors/'+'all',
                 //     type: 'get',
                 //     dataType: 'json',
@@ -242,7 +240,7 @@ jQuery(function($) {
                 //             output +=   "<tr>"
                 //                             +"<td class='text-center'>"+data[i].id+"</td>"
                 //                             +"<td class='text-center'>"+data[i].name+"</td>"
-                                            
+
                 //                             +"<td class='text-center'>"
                 //                                 +"<a href='#' class='text-blue' data-toggle='modal' id_edit_author="+data[i].id+" data-type='update-author' name="+data[i].name+">"
                 //                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
@@ -253,7 +251,7 @@ jQuery(function($) {
                 //                                     +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                 //                                 +"</a>"
                 //                             +"</td>"
-                                            
+
                 //                         +"</tr>";
 
                 //         }
@@ -276,7 +274,7 @@ jQuery(function($) {
 
                 //             $('#author-delete').val(id);
                 //             $('#deleteModal-author').modal('show');
-                            
+
                 //         });
 
 
@@ -296,7 +294,7 @@ jQuery(function($) {
 
         $('#author-delete').val(id);
         $('#deleteModal-author').modal('show');
-        
+
     });
 
     $('#_delete-author').on('click', function(){
@@ -313,7 +311,7 @@ jQuery(function($) {
         });
 
         $.ajax({
-                
+
 
             url: '/api/v1/authors/delete/'+id,
             type: 'delete',
@@ -322,7 +320,7 @@ jQuery(function($) {
                 alert('success!');
                 $('#deleteModal-author').modal('hide');
                 $.ajax({
-                
+
                     url: '/api/v1/authors/'+'all',
                     type: 'get',
                     dataType: 'json',
@@ -333,7 +331,7 @@ jQuery(function($) {
                             output +=   "<tr>"
                                         +"<td class='text-center'>"+data[i].id+"</td>"
                                         +"<td class='text-center'>"+data[i].name+"</td>"
-                                        
+
                                         +"<td class='text-center'>"
                                             +"<a href='#' class='text-blue' data-toggle='modal' id_edit_author="+data[i].id+" data-type='update-author' name="+data[i].name+">"
                                                 +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
@@ -344,7 +342,7 @@ jQuery(function($) {
                                                 +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                             +"</a>"
                                         +"</td>"
-                                        
+
                                     +"</tr>";
 
                         }
@@ -357,7 +355,7 @@ jQuery(function($) {
                             // alert(name);
 
                             $.ajax({
-                        
+
                                     url: '/api/v1/authors/get/'+id,
                                     type: 'get',
                                     dataType: 'json',
@@ -383,7 +381,7 @@ jQuery(function($) {
 
                             $('#author-delete').val(id);
                             $('#deleteModal-author').modal('show');
-                            
+
                         });
 
 
@@ -398,11 +396,11 @@ jQuery(function($) {
                 alert("error! Please, try again.");
                 console.log(mess);
 
-                
+
             }
         });
-    	
-		
+
+
 	});
 
 });
