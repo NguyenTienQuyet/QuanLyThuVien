@@ -3,7 +3,6 @@ jQuery(function ($) {
         var name = $('#name').val();
         var email = $('#email').val();
         var password = $('#password').val();
-        var roleID = 1;
         $.ajax({
 
             url: "http://127.0.0.1:8000/api/v1/users/register",
@@ -18,11 +17,12 @@ jQuery(function ($) {
 
             },
             success: function () {
+                window.location.href="{{homeAdmin}}"
                 alert("success!");
             },
             error: function (err) {
                 console.log(err);
-                alert("error");
+                alert(err.toString());
             }
         });
 
