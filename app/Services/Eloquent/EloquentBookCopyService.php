@@ -25,15 +25,19 @@ class EloquentBookCopyService extends EloquentService implements BookCopyService
         if (count($pairs) == 0) {
             return null;
         }
-        $conditions = [];
-        foreach ($pairs as $pair) {
-            $condition[] = $pair['needle'];
-            $condition[] = '=';
-            $condition[] = $pair['value'];
-            array_push($conditions, $condition);
-            $condition = [];
-        }
+        $conditions = $this->createConditions($pairs);
 
         return $this->getRepository()->getBy($conditions, $relations);
+    }
+
+    public function countAvailable(): int
+    {
+       $pairs = [
+           [
+               'needle' => 'state',
+               'value' => true
+           ]
+       ];
+       return $this->count($pairs);
     }
 }

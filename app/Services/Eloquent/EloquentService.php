@@ -126,7 +126,7 @@ class EloquentService implements Service, Message
         return $this->repository->getBy($conditions, $relations);
     }
 
-    private function createConditions(array $pairs): array
+    public function createConditions(array $pairs): array
     {
         $conditions = [];
         foreach ($pairs as $pair) {

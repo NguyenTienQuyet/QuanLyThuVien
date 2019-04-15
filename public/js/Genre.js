@@ -143,7 +143,7 @@ jQuery(function($) {
 
         $.ajax({
                 
-            url: '/api/v1/genres/patch/'+id,
+            url: '/api/v1/genres/patch?id='+id,
             type: 'patch',
             dataType: "json",
             data: {genreType: data, _method: "patch"},

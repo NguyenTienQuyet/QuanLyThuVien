@@ -3,21 +3,21 @@
 
     <!-- Main content -->
 
-        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
-            <ul class="breadcrumb">
-                <li>
-                    <i class="ace-icon fa fa-home home-icon"></i>
-                    <a href="">Home</a>
-                </li>
+    <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+        <ul class="breadcrumb">
+            <li>
+                <i class="ace-icon fa fa-home home-icon"></i>
+                <a href="">Home</a>
+            </li>
 
-                <li>
-                    <a href="">Manage Book</a>
-                </li>
-                <li class="active">List Book</li>
+            <li>
+                <a href="">Manage Book</a>
+            </li>
+            <li class="active">List Book</li>
 
-            </ul><!-- /.breadcrumb -->
+        </ul><!-- /.breadcrumb -->
 
-        </div>
+    </div>
 
     <div class="box">
         <div class="box-header">
@@ -39,6 +39,9 @@
 
                       <th class="text-center">Title</th>
 
+                      <th class="text-center">Author ID</th>
+                      <th class="text-center">Genre ID</th>
+
                       <th class="text-center">Publisher ID</th>
                       <th class="text-center">Published Year</th>
                       
@@ -48,7 +51,7 @@
                 </thead>
 
                 <tbody id="body_list_book">
-                    @foreach($list as $book)
+                    <!-- @foreach($list as $book)
 
                         <tr>
                             <td class="text-center">{{$book->id}}</td>
@@ -70,7 +73,7 @@
                             </td>
                         </tr>
 
-                    @endforeach
+                    @endforeach -->
 
                 </tbody>
               </table>
@@ -113,26 +116,26 @@
                             </div>
 
 
-                            <div class="col-sm-11" style="margin-top: 5px;">
+                            <div class="col-sm-11" style="margin-top: 15px;">
                                 <div class="form-group">
                                     <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Author ID:</label>
 
                                     <div class="input-group " style="width: 350px;" >
-                                      <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
-                                          <span class="fa fa-caret-down"></span></button>
-                                        <ul class="dropdown-menu" id="dropdown_author">
+                                     
+                                        <select id="author_select" class="  form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                             @foreach($listA as $author)
 
-                                                <li><a id="{{$author->id}}" href="#">{{$author->name}}</a></li>
+                                                <option id="{{$author->id}}">{{$author->name}}</option>
                                                 <li class="divider"></li>
 
                                             @endforeach
-                                        </ul>
-                                      </div>
-                                      <!-- /btn-group -->
+                                          
+                                        </select>
 
-                                      <input type="text" class="form-control" id="author_id">
+                                      <!-- </div> -->
+                                      <!-- /btn-group -->
+                                      <input type="hidden" class="form-control" id="_author_id">
+                                      <!-- <input type="text" class="form-control" id="genre_id"> -->
 
                                     </div>
 
@@ -144,52 +147,53 @@
                                     <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Genre ID:</label>
 
                                     <div class="input-group " style="width: 350px;" >
-                                      <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
-                                          <span class="fa fa-caret-down"></span></button>
-                                        <ul class="dropdown-menu" id="dropdown_genre">
+                                    
+                                        <select id="genre_select" class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                             @foreach($listG as $genre)
 
-                                                <li><a id="{{$genre->id}}" href="#">{{$genre->genreType}}</a></li>
+                                                <!-- <li id="{{$genre->id}}"><a href="#">{{$genre->genreType}}</a></li> -->
+                                                <option id="{{$genre->id}}">{{$genre->genreType}}</option>
                                                 <li class="divider"></li>
 
                                             @endforeach
-                                        </ul>
-                                      </div>
-                                      <!-- /btn-group -->
+                                          
+                                        </select>
 
-                                      <input type="text" class="form-control" id="genre_id">
+                                      <!-- </div> -->
+                                      <!-- /btn-group -->
+                                      <input type="hidden" class="form-control" id="_genre_id">
+                                      <!-- <input type="text" class="form-control" id="genre_id"> -->
 
                                     </div>
 
                                 </div>
                             </div>
                             
-                             <div class="col-sm-11" style="margin-top: 5px;">
+                            <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
                                     <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Publisher ID:</label>
                                     
                                     <div class="input-group " style="width: 350px;" >
-                                      <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
-                                          <span class="fa fa-caret-down"></span></button>
-                                        <ul class="dropdown-menu" id="dropdown_publisher">
+                                     
+                                        <div class="input-group-btn" style="margin-left: 30px;">
+                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
+                                              <span class="fa fa-caret-down"></span></button>
+                                            <ul class="dropdown-menu dropdown_publisher">
+                                                @foreach($listP as $publisher)
 
-                                            @foreach($listP as $publisher)
+                                                    <li id="{{$publisher->id}}"><a href="#">{{$publisher->publisherName}}</a></li>
+                                                    <li class="divider"></li>
 
-                                                <li><a id="{{$publisher->id}}" href="#">{{$publisher->publisherName}}</a></li>
-                                                <li class="divider"></li>
+                                                @endforeach
+                                            </ul>
 
-                                            @endforeach
 
-                                        </ul>
-                                      </div>
+                                        </div>
                                       <!-- /btn-group -->
-
+                                      <input type="hidden" class="form-control" id="_publisher_id">
                                       <input type="text" class="form-control" id="publisher_id">
 
                                     </div>
-
                                 </div>
                             </div>
                             <div class="col-sm-11" style="margin-top: 5px;">
@@ -261,26 +265,26 @@
 
                             </div>
 
-                            <div class="col-sm-11" style="margin-top: 5px;">
+                            <div class="col-sm-11" style="margin-top: 15px;">
                                 <div class="form-group">
                                     <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Author ID:</label>
 
                                     <div class="input-group " style="width: 350px;" >
-                                      <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
-                                          <span class="fa fa-caret-down"></span></button>
-                                        <ul class="dropdown-menu" >
+                                     
+                                        <select id="select_author" class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                             @foreach($listA as $author)
 
-                                                <li><a id="{{$author->id}}" href="#">{{$author->name}}</a></li>
+                                                <option id="{{$author->id}}">{{$author->name}}</option>
                                                 <li class="divider"></li>
 
                                             @endforeach
-                                        </ul>
-                                      </div>
-                                      <!-- /btn-group -->
+                                          
+                                        </select>
 
-                                      <input type="text" class="form-control" id="edit_author_id">
+                                      <!-- </div> -->
+                                      <!-- /btn-group -->
+                                      <input type="hidden" class="form-control" id="_edit_author_id">
+                                      <!-- <input type="text" class="form-control" id="genre_id"> -->
 
                                     </div>
 
@@ -292,21 +296,22 @@
                                     <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Genre ID:</label>
 
                                     <div class="input-group " style="width: 350px;" >
-                                      <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
-                                          <span class="fa fa-caret-down"></span></button>
-                                        <ul class="dropdown-menu" >
+                                
+                                        <select id="select_genre" class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                             @foreach($listG as $genre)
 
-                                                <li><a id="{{$genre->id}}" href="#">{{$genre->genreType}}</a></li>
+                                                <!-- <li id="{{$genre->id}}"><a href="#">{{$genre->genreType}}</a></li> -->
+                                                <option id="{{$genre->id}}">{{$genre->genreType}}</option>
                                                 <li class="divider"></li>
 
                                             @endforeach
-                                        </ul>
-                                      </div>
-                                      <!-- /btn-group -->
+                                          
+                                        </select>
 
-                                      <input type="text" class="form-control" id="edit_genre_id">
+                                      <!-- </div> -->
+                                      <!-- /btn-group -->
+                                      <input type="hidden" class="form-control" id="_edit_genre_id">
+                                      <!-- <input type="text" class="form-control" id="genre_id"> -->
 
                                     </div>
 
@@ -316,30 +321,30 @@
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
                                     <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Publisher ID:</label>
-
+                                    
                                     <div class="input-group " style="width: 350px;" >
-                                      <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
-                                          <span class="fa fa-caret-down"></span></button>
-                                        <ul class="dropdown-menu" >
-                                            @foreach($listP as $publisher)
+                                     
+                                        <div class="input-group-btn" style="margin-left: 30px;">
+                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
+                                              <span class="fa fa-caret-down"></span></button>
+                                            <ul class="dropdown-menu dropdown_publisher">
+                                                @foreach($listP as $publisher)
 
-                                                <li><a id="{{$publisher->id}}" href="#">{{$publisher->publisherName}}</a></li>
-                                                <li class="divider"></li>
+                                                    <li id="{{$publisher->id}}"><a href="#">{{$publisher->publisherName}}</a></li>
+                                                    <li class="divider"></li>
 
-                                            @endforeach
-                                        </ul>
-                                      </div>
+                                                @endforeach
+                                            </ul>
+
+
+                                        </div>
                                       <!-- /btn-group -->
-
+                                      <input type="hidden" class="form-control" id="_edit_publisher_id">
                                       <input type="text" class="form-control" id="edit_publisher_id">
 
                                     </div>
-
                                 </div>
                             </div>
-
-
 
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">

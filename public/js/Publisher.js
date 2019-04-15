@@ -141,7 +141,7 @@ jQuery(function($) {
 
         $.ajax({
                 
-            url: '/api/v1/publishers/patch/id='+id,
+            url: '/api/v1/publishers/patch?id='+id,
             type: 'patch',
             dataType: "json",
             data: {publisherName: data, _method: "patch"},

@@ -10,15 +10,17 @@ namespace App\Decorators\AccountDecorators\Login;
 
 
 use App\Decorators\AccountDecorators\EloquentUserDecorator;
+use App\Decorators\Handlers\Handlerable;
+use App\Decorators\Handlers\Role\FindRoleHandler;
+use App\Decorators\Handlers\User\HashPasswordHandler;
 use Illuminate\Database\Eloquent\Model;
 
 class LoginDecorator extends EloquentUserDecorator
 {
     public function getModel(array $attributes, $id): ?Model
     {
-        $password = $attributes['password'];
-        $hashPassword = hash('md5', $password);
-
+        $passwordHandler = new HashPasswordHandler();
+        $passwordHandler->handle($attributes);
         $pairs = [
             [
                 'needle' => 'email',
@@ -26,11 +28,16 @@ class LoginDecorator extends EloquentUserDecorator
             ],
             [
                 'needle' => 'password',
-                'value' => $hashPassword
+                'value' => $attributes['password']
             ],
         ];
         $userService = $this->getService();
         $user = $userService->getBy($pairs, ['role']);
         return $user;
+    }
+
+    private function arrangeHandler() : Handlerable
+    {
+
     }
 }
