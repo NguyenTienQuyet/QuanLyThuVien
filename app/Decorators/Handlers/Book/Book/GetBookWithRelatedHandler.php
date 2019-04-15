@@ -16,7 +16,8 @@ abstract class GetBookWithRelatedHandler extends BookHandler
     public function handle(array &$attributes): HandlerResponse
     {
         $bookService = $this->createHandlerService();
-        $attributes['related'] = $bookService->getModel($this->setRelations(), $attributes['bookId']);
+        $book = $attributes['book'];
+        $attributes['related'] = $bookService->getModel($this->setRelations(), $book['id']);
         return parent::handle($attributes);
     }
 

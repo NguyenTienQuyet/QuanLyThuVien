@@ -9,6 +9,7 @@
 namespace App\Decorators;
 
 
+use App\Decorators\Handlers\Book\BookCopy\GetBookCopy\CountAvailableHandler;
 use App\Decorators\Handlers\Handlerable;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,12 +22,14 @@ trait GetDetailModel
 
         $bookRelated = [];
         $bookHandler = $this->createGetHandler();
+        $bookCopyHandler = new CountAvailableHandler();
+        $bookHandler->setNextHandler($bookCopyHandler);
 
         foreach ($books as $book) {
-            $bookAttributes['bookId'] = $book['id'];
-            $bookAttributes['related'] = null;
+            $bookAttributes['book'] = $book;
             $bookHandler->handle($bookAttributes);
-            array_push($bookRelated, $bookAttributes['related']);
+            array_push($bookRelated, $bookAttributes);
+            unset($bookAttributes['book']);
         }
         unset($model['books']);
         $model['books'] = $bookRelated;
