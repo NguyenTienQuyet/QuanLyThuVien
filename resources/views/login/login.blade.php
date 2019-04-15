@@ -55,7 +55,7 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat" id="sign_in">Sign In</button>
+                    <button type="button" class="btn btn-primary btn-block btn-flat" id="sign_in">Sign In</button>
                 </div>
                 <!-- /.col -->
             </div>
@@ -84,6 +84,7 @@
 <script src="backend/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- iCheck -->
 <script src="backend/plugins/iCheck/icheck.min.js"></script>
+<script type="text/javascript" src="js/Home.js"></script>
 <script>
     $(function () {
         $('input').iCheck({

@@ -17,7 +17,7 @@ jQuery(function ($) {
 
             },
             success: function () {
-                window.location.href="{{homeAdmin}}"
+                window.location.href="http://127.0.0.1:8000/homeAdmin"
                 alert("success!");
             },
             error: function (err) {
