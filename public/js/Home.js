@@ -24,24 +24,8 @@ $.ajax({
                     ge.push(data[i].genres[q].genreType);
                 }
                 var publisher = data[i].publisher.publisherName;
-                // $.ajax({
-                            
-                //     url: '/api/v1/publishers/get?id='+data[i].publisher_id,
-                //     type: 'get',
-                //     dataType: 'json',
-                //     success: function(data) {
-                //         $('#publisher').val(data.publisherName);
-                        
-                        
-                //     },
-                //     error: function(){
-                //         alert("Error get data publisher");
-                //     }
-                // });
-                // publisher = $('#publisher').val();
-                // alert(publisher);
+                
                 output = 
-                        // "<div class='active-popular-carusel'>"
                             "<div class='single-popular-carusel'>"
                                 +"<div class='thumb-wrap relative'>"
                                     +"<div class='thumb relative'>"
@@ -61,12 +45,12 @@ $.ajax({
                                     +"</a>"
                                     
                                         +"<p>"
-                                            +"Author: "+"<a href='#'>"+au+"</a>"                                        
+                                            +"Author: "+"<b style='color: black;'>"+au+"</b>"                                        
                                         +"</p>"
                                     
                                     
                                         +"<p>"
-                                            +"Genre: "+"<a href='#'>"+ge+"</a>"                                       
+                                            +"Genre: "+"<b style='color: black;'>"+ge+"</b>"                                       
                                         +"</p>"
                                     
                                     
@@ -76,23 +60,86 @@ $.ajax({
                                     
                                     
                                         +"<p>"
-                                            +"Published Year: "+"<a href='#'>"+data[i].publishedYear+"</a>"                                     
+                                            +"Published Year: "+"<b style='color: black;'>"+data[i].publishedYear+"</b>"                                     
                                         +"</p>"
 
                                 +"</div>"
                             +"</div>";
-                        // +"</div>";
-                
-                // $('#publisher').val("");
+
                 $('#_list_book').append(output);
 
                 
             }
-            // $('#list_book').html(output);
-            
         },
 
         error: function(err){
             console.log(mess);
         }
+});
+
+$('#sign_in').click(function(){
+
+    var email = $('#email_login').val();
+    var password = $('#password_login').val();
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
     });
+
+    $.ajax({
+        url: '/api/v1/users/login',
+        type: 'post',
+        dataType: 'json',
+        data:{
+            email: email,
+            password: password
+        },
+        success: function(){
+            alert("Success !");
+        },
+        error: function(){
+            alert("Login fail !");
+        }
+
+    });
+});
+
+$('#register').click(function(){
+
+    var name = $('#name_user').val();
+    var email = $('#email_user').val();
+    var password = $('#password_user').val();
+    var re_password = $('#re_password_user').val();
+
+    if(password == re_password){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            url: '/api/v1/users/register',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                name: name,
+                email: email,
+                password: password
+            },
+            success: function(){
+                alert('Success !');
+            },
+            error: function(){
+                alert('Register fail !');
+            }
+        });
+    }
+    else{
+        alert('Confirm password is fail');
+    }
+
+    
+});
