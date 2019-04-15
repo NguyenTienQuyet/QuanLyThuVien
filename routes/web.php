@@ -85,9 +85,7 @@ Route::get('login',
 
 // Route::get('register','RegisterController@getRegister');
 
-
 // Route::get('login','LoginController@login');
-
 
 
 Route::get('homePage',
