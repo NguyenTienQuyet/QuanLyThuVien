@@ -122,7 +122,7 @@
 
                                     <div class="input-group " style="width: 350px;" >
                                      
-                                        <select class=" author_select form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                        <select id="author_select" class="  form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                             @foreach($listA as $author)
 
                                                 <option id="{{$author->id}}">{{$author->name}}</option>
@@ -148,7 +148,7 @@
 
                                     <div class="input-group " style="width: 350px;" >
                                     
-                                        <select class=" genre_select form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                        <select id="genre_select" class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                             @foreach($listG as $genre)
 
                                                 <!-- <li id="{{$genre->id}}"><a href="#">{{$genre->genreType}}</a></li> -->
@@ -271,7 +271,7 @@
 
                                     <div class="input-group " style="width: 350px;" >
                                      
-                                        <select id="select_author" class=" author_select form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                        <select id="select_author" class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                             @foreach($listA as $author)
 
                                                 <option id="{{$author->id}}">{{$author->name}}</option>
@@ -297,7 +297,7 @@
 
                                     <div class="input-group " style="width: 350px;" >
                                 
-                                        <select id="select_genre" class=" genre_select form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                        <select id="select_genre" class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                             @foreach($listG as $genre)
 
                                                 <!-- <li id="{{$genre->id}}"><a href="#">{{$genre->genreType}}</a></li> -->

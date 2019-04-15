@@ -3,12 +3,13 @@ jQuery(function($) {
 
     $('#addBook').click(function(){
 
-        $('#myModal-book').modal('show');
+        
         $('#title').val("");
-        $('#author_id').val("");
-        $('#genre_id').val("");
+        $('#author_select').val("");
+        $('#genre_select').val("");
         $('#publisher_id').val("");
         $('#publishedYear').val("");
+        $('#myModal-book').modal('show');
 
     });
 
@@ -22,27 +23,11 @@ jQuery(function($) {
         
     });
 
-    // $('.dropdown_author li').click(function(){
-    //     // alert('aa');
-    //     $('#author_id').val($(this).text());
-    //     $('#edit_author_id').val($(this).text());
-    //     $('#_author_id').val($(this).attr('id'));
-    //     $('#_edit_author_id').val($(this).attr('id'));
-        
-    // });
-
-    // $('.dropdown_genre li').click(function(){
-    //     $('#genre_id').val($(this).text());
-    //     $('#edit_genre_id').val($(this).text());
-    //     $('#_genre_id').val($(this).attr('id'));
-    //     $('#_edit_genre_id').val($(this).attr('id'));
-        
-    // });
 
     $('.select2').select2();
     $.ajax({
                     
-        url: '/api/v1/books/'+'all?relations[]=authors&relations[]=genres',
+        url: '/api/v1/books/'+'all?relations[]=authors&relations[]=genres&relations[]=publisher',
         type: 'get',
         dataType: 'json',
         success: function(data) {
@@ -70,7 +55,7 @@ jQuery(function($) {
                                 +"<td class='text-center'>"+data[i].title+"</td>"
                                 +"<td class='text-center'>"+au+"</td>"
                                 +"<td class='text-center'>"+ge+"</td>"
-                                +"<td class='text-center'>"+data[i].publisher_id+"</td>"
+                                +"<td class='text-center'>"+data[i].publisher.publisherName+"</td>"
                                 +"<td class='text-center'>"+data[i].publishedYear+"</td>"
                                 +"<td class='text-center'>"
                                     +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].publishedYear+">"
@@ -87,6 +72,17 @@ jQuery(function($) {
 
             }
             $('#body_list_book').html(output);
+            $('#addBook').click(function(){
+
+        
+                $('#title').val("");
+                $('#author_select').val("");
+                $('#genre_select').val("");
+                $('#publisher_id').val("");
+                $('#publishedYear').val("");
+                $('#myModal-book').modal('show');
+
+            });
             $('a[data-type=update-book]').on('click', function(){
 
                 $('#edit_title').val("");
@@ -238,7 +234,7 @@ jQuery(function($) {
 
         var author=[];
         var author_id_ = [];
-        $('.author_select :selected').each(function(){
+        $('#author_select :selected').each(function(){
              author.push($(this).text());
              author_id_.push($(this).attr('id'));
         });
@@ -246,7 +242,7 @@ jQuery(function($) {
 
         var genre=[];
         var genre_id_ = [];
-        $('.genre_select :selected').each(function(){
+        $('#genre_select :selected').each(function(){
              genre.push($(this).text());
              genre_id_.push($(this).attr('id'));
         });
@@ -277,7 +273,7 @@ jQuery(function($) {
                 $('#myModal-book').modal('hide');
                 $.ajax({
                     
-                    url: '/api/v1/books/'+'all?relations[]=authors&relations[]=genres',
+                    url: '/api/v1/books/'+'all?relations[]=authors&relations[]=genres&relations[]=publisher',
                     type: 'get',
                     dataType: 'json',
                     success: function(data) {
@@ -305,7 +301,7 @@ jQuery(function($) {
                                             +"<td class='text-center'>"+data[i].title+"</td>"
                                             +"<td class='text-center'>"+au+"</td>"
                                             +"<td class='text-center'>"+ge+"</td>"
-                                            +"<td class='text-center'>"+data[i].publisher_id+"</td>"
+                                            +"<td class='text-center'>"+data[i].publisher.publisherName+"</td>"
                                             +"<td class='text-center'>"+data[i].publishedYear+"</td>"
                                             +"<td class='text-center'>"
                                                 +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].publishedYear+">"
@@ -322,6 +318,17 @@ jQuery(function($) {
 
                         }
                         $('#body_list_book').html(output);
+                        $('#addBook').click(function(){
+
+        
+                            $('#title').val("");
+                            $('#author_select').val("");
+                            $('#genre_select').val("");
+                            $('#publisher_id').val("");
+                            $('#publishedYear').val("");
+                            $('#myModal-book').modal('show');
+
+                        });
                         $('a[data-type=update-book]').on('click', function(){
 
                             $('#edit_title').val("");
@@ -506,7 +513,7 @@ jQuery(function($) {
                 $('#editModal-book').modal('hide');
                 $.ajax({
                     
-                    url: '/api/v1/books/'+'all?relations[]=authors&relations[]=genres',
+                    url: '/api/v1/books/'+'all?relations[]=authors&relations[]=genres&relations[]=publisher',
                     type: 'get',
                     dataType: 'json',
                     success: function(data) {
@@ -534,7 +541,7 @@ jQuery(function($) {
                                             +"<td class='text-center'>"+data[i].title+"</td>"
                                             +"<td class='text-center'>"+au+"</td>"
                                             +"<td class='text-center'>"+ge+"</td>"
-                                            +"<td class='text-center'>"+data[i].publisher_id+"</td>"
+                                            +"<td class='text-center'>"+data[i].publisher.publisherName+"</td>"
                                             +"<td class='text-center'>"+data[i].publishedYear+"</td>"
                                             +"<td class='text-center'>"
                                                 +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].publishedYear+">"
@@ -551,6 +558,17 @@ jQuery(function($) {
 
                         }
                         $('#body_list_book').html(output);
+                        $('#addBook').click(function(){
+
+        
+                            $('#title').val("");
+                            $('#author_select').val("");
+                            $('#genre_select').val("");
+                            $('#publisher_id').val("");
+                            $('#publishedYear').val("");
+                            $('#myModal-book').modal('show');
+
+                        });
                         $('a[data-type=update-book]').on('click', function(){
 
                             $('#edit_title').val("");
@@ -720,7 +738,7 @@ jQuery(function($) {
                 $('#deleteModal-book').modal('hide');
                 $.ajax({
                     
-                    url: '/api/v1/books/'+'all?relations[]=authors&relations[]=genres',
+                    url: '/api/v1/books/'+'all?relations[]=authors&relations[]=genres&relations[]=publisher',
                     type: 'get',
                     dataType: 'json',
                     success: function(data) {
@@ -748,7 +766,7 @@ jQuery(function($) {
                                             +"<td class='text-center'>"+data[i].title+"</td>"
                                             +"<td class='text-center'>"+au+"</td>"
                                             +"<td class='text-center'>"+ge+"</td>"
-                                            +"<td class='text-center'>"+data[i].publisher_id+"</td>"
+                                            +"<td class='text-center'>"+data[i].publisher.publisherName+"</td>"
                                             +"<td class='text-center'>"+data[i].publishedYear+"</td>"
                                             +"<td class='text-center'>"
                                                 +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].publishedYear+">"
@@ -765,6 +783,19 @@ jQuery(function($) {
 
                         }
                         $('#body_list_book').html(output);
+
+                        $('#addBook').click(function(){
+
+        
+                            $('#title').val("");
+                            $('#author_select').val("");
+                            $('#genre_select').val("");
+                            $('#publisher_id').val("");
+                            $('#publishedYear').val("");
+                            $('#myModal-book').modal('show');
+
+                        });
+                        
                         $('a[data-type=update-book]').on('click', function(){
 
                             $('#edit_title').val("");
