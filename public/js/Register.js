@@ -1,8 +1,8 @@
 jQuery(function ($) {
-    $('#btn_register').on('click', function () {
-        var name = $('#name').val();
-        var email = $('#email').val();
-        var password = $('#password').val();
+    $('#register').on('click', function () {
+        var name = $('#name_user').val();
+        var email = $('#email_user').val();
+        var password = $('#password_user').val();
         $.ajax({
 
             url: "http://127.0.0.1:8000/api/v1/users/register",

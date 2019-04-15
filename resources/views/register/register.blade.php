@@ -36,7 +36,7 @@
     <div class="register-box-body">
         <p class="login-box-msg">Đăng ký thành viên</p>
 
-        <form action="{{url('register')}}" method="post">
+        <form>
             {{ csrf_field() }}
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" name="name" placeholder="Full name" id="name_user">
@@ -64,7 +64,7 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat" id="register">Đăng ký</button>
+                    <button type="button" class="btn btn-primary btn-block btn-flat" id="register">Đăng ký</button>
                 </div>
                 <!-- /.col -->
             </div>
@@ -90,6 +90,7 @@
 <script src="backend/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- iCheck -->
 <script src="backend/plugins/iCheck/icheck.min.js"></script>
+<script type="text/javascript" src="js/Register.js"></script>
 <script>
     $(function () {
         $('input').iCheck({
