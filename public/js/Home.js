@@ -142,5 +142,5 @@ $('#register').click(function(){
         alert('Confirm password is fail');
     }
 
-    
 });
+
