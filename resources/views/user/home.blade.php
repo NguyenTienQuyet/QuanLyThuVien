@@ -11,16 +11,16 @@
 								<p>There is a moment in the life of any aspiring.</p>
 							</div>
 						</div>
-					</div>						
+					</div>
 					<div class="row" id="list_book">
 						<div class="active-popular-carusel" id="_list_book">
 							<input type="hidden" name="publisher" id="publisher" value="">
-							
+
 
 						</div>
 
 					</div>
-				</div>	
+				</div>
 </section>
 
 @endsection

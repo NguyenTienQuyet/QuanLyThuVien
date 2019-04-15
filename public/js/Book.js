@@ -3,7 +3,7 @@ jQuery(function($) {
 
     $('#addBook').click(function(){
 
-        
+
         $('#title').val("");
         $('#author_select').val("");
         $('#genre_select').val("");
@@ -13,21 +13,21 @@ jQuery(function($) {
 
     });
 
-    
+
 
     $('.dropdown_publisher li').click(function(){
         $('#publisher_id').val($(this).text());
         $('#edit_publisher_id').val($(this).text());
         $('#_publisher_id').val($(this).attr('id'));
         $('#_edit_publisher_id').val($(this).attr('id'));
-        
+
     });
 
 
     $('.select2').select2();
     $.ajax({
-                    
-        url: '/api/v1/books/'+'all?relations[]=authors&relations[]=genres&relations[]=publisher',
+
+        url: 'http://127.0.0.1:8000/api/v1/books/'+'all?relations[]=authors&relations[]=genres&relations[]=publisher',
         type: 'get',
         dataType: 'json',
         success: function(data) {
@@ -67,14 +67,14 @@ jQuery(function($) {
                                         +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                     +"</a>"
                                 +"</td>"
-                                
+
                             +"</tr>";
 
             }
             $('#body_list_book').html(output);
             $('#addBook').click(function(){
 
-        
+
                 $('#title').val("");
                 $('#author_select').val("");
                 $('#genre_select').val("");
@@ -112,7 +112,7 @@ jQuery(function($) {
                 // console.log(author_array);
                 // console.log(genre_array);
                 $.ajax({
-                            
+
                     url: '/api/v1/books/get?id='+id,
                     type: 'get',
                     dataType: 'json',
@@ -127,7 +127,7 @@ jQuery(function($) {
                 });
                 // console.log(title);
                 $.ajax({
-                            
+
                     url: '/api/v1/publishers/get?id='+edit_publisher_id,
                     type: 'get',
                     dataType: 'json',
@@ -141,54 +141,54 @@ jQuery(function($) {
                 });
 
                 var nameAuthor = [];
-                
+
                 for(var a = 0; a < author_array.length; a++){
                     // alert(author_array[a]);
                     $.ajax({
-                        
+
                         url: '/api/v1/authors/get?id='+author_array[a],
                         type: 'get',
                         dataType: 'json',
                         success: function(data) {
                             nameAuthor.push(data.name);
                             $('#select_author').val(nameAuthor);
-                            
+
                         },
                         error: function(){
                             alert("Error get data author");
                         }
                     });
                 }
-                
-                
-                
-                
-                
+
+
+
+
+
                 var genreType = [];
-                
+
                 for(var g = 0; g < genre_array.length; g++){
                     // alert(genre_array[g]);
                     $.ajax({
-                            
+
                         url: '/api/v1/genres/get?id='+genre_array[g],
                         type: 'get',
                         dataType: 'json',
                         success: function(data) {
                             genreType.push(data.genreType);
                             $('#select_genre').val(genreType);
-                            
+
                         },
                         error: function(){
                             alert("Error get data genre");
                         }
                     });
                 }
-                
-                
+
+
 
 
                 // $('#edit_title').val(title);
-                
+
                 $('#edit_published_year').val(edit_published_year);
                 $('#editModal-book').modal('show');
                 // console.log(nameAuthor);
@@ -201,7 +201,7 @@ jQuery(function($) {
 
                 $('#book-delete').val(id);
                 $('#deleteModal-book').modal('show');
-                
+
             });
 
 
@@ -212,7 +212,7 @@ jQuery(function($) {
         }
     });
 
-    
+
 
 
     $('#add-book').on('click', function(){
@@ -255,24 +255,24 @@ jQuery(function($) {
         // console.log(title);
 
         $.ajax({
-            
+
             url: "/api/v1/books/post",
             type: 'post',
             dataType: "json",
             data:{
-                
+
                 title: title,
                 authors: author_id_,
                 genres: genre_id_,
                 publisher_id: publisher_id,
                 publishedYear: publishedYear
-                
+
             },
             success: function () {
                 alert("success!");
                 $('#myModal-book').modal('hide');
                 $.ajax({
-                    
+
                     url: '/api/v1/books/'+'all?relations[]=authors&relations[]=genres&relations[]=publisher',
                     type: 'get',
                     dataType: 'json',
@@ -313,14 +313,14 @@ jQuery(function($) {
                                                     +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
-                                            
+
                                         +"</tr>";
 
                         }
                         $('#body_list_book').html(output);
                         $('#addBook').click(function(){
 
-        
+
                             $('#title').val("");
                             $('#author_select').val("");
                             $('#genre_select').val("");
@@ -357,7 +357,7 @@ jQuery(function($) {
                             // console.log(author_array);
                             // console.log(genre_array);
                             $.ajax({
-                                        
+
                                 url: '/api/v1/books/get?id='+id,
                                 type: 'get',
                                 dataType: 'json',
@@ -372,7 +372,7 @@ jQuery(function($) {
                             });
                             // console.log(title);
                             $.ajax({
-                                        
+
                                 url: '/api/v1/publishers/get?id='+edit_publisher_id,
                                 type: 'get',
                                 dataType: 'json',
@@ -386,54 +386,54 @@ jQuery(function($) {
                             });
 
                             var nameAuthor = [];
-                            
+
                             for(var a = 0; a < author_array.length; a++){
                                 // alert(author_array[a]);
                                 $.ajax({
-                                    
+
                                     url: '/api/v1/authors/get?id='+author_array[a],
                                     type: 'get',
                                     dataType: 'json',
                                     success: function(data) {
                                         nameAuthor.push(data.name);
                                         $('#select_author').val(nameAuthor);
-                                        
+
                                     },
                                     error: function(){
                                         alert("Error get data author");
                                     }
                                 });
                             }
-                            
-                            
-                            
-                            
-                            
+
+
+
+
+
                             var genreType = [];
-                            
+
                             for(var g = 0; g < genre_array.length; g++){
                                 // alert(genre_array[g]);
                                 $.ajax({
-                                        
+
                                     url: '/api/v1/genres/get?id='+genre_array[g],
                                     type: 'get',
                                     dataType: 'json',
                                     success: function(data) {
                                         genreType.push(data.genreType);
                                         $('#select_genre').val(genreType);
-                                        
+
                                     },
                                     error: function(){
                                         alert("Error get data genre");
                                     }
                                 });
                             }
-                            
-                            
+
+
 
 
                             // $('#edit_title').val(title);
-                            
+
                             $('#edit_published_year').val(edit_published_year);
                             $('#editModal-book').modal('show');
                             // console.log(nameAuthor);
@@ -446,7 +446,7 @@ jQuery(function($) {
 
                             $('#book-delete').val(id);
                             $('#deleteModal-book').modal('show');
-                            
+
                         });
 
 
@@ -465,7 +465,7 @@ jQuery(function($) {
     });
 
     $('#edit-book').on('click', function () {
-        
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -497,7 +497,7 @@ jQuery(function($) {
         console.log(publisher_id);
 
         $.ajax({
-                
+
             url: '/api/v1/books/patch?id='+parseInt(id),
             type: 'patch',
             dataType: "json",
@@ -512,7 +512,7 @@ jQuery(function($) {
                 alert('success!');
                 $('#editModal-book').modal('hide');
                 $.ajax({
-                    
+
                     url: '/api/v1/books/'+'all?relations[]=authors&relations[]=genres&relations[]=publisher',
                     type: 'get',
                     dataType: 'json',
@@ -553,14 +553,14 @@ jQuery(function($) {
                                                     +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
-                                            
+
                                         +"</tr>";
 
                         }
                         $('#body_list_book').html(output);
                         $('#addBook').click(function(){
 
-        
+
                             $('#title').val("");
                             $('#author_select').val("");
                             $('#genre_select').val("");
@@ -597,7 +597,7 @@ jQuery(function($) {
                             // console.log(author_array);
                             // console.log(genre_array);
                             $.ajax({
-                                        
+
                                 url: '/api/v1/books/get?id='+id,
                                 type: 'get',
                                 dataType: 'json',
@@ -612,7 +612,7 @@ jQuery(function($) {
                             });
                             // console.log(title);
                             $.ajax({
-                                        
+
                                 url: '/api/v1/publishers/get?id='+edit_publisher_id,
                                 type: 'get',
                                 dataType: 'json',
@@ -626,54 +626,54 @@ jQuery(function($) {
                             });
 
                             var nameAuthor = [];
-                            
+
                             for(var a = 0; a < author_array.length; a++){
                                 // alert(author_array[a]);
                                 $.ajax({
-                                    
+
                                     url: '/api/v1/authors/get?id='+author_array[a],
                                     type: 'get',
                                     dataType: 'json',
                                     success: function(data) {
                                         nameAuthor.push(data.name);
                                         $('#select_author').val(nameAuthor);
-                                        
+
                                     },
                                     error: function(){
                                         alert("Error get data author");
                                     }
                                 });
                             }
-                            
-                            
-                            
-                            
-                            
+
+
+
+
+
                             var genreType = [];
-                            
+
                             for(var g = 0; g < genre_array.length; g++){
                                 // alert(genre_array[g]);
                                 $.ajax({
-                                        
+
                                     url: '/api/v1/genres/get?id='+genre_array[g],
                                     type: 'get',
                                     dataType: 'json',
                                     success: function(data) {
                                         genreType.push(data.genreType);
                                         $('#select_genre').val(genreType);
-                                        
+
                                     },
                                     error: function(){
                                         alert("Error get data genre");
                                     }
                                 });
                             }
-                            
-                            
+
+
 
 
                             // $('#edit_title').val(title);
-                            
+
                             $('#edit_published_year').val(edit_published_year);
                             $('#editModal-book').modal('show');
                             // console.log(nameAuthor);
@@ -686,7 +686,7 @@ jQuery(function($) {
 
                             $('#book-delete').val(id);
                             $('#deleteModal-book').modal('show');
-                            
+
                         });
 
 
@@ -701,7 +701,7 @@ jQuery(function($) {
                 alert("error! Please, try again.");
                 console.log(mess);
                 $('#editModal-book').modal('hide');
-                
+
             }
         });
     });
@@ -713,7 +713,7 @@ jQuery(function($) {
 
     //     $('#book-delete').val(id);
     //     $('#deleteModal-book').modal('show');
-        
+
     // });
 
     $('#_delete-book').on('click', function(){
@@ -729,7 +729,7 @@ jQuery(function($) {
         });
 
         $.ajax({
-                
+
             url: '/api/v1/books/delete/'+id,
             type: 'delete',
             data: {id: id, _method: "delete"},
@@ -737,7 +737,7 @@ jQuery(function($) {
                 alert('success!');
                 $('#deleteModal-book').modal('hide');
                 $.ajax({
-                    
+
                     url: '/api/v1/books/'+'all?relations[]=authors&relations[]=genres&relations[]=publisher',
                     type: 'get',
                     dataType: 'json',
@@ -778,7 +778,7 @@ jQuery(function($) {
                                                     +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
-                                            
+
                                         +"</tr>";
 
                         }
@@ -786,7 +786,7 @@ jQuery(function($) {
 
                         $('#addBook').click(function(){
 
-        
+
                             $('#title').val("");
                             $('#author_select').val("");
                             $('#genre_select').val("");
@@ -795,7 +795,7 @@ jQuery(function($) {
                             $('#myModal-book').modal('show');
 
                         });
-                        
+
                         $('a[data-type=update-book]').on('click', function(){
 
                             $('#edit_title').val("");
@@ -824,7 +824,7 @@ jQuery(function($) {
                             // console.log(author_array);
                             // console.log(genre_array);
                             $.ajax({
-                                        
+
                                 url: '/api/v1/books/get?id='+id,
                                 type: 'get',
                                 dataType: 'json',
@@ -839,7 +839,7 @@ jQuery(function($) {
                             });
                             // console.log(title);
                             $.ajax({
-                                        
+
                                 url: '/api/v1/publishers/get?id='+edit_publisher_id,
                                 type: 'get',
                                 dataType: 'json',
@@ -853,54 +853,54 @@ jQuery(function($) {
                             });
 
                             var nameAuthor = [];
-                            
+
                             for(var a = 0; a < author_array.length; a++){
                                 // alert(author_array[a]);
                                 $.ajax({
-                                    
+
                                     url: '/api/v1/authors/get?id='+author_array[a],
                                     type: 'get',
                                     dataType: 'json',
                                     success: function(data) {
                                         nameAuthor.push(data.name);
                                         $('#select_author').val(nameAuthor);
-                                        
+
                                     },
                                     error: function(){
                                         alert("Error get data author");
                                     }
                                 });
                             }
-                            
-                            
-                            
-                            
-                            
+
+
+
+
+
                             var genreType = [];
-                            
+
                             for(var g = 0; g < genre_array.length; g++){
                                 // alert(genre_array[g]);
                                 $.ajax({
-                                        
+
                                     url: '/api/v1/genres/get?id='+genre_array[g],
                                     type: 'get',
                                     dataType: 'json',
                                     success: function(data) {
                                         genreType.push(data.genreType);
                                         $('#select_genre').val(genreType);
-                                        
+
                                     },
                                     error: function(){
                                         alert("Error get data genre");
                                     }
                                 });
                             }
-                            
-                            
+
+
 
 
                             // $('#edit_title').val(title);
-                            
+
                             $('#edit_published_year').val(edit_published_year);
                             $('#editModal-book').modal('show');
                             // console.log(nameAuthor);
@@ -913,7 +913,7 @@ jQuery(function($) {
 
                             $('#book-delete').val(id);
                             $('#deleteModal-book').modal('show');
-                            
+
                         });
 
 
@@ -929,8 +929,8 @@ jQuery(function($) {
                 console.log(mess);
             }
         });
-        
-        
+
+
     });
 
 });
