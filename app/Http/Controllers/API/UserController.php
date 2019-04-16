@@ -14,9 +14,11 @@ use App\Decorators\AccountDecorators\Login\LoginDecorator;
 use App\Http\Controllers\Requests\API\User\UserDeleteRequest;
 use App\Http\Controllers\Requests\API\User\UserGetRequest;
 use App\Http\Controllers\Requests\API\User\UserLoginRequest;
+use App\Http\Controllers\Requests\API\User\UserLogoutRequest;
 use App\Http\Controllers\Requests\API\User\UserPatchRequest;
 use App\Http\Controllers\Requests\API\User\UserPostRequest;
 use App\Services\UserService;
+use Illuminate\Http\Request;
 
 class UserController extends APIController
 {
@@ -38,7 +40,21 @@ class UserController extends APIController
         $userService = $this->getService();
         $userProxy = new CreateUserProxy($userService);
 
-        return $userProxy->createNewModel($request->all());
+
+        $newUser = $userProxy->createNewModel($request->all());
+
+        if ($newUser == null) {
+            /**
+             * @var Message $userProxy
+             */
+            return response(['Message' => $this->message($userProxy)], 403);
+        }
+        $request->session()->put('user_id', $newUser['id']);
+        return response([
+            'Message' => 'Register successfully',
+            'User' => $newUser
+        ], 200);
+
     }
 
     public function patch(UserPatchRequest $request, int $id = null)
@@ -58,6 +74,42 @@ class UserController extends APIController
          */
         $userService = $this->getService();
         $enhancedService = new LoginDecorator($userService);
-        return $enhancedService->getModel($request->all(), null);
+
+        $user = $enhancedService->getModel($request->all(), null);
+        if ($user == null) {
+            return response(['Invalid password'], 403);
+        }
+        $request->session()->put('user_id', $user['id']);
+        return response([
+            'Message' => 'Login successfully',
+            'User' => $user
+        ], 200);
+
+    }
+
+    public function logout(UserLogoutRequest $request)
+    {
+        $userId = $request->get('user_id');
+        $sessionUserId = $request->session()->get('user_id');
+
+        if ($sessionUserId == null || strcasecmp($sessionUserId, $userId) != 0) {
+            return response(['Invalid request'], 403);
+        }
+
+        $request->session()->flush();
+        return response([
+            'Message' => 'Logout successfully',
+        ], 200);
+    }
+
+    public function getSessionData(Request $request) {
+        $userId = $request->session()->get('user_id');
+        if ($userId != null) {
+            return response([
+                'Message' => 'Success',
+                'user_id' => $userId
+            ], 200);
+        }
+        return response(['Message' => 'Invalid'], 403);;
     }
 }
