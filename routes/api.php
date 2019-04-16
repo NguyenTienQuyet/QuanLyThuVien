@@ -219,5 +219,15 @@ Route::prefix('v1')->group(function () {
             'uses' => 'API\UserController@login',
             'as' => 'api/v1/users/login'
         ]);
+
+        Route::post('logout', [
+            'uses' => 'API\UserController@logout',
+            'as' => 'api/v1/users/logout'
+        ]);
+
+        Route::post('session', [
+            'uses' => 'API\UserController@getSessionData',
+            'as' => 'api/v1/users/session'
+        ]);
     });
 });
