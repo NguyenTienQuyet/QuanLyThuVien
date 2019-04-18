@@ -333,7 +333,7 @@
 									<a class="justify-content-between d-flex" href="#">
 										<p><b style="color: black;">Author:</b></p>
 										@foreach($listA as $author)
-											<span style="margin-left: 10px;"><a href="{{route('listAuthorBook', $author->id)}}" id="{{$author->id}}">{{$author->name}}</a></span>
+											<span style="margin-left: 10px;"><a href="{{route('listBookOfAuthor', $author->id)}}" id="{{$author->id}}">{{$author->name}}</a></span>
 										@endforeach
 									</a>
 								</li>
@@ -341,7 +341,7 @@
 									<a class="justify-content-between d-flex" href="#">
 										<p><b style="color: black;">Genre:</b></p>
 										@foreach($listG as $genre)
-										<span style="margin-left: 10px;"><a id="{{$genre->id}}" href="{{route('listBookGenre', $genre->id)}}" >{{$genre->genreType}}</a></span>
+										<span style="margin-left: 10px;"><a id="{{$genre->id}}" href="{{route('listBookOfGenre', $genre->id)}}" >{{$genre->genreType}}</a></span>
 										@endforeach
 									</a>
 								</li>
