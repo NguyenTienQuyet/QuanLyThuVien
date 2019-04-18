@@ -92,11 +92,19 @@ Route::get('homePage',
  	['as'=>'homePage', 'uses'=>'UserController@getHome']
 );
 
-Route::get('book',
+Route::get('book/{id}',
  	['as'=>'book', 'uses'=>'UserController@getListBook']
 );
 
-Route::get('detailBook',
+Route::get('listAuthorBook/{id}',
+ 	['as'=>'listAuthorBook', 'uses'=>'UserController@getListAuthorBook']
+);
+
+Route::get('listBookGenre/{id}',
+ 	['as'=>'listBookGenre', 'uses'=>'UserController@getListBookGenre']
+);
+
+Route::get('detailBook/{id}',
  	['as'=>'detailBook', 'uses'=>'UserController@getBookDetail']
 );
 

@@ -23,7 +23,7 @@
 					<div class="row">
 						<div class="col-lg-8 left-contents">
 							<div class="main-image">
-								<img class="img-fluid" src="frontend/img/m-img.jpg" alt="">
+								<img class="img-fluid" src="../frontend/img/m-img.jpg" alt="">
 							</div>
 							<div class="jq-tab-wrapper" id="horizontalTab">
 	                            <div class="jq-tab-menu">
@@ -33,7 +33,7 @@
 	                                <div class="jq-tab-title" data-tab="4">Comments</div>
 	                                <div class="jq-tab-title" data-tab="5">Reviews</div>
 	                            </div>
-	                            <div class="jq-tab-content-wrapper">
+	                            <!-- <div class="jq-tab-content-wrapper">
 	                                <div class="jq-tab-content active" data-tab="1">
 	                                    When you enter into any new area of science, you almost always find yourself with a baffling new language of technical terms to learn before you can converse with the experts. This is certainly true in astronomy both in terms of terms that refer to the cosmos and terms that describe the tools of the trade, the most prevalent being the telescope.
 										<br>
@@ -315,33 +315,48 @@
 						                    </div>  						                                                                      
 						                </div>	                                	
 	                                </div>                                
-	                            </div>
+	                            </div> -->
 	                        </div>
 						</div>
 						<div class="col-lg-4 right-contents">
 							<ul>
 								<li>
 									<a class="justify-content-between d-flex" href="#">
-										<p>Trainer’s Name</p> 
-										<span class="or">George Mathews</span>
+										@foreach($list as $book)
+										<p id="{{$book->title}}"><b style="color: black;">Title:</b></p> 
+										
+										<span class="or">{{$book->title}}</span>
+										@endforeach
 									</a>
 								</li>
 								<li>
 									<a class="justify-content-between d-flex" href="#">
-										<p>Course Fee </p>
-										<span>$230</span>
+										<p><b style="color: black;">Author:</b></p>
+										@foreach($listA as $author)
+											<span style="margin-left: 10px;"><a href="{{route('listAuthorBook', $author->id)}}" id="{{$author->id}}">{{$author->name}}</a></span>
+										@endforeach
 									</a>
 								</li>
 								<li>
 									<a class="justify-content-between d-flex" href="#">
-										<p>Available Seats </p>
-										<span>15</span>
+										<p><b style="color: black;">Genre:</b></p>
+										@foreach($listG as $genre)
+										<span style="margin-left: 10px;"><a id="{{$genre->id}}" href="{{route('listBookGenre', $genre->id)}}" >{{$genre->genreType}}</a></span>
+										@endforeach
 									</a>
 								</li>
 								<li>
 									<a class="justify-content-between d-flex" href="#">
-										<p>Schedule </p>
-										<span>2.00 pm to 4.00 pm</span>
+										<p><b style="color: black;">Publisher:</b></p>
+										<span><a id="{{$book->publisher_id}}" href="{{route('book', $book->publisher_id)}}">{{$book->publisherName}}</a></span>
+									</a>
+								</li>
+								<li>
+									<a class="justify-content-between d-flex" href="#">
+										<p><b style="color: black;">Published Year:</b></p>
+										@foreach($list as $book)
+										<span>{{$book->publishedYear}}</span>
+										@endforeach
 									</a>
 								</li>
 							</ul>
