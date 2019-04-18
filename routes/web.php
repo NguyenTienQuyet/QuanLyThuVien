@@ -96,12 +96,12 @@ Route::get('book/{id}',
  	['as'=>'book', 'uses'=>'UserController@getListBook']
 );
 
-Route::get('listAuthorBook/{id}',
- 	['as'=>'listAuthorBook', 'uses'=>'UserController@getListAuthorBook']
+Route::get('listBookOfAuthor/{id}',
+ 	['as'=>'listBookOfAuthor', 'uses'=>'UserController@getListAuthorBook']
 );
 
-Route::get('listBookGenre/{id}',
- 	['as'=>'listBookGenre', 'uses'=>'UserController@getListBookGenre']
+Route::get('listBookOfGenre/{id}',
+ 	['as'=>'listBookOfGenre', 'uses'=>'UserController@getListBookGenre']
 );
 
 Route::get('detailBook/{id}',

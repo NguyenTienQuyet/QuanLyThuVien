@@ -44,7 +44,7 @@ class UserController extends Controller
 
     public function getListAuthorBook($id){
 
-        $data['list'] = DB::table('authors')->join('author_book', 'authors.id', '=', 'author_book.author_id')->join('books', 'author_book.book_id', '=', 'books.id')->leftjoin('publishers', 'publishers.id', '=', 'books.publisher_id')->where('authors.id', '=', $id)->get();
+        $data['list'] = DB::table('authors')->join('author_book', 'authors.id', '=', 'author_book.author_id')->join('books', 'author_book.book_id', '=', 'books.id')->join('publishers', 'publishers.id', '=', 'books.publisher_id')->where('authors.id', '=', $id)->select('books.*', 'publishers.publisherName')->get();
 
         
         return view('user.listAuthorBook', $data);
@@ -53,7 +53,7 @@ class UserController extends Controller
 
     public function getListBookGenre($id){
 
-        $data['list'] = DB::table('genres')->join('book_genre', 'genres.id', '=', 'book_genre.genre_id')->join('books', 'book_genre.book_id', '=', 'books.id')->leftjoin('publishers', 'publishers.id', '=', 'books.publisher_id')->where('genres.id', '=', $id)->get();
+        $data['list'] = DB::table('genres')->join('book_genre', 'genres.id', '=', 'book_genre.genre_id')->join('books', 'book_genre.book_id', '=', 'books.id')->join('publishers', 'publishers.id', '=', 'books.publisher_id')->where('genres.id', '=', $id)->select('books.*', 'publishers.publisherName')->get();
         
         return view('user.listBookGenre', $data);
         
