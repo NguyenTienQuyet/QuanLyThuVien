@@ -80,7 +80,8 @@ class UserController extends APIController
         $request->session()->put('user_id', $user['id']);
         return response([
             'Message' => 'Login successfully',
-            'User' => $user
+            'User' => $user,
+            'Role' => $user['role']
         ], 200);
     }
 
