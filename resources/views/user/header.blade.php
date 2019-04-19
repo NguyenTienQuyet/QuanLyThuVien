@@ -9,6 +9,9 @@
 				<li><a href="#"><i class="fa fa-behance"></i></a></li>
 				</ul>			
 			</div>
+
+			
+
 			<div class="col-lg-6 col-sm-6 col-4 header-top-right no-padding">
 				<a href="{{route('register')}}"><span class="lnr lnr-phone-handset"></span> <span class="text"><b><u>Register</u></b></span></a>
 				<a href="{{route('login')}}"><span class="lnr lnr-envelope"></span> <span class="text"><b><u>Login</u></b></span></a>			
@@ -21,34 +24,28 @@
       <div id="logo">
         <a href="{{route('homePage')}}"><img style="height: 50px; width: 50px;" src="../frontend/img/logo1.png" alt="" title="" /><h3 style="color: white; margin-left: 70px; margin-top: -28px;">Library</h3></a>
       </div>
+
+    <div class="col-lg-4  col-md-6 col-sm-6">
+		<div class="single-footer-widget">
+			
+			<div class="" id="mc_embed_signup">
+				 <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get">
+				  <div class="input-group">
+				    <input type="text" class="form-control" name="EMAIL" placeholder="Enter Data Search ... " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Data Search ... '" required="" type="email">
+				    <div class="input-group-btn">
+				      <button class="btn btn-default" type="submit">
+				        <span class="lnr lnr-arrow-right"></span>
+				      </button>    
+				    </div>
+				    	<div class="info"></div>  
+				  </div>
+				</form> 
+			</div>
+		</div>
+	</div>
+
       <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="courses.html">Courses</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="menu-has-children"><a href="">Blog</a>
-            <ul>
-              <li><a href="blog-home.html">Blog Home</a></li>
-              <li><a href="blog-single.html">Blog Single</a></li>
-            </ul>
-          </li>	
-          <li class="menu-has-children"><a href="">Pages</a>
-            <ul>
-          		<li><a href="course-details.html">Course Details</a></li>		
-          		<li><a href="event-details.html">Event Details</a></li>		
-                <li><a href="elements.html">Elements</a></li>
-		          <li class="menu-has-children"><a href="">Level 2 </a>
-		            <ul>
-		              <li><a href="#">Item One</a></li>
-		              <li><a href="#">Item Two</a></li>
-		            </ul>
-		          </li>					                		
-            </ul>
-          </li>					          					          		          
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+        @include('user.menu')
       </nav><!-- #nav-menu-container -->		    		
 	</div>
 </div>
