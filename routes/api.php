@@ -225,7 +225,7 @@ Route::prefix('v1')->group(function () {
             'as' => 'api/v1/users/logout'
         ]);
 
-        Route::post('session', [
+        Route::get('session', [
             'uses' => 'API\UserController@getSessionData',
             'as' => 'api/v1/users/session'
         ]);
