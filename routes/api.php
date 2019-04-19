@@ -215,6 +215,11 @@ Route::prefix('v1')->group(function () {
             'as' => 'api/v1/users/delete'
         ]);
 
+        Route::get('all', [
+            'uses' => 'API\UserController@all',
+            'as' => 'api/v1/users/all'
+        ]);
+
         Route::post('login', [
             'uses' => 'API\UserController@login',
             'as' => 'api/v1/users/login'
@@ -228,6 +233,33 @@ Route::prefix('v1')->group(function () {
         Route::get('session', [
             'uses' => 'API\UserController@getSessionData',
             'as' => 'api/v1/users/session'
+        ]);
+    });
+
+    Route::prefix('roles')->group(function () {
+        Route::get('get/{id?}', [
+            'uses' => 'API\RoleController@get',
+            'as' => 'api/v1/roles/get'
+        ]);
+
+        Route::post('register', [
+            'uses' => 'API\RoleController@post',
+            'as' => 'api/v1/roles/register'
+        ]);
+
+        Route::patch('patch/{id?}', [
+            'uses' => 'API\RoleController@patch',
+            'as' => 'api/v1/roles/patch'
+        ]);
+
+        Route::delete('delete/{id?}', [
+            'uses' => 'API\RoleController@delete',
+            'as' => 'api/v1/roles/delete'
+        ]);
+
+        Route::get('all', [
+            'uses' => 'API\RoleController@all',
+            'as' => 'api/v1/roles/all'
         ]);
     });
 });
