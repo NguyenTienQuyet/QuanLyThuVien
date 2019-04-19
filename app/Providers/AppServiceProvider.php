@@ -56,6 +56,12 @@ use App\Services\UserService;
 use Illuminate\Support\ServiceProvider;
 use PhpOption\Tests\Repository;
 
+use App\Models\Author;
+use App\Models\Genre;
+use App\Models\Publisher;
+
+use Illuminate\Support\Facades\View;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -104,5 +110,15 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(UserRepository::class, EloquentUserRepository::class);
         $this->app->singleton(BookQuantityRepository::class, EloquentBookQuantityRepository::class);
         $this->app->singleton(CardRepository::class, EloquentCardRepository::class);
+
+
+        $author['listAuthor'] = Author::all();
+        $genre['listGenre'] = Genre::all();
+        $publisher['listPublisher'] = Publisher::all();
+
+        View::share($author);
+        View::share($genre);
+        View::share($publisher);
+
     }
 }
