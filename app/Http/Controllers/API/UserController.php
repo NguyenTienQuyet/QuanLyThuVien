@@ -80,38 +80,14 @@ class UserController extends APIController
             return response(['Invalid password'], 403);
         }
         $request->session()->put('user_id', $user['id']);
+        $request->session()->put('name', $user['name']);
+        $request->session()->put('role_id', $user['role_id']);
         return response([
             'Message' => 'Login successfully',
             'User' => $user,
             'Role' => $user['role']
         ], 200);
 
-    }
-
-    public function logout(UserLogoutRequest $request)
-    {
-        $userId = $request->get('user_id');
-        $sessionUserId = $request->session()->get('user_id');
-
-        if ($sessionUserId == null || strcasecmp($sessionUserId, $userId) != 0) {
-            return response(['Invalid request'], 403);
-        }
-
-        $request->session()->flush();
-        return response([
-            'Message' => 'Logout successfully',
-        ], 200);
-    }
-
-    public function getSessionData(Request $request) {
-        $userId = $request->session()->get('user_id');
-        if ($userId != null) {
-            return response([
-                'Message' => 'Success',
-                'user_id' => $userId
-            ], 200);
-        }
-        return response(['Message' => 'Invalid'], 403);;
     }
 
     public function logout(UserLogoutRequest $request)

@@ -19,9 +19,16 @@ $('#sign_in').click(function(){
             password: password
         },
         success: function(data){
-            console.log(data);
-            window.location.href="{{homeAdmin}}"
-            alert("Success !");
+
+            if(data.Role.id == 1){
+                window.location.href="http://127.0.0.1:8000/homePage";
+            }
+            else{
+                window.location.href="http://127.0.0.1:8000/homeAdmin";
+            }
+            
+            
+            
         },
         error: function(){
             alert("Login fail !");
@@ -68,19 +75,19 @@ $('#register').click(function(){
     
 });
 
-$('#borrow').click(function(){
-    var id = $('this').attr('book_id');
-    alert(id);
+$('.borrow').click(function(){
+    var id = $('#book_id').val();
+    // alert(id);
     $('#borrow_book_id').val(id);
     $('#myModal-borrow').modal('show');
 });
 
 $('#borrow_book').click(function(){
-    var book_id = $('borrow_book_id').val();
+    var book_id = $('#borrow_book_id').val();
     alert(book_id);
     var quantity = $('#quantity').val();
     alert(quantity);
-    var user_id = 
+    var user_id = $('#borrow_user_id').val();
 
     $.ajaxSetup({
         headers: {
@@ -94,16 +101,56 @@ $('#borrow_book').click(function(){
         dataType: 'json',
         data: {
             user_id: user_id,
-            books: [
+            books: {
                 book_id: book_id,
                 quantity: quantity
-            ]
+            }
         },
-        success: function(){
-
+        success: function(data){
+            alert('success');
         },
-        error: function(){
+        error: function(err){
+            console.log(err);
+        }
+    });
 
+});
+
+$('#_register_card').click(function(){
+
+    var id = $(this).attr('data_id');
+    alert(id);
+    $('#card_user_id').val(id);
+    $('#card').modal('show');
+});
+
+$('#register_card').click(function(){
+    var user_id = $('#card_user_id').val();
+    alert(user_id);
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $.ajax({
+        url: '/api/v1/cards/post',
+        type: 'post',
+        dataType: 'json',
+        data: {
+            user_id: user_id,
+            
+        },
+        success: function(data){
+            alert('success');
+            $('#card').modal('show');
+            $('#_register_card').text("");
+        },
+        error: function(err){
+            console.log(err);
+            alert('Register card fail');
+            $('#card').modal('show');
         }
     });
 

@@ -9,12 +9,14 @@
 namespace App\Http\Controllers\API;
 
 
+use App\Decorators\CardDecorator\CreateCardProxy;
 use App\Decorators\CardDecorator\RenewedCardDecorator;
 use App\Decorators\CardDecorator\RenewedCardTransactionDecorator;
 use App\Http\Controllers\Requests\API\Card\CardPostRequest;
 
 use App\Http\Controllers\Requests\API\Card\CardRenewedRequest;
 use App\Services\CardService;
+use App\Services\Message;
 
 class CardController extends APIController
 {
@@ -25,7 +27,19 @@ class CardController extends APIController
 
     public function post(CardPostRequest $request)
     {
-        return parent::_post($request);
+        /**
+         * @var CardService $service
+         */
+        $service = $this->getService();
+        $enhancedService = new CreateCardProxy($service);
+        $card = $enhancedService->createNewModel($request->all());
+        if ($card != null) {
+            return $card;
+        }
+        /**
+         * @var Message $enhancedService
+         */
+        return response(['Message' => $this->message($enhancedService)], 403);
     }
 
     public function renewed(CardRenewedRequest $request, int $id = null)

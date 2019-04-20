@@ -79,7 +79,8 @@
 								</li>
 							</ul>
 							@foreach($list as $book)
-							<a href="#" class="primary-btn text-uppercase" id="borrow" book_id="{{$book->id}}">Borrow</a>
+							<input type="hidden" name="book_id" id="book_id" value="{{$book->id}}">
+							<a href="#" class="primary-btn text-uppercase borrow" book_id="{{$book->id}}" data-toggle="modal">Borrow</a>
 							@endforeach
 						</div>
 					</div>
@@ -94,9 +95,10 @@
             <!-- {{csrf_field()}} -->
             <!-- Modal content-->
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header" style="background: #FFFAFA;">
+                	<h4 class="modal-title"> Borrow Book</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"> Borrow Book</h4>
+                    
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -104,10 +106,10 @@
                             <!-- PAGE CONTENT BEGINS -->
                             <div class="col-sm-9" >
                                 <div class="form-group" >
-                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top: 22px;">Quantity:</label>
+                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top: 22px;"><b>Quantity:</b></label>
 
                                     <div class="col-sm-7">
-                                        <input type="text" placeholder="Enter quantity book ..." class="form-control"  name="quantity" id="quantity" style="width: 350px; margin-top: 15px;"/>
+                                        <input type="text" placeholder="Enter quantity book ..." class="form-control"  name="quantity" id="quantity" style="width: 350px; margin-top: -40px; margin-left: 80px;"/>
                                     </div>
                                 </div>
 
@@ -118,9 +120,10 @@
 
                 </div>  
                 <br/>
-                <div class="modal-footer">
+                <div class="modal-footer" style="background: #FFFAFA;">
                 	<input type="hidden" name="borrow_book_id" id="borrow_book_id" value="">
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                	<input type="hidden" name="borrow_user_id" id="borrow_user_id" value="{{Session::get('user_id')}}">
+                    <!-- <button style="margin-left: -400px;" type="button" class="btn" data-dismiss="modal">Close</button> -->
                     <button class="btn btn-info" type="submit" id="borrow_book">
                         <i class="ace-icon fa fa-check bigger-110"></i>
                         Ok

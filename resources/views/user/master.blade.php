@@ -29,6 +29,11 @@
 			<link rel="stylesheet" href="../frontend/css/owl.carousel.css">			
 			<link rel="stylesheet" href="../frontend/css/jquery-ui.css">			
 			<link rel="stylesheet" href="../frontend/css/main.css">
+			
+
+
+			<!-- <script type="text/javascript" src="../js/Home.js"></script> -->
+
 		</head>
 		<body>	
 		  <header id="header" id="home">
@@ -68,6 +73,51 @@
 			</footer>	
 			<!-- End footer Area -->	
 
+			<div class="modal fade" id="card" role="dialog">
+	            <div class="modal-dialog">
+	                
+	                <div class="modal-content">
+	                    <!-- <form > -->
+	                        <!-- <input type="hidden" name="_method" value="delete"> -->
+	                        <!-- {{csrf_field()}} -->
+	                    
+	                <!-- Modal content-->
+	                
+	                        <div class="modal-header">
+	                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+	                            <h4 class="modal-title">Confirm</h4>
+	                        </div>
+	                        <div class="modal-body">
+	                            
+	                            <span id="form_output"></span>
+	                            <div class="row">
+	                                <div class="col-xs-12">
+	                                    <!-- PAGE CONTENT BEGINS -->
+	                                    <h4>You may want to register card ?</h4>
+
+	                                </div>
+	                            </div>
+
+	                        </div>  
+	                        
+	                        <div class="modal-footer">
+	                            <input type="hidden" id="card_user_id" value="" />
+	                            <button class="btn btn-white btn-round pull-left" data-dismiss="modal">
+	                                <i class="ace-icon fa fa-times red2"></i>
+	                                No
+	                            </button>
+	                            <button class="btn btn-white btn-warning btn-bold" id="register_card">
+	                                <i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
+	                                Yes
+	                            </button>
+	                            
+	                        </div>
+	                    <!-- </form> -->
+	                        
+	                    
+	                </div>
+	            </div>
+			</div>
 
 
 			<script src="../frontend/js/vendor/jquery-2.2.4.min.js"></script>
@@ -86,23 +136,10 @@
 			<script src="../frontend/js/main.js"></script>	
 
 			
-			<script type="text/javascript" src="js/Home.js"></script>
-			<script type="text/javascript" src="js/PublisherBook.js"></script>
 
-			<!-- <script src="frontend/js/vendor/jquery-2.2.4.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-			<script src="frontend/js/vendor/bootstrap.min.js"></script>			
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-  			<script src="frontend/js/easing.min.js"></script>			
-			<script src="frontend/js/hoverIntent.js"></script>
-			<script src="frontend/js/superfish.min.js"></script>	
-			<script src="frontend/js/jquery.ajaxchimp.min.js"></script>
-			<script src="frontend/js/jquery.magnific-popup.min.js"></script>	
-    		<script src="frontend/js/jquery.tabs.min.js"></script>						
-			<script src="frontend/js/jquery.nice-select.min.js"></script>	
-			<script src="frontend/js/owl.carousel.min.js"></script>									
-			<script src="frontend/js/mail-script.js"></script>	
-			<script src="frontend/js/main.js"></script>	 -->
+			
+			<script type="text/javascript" src="../js/Home.js"></script>
+
 
 		</body>
 	</html>
