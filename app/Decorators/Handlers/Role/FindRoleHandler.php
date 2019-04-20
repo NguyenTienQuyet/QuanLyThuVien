@@ -18,8 +18,8 @@ class FindRoleHandler extends RoleHandler
         $roleService = $this->createHandlerService();
         $pairs = [
             [
-                'needle' => 'email',
-                'role_type' => 'user'
+                'needle' => 'roleType',
+                'value' => 'user'
             ],
         ];
         $role = $roleService->getBy($pairs);
