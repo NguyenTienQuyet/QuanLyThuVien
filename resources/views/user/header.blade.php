@@ -13,6 +13,18 @@
 			
 
 			<div class="col-lg-6 col-sm-6 col-4 header-top-right no-padding">
+
+				<li class="menu-has-children"><a href="#">Full Name</a>
+				    <ul>
+				      
+				      <li><a href="#">Profile</a></li>
+				      <li class="divider"></li>
+				      <li><a href="#">Change Password</a></li>
+				      <li class="divider"></li>
+				      
+				    </ul>
+				 </li>	
+
 				<a href="{{route('register')}}"><span class="lnr lnr-phone-handset"></span> <span class="text"><b><u>Register</u></b></span></a>
 				<a href="{{route('login')}}"><span class="lnr lnr-envelope"></span> <span class="text"><b><u>Login</u></b></span></a>			
 			</div>
