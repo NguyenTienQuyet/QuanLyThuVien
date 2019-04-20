@@ -253,21 +253,33 @@ jQuery(function($) {
         // console.log(publisher_id);
         // console.log(publishedYear);
         // console.log(title);
+        var formData = new FormData();
+        formData.append('title', title);
+        formData.append('authors[]', author_id_);
+        formData.append('genres[]', genre_id_);
+        formData.append('publisher_id', publisher_id);
+        formData.append('publishedYear', publishedYear);
+        formData.append('image', $('input[type=file]')[0].files[0]);
 
         $.ajax({
 
             url: "/api/v1/books/post",
             type: 'post',
-            dataType: "json",
-            data:{
-
-                title: title,
-                authors: author_id_,
-                genres: genre_id_,
-                publisher_id: publisher_id,
-                publishedYear: publishedYear
-
-            },
+            data: formData,
+            // type: "POST", //ADDED THIS LINE
+            // THIS MUST BE DONE FOR FILE UPLOADING
+            contentType: false,
+            processData: false,
+            // dataType: "json",
+            // data:{
+            //
+            //     title: title,
+            //     authors: author_id_,
+            //     genres: genre_id_,
+            //     publisher_id: publisher_id,
+            //     publishedYear: publishedYear
+            //
+            // },
             success: function () {
                 alert("success!");
                 $('#myModal-book').modal('hide');
