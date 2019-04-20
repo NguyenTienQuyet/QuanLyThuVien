@@ -67,3 +67,44 @@ $('#register').click(function(){
 
     
 });
+
+$('#borrow').click(function(){
+    var id = $('this').attr('book_id');
+    alert(id);
+    $('#borrow_book_id').val(id);
+    $('#myModal-borrow').modal('show');
+});
+
+$('#borrow_book').click(function(){
+    var book_id = $('borrow_book_id').val();
+    alert(book_id);
+    var quantity = $('#quantity').val();
+    alert(quantity);
+    var user_id = 
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $.ajax({
+        url: '/api/v1/books/borrow',
+        type: 'patch',
+        dataType: 'json',
+        data: {
+            user_id: user_id,
+            books: [
+                book_id: book_id,
+                quantity: quantity
+            ]
+        },
+        success: function(){
+
+        },
+        error: function(){
+
+        }
+    });
+
+})

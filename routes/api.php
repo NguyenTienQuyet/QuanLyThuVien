@@ -242,9 +242,9 @@ Route::prefix('v1')->group(function () {
             'as' => 'api/v1/roles/get'
         ]);
 
-        Route::post('register', [
+        Route::post('post', [
             'uses' => 'API\RoleController@post',
-            'as' => 'api/v1/roles/register'
+            'as' => 'api/v1/roles/post'
         ]);
 
         Route::patch('patch/{id?}', [

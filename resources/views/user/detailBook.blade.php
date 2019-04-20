@@ -78,11 +78,57 @@
 									</a>
 								</li>
 							</ul>
-							<a href="#" class="primary-btn text-uppercase">Borrow</a>
+							@foreach($list as $book)
+							<a href="#" class="primary-btn text-uppercase" id="borrow" book_id="{{$book->id}}">Borrow</a>
+							@endforeach
 						</div>
 					</div>
 				</div>	
 			</section>
 			<!-- End course-details Area -->
+
+<div class="modal fade" id="myModal-borrow" author="dialog">
+    <div class="modal-dialog">
+
+        <!-- <form id="form-author"> -->
+            <!-- {{csrf_field()}} -->
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"> Borrow Book</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+                            <div class="col-sm-9" >
+                                <div class="form-group" >
+                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top: 22px;">Quantity:</label>
+
+                                    <div class="col-sm-7">
+                                        <input type="text" placeholder="Enter quantity book ..." class="form-control"  name="quantity" id="quantity" style="width: 350px; margin-top: 15px;"/>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>  
+                <br/>
+                <div class="modal-footer">
+                	<input type="hidden" name="borrow_book_id" id="borrow_book_id" value="">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button class="btn btn-info" type="submit" id="borrow_book">
+                        <i class="ace-icon fa fa-check bigger-110"></i>
+                        Ok
+                    </button>
+                </div>
+            </div>
+        <!-- </form> -->
+    </div>
+</div>
 					    			
 @endsection
