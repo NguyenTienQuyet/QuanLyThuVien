@@ -77,7 +77,7 @@
 
 
     
-<div class="modal fade" id="myModal-author" author="dialog">
+<div class="modal fade" id="myModal-author" role="dialog">
     <div class="modal-dialog">
 
         <!-- <form id="form-author"> -->
@@ -120,7 +120,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="editModal-author" author="dialog">
+<div class="modal fade" id="editModal-author" role="dialog">
     <div class="modal-dialog">
 
         <!-- <form> -->
@@ -169,7 +169,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="deleteModal-author" author="dialog">
+<div class="modal fade" id="deleteModal-author" role="dialog">
             <div class="modal-dialog">
                 
                 <div class="modal-content">
@@ -214,45 +214,6 @@
                 </div>
             </div>
 </div>
-
-<!-- <script>
-    jQuery(function($){
-        $.ajax({
-                    
-                url: '/api/v1/authors/'+'all',
-                type: 'get',
-                dataType: 'json',
-                success: function(data) {
-                    var output = "";
-                    for(var i = 0; i < data.length; i++){
-
-                        output +=   "<tr>"
-                                        +"<td class='text-center'>"+data[i].id+"</td>"
-                                        +"<td class='text-center'>"+data[i].name+"</td>"
-                                        
-                                        +"<td class='text-center'>"
-                                            +"<a href='#' class='text-blue' data-toggle='modal' id_edit_author="+data[i].id+" data-type='update-author'>"
-                                                +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
-                                            +"</a>"
-                                        +"</td>"
-                                        +"<td class='text-center'>"
-                                            +"<a href='#' class='text-red delete_author' id_delete_author="+data[i].id+" data-type='delete-author'>"
-                                                +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
-                                            +"</a>"
-                                        +"</td>"
-                                        
-                                    +"</tr>";
-
-                    }
-                    $('#body_list_author').html(output);
-                    // alert('success');
-                },
-                error: function(err){
-                    alert(1);
-                }
-        });
-    });
-</script> -->
 
 
 @endsection

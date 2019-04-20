@@ -14,7 +14,7 @@
 
 			<div class="col-lg-6 col-sm-6 col-4 header-top-right no-padding">
 
-				<li class="menu-has-children"><a href="#">Full Name</a>
+				<!-- <li class="menu-has-children"><a href="#">Full Name</a>
 				    <ul>
 				      
 				      <li><a href="#">Profile</a></li>
@@ -23,10 +23,15 @@
 				      <li class="divider"></li>
 				      
 				    </ul>
-				 </li>	
-
+				 </li>	 -->
+				 
+				 @if(!Session::has('user_id'))
 				<a href="{{route('register')}}"><span class="lnr lnr-phone-handset"></span> <span class="text"><b><u>Register</u></b></span></a>
-				<a href="{{route('login')}}"><span class="lnr lnr-envelope"></span> <span class="text"><b><u>Login</u></b></span></a>			
+				<a href="{{route('login')}}"><span class="lnr lnr-envelope"></span> <span class="text"><b><u>Login</u></b></span></a>	
+				@else
+				<a id="_register_card" data_id="{{Session::get('user_id')}}" href="#" data-toggle="modal"><span class="lnr lnr-envelope"></span> <span class="text"><b><u>Register card</u></b></span></a>
+				<a href="{{route('register')}}"><span class="lnr lnr-phone-handset"></span> <span class="text"><b><u>{{Session::get('name')}}</u></b></span></a>
+				@endif		
 			</div>
 		</div>			  					
 	</div>
@@ -37,7 +42,7 @@
         <a href="{{route('homePage')}}"><img style="height: 50px; width: 50px;" src="../frontend/img/logo1.png" alt="" title="" /><h3 style="color: white; margin-left: 70px; margin-top: -28px;">Library</h3></a>
       </div>
 
-    <div class="col-lg-4  col-md-6 col-sm-6">
+    <!-- <div class="col-lg-4  col-md-6 col-sm-6">
 		<div class="single-footer-widget">
 			
 			<div class="" id="mc_embed_signup">
@@ -54,7 +59,7 @@
 				</form> 
 			</div>
 		</div>
-	</div>
+	</div> -->
 
       <nav id="nav-menu-container">
         @include('user.menu')
