@@ -770,15 +770,6 @@ jQuery(function($) {
     });
 
 
-    // $('a[data-type=delete-book]').on('click', function(){
-
-    //     var id = $(this).attr("id");
-
-    //     $('#book-delete').val(id);
-    //     $('#deleteModal-book').modal('show');
-
-    // });
-
     $('#_delete-book').on('click', function(){
 
         var id = $('#book-delete').val();

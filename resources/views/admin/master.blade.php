@@ -82,8 +82,8 @@
 <script type="text/javascript" src="js/Publisher.js"></script>
 <script type="text/javascript" src="js/Genre.js"></script>
 <script type="text/javascript" src="js/User.js"></script>
-<!-- <script type="text/javascript" src="js/Card.js"></script>
-<script type="text/javascript" src="js/BookHistory.js"></script> -->
+<!-- <script type="text/javascript" src="js/Card.js"></script> -->
+<script type="text/javascript" src="js/BookHistory.js"></script>
 <script type="text/javascript" src="js/Book.js"></script>
 
   <!-- Google Font -->
