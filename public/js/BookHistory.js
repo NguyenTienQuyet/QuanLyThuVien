@@ -12,7 +12,7 @@ jQuery(function($) {
 	            var output = "";
 	            
 	            for(var i = 0; i < data.length; i++){
-	                if(data[i].state == 1){
+	                if(data[i].book_copy.state_detail == "available"){
 		                output +=   "<tr>"
 		                            +"<td class='text-center'>"+data[i].id+"</td>"
 		                            +"<td class='text-center'>"+data[i].book_copies_id+"</td>"
@@ -35,7 +35,7 @@ jQuery(function($) {
 		                                +"</a>"
 
 		                            +"</td>"
-		                             +"<td class='text-center'>"+data[i].state+"</td>"
+		                             +"<td class='text-center'>"+data[i].book_copy.state_detail+"</td>"
 		                        +"</tr>";
 	                    }
 

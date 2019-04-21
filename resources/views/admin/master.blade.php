@@ -85,7 +85,8 @@
 <!-- <script type="text/javascript" src="js/Card.js"></script> -->
 <script type="text/javascript" src="js/BookHistory.js"></script>
 <script type="text/javascript" src="js/Book.js"></script>
-
+<script type="text/javascript" src="js/RentBook.js"></script>
+<script type="text/javascript" src="js/ReturnBook.js"></script>
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
