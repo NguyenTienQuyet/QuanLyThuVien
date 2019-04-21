@@ -22,7 +22,7 @@ class BookHistory extends Model
 
     public function bookCopy()
     {
-        return $this->belongsTo(BookCopy::class, 'book_copies_id');
+        return $this->belongsTo(BookCopy::class, 'book_copies_id', 'id');
     }
 
     public function user()

@@ -97,6 +97,6 @@ class BookHistoryController extends APIController
 
     public function all(BookHistoryGetRequest $request)
     {
-        return $this->getService()->getAll($request->attributes());
+        return parent::_all($request);
     }
 };
