@@ -29,8 +29,38 @@
 				<a href="{{route('register')}}"><span class="lnr lnr-phone-handset"></span> <span class="text"><b><u>Register</u></b></span></a>
 				<a href="{{route('login')}}"><span class="lnr lnr-envelope"></span> <span class="text"><b><u>Login</u></b></span></a>	
 				@else
-				<a id="_register_card" data_id="{{Session::get('user_id')}}" href="#" data-toggle="modal"><span class="lnr lnr-envelope"></span> <span class="text"><b><u>Register card</u></b></span></a>
-				<a href="{{route('register')}}"><span class="lnr lnr-phone-handset"></span> <span class="text"><b><u>{{Session::get('name')}}</u></b></span></a>
+				<li class="dropdown user user-menu">
+		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		              <!-- <img src="backend/dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
+		              <span class="hidden-xs"><b>{{Session::get('name')}}</b></span>
+		            </a>
+		            <ul class="dropdown-menu">
+		              
+		                <!-- <li> -->
+		                  	<div class="col-xs-4 text-center">
+		                    	<a id="_register_card" data_id="{{Session::get('user_id')}}" href="#" data-toggle="modal"><span class="hidden-xs" style="color: black; font-size: 12px; float: left; margin-left: 10px;">Register card</span></a>
+		                  	</div>
+		                  	
+		              	<!-- </li> -->
+		              	<!-- <li> -->
+		                  	<div class="col-xs-4 text-center">
+		                    	<a id="change_password" data_id="{{Session::get('user_id')}}" href="#" data-toggle="modal"><span class="hidden-xs" style="color: black; font-size: 12px; float: left; margin-left: 10px;">Change password</span></a>
+		                  	</div>
+		              	<!-- </li> -->
+		              	<!-- <li> -->
+		                  	<div class="col-xs-4 text-center">
+		                    	<a id="logout" data_id="{{Session::get('user_id')}}" href="#" data-toggle="modal"><span class="hidden-xs" style="color: black; font-size: 12px; float: left; margin-left: 10px;">Logout</span></a>
+		                  	</div>
+		              	<!-- </li> -->
+		                  
+		            </ul>
+		        </li>
+		          
+         
+				
+				
+
+				
 				@endif		
 			</div>
 		</div>			  					
