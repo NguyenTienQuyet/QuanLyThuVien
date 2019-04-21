@@ -84,32 +84,30 @@
 	                <!-- Modal content-->
 	                
 	                        <div class="modal-header">
+	                        	<h4 class="modal-title">Confirm</h4>
 	                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-	                            <h4 class="modal-title">Confirm</h4>
+	                            
 	                        </div>
 	                        <div class="modal-body">
 	                            
-	                            <span id="form_output"></span>
-	                            <div class="row">
-	                                <div class="col-xs-12">
+	                            <!-- <span id="form_output"></span> -->
+	                            <!-- <div class="row" > -->
+	                                <div class="col-xs-12" style="text-align: center;">
 	                                    <!-- PAGE CONTENT BEGINS -->
 	                                    <h4>You may want to register card ?</h4>
 
 	                                </div>
-	                            </div>
+	                            <!-- </div> -->
 
 	                        </div>  
 	                        
 	                        <div class="modal-footer">
 	                            <input type="hidden" id="card_user_id" value="" />
-	                            <button class="btn btn-white btn-round pull-left" data-dismiss="modal">
-	                                <i class="ace-icon fa fa-times red2"></i>
-	                                No
-	                            </button>
-	                            <button class="btn btn-white btn-warning btn-bold" id="register_card">
-	                                <i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
-	                                Yes
-	                            </button>
+	                            <input type="button" value="No" data-dismiss="modal" >
+	                                
+	                            <input type="button" id="register_card" value="Yes">
+	                                <!-- <i class="ace-icon fa fa-trash-o bigger-120 orange"></i> -->
+	                                
 	                            
 	                        </div>
 	                    <!-- </form> -->

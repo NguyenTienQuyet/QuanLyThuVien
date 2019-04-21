@@ -77,8 +77,8 @@
 <div class="modal fade" id="myModal-role" role="dialog">
     <div class="modal-dialog">
 
-        <form id="form-role">
-            {{csrf_field()}}
+        <!-- <form id="form-role">
+            {{csrf_field()}} -->
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
@@ -113,17 +113,17 @@
                     </button>
                 </div>
             </div>
-        </form>
+        <!-- </form> -->
     </div>
 </div>
 
 <div class="modal fade" id="editModal-role" role="dialog">
     <div class="modal-dialog">
 
-        <form action="" method="get">
+       <!--  <form action="" method="get">
 
             <input type="hidden" name="_method" value="patch">
-            {{csrf_field()}}
+            {{csrf_field()}} -->
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
@@ -161,7 +161,7 @@
                     </button>
                 </div>
             </div>
-        </form>
+        <!-- </form> -->
     </div>
 </div>
 
@@ -169,10 +169,10 @@
             <div class="modal-dialog">
 
                 <div class="modal-content">
-                    <form method="get" class="form-delete">
+                    <!-- <form method="get" class="form-delete">
                         <input type="hidden" name="_method" value="delete">
                         {{csrf_field()}}
-
+ -->
                 <!-- Modal content-->
 
                         <div class="modal-header">
@@ -204,7 +204,7 @@
                             </button>
 
                         </div>
-                    </form>
+                    <!-- </form> -->
 
 
                 </div>

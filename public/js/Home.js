@@ -84,11 +84,11 @@ $('.borrow').click(function(){
 
 $('#borrow_book').click(function(){
     var book_id = $('#borrow_book_id').val();
-    alert(book_id);
+    // alert(book_id);
     var quantity = $('#quantity').val();
-    alert(quantity);
+    // alert(quantity);
     var user_id = $('#borrow_user_id').val();
-
+    // alert(user_id);
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -102,14 +102,18 @@ $('#borrow_book').click(function(){
         data: {
             user_id: user_id,
             books: {
+                0:{
                 book_id: book_id,
                 quantity: quantity
+                }
             }
         },
         success: function(data){
             alert('success');
+            $('#myModal-borrow').modal('hide');
         },
         error: function(err){
+            alert(err);
             console.log(err);
         }
     });
@@ -119,14 +123,14 @@ $('#borrow_book').click(function(){
 $('#_register_card').click(function(){
 
     var id = $(this).attr('data_id');
-    alert(id);
+    // alert(id);
     $('#card_user_id').val(id);
     $('#card').modal('show');
 });
 
 $('#register_card').click(function(){
     var user_id = $('#card_user_id').val();
-    alert(user_id);
+    // alert(user_id);
 
     $.ajaxSetup({
         headers: {

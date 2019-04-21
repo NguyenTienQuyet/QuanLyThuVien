@@ -18,7 +18,11 @@
 			<!-- End banner Area -->	
 
 			<!-- Start course-details Area -->
-			<section class="course-details-area pt-120">
+			<br>
+			<br>
+			<br>
+			<h2 style="text-align: center; margin-left: 30px"><b style="color: black;">Book Detail</b></h2>
+			<section class="course-details-area pt-120" style="margin-top: -50px;">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-8 left-contents">
@@ -124,10 +128,8 @@
                 	<input type="hidden" name="borrow_book_id" id="borrow_book_id" value="">
                 	<input type="hidden" name="borrow_user_id" id="borrow_user_id" value="{{Session::get('user_id')}}">
                     <!-- <button style="margin-left: -400px;" type="button" class="btn" data-dismiss="modal">Close</button> -->
-                    <button class="btn btn-info" type="submit" id="borrow_book">
-                        <i class="ace-icon fa fa-check bigger-110"></i>
-                        Ok
-                    </button>
+                    <input type="submit" value="Ok" id="borrow_book">
+                        
                 </div>
             </div>
         <!-- </form> -->

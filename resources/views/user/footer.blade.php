@@ -1,5 +1,5 @@
 <div class="container">
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-lg-2 col-md-6 col-sm-6">
 							<div class="single-footer-widget">
 								<h4>Top Products</h4>
@@ -63,7 +63,7 @@
 								</div>
 							</div>
 						</div>											
-					</div>
+					</div> -->
 					<div class="footer-bottom row align-items-center justify-content-between">
 						<p class="footer-text m-0 col-lg-6 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
