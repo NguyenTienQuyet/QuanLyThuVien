@@ -262,4 +262,11 @@ Route::prefix('v1')->group(function () {
             'as' => 'api/v1/roles/all'
         ]);
     });
+
+    Route::prefix('bookCopies')->group(function () {
+        Route::get('get/{id?}', [
+            'uses' => 'API\BookCopyController@get',
+            'as' => 'api/v1/bookCopies/get'
+        ]);
+    });
 });
