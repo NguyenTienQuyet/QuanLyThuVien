@@ -26,6 +26,6 @@ class BookGetRequest extends GetRequest
 
     function relations(): array
     {
-        return ['authors', 'publisher', 'bookImages', 'genres', 'bookCopies'];
+        return ['authors', 'publisher', 'images', 'genres', 'bookCopies'];
     }
 }
