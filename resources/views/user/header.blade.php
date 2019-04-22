@@ -49,7 +49,7 @@
 		              	<!-- </li> -->
 		              	<!-- <li> -->
 		                  	<div class="col-xs-4 text-center">
-		                    	<a id="logout" data_id="{{Session::get('user_id')}}" href="#" data-toggle="modal"><span class="hidden-xs" style="color: black; font-size: 12px; float: left; margin-left: 10px;">Logout</span></a>
+		                    	<a class="logout" data_id="{{Session::get('user_id')}}" href="#" data-toggle="modal"><span class="hidden-xs" style="color: black; font-size: 12px; float: left; margin-left: 10px;">Logout</span></a>
 		                  	</div>
 		              	<!-- </li> -->
 		                  

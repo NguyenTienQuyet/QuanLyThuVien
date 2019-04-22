@@ -87,6 +87,7 @@
 <script type="text/javascript" src="js/Book.js"></script>
 <script type="text/javascript" src="js/RentBook.js"></script>
 <script type="text/javascript" src="js/ReturnBook.js"></script>
+<script type="text/javascript" src="../js/Home.js"></script>
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
@@ -127,6 +128,52 @@
   <footer class="main-footer">
     @include('admin.footer')
   </footer>
+
+  <div class="modal fade" id="confirm_logout" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <!-- <form method="get" class="form-delete">
+                <input type="hidden" name="_method" value="delete">
+                {{csrf_field()}} -->
+
+        <!-- Modal content-->
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Confirm</h4>
+                </div>
+                <div class="modal-body">
+
+                    <span id="form_output"></span>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+                            <h4>You may want to logout ?</h4>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <input type="hidden" id="user-delete" value="" />
+                    <button class="btn btn-white btn-round pull-left" data-dismiss="modal">
+                        <i class="ace-icon fa fa-times red2"></i>
+                        No
+                    </button>
+                    <button class="btn btn-white btn-warning btn-bold" id="logout_user">
+                        <i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
+                        Yes
+                    </button>
+
+                </div>
+            <!-- </form> -->
+
+
+        </div>
+    </div>
+</div>
 
   <!-- Control Sidebar -->
   

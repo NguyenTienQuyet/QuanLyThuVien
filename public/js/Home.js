@@ -24,8 +24,11 @@ jQuery(function($) {
                 if(data.Role.id == 1){
                     window.location.href="http://127.0.0.1:8000/homePage";
                 }
-                else{
+                else if(data.Role.id == 2){
                     window.location.href="http://127.0.0.1:8000/homeAdmin";
+                }
+                else{
+                    alert('You need register account');
                 }
                 
                 
@@ -36,6 +39,44 @@ jQuery(function($) {
             }
 
         });
+    });
+
+    $('.logout').click(function(){
+
+        var id = $(this).attr('data_id');
+        alert(id);
+        // var password = $('#password_login').val();
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $('#confirm_logout').modal('show');
+
+        $('#logout_user').click(function(){
+
+            $.ajax({
+                url: '/api/v1/users/logout',
+                type: 'post',
+                dataType: 'json',
+                data:{
+                    user_id: id
+                },
+                success: function(data){
+
+                    window.location.href="http://127.0.0.1:8000/login";
+                   
+                },
+                error: function(){
+                    
+                }
+
+            });
+        });
+
+        
     });
 
     $('#register').click(function(){

@@ -30,6 +30,7 @@ class AdminController extends Controller
     public function getListUser(){
 
         $data['list'] = User::paginate(10);
+        $data['listR'] = Role::all();
         return view('admin.listUser', $data);
     	
     }
