@@ -77,7 +77,39 @@ jQuery(function($) {
 					$('#return-history').modal('show');
 				});
 
+				$('a[data-type=active-history]').on('click', function(){
+					// alert(1);
+					var id = $(this).attr('book_copies_id');
+					var user_id = $(this).attr('user_id');
+					// alert(id);
+					
+					$.ajax({
+						url:'/api/v1/bookCopies/get?id='+id+'&relations[]=book',
+						type: 'get',
+						dataType: 'json',
+						success: function(dataa){
+							// console.log(dataa);
+							// for(var i in dataa){
+								// alert(dataa.book.title);
+								$('#active_book_copy_id').text(dataa.id);
+								$('#active_book_id').text(dataa.book_id);
+								$('#active_book_title').text(dataa.book.title);
+								$('#active_published_year').text(dataa.book.publishedYear);
+								$('#active_book_state_detail').text(dataa.state_detail);
 
+								$('#active_user_id').val(user_id);
+								$('#active_bookCopy_id').val(id);
+							// }
+							
+						},
+						error: function(err){
+							alert('fail');
+						}
+					});
+					
+
+					$('#active-history').modal('show');
+				});
 
 	        },
 	        error: function(err){
@@ -183,6 +215,40 @@ jQuery(function($) {
 								
 
 								$('#return-history').modal('show');
+							});
+
+							$('a[data-type=active-history]').on('click', function(){
+								// alert(1);
+								var id = $(this).attr('book_copies_id');
+								var user_id = $(this).attr('user_id');
+								// alert(id);
+								
+								$.ajax({
+									url:'/api/v1/bookCopies/get?id='+id+'&relations[]=book',
+									type: 'get',
+									dataType: 'json',
+									success: function(dataa){
+										// console.log(dataa);
+										// for(var i in dataa){
+											// alert(dataa.book.title);
+											$('#active_book_copy_id').text(dataa.id);
+											$('#active_book_id').text(dataa.book_id);
+											$('#active_book_title').text(dataa.book.title);
+											$('#active_published_year').text(dataa.book.publishedYear);
+											$('#active_book_state_detail').text(dataa.state_detail);
+
+											$('#active_user_id').val(user_id);
+											$('#active_bookCopy_id').val(id);
+										// }
+										
+									},
+									error: function(err){
+										alert('fail');
+									}
+								});
+								
+
+								$('#active-history').modal('show');
 							});
 
 
