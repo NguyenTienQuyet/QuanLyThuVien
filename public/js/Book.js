@@ -27,7 +27,7 @@ jQuery(function($) {
     $('.select2').select2();
     $.ajax({
 
-        url: 'http://127.0.0.1:8000/api/v1/books/'+'all?relations[]=authors&relations[]=genres&relations[]=publisher',
+        url: 'http://127.0.0.1:8000/api/v1/books/'+'all?relations[]=authors&relations[]=genres&relations[]=publisher&relations[]=images',
         type: 'get',
         dataType: 'json',
         success: function(data) {
@@ -35,20 +35,27 @@ jQuery(function($) {
 
 
             var output = "";
-            var j, q = "";
+            var j, q,image = "";
 
             for(var i = 0; i < data.length; i++){
                 var k = [];
                 var p = [];
+                var img=[];
                 var au = [];
                 var ge = [];
                 for(j in data[i].authors){
+
                     k.push(data[i].authors[j].id);
                     au.push(data[i].authors[j].name);
                 }
                 for(q in data[i].genres){
                     p.push(data[i].genres[q].id);
                     ge.push(data[i].genres[q].genreType);
+                }
+                for (image in data[i].images) {
+                    var image_url=data[i].images[image].imageURL;
+                    console.log(image_url);
+                    img.push(image_url);
                 }
                 output +=   "<tr>"
                                 +"<td class='text-center'>"+data[i].id+"</td>"
@@ -63,7 +70,7 @@ jQuery(function($) {
                                     +"</a>"
                                 +"</td>"
                                 +"<td class='text-center'>"
-                                    +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].publishedYear+">"
+                                    +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].publishedYear+" image="+img+">"
                                         +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                     +"</a>"
                                 +"</td>"
@@ -100,6 +107,9 @@ jQuery(function($) {
                 var id = $(this).attr("id_edit_book");
                 var edit_title = "";
                 var edit_author_id = $(this).attr("author_id");
+                var edit_image_url="http://127.0.0.1:8000"+$(this).attr("image");
+                console.log(edit_image_url);
+
                 var edit_genre_id = $(this).attr("genre_id");
                 var edit_publisher_id = $(this).attr("publisher_id");
                 var edit_published_year = $(this).attr("publishedYear");
@@ -108,6 +118,7 @@ jQuery(function($) {
                 // var genre = $(this).attr("genre");
                 var author_array = [];
                 var genre_array = [];
+                $('#edit_uploadPreview').attr("src",edit_image_url);
 
                 author_array = edit_author_id.split(",");
                 // author_array = author_array.split(",");
@@ -216,7 +227,7 @@ jQuery(function($) {
                 var id = $(this).attr("id_edit_book");
 
                 $('#import_book_id').val(id);
-                
+
                 $('#importModal-book').modal('show');
 
             });
@@ -228,8 +239,6 @@ jQuery(function($) {
             alert(1);
         }
     });
-
-
 
 
     $('#add-book').on('click', function(){
@@ -298,23 +307,25 @@ jQuery(function($) {
             //
             // },
             success: function () {
-                alert("success!");
+                console.log('success');
                 $('#myModal-book').modal('hide');
                 $.ajax({
 
-                    url: '/api/v1/books/'+'all?relations[]=authors&relations[]=genres&relations[]=publisher',
+                    url: '/api/v1/books/'+'all?relations[]=authors&relations[]=genres&relations[]=publisher&relations[]=images',
                     type: 'get',
                     dataType: 'json',
                     success: function(data) {
 
-
+                       console.log(data)
 
                         var output = "";
-                        var j, q = "";
+                        var j, q,image = "";
 
                         for(var i = 0; i < data.length; i++){
                             var k = [];
+
                             var p = [];
+                            var img=[]
                             var au = [];
                             var ge = [];
                             for(j in data[i].authors){
@@ -324,6 +335,9 @@ jQuery(function($) {
                             for(q in data[i].genres){
                                 p.push(data[i].genres[q].id);
                                 ge.push(data[i].genres[q].genreType);
+                            }
+                            for (image in data[i].images) {
+                                img.push(data[i].images[image].imageURL)
                             }
                             output +=   "<tr>"
                                             +"<td class='text-center'>"+data[i].id+"</td>"
@@ -338,7 +352,7 @@ jQuery(function($) {
                                                 +"</a>"
                                             +"</td>"
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].publishedYear+">"
+                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].publishedYear+"image="+img+">"
                                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
@@ -378,6 +392,7 @@ jQuery(function($) {
                             var edit_genre_id = $(this).attr("genre_id");
                             var edit_publisher_id = $(this).attr("publisher_id");
                             var edit_published_year = $(this).attr("publishedYear");
+                            var edit_image_url=$(this).attr("image");
                             // var author = $(this).attr("author");
                             // var genre = $(this).attr("genre");
                             var author_array = [];
@@ -464,7 +479,7 @@ jQuery(function($) {
                             }
 
 
-
+                           $('#edit_uploadPreview').attr("src",edit_image_url);
 
                             // $('#edit_title').val(title);
 
@@ -490,7 +505,7 @@ jQuery(function($) {
                             var id = $(this).attr("id_edit_book");
 
                             $('#import_book_id').val(id);
-                            
+
                             $('#importModal-book').modal('show');
 
                         });
@@ -747,7 +762,7 @@ jQuery(function($) {
                             var id = $(this).attr("id_edit_book");
 
                             $('#import_book_id').val(id);
-                            
+
                             $('#importModal-book').modal('show');
 
                         });
@@ -768,7 +783,6 @@ jQuery(function($) {
             }
         });
     });
-
 
     $('#_delete-book').on('click', function(){
 
@@ -982,7 +996,7 @@ jQuery(function($) {
                             var id = $(this).attr("id_edit_book");
 
                             $('#import_book_id').val(id);
-                            
+
                             $('#importModal-book').modal('show');
 
                         });
@@ -1216,7 +1230,7 @@ jQuery(function($) {
                             var id = $(this).attr("id_edit_book");
 
                             $('#import_book_id').val(id);
-                            
+
                             $('#importModal-book').modal('show');
 
                         });
