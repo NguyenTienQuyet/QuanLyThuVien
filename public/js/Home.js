@@ -44,7 +44,7 @@ jQuery(function($) {
     $('.logout').click(function(){
 
         var id = $(this).attr('data_id');
-        alert(id);
+        // alert(id);
         // var password = $('#password_login').val();
 
         $.ajaxSetup({
@@ -77,6 +77,52 @@ jQuery(function($) {
         });
 
         
+    });
+
+    $('._change_password').click(function(){
+
+        // var user_id = $('#change_user_id').val();
+        // alert($('#password_login').val());
+
+        $('#changePassword-user').modal('show');
+
+        
+    });
+
+    //Change Password chua hoan thanh...^^
+
+    $('#change_password').click(function(){
+
+        var current_password = $('#current').val();
+        var new_password = $('#new').val();
+        var confirm_password = $('#confirm').val();
+        var user_id = $('#change_user_id').val();
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        // $('#confirm_logout').modal('show');
+
+        $.ajax({
+                url: '/api/v1/users/get?id='+user_id,
+                type: 'get',
+                dataType: 'json',
+                
+                success: function(data){
+
+                    window.location.href="http://127.0.0.1:8000/login";
+                   
+                },
+                error: function(){
+                    
+                }
+
+            });
+
+
     });
 
     $('#register').click(function(){

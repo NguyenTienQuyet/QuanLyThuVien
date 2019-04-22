@@ -8,22 +8,9 @@
 				<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 				<li><a href="#"><i class="fa fa-behance"></i></a></li>
 				</ul>			
-			</div>
-
-			
+			</div>	
 
 			<div class="col-lg-6 col-sm-6 col-4 header-top-right no-padding">
-
-				<!-- <li class="menu-has-children"><a href="#">Full Name</a>
-				    <ul>
-				      
-				      <li><a href="#">Profile</a></li>
-				      <li class="divider"></li>
-				      <li><a href="#">Change Password</a></li>
-				      <li class="divider"></li>
-				      
-				    </ul>
-				 </li>	 -->
 				 
 				 @if(!Session::has('user_id'))
 				<a href="{{route('register')}}"><span class="lnr lnr-phone-handset"></span> <span class="text"><b><u>Register</u></b></span></a>
@@ -44,7 +31,7 @@
 		              	<!-- </li> -->
 		              	<!-- <li> -->
 		                  	<div class="col-xs-4 text-center">
-		                    	<a id="change_password" data_id="{{Session::get('user_id')}}" href="#" data-toggle="modal"><span class="hidden-xs" style="color: black; font-size: 12px; float: left; margin-left: 10px;">Change password</span></a>
+		                    	<a id="" data_id="{{Session::get('user_id')}}" href="#" data-toggle="modal"><span class="hidden-xs _change_password" style="color: black; font-size: 12px; float: left; margin-left: 10px;">Change password</span></a>
 		                  	</div>
 		              	<!-- </li> -->
 		              	<!-- <li> -->
@@ -55,11 +42,6 @@
 		                  
 		            </ul>
 		        </li>
-		          
-         
-				
-				
-
 				
 				@endif		
 			</div>
@@ -71,25 +53,6 @@
       <div id="logo">
         <a href="{{route('homePage')}}"><img style="height: 50px; width: 50px;" src="../frontend/img/logo1.png" alt="" title="" /><h3 style="color: white; margin-left: 70px; margin-top: -28px;">Library</h3></a>
       </div>
-
-    <!-- <div class="col-lg-4  col-md-6 col-sm-6">
-		<div class="single-footer-widget">
-			
-			<div class="" id="mc_embed_signup">
-				 <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get">
-				  <div class="input-group">
-				    <input type="text" class="form-control" name="EMAIL" placeholder="Enter Data Search ... " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Data Search ... '" required="" type="email">
-				    <div class="input-group-btn">
-				      <button class="btn btn-default" type="submit">
-				        <span class="lnr lnr-arrow-right"></span>
-				      </button>    
-				    </div>
-				    	<div class="info"></div>  
-				  </div>
-				</form> 
-			</div>
-		</div>
-	</div> -->
 
       <nav id="nav-menu-container">
         @include('user.menu')

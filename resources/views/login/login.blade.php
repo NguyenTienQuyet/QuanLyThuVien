@@ -30,7 +30,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="../../index2.html"><b>Admin</b>LTE</a>
+        <a href="../../index2.html"><b>Admin</b> Library</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
@@ -70,8 +70,8 @@
         </div>
         <!-- /.social-auth-links -->
 
-        <a href="#">I forgot my password</a><br>
-        <a href="register.html" class="text-center">Register a new membership</a>
+        <!-- <a href="#">I forgot my password</a><br> -->
+        <a href="{{route('register')}}" class="text-center">Register a new membership</a>
 
     </div>
     <!-- /.login-box-body -->

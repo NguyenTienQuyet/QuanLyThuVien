@@ -30,11 +30,11 @@
 <body class="hold-transition register-page">
 <div class="register-box">
     <div class="register-logo">
-        <a href="backend/index2.html"><b>Admin</b>LTE</a>
+        <a href="backend/index2.html"><b>Library</b></a>
     </div>
 
     <div class="register-box-body">
-        <p class="login-box-msg">Đăng ký thành viên</p>
+        <p class="login-box-msg">Register member</p>
 
         <form>
             {{ csrf_field() }}

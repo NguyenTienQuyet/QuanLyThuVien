@@ -231,24 +231,11 @@
                 </p>
               </li>
               <!-- Menu Body -->
-              <!-- <li class="user-body"> -->
-                <!-- <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div> -->
-                <!-- /.row
-              </li> -->
+
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="#" class="btn btn-default btn-flat _change_password" data-toggle="modal">Change password</a>
                 </div>
                 <div class="pull-right">
                   <a href="#" class="btn btn-default btn-flat logout" data_id="{{Session::get('user_id')}}" data-toggle="modal">Sign out</a>

@@ -118,6 +118,48 @@
 			</div>
 
 
+			<div class="modal fade" id="confirm_logout" role="dialog">
+			    <div class="modal-dialog">
+
+			        <div class="modal-content">
+			            <!-- <form method="get" class="form-delete">
+			                <input type="hidden" name="_method" value="delete">
+			                {{csrf_field()}} -->
+
+			        <!-- Modal content-->
+
+			                <div class="modal-header">
+			                	<h4 class="modal-title">Confirm</h4>
+			                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+			                    
+			                </div>
+			                <div class="modal-body">
+
+			                    <span id="form_output"></span>
+			                    <div class="row">
+			                        <div class="col-xs-12">
+			                            <!-- PAGE CONTENT BEGINS -->
+			                            <h4 style="margin-left: 130px;">You may want to logout ?</h4>
+
+			                        </div>
+			                    </div>
+
+			                </div>
+
+			                <div class="modal-footer">
+			                    <input type="hidden" id="user-delete" value="" />
+			                    <input value="No" type="button" data-dismiss="modal">
+
+			                    <input value="Yes" type="button" id="logout_user">
+			                </div>
+			            <!-- </form> -->
+
+
+			        </div>
+			    </div>
+			</div>
+
+
 			<script src="../frontend/js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 			<script src="../frontend/js/vendor/bootstrap.min.js"></script>			
