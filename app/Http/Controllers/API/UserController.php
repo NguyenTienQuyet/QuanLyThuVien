@@ -115,4 +115,9 @@ class UserController extends APIController
         }
         return response(['Message' => 'Invalid'], 403);;
     }
+
+    public function all(UserGetRequest $request)
+    {
+        return parent::_all($request);
+    }
 }
