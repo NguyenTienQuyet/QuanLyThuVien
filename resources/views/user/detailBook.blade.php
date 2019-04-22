@@ -83,8 +83,9 @@
 								</li>
 							</ul>
 							@foreach($list as $book)
+							
 							<input type="hidden" name="book_id" id="book_id" value="{{$book->id}}">
-							<a href="#" class="primary-btn text-uppercase borrow" book_id="{{$book->id}}" data-toggle="modal">Borrow</a>
+							<a href="#" class="primary-btn text-uppercase borrow" book_id="{{$book->id}}" data-toggle="modal" user_id="{{Session::get('user_id')}}">Borrow</a>
 							@endforeach
 						</div>
 					</div>

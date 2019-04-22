@@ -78,9 +78,16 @@ jQuery(function($) {
 
     $('.borrow').click(function(){
         var id = $('#book_id').val();
-        // alert(id);
-        $('#borrow_book_id').val(id);
-        $('#myModal-borrow').modal('show');
+        var user_id = $(this).attr('user_id');
+        // alert(user_id);
+        if(user_id != ""){
+             $('#borrow_book_id').val(id);
+            $('#myModal-borrow').modal('show');
+        }
+        else{
+            alert('You are not login')
+        }
+       
     });
 
     $('#borrow_book').click(function(){

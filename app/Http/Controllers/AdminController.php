@@ -98,4 +98,16 @@ class AdminController extends Controller
     	
     }
 
+    public function getListRentBook(){
+
+        return view('admin.listRentBook');
+        
+    }
+
+    public function getListReturnBook(){
+
+        return view('admin.listReturnBook');
+        
+    }
+
 }

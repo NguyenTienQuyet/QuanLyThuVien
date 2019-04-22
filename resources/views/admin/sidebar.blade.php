@@ -56,6 +56,10 @@
             <!-- <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Image Book </a></li> -->
           </ul>
         </li>
+ 
+        <li><a href="{{route('listRentBook')}}"><i class="fa fa-table"></i> <span>Rent Book</span></a></li>
+
+        <li><a href="{{route('listReturnBook')}}"><i class="fa fa-share "></i> <span>Return Book</span></a></li>
 
         <li><a href="{{route('listBookHistory')}}"><i class="fa fa-book"></i> <span>Book History</span></a></li>
         <li class="header">LABELS</li>

@@ -2,7 +2,7 @@ jQuery(function($) {
 
 	$.ajax({
 
-	        url: '/api/v1/histories/'+'all?relations[]=bookCopy',
+	        url: '/api/v1/histories/'+'all?relations[]=bookCopy&relations[]=user',
 	        type: 'get',
 	        dataType: 'json',
 	        success: function(data) {
@@ -17,18 +17,19 @@ jQuery(function($) {
 		                            +"<td class='text-center'>"+data[i].id+"</td>"
 		                            +"<td class='text-center'>"+data[i].book_copies_id+"</td>"
 		                            +"<td class='text-center'>"+data[i].user_id+"</td>"
+		                            +"<td class='text-center'>"+data[i].user.name+"</td>"
 		                            +"<td class='text-center'>"
 		                                +"<a href='#' class='text-yellow' id="+data[i].id+" book_copies_id="+data[i].book_copies_id+" user_id="+data[i].user_id+" data-type='active-history' data-toggle='modal'>"
 		                                    +"<i class='ace-icon fa fa-eye bigger-130'></i>"
 		                                +"</a>"
 		                            +"</td>"
 		                            
-		                            +"<td class='text-center'>"
-		                                +"<a class='text-blue' href='#' id="+data[i].id+" book_copies_id="+data[i].book_copies_id+" user_id="+data[i].user_id+" data-type='rent-history' data-toggle='modal'>"
-		                                    +"<i class='ace-icon fa fa-hourglass-1 bigger-130'></i>"
-		                                +"</a>"
+		                            // +"<td class='text-center'>"
+		                            //     +"<a class='text-blue' href='#' id="+data[i].id+" book_copies_id="+data[i].book_copies_id+" user_id="+data[i].user_id+" data-type='rent-history' data-toggle='modal'>"
+		                            //         +"<i class='ace-icon fa fa-hourglass-1 bigger-130'></i>"
+		                            //     +"</a>"
 
-		                            +"</td>"
+		                            // +"</td>"
 		                            +"<td class='text-center'>"
 		                                +"<a class='text-green' href='#' id="+data[i].id+" book_copies_id="+data[i].book_copies_id+" user_id="+data[i].user_id+" data-type='return-history' data-toggle='modal'>"
 		                                    +"<i class='ace-icon fa fa-hourglass-end bigger-130'></i>"
@@ -41,7 +42,7 @@ jQuery(function($) {
 
 
 	            }
-	            $('#body_book_history').html(output);
+	            $('#body_return_book').html(output);
 
 				$('a[data-type=return-history]').on('click', function(){
 					// alert(1);
@@ -87,8 +88,8 @@ jQuery(function($) {
 	$('#return_id').click(function(){
 		var user_id = $('#return_user_id').val();
 		var book_copy_id = $('#return_bookCopy_id').val();
-		alert(user_id);
-		alert(book_copy_id);
+		// alert(user_id);
+		// alert(book_copy_id);
 
 		$.ajax({
 			url: '/api/v1/histories/return',
@@ -107,7 +108,7 @@ jQuery(function($) {
 
 	        	$.ajax({
 
-				        url: '/api/v1/histories/'+'all?relations[]=bookCopy',
+				        url: '/api/v1/histories/'+'all?relations[]=bookCopy&relations[]=user',
 				        type: 'get',
 				        dataType: 'json',
 				        success: function(data) {
@@ -124,18 +125,19 @@ jQuery(function($) {
 					                            +"<td class='text-center'>"+data[i].id+"</td>"
 					                            +"<td class='text-center'>"+data[i].book_copies_id+"</td>"
 					                            +"<td class='text-center'>"+data[i].user_id+"</td>"
+					                            +"<td class='text-center'>"+data[i].user.name+"</td>"
 					                            +"<td class='text-center'>"
 					                                +"<a href='#' class='text-yellow' id="+data[i].id+" book_copies_id="+data[i].book_copies_id+" user_id="+data[i].user_id+" data-type='active-history' data-toggle='modal'>"
 					                                    +"<i class='ace-icon fa fa-eye bigger-130'></i>"
 					                                +"</a>"
 					                            +"</td>"
 					                            
-					                            +"<td class='text-center'>"
-					                                +"<a class='text-blue' href='#' id="+data[i].id+" book_copies_id="+data[i].book_copies_id+" user_id="+data[i].user_id+" data-type='rent-history' data-toggle='modal'>"
-					                                    +"<i class='ace-icon fa fa-hourglass-1 bigger-130'></i>"
-					                                +"</a>"
+					                            // +"<td class='text-center'>"
+					                            //     +"<a class='text-blue' href='#' id="+data[i].id+" book_copies_id="+data[i].book_copies_id+" user_id="+data[i].user_id+" data-type='rent-history' data-toggle='modal'>"
+					                            //         +"<i class='ace-icon fa fa-hourglass-1 bigger-130'></i>"
+					                            //     +"</a>"
 
-					                            +"</td>"
+					                            // +"</td>"
 					                            +"<td class='text-center'>"
 					                                +"<a class='text-green' href='#' id="+data[i].id+" book_copies_id="+data[i].book_copies_id+" user_id="+data[i].user_id+" data-type='return-history' data-toggle='modal'>"
 					                                    +"<i class='ace-icon fa fa-hourglass-end bigger-130'></i>"
@@ -148,7 +150,7 @@ jQuery(function($) {
 
 
 				            }
-				            $('#body_book_history').html(output);
+				            $('#body_return_book').html(output);
 
 							$('a[data-type=return-history]').on('click', function(){
 								// alert(1);
