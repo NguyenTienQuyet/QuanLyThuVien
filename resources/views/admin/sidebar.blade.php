@@ -66,6 +66,6 @@
         <li><a href="{{route('listPublisher')}}"><i class="fa fa-circle-o text-red"></i> <span>Publisher</span></a></li>
         <li><a href="{{route('listAuthor')}}" id="list_author"><i class="fa fa-circle-o text-yellow"></i> <span>Author</span></a></li>
         <li><a href="{{route('listGenre')}}"><i class="fa fa-circle-o text-green"></i> <span>Genre</span></a></li>
-        <li><a href="{{route('listImage')}}"><i class="fa fa-circle-o text-aqua"></i> <span>Image</span></a></li>
+        <!-- <li><a href="{{route('listImage')}}"><i class="fa fa-circle-o text-aqua"></i> <span>Image</span></a></li> -->
       </ul>
 </section>
