@@ -283,8 +283,13 @@ jQuery(function($) {
         // console.log(title);
         var formData = new FormData();
         formData.append('title', title);
-        formData.append('authors[]', author_id_);
-        formData.append('genres[]', genre_id_);
+        for(var auth_id in author_id_){
+            formData.append('authors[]',author_id_[auth_id]);
+        }
+        for (var ge_id in genre_id_){
+            formData.append('genres[]',genre_id_[ge_id]);
+        }
+
         formData.append('publisher_id', publisher_id);
         formData.append('publishedYear', publishedYear);
         formData.append('image', $('input[type=file]')[0].files[0]);
