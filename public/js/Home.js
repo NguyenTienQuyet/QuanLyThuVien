@@ -204,8 +204,9 @@ jQuery(function($) {
                 }
             },
             success: function(data){
-                alert('success');
+                alert(data);
                 $('#myModal-borrow').modal('hide');
+                console.log(data);
             },
             error: function(err){
                 alert(err);
@@ -243,13 +244,13 @@ jQuery(function($) {
             },
             success: function(data){
                 alert('success');
-                $('#card').modal('show');
-                $('#_register_card').text("");
+                $('#card').modal('hide');
+                // $('#_register_card').text("");
             },
             error: function(err){
-                console.log(err);
-                alert('Register card fail');
-                $('#card').modal('show');
+                // console.log(err);
+                alert('Card exists!');
+                $('#card').modal('hide');
             }
         });
 

@@ -25,7 +25,8 @@ jQuery(function ($) {
 
                 },
                 success: function () {
-                    window.location.href = "http://127.0.0.1:8000/homeAdmin"
+                    alert("success!");
+                    window.location.href = "http://127.0.0.1:8000/login"
                     alert("success!");
                 },
                 error: function (err) {
