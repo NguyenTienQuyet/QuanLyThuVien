@@ -34,7 +34,7 @@
                   <tr>
                     <th class="text-center">ID</th>
                     <th class="text-center">Book Copy ID</th>
-                    <th class="text-center">Book Title</th>
+                    <!-- <th class="text-center">Book Title</th> -->
                     <th class="text-center">User ID</th>
                     <th class="text-center">Full Name</th>
                     <th class="text-center">Active</th>

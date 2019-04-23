@@ -35,7 +35,7 @@ jQuery(function($) {
 		                output +=   "<tr>"
 		                            +"<td class='text-center'>"+data[i].id+"</td>"
 		                            +"<td class='text-center'>"+data[i].book_copies_id+"</td>"
-		                            +"<td class='text-center' id='_book_title'></td>"
+		                            // +"<td class='text-center' id='_book_title'></td>"
 		                            +"<td class='text-center'>"+data[i].user_id+"</td>"
 		                            +"<td class='text-center'>"+data[i].user.name+"</td>"
 		                            +"<td class='text-center'>"
