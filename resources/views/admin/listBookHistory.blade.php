@@ -34,12 +34,14 @@
                   <tr>
                     <th class="text-center">ID</th>
                     <th class="text-center">Book Copy ID</th>
+                    <th class="text-center">Book Title</th>
                     <th class="text-center">User ID</th>
                     <th class="text-center">Full Name</th>
                     <th class="text-center">Active</th>
                     <!-- <th class="text-center">Rent</th> -->
                     <!-- <th class="text-center">Return</th> -->
                     <th class="text-center">State</th>
+                    <th class="text-center">Delete</th>
                   </tr>
                 </thead>
                 <tbody id="body_book_history">
@@ -253,9 +255,9 @@
     <div class="modal-dialog">
         
         <div class="modal-content">
-            <form method="get" class="form-delete">
+            <!-- <form method="get" class="form-delete">
                 <input type="hidden" name="_method" value="delete">
-                {{csrf_field()}}
+                {{csrf_field()}} -->
             
         <!-- Modal content-->
         
@@ -277,18 +279,18 @@
                 </div>  
                 
                 <div class="modal-footer">
-                    <input type="hidden" id="member-delete" value="" />
+                    <input type="hidden" id="id_book_history" value="" />
                     <button class="btn btn-white btn-round pull-left" data-dismiss="modal">
                         <i class="ace-icon fa fa-times red2"></i>
                         No
                     </button>
-                    <button class="btn btn-white btn-warning btn-bold" id="_delete-member">
+                    <button class="btn btn-white btn-warning btn-bold" id="_delete_book_history">
                         <i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
                         Yes
                     </button>
                     
                 </div>
-            </form>
+            <!-- </form> -->
                 
             
         </div>

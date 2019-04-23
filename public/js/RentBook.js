@@ -12,10 +12,33 @@ jQuery(function($) {
 	            var output = "";
 	            
 	            for(var i = 0; i < data.length; i++){
+	            	var book_title = "";
 	                if(data[i].book_copy.state_detail == "borrowed"){
+
+	                	
+
+		            	$.ajax({
+
+					        url: '/api/v1/bookCopies/get?id='+data[i].book_copies_id+'&relations[]=book',
+					        type: 'get',
+					        dataType: 'json',
+					        success: function(dataaa) {
+					        	
+					        	// book_title = dataaa.book.title;
+					        	$('#_book_title').text(dataaa.book.title)
+					        	// alert(book_title);
+					        	// console.log(dataaa);
+					        },
+					        error: function(err){
+					        	console.log(err);
+					        }
+					    });
+
+
 		                output +=   "<tr>"
 		                            +"<td class='text-center'>"+data[i].id+"</td>"
 		                            +"<td class='text-center'>"+data[i].book_copies_id+"</td>"
+		                            +"<td class='text-center' id='_book_title'></td>"
 		                            +"<td class='text-center'>"+data[i].user_id+"</td>"
 		                            +"<td class='text-center'>"+data[i].user.name+"</td>"
 		                            +"<td class='text-center'>"
@@ -150,14 +173,35 @@ jQuery(function($) {
 				        	// alert('Success !');
 
 				            var output = "";
-				            
+	            
 				            for(var i = 0; i < data.length; i++){
+				            	var book_title = "";
+				                if(data[i].book_copy.state_detail == "borrowed"){
 
-				            	if(data[i].book_copy.state_detail == "borrowed"){
-				                
+				                	
+
+					            	$.ajax({
+
+								        url: '/api/v1/bookCopies/get?id='+data[i].book_copies_id+'&relations[]=book',
+								        type: 'get',
+								        dataType: 'json',
+								        success: function(dataaa) {
+								        	
+								        	// book_title = dataaa.book.title;
+								        	$('#_book_title').text(dataaa.book.title)
+								        	// alert(book_title);
+								        	// console.log(dataaa);
+								        },
+								        error: function(err){
+								        	console.log(err);
+								        }
+								    });
+
+
 					                output +=   "<tr>"
 					                            +"<td class='text-center'>"+data[i].id+"</td>"
 					                            +"<td class='text-center'>"+data[i].book_copies_id+"</td>"
+					                            +"<td class='text-center' id='_book_title'></td>"
 					                            +"<td class='text-center'>"+data[i].user_id+"</td>"
 					                            +"<td class='text-center'>"+data[i].user.name+"</td>"
 					                            +"<td class='text-center'>"
@@ -178,9 +222,10 @@ jQuery(function($) {
 					                            //     +"</a>"
 
 					                            // +"</td>"
-					                             +"<td class='text-center'>"+data[i].state+"</td>"
+					                             +"<td class='text-center'>"+data[i].book_copy.state_detail+"</td>"
 					                        +"</tr>";
-								}
+				                    }
+
 
 				            }
 				            $('#body_rent_book').html(output);

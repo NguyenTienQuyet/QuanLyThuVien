@@ -12,10 +12,30 @@ jQuery(function($) {
 	            var output = "";
 	            
 	            for(var i = 0; i < data.length; i++){
+
+	            	var book_title = "";
 	                if(data[i].book_copy.state_detail == "available"){
+
+	                	$.ajax({
+
+					        url: '/api/v1/bookCopies/get?id='+data[i].book_copies_id+'&relations[]=book',
+					        type: 'get',
+					        dataType: 'json',
+					        success: function(dataaa) {
+					        	
+					        	// book_title = dataaa.book.title;
+					        	$('#_book_title').text(dataaa.book.title)
+					        	// alert(book_title);
+					        	// console.log(dataaa);
+					        },
+					        error: function(err){
+					        	console.log(err);
+					        }
+					    });
 		                output +=   "<tr>"
 		                            +"<td class='text-center'>"+data[i].id+"</td>"
 		                            +"<td class='text-center'>"+data[i].book_copies_id+"</td>"
+		                            +"<td class='text-center' id='_book_title'></td>"
 		                            +"<td class='text-center'>"+data[i].user_id+"</td>"
 		                            +"<td class='text-center'>"+data[i].user.name+"</td>"
 		                            +"<td class='text-center'>"
@@ -36,9 +56,14 @@ jQuery(function($) {
 		                            //     +"</a>"
 
 		                            // +"</td>"
-		                             +"<td class='text-center'>"+data[i].book_copy.state_detail+"</td>"
+		                            +"<td class='text-center'>"+data[i].book_copy.state_detail+"</td>"
+		                            +"<td class='text-center'>"
+                                        +"<a href='#' class='text-red delete_role' id_delete_role="+data[i].id+" data-type='delete-role'>"
+                                            +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
+                                        +"</a>"
+                                    +"</td>"
 		                        +"</tr>";
-	                    }
+                    }
 
 
 	            }
