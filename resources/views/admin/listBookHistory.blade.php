@@ -84,171 +84,7 @@
     
     <!-- /.content -->
 
-<div class="modal fade" id="myModal-BookHistory" role="dialog">
-    <div class="modal-dialog">
 
-        <form action="" method="get" id="form-member">
-            <!-- Modal content-->
-            {{csrf_field()}}
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Add Book History</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <!-- PAGE CONTENT BEGINS -->
-
-                            
-                             <div class="col-sm-11" style="margin-top: 5px;">
-                                <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Book Copy ID:</label>
-                                    
-                                    <div class="input-group " style="width: 350px;" >
-                                      <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action
-                                          <span class="fa fa-caret-down"></span></button>
-                                        <ul class="dropdown-menu">
-                                          <li><a href="#">Action</a></li>
-                                          <li><a href="#">Another action</a></li>
-                                          <li><a href="#">Something else here</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="#">Separated link</a></li>
-                                        </ul>
-                                      </div>
-                                      <!-- /btn-group -->
-                                      <input type="text" class="form-control">
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-sm-11" style="margin-top: 5px;">
-                                <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">User ID:</label>
-                                    
-                                    <div class="input-group " style="width: 350px;" >
-                                      <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action
-                                          <span class="fa fa-caret-down"></span></button>
-                                        <ul class="dropdown-menu">
-                                          <li><a href="#">Action</a></li>
-                                          <li><a href="#">Another action</a></li>
-                                          <li><a href="#">Something else here</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="#">Separated link</a></li>
-                                        </ul>
-                                      </div>
-                                      <!-- /btn-group -->
-                                      <input type="text" class="form-control">
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>  
-                <br/>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                    <button class="btn btn-info" type="submit" id="add-member">
-                        <i class="ace-icon fa fa-check bigger-110"></i>
-                        Add
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
-<div class="modal fade" id="editModal-BookHistory" role="dialog">
-    <div class="modal-dialog">
-
-        <form method="get" action="">
-            <input type="hidden" name="_method" value="patch">
-            {{csrf_field()}}
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Edit Book History</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <!-- PAGE CONTENT BEGINS -->
-
-                            <div class="col-sm-11" style="margin-top: 5px;">
-                                <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Book Copy ID:</label>
-                                    
-                                    <div class="input-group " style="width: 350px;" >
-                                      <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action
-                                          <span class="fa fa-caret-down"></span></button>
-                                        <ul class="dropdown-menu">
-                                          <li><a href="#">Action</a></li>
-                                          <li><a href="#">Another action</a></li>
-                                          <li><a href="#">Something else here</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="#">Separated link</a></li>
-                                        </ul>
-                                      </div>
-                                      <!-- /btn-group -->
-                                      <input type="text" class="form-control">
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-sm-11" style="margin-top: 5px;">
-                                <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">User ID:</label>
-                                    
-                                    <div class="input-group " style="width: 350px;" >
-                                      <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action
-                                          <span class="fa fa-caret-down"></span></button>
-                                        <ul class="dropdown-menu">
-                                          <li><a href="#">Action</a></li>
-                                          <li><a href="#">Another action</a></li>
-                                          <li><a href="#">Something else here</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="#">Separated link</a></li>
-                                        </ul>
-                                      </div>
-                                      <!-- /btn-group -->
-                                      <input type="text" class="form-control">
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>   
-                <br/>
-                <div class="modal-footer">
-                    <input type="hidden" id="member-id" name="member-id" value="" />
-                    <input type="hidden" id="_email" value="" />
-                    <input type="hidden" id="_password" value="" />
-                    <input type="hidden" id="_firt-name" value="" />
-                    <input type="hidden" id="_last-name" value="" />
-                    <input type="hidden" id="_phone" value="" />
-                    <input type="hidden" id="_role-id" value="" />
-                    <input type="hidden" id="_image-id" value="" />
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                    <input class="btn btn-info" type="submit" value="Edit" id="_edit-member" >
-
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
 
 
 <div class="modal fade" id="deleteModal-BookHistory" role="dialog">
@@ -284,7 +120,7 @@
                         <i class="ace-icon fa fa-times red2"></i>
                         No
                     </button>
-                    <button class="btn btn-white btn-warning btn-bold" id="_delete_book_history">
+                    <button class="btn btn-white btn-warning btn-bold" id="delete_book_history">
                         <i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
                         Yes
                     </button>
@@ -494,6 +330,172 @@
                 </div>
             </div>
         <!-- </form> -->
+    </div>
+</div>
+
+<div class="modal fade" id="myModal-BookHistory" role="dialog">
+    <div class="modal-dialog">
+
+        <form action="" method="get" id="form-member">
+            <!-- Modal content-->
+            {{csrf_field()}}
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add Book History</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+
+                            
+                             <div class="col-sm-11" style="margin-top: 5px;">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Book Copy ID:</label>
+                                    
+                                    <div class="input-group " style="width: 350px;" >
+                                      <div class="input-group-btn" style="margin-left: 30px;">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action
+                                          <span class="fa fa-caret-down"></span></button>
+                                        <ul class="dropdown-menu">
+                                          <li><a href="#">Action</a></li>
+                                          <li><a href="#">Another action</a></li>
+                                          <li><a href="#">Something else here</a></li>
+                                          <li class="divider"></li>
+                                          <li><a href="#">Separated link</a></li>
+                                        </ul>
+                                      </div>
+                                      <!-- /btn-group -->
+                                      <input type="text" class="form-control">
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-11" style="margin-top: 5px;">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">User ID:</label>
+                                    
+                                    <div class="input-group " style="width: 350px;" >
+                                      <div class="input-group-btn" style="margin-left: 30px;">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action
+                                          <span class="fa fa-caret-down"></span></button>
+                                        <ul class="dropdown-menu">
+                                          <li><a href="#">Action</a></li>
+                                          <li><a href="#">Another action</a></li>
+                                          <li><a href="#">Something else here</a></li>
+                                          <li class="divider"></li>
+                                          <li><a href="#">Separated link</a></li>
+                                        </ul>
+                                      </div>
+                                      <!-- /btn-group -->
+                                      <input type="text" class="form-control">
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>  
+                <br/>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button class="btn btn-info" type="submit" id="add-member">
+                        <i class="ace-icon fa fa-check bigger-110"></i>
+                        Add
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="editModal-BookHistory" role="dialog">
+    <div class="modal-dialog">
+
+        <form method="get" action="">
+            <input type="hidden" name="_method" value="patch">
+            {{csrf_field()}}
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Edit Book History</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+
+                            <div class="col-sm-11" style="margin-top: 5px;">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Book Copy ID:</label>
+                                    
+                                    <div class="input-group " style="width: 350px;" >
+                                      <div class="input-group-btn" style="margin-left: 30px;">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action
+                                          <span class="fa fa-caret-down"></span></button>
+                                        <ul class="dropdown-menu">
+                                          <li><a href="#">Action</a></li>
+                                          <li><a href="#">Another action</a></li>
+                                          <li><a href="#">Something else here</a></li>
+                                          <li class="divider"></li>
+                                          <li><a href="#">Separated link</a></li>
+                                        </ul>
+                                      </div>
+                                      <!-- /btn-group -->
+                                      <input type="text" class="form-control">
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-11" style="margin-top: 5px;">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">User ID:</label>
+                                    
+                                    <div class="input-group " style="width: 350px;" >
+                                      <div class="input-group-btn" style="margin-left: 30px;">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action
+                                          <span class="fa fa-caret-down"></span></button>
+                                        <ul class="dropdown-menu">
+                                          <li><a href="#">Action</a></li>
+                                          <li><a href="#">Another action</a></li>
+                                          <li><a href="#">Something else here</a></li>
+                                          <li class="divider"></li>
+                                          <li><a href="#">Separated link</a></li>
+                                        </ul>
+                                      </div>
+                                      <!-- /btn-group -->
+                                      <input type="text" class="form-control">
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>   
+                <br/>
+                <div class="modal-footer">
+                    <input type="hidden" id="member-id" name="member-id" value="" />
+                    <input type="hidden" id="_email" value="" />
+                    <input type="hidden" id="_password" value="" />
+                    <input type="hidden" id="_firt-name" value="" />
+                    <input type="hidden" id="_last-name" value="" />
+                    <input type="hidden" id="_phone" value="" />
+                    <input type="hidden" id="_role-id" value="" />
+                    <input type="hidden" id="_image-id" value="" />
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <input class="btn btn-info" type="submit" value="Edit" id="_edit-member" >
+
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 
