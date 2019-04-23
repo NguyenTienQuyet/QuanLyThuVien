@@ -388,6 +388,31 @@
 
                             </div>
 
+                            <div class="col-sm-11" style="margin-top: 5px;">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Choose image: </label>
+
+                                    <div class="col-sm-9" style="margin-left: -15px; width: 380px;">
+
+                                        <input type="file" id="edit_image_book" onchange="edit_PreviewImage();"  />
+                                        <img id="edit_uploadPreview" style="width: 50px; height: 50px;" />
+                                        <script type="text/javascript">
+
+                                            function edit_PreviewImage() {
+                                                var oFReader = new FileReader();
+                                                oFReader.readAsDataURL(document.getElementById("edit_image_book").files[0]);
+
+                                                oFReader.onload = function (oFREvent) {
+                                                    document.getElementById("edit_uploadPreview").src = oFREvent.target.result;
+                                                };
+                                            };
+
+                                        </script>
+                                    </div>
+                                </div>
+
+                            </div>
+
                         </div>
                     </div>
 
