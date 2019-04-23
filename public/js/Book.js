@@ -1,5 +1,6 @@
 
 jQuery(function($) {
+    var id_book_edit_click="";
 
     $('#addBook').click(function(){
 
@@ -105,15 +106,16 @@ jQuery(function($) {
 
 
                 var id = $(this).attr("id_edit_book");
+                id_book_edit_click=id;
                 var edit_title = "";
                 var edit_author_id = $(this).attr("author_id");
                 var edit_image_url="http://127.0.0.1:8000"+$(this).attr("image");
-                console.log(edit_image_url);
+
 
                 var edit_genre_id = $(this).attr("genre_id");
                 var edit_publisher_id = $(this).attr("publisher_id");
                 var edit_published_year = $(this).attr("publishedYear");
-
+                console.log("id "+edit_publisher_id);
                 // var author = $(this).attr("author");
                 // var genre = $(this).attr("genre");
                 var author_array = [];
@@ -533,9 +535,9 @@ jQuery(function($) {
             }
 
         });
-        var id = $('#book-id').val();
+        var id = id_book_edit_click;
         var title = $('#edit_title').val();
-
+        console.log("title "+title);
         var author=[];
         var author_id_ = [];
         $('#select_author :selected').each(function(){
@@ -556,19 +558,21 @@ jQuery(function($) {
         // var genre_id = $('#_edit_genre_id').val();
         var publishedYear = $('#edit_publishedYear').val();
         console.log(publisher_id);
-
+        var data={
+            title: title,
+            authors: author_id_,
+            genres: genre_id_,
+            publisher_id: publisher_id,
+            publishedYear: publishedYear
+        }
+        var json=JSON.stringify(data);
+        console.log("json "+json);
         $.ajax({
 
             url: '/api/v1/books/patch?id='+parseInt(id),
             type: 'patch',
-            dataType: "json",
-            data: {
-                title: title,
-                authors: author_id_,
-                genres: genre_id_,
-                publisher_id: publisher_id,
-                publishedYear: publishedYear
-            },
+            contentType : 'application/json',
+            data: json,
             success: function () {
                 alert('success!');
                 $('#editModal-book').modal('hide');
