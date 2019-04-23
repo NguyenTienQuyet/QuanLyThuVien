@@ -9,6 +9,8 @@ Use App\Models\Genre;
 Use App\Models\Publisher;
 Use App\Models\Book;
 Use App\Models\BookGenre;
+Use App\Models\BookImage;
+Use App\Models\Image;
 Use App\Models\AuthorBook;
 
 
@@ -17,14 +19,14 @@ class UserController extends Controller
     //
     public function getHome(){
     	
-        $data['list'] = DB::table('publishers')->join('books', 'publishers.id', '=', 'books.publisher_id')->get();
+        $data['list'] = DB::table('publishers')->join('books', 'publishers.id', '=', 'books.publisher_id')->join('book_images', 'book_images.book_id', '=', 'books.id')->join('images', 'book_images.image_id', '=', 'images.id')->select('books.*', 'images.imageURL', 'publishers.publisherName')->get();
     	return view('user.home', $data);
     	
     }
 
     public function getListBook($id){
 
-        $data['list'] = DB::table('publishers')->join('books', 'publishers.id', '=', 'books.publisher_id')->where('publishers.id', '=', $id)->get();
+        $data['list'] = DB::table('publishers')->join('books', 'publishers.id', '=', 'books.publisher_id')->join('book_images', 'book_images.book_id', '=', 'books.id')->join('images', 'book_images.image_id', '=', 'images.id')->select('books.*', 'images.imageURL', 'publishers.publisherName')->where('publishers.id', '=', $id)->get();
     	
     	return view('user.book', $data);
     	
@@ -32,7 +34,7 @@ class UserController extends Controller
 
     public function getBookDetail($id){
 
-        $data['list'] = DB::table('publishers')->join('books', 'publishers.id', '=', 'books.publisher_id')->where('books.id', '=', $id)->get();
+        $data['list'] = DB::table('publishers')->join('books', 'publishers.id', '=', 'books.publisher_id')->join('book_images', 'book_images.book_id', '=', 'books.id')->join('images', 'book_images.image_id', '=', 'images.id')->select('books.*', 'images.imageURL', 'publishers.publisherName')->where('books.id', '=', $id)->get();
 
         $data['listA'] = DB::table('books')->join('author_book', 'books.id', '=', 'author_book.book_id')->join('authors', 'author_book.author_id', '=', 'authors.id')->where('books.id', '=', $id)->get();
 
@@ -44,7 +46,7 @@ class UserController extends Controller
 
     public function getListAuthorBook($id){
 
-        $data['list'] = DB::table('authors')->join('author_book', 'authors.id', '=', 'author_book.author_id')->join('books', 'author_book.book_id', '=', 'books.id')->join('publishers', 'publishers.id', '=', 'books.publisher_id')->where('authors.id', '=', $id)->select('books.*', 'publishers.publisherName')->get();
+        $data['list'] = DB::table('authors')->join('author_book', 'authors.id', '=', 'author_book.author_id')->join('books', 'author_book.book_id', '=', 'books.id')->join('publishers', 'publishers.id', '=', 'books.publisher_id')->join('book_images', 'book_images.book_id', '=', 'books.id')->join('images', 'book_images.image_id', '=', 'images.id')->where('authors.id', '=', $id)->select('books.*', 'publishers.publisherName', 'images.imageURL')->get();
 
         
         return view('user.listAuthorBook', $data);
@@ -53,7 +55,7 @@ class UserController extends Controller
 
     public function getListBookGenre($id){
 
-        $data['list'] = DB::table('genres')->join('book_genre', 'genres.id', '=', 'book_genre.genre_id')->join('books', 'book_genre.book_id', '=', 'books.id')->join('publishers', 'publishers.id', '=', 'books.publisher_id')->where('genres.id', '=', $id)->select('books.*', 'publishers.publisherName')->get();
+        $data['list'] = DB::table('genres')->join('book_genre', 'genres.id', '=', 'book_genre.genre_id')->join('books', 'book_genre.book_id', '=', 'books.id')->join('publishers', 'publishers.id', '=', 'books.publisher_id')->join('book_images', 'book_images.book_id', '=', 'books.id')->join('images', 'book_images.image_id', '=', 'images.id')->where('genres.id', '=', $id)->select('books.*', 'publishers.publisherName', 'images.imageURL')->get();
         
         return view('user.listBookGenre', $data);
         

@@ -21,7 +21,9 @@
 								<div class="thumb-wrap relative">
 									<div class="thumb relative">
 										<div class="overlay overlay-bg"></div>	
-										<img class="img-fluid" src="frontend/img/p1.jpg" alt="">
+										<a id="{{$book->id}}" href="{{route('detailBook', $book->id)}}">
+											<img class="img-fluid" src="{{$book->imageURL}}" alt="">
+										</a>
 									</div>
 									<div class="meta d-flex justify-content-between">
 										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
