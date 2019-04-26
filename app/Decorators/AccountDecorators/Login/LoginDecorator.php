@@ -10,6 +10,7 @@ namespace App\Decorators\AccountDecorators\Login;
 
 
 use App\Decorators\AccountDecorators\EloquentUserDecorator;
+use App\Decorators\Handlers\User\HashPasswordHandler;
 use Illuminate\Database\Eloquent\Model;
 
 class LoginDecorator extends EloquentUserDecorator
@@ -27,7 +28,7 @@ class LoginDecorator extends EloquentUserDecorator
             ],
             [
                 'needle' => 'password',
-                'value' => $hashPassword
+                'value' => $attributes['password']
             ],
         ];
         $userService = $this->getService();

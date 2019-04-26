@@ -10,6 +10,8 @@ namespace App\Decorators\AccountDecorators\CreateAccount;
 
 
 use App\Decorators\AccountDecorators\EloquentUserDecorator;
+use App\Decorators\Handlers\Role\FindRoleHandler;
+use App\Decorators\Handlers\User\HashPasswordHandler;
 use Illuminate\Database\Eloquent\Model;
 
 class CreateUserProxy extends EloquentUserDecorator
