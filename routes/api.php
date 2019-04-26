@@ -234,6 +234,11 @@ Route::prefix('v1')->group(function () {
             'uses' => 'API\UserController@getSessionData',
             'as' => 'api/v1/users/session'
         ]);
+
+        Route::patch('changePassword', [
+            'uses' => 'API\UserController@changePassword',
+            'as' => 'api/v1/users/changePassword'
+        ]);
     });
 
     Route::prefix('roles')->group(function () {

@@ -9,8 +9,10 @@
 namespace App\Http\Controllers\API;
 
 
+use App\Decorators\AccountDecorators\ChangePassword\ChangePasswordDecorator;
 use App\Decorators\AccountDecorators\CreateAccount\CreateUserProxy;
 use App\Decorators\AccountDecorators\Login\LoginDecorator;
+use App\Http\Controllers\Requests\API\User\UserChangePasswordRequest;
 use App\Http\Controllers\Requests\API\User\UserDeleteRequest;
 use App\Http\Controllers\Requests\API\User\UserGetRequest;
 use App\Http\Controllers\Requests\API\User\UserLoginRequest;
@@ -65,6 +67,26 @@ class UserController extends APIController
     public function delete(UserDeleteRequest $request, int $id = null)
     {
         return parent::_delete($request, $id);
+    }
+
+    public function changePassword(UserChangePasswordRequest $request)
+    {
+        /**
+         * @var UserService $userService
+         */
+        $userService = $this->getService();
+        $enhancedService = new ChangePasswordDecorator($userService);
+        $changePasswordChecker = $enhancedService->updateModel($request->all(), 0);
+        if ($changePasswordChecker == true) {
+            return response(
+                ['Message' => 'Change password successfully'],
+                202
+            );
+        }
+        return response(
+            ['Message' => 'Invalid input old password'],
+            403
+        );
     }
 
     public function login(UserLoginRequest $request)
