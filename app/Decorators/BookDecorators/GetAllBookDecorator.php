@@ -15,6 +15,7 @@ class GetAllBookDecorator extends EloquentBookDecorator
 {
     public function getAll(array $attributes = [])
     {
+        //comment
         $books = parent::getAll($attributes);
         $bookCopyHandler = new CountAvailableHandler();
         $returnBookInfo = [];

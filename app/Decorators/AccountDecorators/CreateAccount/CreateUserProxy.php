@@ -27,7 +27,7 @@ class CreateUserProxy extends EloquentUserDecorator
             $this->setMessage($response->getResponseMessage());
             return null;
         }
-
+        //ditme a tuan
         return parent::createNewModel($attributes);
     }
 }
