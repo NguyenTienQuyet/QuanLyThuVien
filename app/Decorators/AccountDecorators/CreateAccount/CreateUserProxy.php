@@ -16,9 +16,17 @@ class CreateUserProxy extends EloquentUserDecorator
 {
     public function createNewModel(array $attributes): ?Model
     {
-        $password = $attributes['password'];
-        $hashPassword = hash('md5', $password);
-        $attributes['password'] = $hashPassword;
+
+        $roleHandler= new FindRoleHandler();
+        $passwordHandler = new HashPasswordHandler();
+        $roleHandler->setNextHandler($passwordHandler);
+
+        $response = $roleHandler->handle($attributes);
+        if ($response->getResponseStatus() == false) {
+            $this->setMessage($response->getResponseMessage());
+            return null;
+        }
+        //ditme a tuan
         return parent::createNewModel($attributes);
     }
 }

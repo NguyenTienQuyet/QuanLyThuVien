@@ -22,6 +22,7 @@ class CreateUserDecorator extends EloquentCreateTransactionDecorator
 
     public function attachCreate(Model &$model, $attributes): bool
     {
+        //tuan suc vat
         return ($model != null);
     }
 }

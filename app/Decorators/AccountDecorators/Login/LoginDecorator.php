@@ -16,9 +16,10 @@ class LoginDecorator extends EloquentUserDecorator
 {
     public function getModel(array $attributes, $id): ?Model
     {
-        $password = $attributes['password'];
-        $hashPassword = hash('md5', $password);
 
+        //comment
+        $passwordHandler = new HashPasswordHandler();
+        $passwordHandler->handle($attributes);
         $pairs = [
             [
                 'needle' => 'email',
