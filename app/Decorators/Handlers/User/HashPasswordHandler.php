@@ -15,6 +15,7 @@ class HashPasswordHandler extends UserHandler
 {
     public function handle(array &$attributes): HandlerResponse
     {
+        //tuan
         $password = $attributes['password'];
         $attributes['password'] = hash('md5', $password);
         return parent::handle($attributes);
