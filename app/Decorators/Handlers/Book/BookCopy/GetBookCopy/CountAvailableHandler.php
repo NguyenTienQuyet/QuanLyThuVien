@@ -16,6 +16,7 @@ class CountAvailableHandler extends BookCopyHandler
 {
     public function handle(array &$attributes): HandlerResponse
     {
+        //check
         $bookCopyService = $this->createHandlerService();
         $book = $attributes['book'];
         $pairs = [
