@@ -16,7 +16,7 @@ jQuery(function($) {
 	            	
 	            	
 	            	
-	                if(data[i].book_copy.state_detail == "borrowed"){
+	                if(data[i].book_copy.state_detail == "borrowed" && data[i].state == 1){
 	                	
 		                output +=   "<tr>"
 		                            +"<td class='text-center'>"+data[i].id+"</td>"
@@ -158,7 +158,7 @@ jQuery(function($) {
 	            
 				            for(var i = 0; i < data.length; i++){
 				            	var book_title = "";
-				                if(data[i].book_copy.state_detail == "borrowed"){
+				                if(data[i].book_copy.state_detail == "borrowed" && data[i].state == 1){
 
 					                output +=   "<tr>"
 					                            +"<td class='text-center'>"+data[i].id+"</td>"

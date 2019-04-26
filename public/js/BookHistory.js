@@ -14,7 +14,7 @@ jQuery(function($) {
 	            for(var i in data){
 
 	            	var book_title = "";
-	                if(data[i].book_copy.state_detail == "available"){
+	                if(data[i].state == 0){
 
 		                output +=   "<tr>"
 		                            +"<td class='text-center'>"+data[i].id+"</td>"
@@ -40,7 +40,7 @@ jQuery(function($) {
 		                            //     +"</a>"
 
 		                            // +"</td>"
-		                            +"<td class='text-center'>"+data[i].book_copy.state_detail+"</td>"
+		                            // +"<td class='text-center'>"+data[i].book_copy.state_detail+"</td>"
 		                            +"<td class='text-center'>"
                                         +"<a href='#' class='text-red delete_role' id_delete_book_history="+data[i].id+" data-type='delete-book_history'>"
                                             +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
@@ -229,7 +229,7 @@ jQuery(function($) {
 			            for(var i in data){
 
 			            	var book_title = "";
-			                if(data[i].book_copy.state_detail == "available"){
+			                if(data[i].state == 1){
 
 				                output +=   "<tr>"
 				                            +"<td class='text-center'>"+data[i].id+"</td>"
@@ -255,7 +255,7 @@ jQuery(function($) {
 				                            //     +"</a>"
 
 				                            // +"</td>"
-				                            +"<td class='text-center'>"+data[i].book_copy.state_detail+"</td>"
+				                            // +"<td class='text-center'>"+data[i].book_copy.state_detail+"</td>"
 				                            +"<td class='text-center'>"
 		                                        +"<a href='#' class='text-red delete_role' id_delete_book_history="+data[i].id+" data-type='delete-book_history'>"
 		                                            +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"

@@ -13,7 +13,7 @@ jQuery(function($) {
 	            
 	            for(var i in data){
 	            	var book_title = "";
-	                if(data[i].book_copy.state_detail == "rented"){
+	                if(data[i].book_copy.state_detail == "rented" && data[i].state == 1){
 
 		                output +=   "<tr>"
 		                            +"<td class='text-center'>"+data[i].id+"</td>"
@@ -155,7 +155,7 @@ jQuery(function($) {
 				            for(var i in data){
 
 				            	var book_title = "";
-				                if(data[i].book_copy.state_detail == "rented"){
+				                if(data[i].book_copy.state_detail == "rented" && data[i].state == 1){
 
 					                output +=   "<tr>"
 					                            +"<td class='text-center'>"+data[i].id+"</td>"

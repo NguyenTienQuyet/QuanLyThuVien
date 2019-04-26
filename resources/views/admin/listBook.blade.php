@@ -44,6 +44,7 @@
 
                       <th class="text-center">Publisher ID</th>
                       <th class="text-center">Published Year</th>
+                      <th class="text-center">Quantity</th>
 
                       <th class="text-center">Import</th>
                       <th class="text-center">Edit</th>

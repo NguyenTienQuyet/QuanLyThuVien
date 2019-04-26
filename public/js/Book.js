@@ -28,11 +28,11 @@ jQuery(function($) {
     $('.select2').select2();
     $.ajax({
 
-        url: 'http://127.0.0.1:8000/api/v1/books/'+'all?relations[]=authors&relations[]=genres&relations[]=publisher&relations[]=images',
+        url: '/api/v1/books/'+'all?relations[]=authors&relations[]=genres&relations[]=publisher&relations[]=images',
         type: 'get',
         dataType: 'json',
         success: function(data) {
-
+            console.log(data);
 
 
             var output = "";
@@ -44,14 +44,14 @@ jQuery(function($) {
                 var img=[];
                 var au = [];
                 var ge = [];
-                for(j in data[i].authors){
+                for(j in data[i].book.authors){
 
-                    k.push(data[i].authors[j].id);
-                    au.push(data[i].authors[j].name);
+                    k.push(data[i].book.authors[j].id);
+                    au.push(data[i].book.authors[j].name);
                 }
-                for(q in data[i].genres){
-                    p.push(data[i].genres[q].id);
-                    ge.push(data[i].genres[q].genreType);
+                for(q in data[i].book.genres){
+                    p.push(data[i].book.genres[q].id);
+                    ge.push(data[i].book.genres[q].genreType);
                 }
                 for (image in data[i].images) {
                     var image_url=data[i].images[image].imageURL;
@@ -59,24 +59,25 @@ jQuery(function($) {
                     img.push(image_url);
                 }
                 output +=   "<tr>"
-                                +"<td class='text-center'>"+data[i].id+"</td>"
-                                +"<td class='text-center'>"+data[i].title+"</td>"
+                                +"<td class='text-center'>"+data[i].book.id+"</td>"
+                                +"<td class='text-center'>"+data[i].book.title+"</td>"
                                 +"<td class='text-center'>"+au+"</td>"
                                 +"<td class='text-center'>"+ge+"</td>"
-                                +"<td class='text-center'>"+data[i].publisher.publisherName+"</td>"
-                                +"<td class='text-center'>"+data[i].publishedYear+"</td>"
+                                +"<td class='text-center'>"+data[i].book.publisher.publisherName+"</td>"
+                                +"<td class='text-center'>"+data[i].book.publishedYear+"</td>"
+                                +"<td class='text-center'>"+data[i].availableQuantity+"</td>"
                                 +"<td class='text-center'>"
-                                    +"<a href='#' class='text-yellow' data-toggle='modal' id_edit_book="+data[i].id+" data-type='import-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].publishedYear+">"
+                                    +"<a href='#' class='text-yellow' data-toggle='modal' id_edit_book="+data[i].book.id+" data-type='import-book' title="+data[i].book.title+" publisher_id="+data[i].book.publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].book.publishedYear+">"
                                         +"<i class='ace-icon fa fa-pencil-square-o bigger-130'></i>"
                                     +"</a>"
                                 +"</td>"
                                 +"<td class='text-center'>"
-                                    +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].publishedYear+" image="+img+">"
+                                    +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].book.id+" data-type='update-book' title="+data[i].book.title+" publisher_id="+data[i].book.publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].book.publishedYear+" image="+img+">"
                                         +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                     +"</a>"
                                 +"</td>"
                                 +"<td class='text-center'>"
-                                    +"<a href='#' class='text-red delete_book' id_delete_book="+data[i].id+" data-type='delete-book'>"
+                                    +"<a href='#' class='text-red delete_book' id_delete_book="+data[i].book.id+" data-type='delete-book'>"
                                         +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                     +"</a>"
                                 +"</td>"
@@ -353,6 +354,7 @@ jQuery(function($) {
                                             +"<td class='text-center'>"+ge+"</td>"
                                             +"<td class='text-center'>"+data[i].publisher.publisherName+"</td>"
                                             +"<td class='text-center'>"+data[i].publishedYear+"</td>"
+                                            +"<td class='text-center'>"+data[i].availableQuantity+"</td>"
                                             +"<td class='text-center'>"
                                                 +"<a href='#' class='text-yellow' data-toggle='modal' id_edit_book="+data[i].id+" data-type='import-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].publishedYear+">"
                                                     +"<i class='ace-icon fa fa-pencil-square-o bigger-130'></i>"
@@ -613,6 +615,7 @@ jQuery(function($) {
                                             +"<td class='text-center'>"+ge+"</td>"
                                             +"<td class='text-center'>"+data[i].publisher.publisherName+"</td>"
                                             +"<td class='text-center'>"+data[i].publishedYear+"</td>"
+                                            +"<td class='text-center'>"+data[i].availableQuantity+"</td>"
                                             +"<td class='text-center'>"
                                                 +"<a href='#' class='text-yellow' data-toggle='modal' id_edit_book="+data[i].id+" data-type='import-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].publishedYear+">"
                                                     +"<i class='ace-icon fa fa-pencil-square-o bigger-130'></i>"
@@ -845,6 +848,7 @@ jQuery(function($) {
                                             +"<td class='text-center'>"+ge+"</td>"
                                             +"<td class='text-center'>"+data[i].publisher.publisherName+"</td>"
                                             +"<td class='text-center'>"+data[i].publishedYear+"</td>"
+                                            +"<td class='text-center'>"+data[i].availableQuantity+"</td>"
                                             +"<td class='text-center'>"
                                                 +"<a href='#' class='text-yellow' data-toggle='modal' id_edit_book="+data[i].id+" data-type='import-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].publishedYear+">"
                                                     +"<i class='ace-icon fa fa-pencil-square-o bigger-130'></i>"
@@ -1066,33 +1070,34 @@ jQuery(function($) {
                             var p = [];
                             var au = [];
                             var ge = [];
-                            for(j in data[i].authors){
-                                k.push(data[i].authors[j].id);
-                                au.push(data[i].authors[j].name);
+                            for(j in data[i].book.authors){
+                                k.push(data[i].book.authors[j].id);
+                                au.push(data[i].book.authors[j].name);
                             }
-                            for(q in data[i].genres){
-                                p.push(data[i].genres[q].id);
-                                ge.push(data[i].genres[q].genreType);
+                            for(q in data[i].book.genres){
+                                p.push(data[i].book.genres[q].id);
+                                ge.push(data[i].book.genres[q].genreType);
                             }
                             output +=   "<tr>"
-                                            +"<td class='text-center'>"+data[i].id+"</td>"
-                                            +"<td class='text-center'>"+data[i].title+"</td>"
+                                            +"<td class='text-center'>"+data[i].book.id+"</td>"
+                                            +"<td class='text-center'>"+data[i].book.title+"</td>"
                                             +"<td class='text-center'>"+au+"</td>"
                                             +"<td class='text-center'>"+ge+"</td>"
-                                            +"<td class='text-center'>"+data[i].publisher.publisherName+"</td>"
-                                            +"<td class='text-center'>"+data[i].publishedYear+"</td>"
+                                            +"<td class='text-center'>"+data[i].book.publisher.publisherName+"</td>"
+                                            +"<td class='text-center'>"+data[i].book.publishedYear+"</td>"
+                                            +"<td class='text-center'>"+data[i].availableQuantity+"</td>"
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-yellow' data-toggle='modal' id_edit_book="+data[i].id+" data-type='import-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].publishedYear+">"
+                                                +"<a href='#' class='text-yellow' data-toggle='modal' id_edit_book="+data[i].book.id+" data-type='import-book' title="+data[i].book.title+" publisher_id="+data[i].book.publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].book.publishedYear+">"
                                                     +"<i class='ace-icon fa fa-pencil-square-o bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].id+" data-type='update-book' title="+data[i].title+" publisher_id="+data[i].publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].publishedYear+">"
+                                                +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].book.id+" data-type='update-book' title="+data[i].book.title+" publisher_id="+data[i].book.publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].book.publishedYear+">"
                                                     +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"
                                             +"<td class='text-center'>"
-                                                +"<a href='#' class='text-red delete_book' id_delete_book="+data[i].id+" data-type='delete-book'>"
+                                                +"<a href='#' class='text-red delete_book' id_delete_book="+data[i].book.id+" data-type='delete-book'>"
                                                     +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
                                                 +"</a>"
                                             +"</td>"

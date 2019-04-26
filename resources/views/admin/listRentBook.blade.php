@@ -37,7 +37,7 @@
                     <!-- <th class="text-center">Book Title</th> -->
                     <th class="text-center">User ID</th>
                     <th class="text-center">Full Name</th>
-                    <th class="text-center">Active</th>
+                    <th class="text-center">Detail</th>
                     <th class="text-center">Rent</th>
                     <!-- <th class="text-center">Return</th> -->
                     <th class="text-center">State</th>

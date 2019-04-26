@@ -37,10 +37,10 @@
                     <!-- <th class="text-center">Book Title</th> -->
                     <th class="text-center">User ID</th>
                     <th class="text-center">Full Name</th>
-                    <th class="text-center">Active</th>
+                    <th class="text-center">Detail</th>
                     <!-- <th class="text-center">Rent</th> -->
                     <!-- <th class="text-center">Return</th> -->
-                    <th class="text-center">State</th>
+                    <!-- <th class="text-center">State</th> -->
                     <th class="text-center">Delete</th>
                   </tr>
                 </thead>
@@ -157,7 +157,7 @@
                                                 <th class="center">Book Copy ID</th>
                                                 <th class="center">Book ID</th>
                                                 <th class="center">Book Title</th>
-                                                <th class="center">State</th>
+                                                <!-- <th class="center">State</th> -->
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -165,7 +165,7 @@
                                                 <td class="center" id="rent_book_copy_id"></td>
                                                 <td class="center" id="rent_book_id"></td>
                                                 <td class="center" id="rent_book_title"></td>
-                                                <td class="center" id="rent_book_state_detail"></td>
+                                                <!-- <td class="center" id="rent_book_state_detail"></td> -->
                                             </tr>
                                         </tbody>
                                     </table>
@@ -223,7 +223,7 @@
                                                 <th class="center">Book Copy ID</th>
                                                 <th class="center">Book ID</th>
                                                 <th class="center">Book Title</th>
-                                                <th class="center">State</th>
+                                                <!-- <th class="center">State</th> -->
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -231,7 +231,7 @@
                                                 <td class="center" id="return_book_copy_id"></td>
                                                 <td class="center" id="return_book_id"></td>
                                                 <td class="center" id="return_book_title"></td>
-                                                <td class="center" id="return_book_state_detail"></td>
+                                                <!-- <td class="center" id="return_book_state_detail"></td> -->
                                             </tr>
                                         </tbody>
                                     </table>
@@ -290,7 +290,7 @@
                                                 <th class="center">Book ID</th>
                                                 <th class="center">Book Title</th>
                                                 <th class="center">Published Year</th>
-                                                <th class="center">State</th>
+                                                <!-- <th class="center">State</th> -->
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -299,7 +299,7 @@
                                                 <td class="center" id="active_book_id"></td>
                                                 <td class="center" id="active_book_title"></td>
                                                 <td class="center" id="active_published_year"></td>
-                                                <td class="center" id="active_book_state_detail"></td>
+                                                <!-- <td class="center" id="active_book_state_detail"></td> -->
                                             </tr>
                                         </tbody>
                                     </table>
