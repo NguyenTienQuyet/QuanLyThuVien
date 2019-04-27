@@ -67,7 +67,7 @@ class EloquentService implements Service, Message
                 $state = $this->repository->update($attributes, $model);
                 foreach($this->manyToManyRelations as $relation){
                     if(method_exists($model, $relation) && array_key_exists($relation, $attributes)){
-                        $this->repository->attach($attributes, $relation, $model);
+                        $this->repository->syncModel($attributes, $relation, $model);
                     }
                 }
             });
