@@ -75,8 +75,9 @@ class UserController extends APIController
          * @var UserService $userService
          */
         $userService = $this->getService();
+        $id = $request->get('id');
         $enhancedService = new ChangePasswordDecorator($userService);
-        $changePasswordChecker = $enhancedService->updateModel($request->all(), 0);
+        $changePasswordChecker = $enhancedService->updateModel($request->all(), $id);
         if ($changePasswordChecker == true) {
             return response(
                 ['Message' => 'Change password successfully'],
