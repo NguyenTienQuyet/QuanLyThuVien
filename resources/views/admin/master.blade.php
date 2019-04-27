@@ -198,7 +198,7 @@
                                     <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 10px;">Current Password: </label>
 
                                     <div class="col-sm-9" style="margin-top: 15px; margin-left: -15px; width: 380px;">
-                                        <input type="text" id="current" placeholder="Enter current password ..." class="form-control" name="email-user"/>
+                                        <input type="password" id="current" placeholder="Enter current password ..." class="form-control" name="email-user"/>
                                     </div>
                                 </div>
 
@@ -208,7 +208,7 @@
                                     <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">New Password: </label>
 
                                     <div class="col-sm-9" style="margin-top: 10px; margin-left: -15px; width: 380px;">
-                                        <input type="text" id="new" placeholder="Enter new password ..." class="form-control" name="password-user"/>
+                                        <input type="password" id="new" placeholder="Enter new password ..." class="form-control" name="password-user"/>
                                     </div>
                                 </div>
 
@@ -219,7 +219,7 @@
                                     <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Confirm Password: </label>
 
                                     <div class="col-sm-9" style="margin-top: 10px; margin-left: -15px; width: 380px;">
-                                        <input type="text" id="confirm" placeholder="Enter confirm password ..." class="form-control" name="first-name"/>
+                                        <input type="password" id="confirm" placeholder="Enter confirm password ..." class="form-control" name="first-name"/>
                                     </div>
                                 </div>
 

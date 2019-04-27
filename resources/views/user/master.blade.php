@@ -160,6 +160,79 @@
 			</div>
 
 
+			<div class="modal fade" id="changePassword-user" role="dialog">
+			    <div class="modal-dialog">
+			<!-- 
+			        <form method="get" action="">
+			            <input type="hidden" name="_method" value="patch">
+			            {{csrf_field()}} -->
+			            <!-- Modal content-->
+			            <div class="modal-content">
+			                <div class="modal-header">
+			                	<h4 class="modal-title" style="text-align: center;"><b>Change Password</b></h4>
+			                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+			                    
+			                </div>
+			                <div class="modal-body">
+			                    <div class="row">
+			                        <div class="col-xs-12">
+			                            <!-- PAGE CONTENT BEGINS -->
+
+			                            <div class="col-sm-11">
+			                                <div class="form-group">
+			                                    <label style="margin-top: 10px; float: left;">Current Password: </label>
+
+			                                    <span style="margin-top: -35px; margin-left: 150px; width: 200px; float: left;">
+			                                        <input type="password" id="current" placeholder="Enter current password ..." name="email-user"/>
+			                                    </span>
+			                                </div>
+
+			                            </div>
+			                            <div class="col-sm-11" style="margin-top: 10px;">
+			                                <div class="form-group">
+			                                    <label style="margin-top: 5px; clear: both; float: left;">New Password: </label>
+
+			                                    <span style="margin-top: -35px; margin-left: 150px; width: 200px; float: left;">
+			                                        <input type="password" id="new" placeholder="Enter new password ..." name="password-user"/>
+			                                    </span>
+			                                </div>
+
+			                            </div>
+
+			                            <div class="col-sm-11" style="margin-top: 10px;">
+			                                <div class="form-group">
+			                                    <label style="margin-top: 5px; clear: both; float: left;">Confirm Password: </label>
+
+			                                    <span style="margin-top: -35px; margin-left: 150px; width: 200px; float: left;">
+			                                        <input type="password" id="confirm" placeholder="Enter confirm password ..." name="first-name"/>
+			                                    </span>
+			                                </div>
+
+			                            </div>
+
+			                            
+			                        </div>
+			                    </div>
+
+			                </div>
+			                <br/>
+			                <div class="modal-footer">
+			                    <input type="hidden" id="change_user_id" name="user-id" value="{{Session::get('user_id')}}" />
+			                    <input type="hidden" id="current_pass" value="" />
+			                    <input type="hidden" id="new_pass" value="" />
+			                    <input type="hidden" id="confirm_pass" value="" />
+			                    <!-- <input type="hidden" id="role_id" value="" /> -->
+
+			                    <input type="button" value="Close" data-dismiss="modal" style="margin-left: -100px">
+			                    <input type="submit" value="Ok" id="change_password" >
+
+			                </div>
+			            </div>
+			        <!-- </form> -->
+			    </div>
+			</div>
+
+
 			<script src="../frontend/js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 			<script src="../frontend/js/vendor/bootstrap.min.js"></script>			

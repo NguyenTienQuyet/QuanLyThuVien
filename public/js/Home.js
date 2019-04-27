@@ -107,20 +107,26 @@ jQuery(function($) {
         // $('#confirm_logout').modal('show');
 
         $.ajax({
-                url: '/api/v1/users/get?id='+user_id,
-                type: 'get',
-                dataType: 'json',
-                
-                success: function(data){
+            url: 'api/v1/users/changePassword',
+            type: 'patch',
+            dataType: 'json',
+            data: {
+                'id': user_id,
+                'old_password': current_password,
+                'new_password': new_password,
+                'c_new_password': confirm_password
+            },
+            success: function(data){
 
-                    window.location.href="http://127.0.0.1:8000/login";
-                   
-                },
-                error: function(){
-                    
-                }
+                alert('Success !');
+                $('#changePassword-user').modal('hide');
+               
+            },
+            error: function(err){
+                alert(err);
+            }
 
-            });
+        });
 
 
     });
