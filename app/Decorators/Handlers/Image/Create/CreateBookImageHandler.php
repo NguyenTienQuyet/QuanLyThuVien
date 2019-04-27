@@ -9,15 +9,11 @@
 namespace App\Decorators\Handlers\Image\Create;
 
 
-use App\Decorators\Handlers\EloquentBaseHandler;
 use App\Decorators\Handlers\HandlerResponseCreators\HandlerResponse;
-use App\Models\Image;
-use App\Repositories\Eloquent\EloquentImageRepository;
-use App\Services\Eloquent\EloquentImageService;
+use App\Decorators\Handlers\Image\EloquentImageHandler;
 use App\Services\Message;
-use App\Services\Service;
 
-class CreateBookImageHandler extends EloquentBaseHandler
+class CreateBookImageHandler extends EloquentImageHandler
 {
     private static $MISSING_HANDLER = "Missing create book handler";
     private static $MISSING_UPLOAD_HANDLER = "Missing upload image handler";
@@ -47,12 +43,5 @@ class CreateBookImageHandler extends EloquentBaseHandler
         }
 
         return parent::handle($attributes);
-    }
-
-    public function createHandlerService(): ?Service
-    {
-        $image = new Image();
-        $repository = new EloquentImageRepository($image);
-        return new EloquentImageService($repository);
     }
 }

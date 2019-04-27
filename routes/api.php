@@ -31,7 +31,7 @@ Route::prefix('v1')->group(function () {
             'as' => 'api/v1/books/post'
         ]);
 
-        Route::patch('patch/{id?}', [
+        Route::post('patch/{id?}', [
             'uses' => 'API\BookController@patch',
             'as' => 'api/v1/books/patch'
         ]);
