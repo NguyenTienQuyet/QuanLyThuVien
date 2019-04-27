@@ -20,8 +20,8 @@ class ChangePasswordDecorator extends EloquentUserDecorator
         $this->hashPassword($attributes);
         $pairs = [
             [
-                'needle' => 'email',
-                'value' => $attributes['email']
+                'needle' => 'id',
+                'value' => $id
             ],
             [
                 'needle' => 'password',
@@ -36,7 +36,7 @@ class ChangePasswordDecorator extends EloquentUserDecorator
             $this->hashPassword($attributes);
             unset($attributes['c_new_password']);
             unset($attributes['old_password']);
-            return parent::updateModel($attributes, $user['id']);
+            return parent::updateModel($attributes, $id);
         } else {
             return false;
         }

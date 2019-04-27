@@ -16,7 +16,7 @@ class UserChangePasswordRequest extends PatchRequest
     public function rules(): array
     {
         return [
-            'email' => 'email|required|exists:users,email',
+            'id' => 'int|required|exists:users,id',
             'old_password' => 'string|required',
             'new_password' => 'string|required|min:6',
             'c_new_password' => 'string|required|same:new_password',
