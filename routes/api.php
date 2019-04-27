@@ -31,7 +31,7 @@ Route::prefix('v1')->group(function () {
             'as' => 'api/v1/books/post'
         ]);
 
-        Route::patch('patch/{id?}', [
+        Route::post('patch/{id?}', [
             'uses' => 'API\BookController@patch',
             'as' => 'api/v1/books/patch'
         ]);
@@ -233,6 +233,11 @@ Route::prefix('v1')->group(function () {
         Route::get('session', [
             'uses' => 'API\UserController@getSessionData',
             'as' => 'api/v1/users/session'
+        ]);
+
+        Route::patch('changePassword', [
+            'uses' => 'API\UserController@changePassword',
+            'as' => 'api/v1/users/changePassword'
         ]);
     });
 

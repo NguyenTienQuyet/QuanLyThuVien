@@ -19,23 +19,39 @@ class BookPatchRequest extends PatchRequest
         if (Input::get('id')) {
             return [
                 'title' => 'string|max:50|unique:books,title',
-                'author_id' => 'array|',
-                'author_id.*' => 'int|exists:authors,id||distinct',
+                'author_id' => 'array',
+                'author_id.*' => 'int|exists:authors,id|distinct',
                 'publisher_id' => 'int|exists:publishers,id',
                 'genres_id' => 'array',
-                'genres_id.*' => 'int|exists:genres,id||distinct',
-                'publishedYear' => 'string'
+                'genres_id.*' => 'int|exists:genres,id|distinct',
+                'publishedYear' => 'string',
+                'image' => 'file|required|mimes:jpeg,bmp,png',
             ];
         }
         return [
             'id' => 'int|required|exists:books,id',
             'title' => 'string|max:50|unique:books,title',
-            'author_id' => 'array|',
-            'author_id.*' => 'int|exists:authors,id||distinct',
+            'author_id' => 'array',
+            'author_id.*' => 'int|exists:authors,id|distinct',
             'publisher_id' => 'int|exists:publishers,id',
             'genres_id' => 'array',
-            'genres_id.*' => 'int|exists:genres,id||distinct',
-            'publishedYear' => 'string'
+            'genres_id.*' => 'int|exists:genres,id|distinct',
+            'publishedYear' => 'string',
+            'image' => 'file|required|mimes:jpeg,bmp,png',
         ];
     }
+
+//    public function rules():array
+//    {
+//        return [
+//            'title' => 'string|required|max:50|unique:books,title',
+//            'authors' => 'array|required',
+//            'authors.*' => 'int|required|exists:authors,id|distinct',
+//            'publisher_id' => 'int|required|exists:publishers,id',
+//            'genres' => 'array|required',
+//            'genres.*' => 'int|required|exists:genres,id|distinct',
+//            'publishedYear' => 'string|required',
+//            'image' => 'file|mimes:jpeg,bmp,png'
+//        ];
+//    }
 }

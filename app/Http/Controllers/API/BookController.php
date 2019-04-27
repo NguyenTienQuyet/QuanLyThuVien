@@ -14,6 +14,7 @@ use App\Decorators\BookDecorators\BorrowBook\BorrowBookProxy;
 use App\Decorators\BookDecorators\BorrowBook\BorrowBookTransactionDecorator;
 use App\Decorators\BookDecorators\CreateBookDecorator;
 use App\Decorators\BookDecorators\GetAllBookDecorator;
+use App\Decorators\BookDecorators\UpdateBookDecorator;
 use App\Http\Controllers\Requests\API\Book\BookBorrowRequest;
 use App\Http\Controllers\Requests\API\Book\BookDeleteRequest;
 use App\Http\Controllers\Requests\API\Book\BookGetRequest;
@@ -43,14 +44,30 @@ class BookController extends APIController
         $enhancedService = new CreateBookDecorator($bookService);
         $model = $enhancedService->createNewModel($request->all());
         if ($model == null) {
-            return $this->message($enhancedService);
+            return response(
+                ['Message' => $this->message($enhancedService)],
+                403);
         }
         return $model;
     }
 
     public function patch(BookPatchRequest $request, int $id = null)
     {
-        return parent::_patch($request, $id);
+        /**
+         * @var BookService $bookService
+         */
+        $id = ($id == null) ? $request->get('id') : $id;
+        $bookService = $this->getService();
+        $enhancedService = new UpdateBookDecorator($bookService);
+        $updateChecker = $enhancedService->updateModel($request->all(), $id);
+        if ($updateChecker == null) {
+            return response(
+                ['Message' => $this->message($enhancedService)],
+                403);
+        }
+        return response(
+            ['Message' => "Update Success"],
+            200);
     }
 
     public function delete(BookDeleteRequest $request, int $id = null)
