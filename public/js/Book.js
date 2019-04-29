@@ -1,6 +1,7 @@
 
 jQuery(function($) {
     var id_book_edit_click="";
+    var id_publisher_edit_click="";
 
     $('#addBook').click(function(){
 
@@ -53,9 +54,10 @@ jQuery(function($) {
                     p.push(data[i].book.genres[q].id);
                     ge.push(data[i].book.genres[q].genreType);
                 }
-                for (image in data[i].images) {
-                    var image_url=data[i].images[image].imageURL;
-                    console.log(image_url);
+                for (image in data[i].book.images) {
+                    var image_url=data[i].book.images[image].imageURL;
+                    console.log("image_url "+image_url);
+
                     img.push(image_url);
                 }
                 output +=   "<tr>"
@@ -110,11 +112,12 @@ jQuery(function($) {
                 id_book_edit_click=id;
                 var edit_title = "";
                 var edit_author_id = $(this).attr("author_id");
-                var edit_image_url="http://127.0.0.1:8000"+$(this).attr("image");
+                var edit_image_url=$(this).attr("image");
 
 
                 var edit_genre_id = $(this).attr("genre_id");
                 var edit_publisher_id = $(this).attr("publisher_id");
+                id_publisher_edit_click=edit_publisher_id;
                 var edit_published_year = $(this).attr("publishedYear");
                 console.log("id "+edit_publisher_id);
                 // var author = $(this).attr("author");
@@ -294,7 +297,9 @@ jQuery(function($) {
         formData.append('publisher_id', publisher_id);
         formData.append('publishedYear', publishedYear);
         formData.append('image', $('input[type=file]')[0].files[0]);
-
+        for(var pair of formData.entries()) {
+            console.log(pair[0]+ ', '+ pair[1]);
+        }
         $.ajax({
 
             url: "/api/v1/books/post",
@@ -560,26 +565,44 @@ jQuery(function($) {
              genre_id_.push($(this).attr('id'));
         });
 
-        var publisher_id = $('#_edit_publisher_id').val();
+        var publisher_id = id_publisher_edit_click;
         // var author_id = $('#_edit_author_id').val();
         // var genre_id = $('#_edit_genre_id').val();
-        var publishedYear = $('#edit_publishedYear').val();
+        var publishedYear = $('#edit_published_year').val();
         console.log(publisher_id);
-        var data={
-            title: title,
-            authors: author_id_,
-            genres: genre_id_,
-            publisher_id: publisher_id,
-            publishedYear: publishedYear
+        // var data={
+        //     title: title,
+        //     authors: author_id_,
+        //     genres: genre_id_,
+        //     publisher_id: publisher_id,
+        //     publishedYear: publishedYear
+        // }
+        // var json=JSON.stringify(data);
+        // console.log("json "+json);
+
+        var formData = new FormData();
+        formData.append('title', title);
+        for(var auth_id in author_id_){
+            formData.append('authors[]',author_id_[auth_id]);
         }
-        var json=JSON.stringify(data);
-        console.log("json "+json);
+        for (var ge_id in genre_id_){
+            formData.append('genres[]',genre_id_[ge_id]);
+        }
+
+        formData.append('publisher_id', publisher_id);
+        formData.append('publishedYear', publishedYear);
+        var ins = document.getElementById('edit_image_book').files[0];
+        formData.append('image',ins);
+        for(var pair of formData.entries()) {
+            console.log(pair[0]+ ', '+ pair[1]);
+        }
         $.ajax({
 
             url: '/api/v1/books/patch?id='+parseInt(id),
-            type: 'patch',
-            contentType : 'application/json',
-            data: json,
+            type: 'post',
+            contentType: false,
+            processData: false,
+            data: formData,
             success: function () {
                 alert('success!');
                 $('#editModal-book').modal('hide');
