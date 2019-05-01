@@ -592,7 +592,11 @@ jQuery(function($) {
         formData.append('publisher_id', publisher_id);
         formData.append('publishedYear', publishedYear);
         var ins = document.getElementById('edit_image_book').files[0];
-        formData.append('image',ins);
+        console.log("image "+ins);
+        if (ins!=null){
+            formData.append('image',ins);
+        }
+
         for(var pair of formData.entries()) {
             console.log(pair[0]+ ', '+ pair[1]);
         }
