@@ -10,6 +10,7 @@ namespace App\Decorators\BookDecorators;
 
 
 use App\Decorators\EloquentUpdateTransactionDecorator;
+use App\Decorators\Handlers\Book\Book\UpdateBookImageHandler;
 use App\Decorators\Handlers\Image\Create\CreateBookImageHandler;
 use App\Decorators\Handlers\Image\Upload\UploadBookImageHandler;
 
@@ -21,8 +22,10 @@ class UpdateBookDecorator extends EloquentUpdateTransactionDecorator
         $attributes['bookId'] = $id;
         $uploadImageHandler = new UploadBookImageHandler();
         $createBookImageHandler = new CreateBookImageHandler();
+        $updateBookHandler = new UpdateBookImageHandler();
 
         $uploadImageHandler->setNextHandler($createBookImageHandler);
+        $createBookImageHandler->setNextHandler($updateBookHandler);
         $response = $uploadImageHandler->handle($attributes);
         if ($response->getResponseStatus() == true) {
             return true;
