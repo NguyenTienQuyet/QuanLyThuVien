@@ -31,11 +31,11 @@ class CreateBookImageHandler extends EloquentImageHandler
         $imageService = $this->createHandlerService();
         $imageAttribute['imageURL'] = $attributes['image'];
         $imageAttribute['imageName'] = $attributes['name'];
-        $imageAttribute['books'] = $attributes['bookId'];
+//        $imageAttribute['books'] = $attributes['bookId'];
 
-        $checker = $imageService->createNewModel($imageAttribute);
-
-        if ($checker == null) {
+        $newImage = $imageService->createNewModel($imageAttribute);
+        $attributes['images'] = $newImage['id'];
+        if ($newImage == null) {
             /**
              * @var Message $imageService
              */

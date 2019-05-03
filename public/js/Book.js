@@ -2,6 +2,7 @@
 jQuery(function($) {
     var id_book_edit_click="";
     var id_publisher_edit_click="";
+    var title_edit_click="";
 
     $('#addBook').click(function(){
 
@@ -140,6 +141,7 @@ jQuery(function($) {
                     dataType: 'json',
                     success: function(data) {
                         title = data.title;
+                        title_edit_click=title;
                         $('#edit_title').val(title);
                         // alert(title);
                     },
@@ -245,7 +247,6 @@ jQuery(function($) {
             alert(1);
         }
     });
-
 
     $('#add-book').on('click', function(){
 
@@ -549,6 +550,7 @@ jQuery(function($) {
         });
         var id = id_book_edit_click;
         var title = $('#edit_title').val();
+
         console.log("title "+title);
         var author=[];
         var author_id_ = [];
@@ -581,7 +583,10 @@ jQuery(function($) {
         // console.log("json "+json);
 
         var formData = new FormData();
-        formData.append('title', title);
+        if (title!=title_edit_click){
+            formData.append('title', title);
+        }
+
         for(var auth_id in author_id_){
             formData.append('authors[]',author_id_[auth_id]);
         }
