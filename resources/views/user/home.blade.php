@@ -20,15 +20,15 @@
 							<div class="single-popular-carusel">
 								<div class="thumb-wrap relative">
 									<div class="thumb relative">
-										<div class="overlay overlay-bg"></div>	
+										<div class="overlay overlay-bg"></div>
 										<a id="{{$book->id}}" href="{{route('detailBook', $book->id)}}">
-											<img class="img-fluid" src="{{$book->imageURL}}" alt="">
+											<img style="width: 250px; height: 300px" class="img-fluid" src="{{$book->imageURL}}" alt="">
 										</a>
 									</div>
 									<div class="meta d-flex justify-content-between">
 										<p><span class="lnr lnr-users"></span> 355 <span class="lnr lnr-bubble"></span>35</p>
 										<h4>$150</h4>
-									</div>									
+									</div>
 								</div>
 								<div class="details">
 									<a id="{{$book->id}}" href="{{route('detailBook', $book->id)}}">
@@ -37,14 +37,14 @@
 										</h4>
 									</a>
 									<p>
-										Publisher: <a id="{{$book->publisher_id}}" href="{{route('book', $book->publisher_id)}}">{{$book->publisherName}}</a>								
+										Nhà xuất bản: <a id="{{$book->publisher_id}}" href="{{route('book', $book->publisher_id)}}">{{$book->publisherName}}</a>
 									</p>
 									<p>
-										Published Year: {{$book->publishedYear}}										
+										Năm xuất bản: {{$book->publishedYear}}
 									</p>
 								</div>
-							</div>	
-							@endforeach	
+							</div>
+							@endforeach
 						</div>
 
 					</div>
