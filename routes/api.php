@@ -56,6 +56,11 @@ Route::prefix('v1')->group(function () {
             'as' => 'api/v1/books/all'
         ]);
 
+        Route::get('search', [
+            'uses' => 'API\BookController@search',
+            'as' => 'api/v1/books/search'
+        ]);
+
     });
 
     Route::prefix('authors')->group(function () {

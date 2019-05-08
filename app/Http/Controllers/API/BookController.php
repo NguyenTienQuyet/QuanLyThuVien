@@ -18,6 +18,7 @@ use App\Http\Controllers\Requests\API\Book\BookDeleteRequest;
 use App\Http\Controllers\Requests\API\Book\BookGetRequest;
 use App\Http\Controllers\Requests\API\Book\BookPatchRequest;
 use App\Http\Controllers\Requests\API\Book\BookPostRequest;
+use App\Http\Controllers\Requests\API\Book\BookSearchRequest;
 use App\Services\BookService;
 use App\Services\Message;
 
@@ -75,6 +76,15 @@ class BookController extends APIController
          * @var Message $transactionService;
          */
         return $this->message($transactionService);
+    }
+
+    public function search(BookSearchRequest $request)
+    {
+        /**
+         * @var BookService $bookService
+         */
+        $bookService = $this->getService();
+        return $bookService->searchBook($request->all());
     }
 
     public function all(BookGetRequest $request)

@@ -19,4 +19,11 @@ class EloquentBookRepository extends EloquentRepository implements BookRepositor
     {
         parent::__construct($model);
     }
+
+    public function getByName(string $name, int $limit)
+    {
+        $name = '%'.$name.'%';
+        $limit = ($limit == null) ? 5 : $limit;
+        return $this->newQuery()->where('title', 'like', $name)->limit($limit)->get();
+    }
 }

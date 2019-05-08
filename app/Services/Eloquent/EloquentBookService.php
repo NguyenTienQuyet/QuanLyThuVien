@@ -20,4 +20,13 @@ class EloquentBookService extends EloquentService implements BookService
     {
         parent::__construct($repository);
     }
+
+    public function searchBook(array $attributes)
+    {
+        /**
+         * @var BookRepository $repository
+         */
+        $repository = $this->getRepository();
+        return $repository->getByName($attributes['q'], $attributes['limit']);
+    }
 }
