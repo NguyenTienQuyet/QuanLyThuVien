@@ -8,11 +8,11 @@
         <ul class="breadcrumb">
             <li>
                 <i class="ace-icon fa fa-home home-icon"></i>
-                <a href="">Home</a>
+                <a href="">Trang chủ</a>
             </li>
 
 
-            <li class="active">Author</li>
+            <li class="active">Tác giả</li>
 
         </ul><!-- /.breadcrumb -->
 
@@ -21,10 +21,10 @@
 
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title"><b>List Author</b></h3>
+            <h3 class="box-title"><b>Danh sách tác giả</b></h3>
             <button class="btn btn-sm btn-success" data-toggle="modal" id="addAuthor" style="float: right;">
                 <i class=" "></i>
-                Add
+                Thêm
 
             </button>
         </div>
@@ -36,10 +36,10 @@
                 <thead>
                 <tr>
                     <th class="text-center">ID</th>
-                    <th class="text-center">Name</th>
+                    <th class="text-center">Tên</th>
 
-                    <th class="text-center">Edit</th>
-                    <th class="text-center">Delete</th>
+                    <th class="text-center">Sửa</th>
+                    <th class="text-center">Xóa</th>
                 </tr>
                 </thead>
                 <tbody id="body_list_author">
@@ -86,7 +86,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"> Add Author</h4>
+                    <h4 class="modal-title"> Thêm tác giả</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -94,7 +94,7 @@
                             <!-- PAGE CONTENT BEGINS -->
                             <div class="col-sm-9" >
                                 <div class="form-group" >
-                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top: 22px;">Name:</label>
+                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top: 22px;">Tên:</label>
 
                                     <div class="col-sm-7">
                                         <input type="text" placeholder="Enter input data ..." class="form-control"  name="type-author" id="type-author" style="width: 350px; margin-top: 15px;"/>
@@ -109,10 +109,10 @@
                 </div>  
                 <br/>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
                     <button class="btn btn-info" type="submit" id="add-author">
                         <i class="ace-icon fa fa-check bigger-110"></i>
-                        Add
+                        Thêm
                     </button>
                 </div>
             </div>
@@ -132,7 +132,7 @@
                 <input type="hidden" name="_method" value="patch">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"> Edit Author</h4>
+                    <h4 class="modal-title"> Sửa thông tin tác giả</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -142,7 +142,7 @@
 
                             <div class="col-sm-9">
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top:  12px;">Name: </label>
+                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top:  12px;">Tên: </label>
 
                                     <div class="col-sm-8">
                                         <input type="text" placeholder="Enter input data ..." class="form-control" name="author-type" id="author-type" style="width: 350px; margin-top: 5px;" />
@@ -158,10 +158,10 @@
                 <br/>
                 <div class="modal-footer">
                     <input type="hidden" id="author-id" name="author-id" value="" />
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
                     <button class="btn btn-info" type="submit" id="edit-author">
                         <i class="ace-icon fa fa-check bigger-110"></i>
-                        Edit
+                        Sửa
                     </button>
                 </div>
             </div>
@@ -181,7 +181,7 @@
                 
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Confirm</h4>
+                            <h4 class="modal-title">Xác nhận</h4>
                         </div>
                         <div class="modal-body">
                             
@@ -189,7 +189,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <!-- PAGE CONTENT BEGINS -->
-                                    <h4>You may want to delete ?</h4>
+                                    <h4>Bạn có chắc chắn muốn xóa không?</h4>
 
                                 </div>
                             </div>
