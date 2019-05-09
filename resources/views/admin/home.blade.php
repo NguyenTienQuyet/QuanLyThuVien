@@ -10,12 +10,12 @@
             <div class="inner">
               <h3>150</h3>
 
-              <p>New Orders</p>
+              <p>Đơn mới</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#" class="small-box-footer">Thêm thông tin <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -25,12 +25,12 @@
             <div class="inner">
               <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-              <p>Bounce Rate</p>
+              <p>Tỷ lệ thoát</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#" class="small-box-footer">Thêm thông tin<i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -40,12 +40,12 @@
             <div class="inner">
               <h3>44</h3>
 
-              <p>User Registrations</p>
+              <p>Đăng ký người dùng</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#" class="small-box-footer">Thêm thông tin <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -55,12 +55,12 @@
             <div class="inner">
               <h3>65</h3>
 
-              <p>Unique Visitors</p>
+              <p>Khách truy cập</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#" class="small-box-footer">Thêm thông tin <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -74,9 +74,9 @@
           <div class="nav-tabs-custom">
             <!-- Tabs within a box -->
             <ul class="nav nav-tabs pull-right">
-              <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
-              <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
-              <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
+              <li class="active"><a href="#revenue-chart" data-toggle="tab">Khu vực</a></li>
+              <li><a href="#sales-chart" data-toggle="tab">Bánh rán</a></li>
+              <li class="pull-left header"><i class="fa fa-inbox"></i> Bán hàng</li>
             </ul>
             <div class="tab-content no-padding">
               <!-- Morris chart - Sales -->
@@ -99,7 +99,7 @@
             <div class="box-header">
               <i class="fa fa-envelope"></i>
 
-              <h3 class="box-title">Quick Email</h3>
+              <h3 class="box-title">Email nhanh</h3>
               <!-- tools box -->
               <div class="pull-right box-tools">
                 <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip"
@@ -161,17 +161,17 @@
               <div class="row">
                 <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
                   <div id="sparkline-1"></div>
-                  <div class="knob-label">Visitors</div>
+                  <div class="knob-label">Khách</div>
                 </div>
                 <!-- ./col -->
                 <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
                   <div id="sparkline-2"></div>
-                  <div class="knob-label">Online</div>
+                  <div class="knob-label">Trực tuyến</div>
                 </div>
                 <!-- ./col -->
                 <div class="col-xs-4 text-center">
                   <div id="sparkline-3"></div>
-                  <div class="knob-label">Exists</div>
+                  <div class="knob-label">Thoát</div>
                 </div>
                 <!-- ./col -->
               </div>
@@ -185,7 +185,7 @@
             <div class="box-header">
               <i class="fa fa-th"></i>
 
-              <h3 class="box-title">Sales Graph</h3>
+              <h3 class="box-title">Biểu đồ Bán hàng</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -204,21 +204,27 @@
                   <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
                          data-fgColor="#39CCCC">
 
-                  <div class="knob-label">Mail-Orders</div>
+                  <div class="knob-label">Đặt hàng qua Email</div>
                 </div>
                 <!-- ./col -->
                 <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
                   <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
                          data-fgColor="#39CCCC">
 
-                  <div class="knob-label">Online</div>
+                  <div class="knob-label">Trực tuyến</div>
                 </div>
                 <!-- ./col -->
                 <div class="col-xs-4 text-center">
-                  <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
+                  <input type="text" class="knob" da
+
+
+
+
+
+                         ta-readonly="true" value="30" data-width="60" data-height="60"
                          data-fgColor="#39CCCC">
 
-                  <div class="knob-label">In-Store</div>
+                  <div class="knob-label">Trong cửa hàng</div>
                 </div>
                 <!-- ./col -->
               </div>
