@@ -11,5 +11,5 @@ namespace App\Services;
 
 interface BookService extends Service
 {
-
+    public function searchBook(array $attributes);
 }

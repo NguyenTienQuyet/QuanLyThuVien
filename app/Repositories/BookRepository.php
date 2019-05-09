@@ -11,5 +11,5 @@ namespace App\Repositories;
 
 interface BookRepository extends Repository
 {
-
+    public function getByName(string $name, int $limit);
 }
