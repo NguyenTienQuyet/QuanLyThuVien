@@ -13,7 +13,7 @@
                 <li>
                     <a href="">Quản lý Sách</a>
                 </li>
-                <li class="active">Sách của Tác giả</li>
+                <li class="active">Tác giả của sách</li>
 
             </ul><!-- /.breadcrumb -->
 
@@ -22,7 +22,7 @@
         
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><b>Danh sách Sách của tác giả</b></h3>
+                <h3 class="box-title"><b>Danh sách tác giả</b></h3>
                 <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal-AuthorBook" id="addAuthorBook" style="float: right;">
                     <i class=" "></i>
                     Thêm
@@ -81,7 +81,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Thêm mới Sách của tác giả</h4>
+                    <h4 class="modal-title">Thêm mới tác giả</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
