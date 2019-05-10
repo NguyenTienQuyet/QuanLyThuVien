@@ -1,8 +1,8 @@
 <div class="header-top">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6 col-sm-6 col-8 header-top-left no-padding">
-				<ul>
+			<div class="col-lg-6 col-sm-3 col-8 header-top-left no-padding" style="width: 200px" >
+				<ul style="width: 200px">
 				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 				<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
@@ -11,7 +11,7 @@
 			</div>
 
 			<div class="col-lg-6 col-sm-6 col-4 header-top-right no-padding">
-
+				<input id="search_book" class="form-control" type="text" placeholder="Search" aria-label="Search" onkeypress="return runScript(event)">
 				 @if(!Session::has('user_id'))
 				<a href="{{route('register')}}"><span class="lnr lnr-phone-handset"></span> <span class="text"><b><u>Đăng ký</u></b></span></a>
 				<a href="{{route('login')}}"><span class="lnr lnr-envelope"></span> <span class="text"><b><u>Đăng nhập</u></b></span></a>
