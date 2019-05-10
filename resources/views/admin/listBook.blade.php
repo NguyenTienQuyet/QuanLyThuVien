@@ -7,13 +7,13 @@
         <ul class="breadcrumb">
             <li>
                 <i class="ace-icon fa fa-home home-icon"></i>
-                <a href="">Home</a>
+                <a href="">Trang chủ</a>
             </li>
 
             <li>
-                <a href="">Manage Book</a>
+                <a href="">Quản lý sách</a>
             </li>
-            <li class="active">List Book</li>
+            <li class="active">Danh sách Sách</li>
 
         </ul><!-- /.breadcrumb -->
 
@@ -21,10 +21,10 @@
 
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title"><b>List Book</b></h3>
+            <h3 class="box-title"><b>Danh sách Sách</b></h3>
             <button class="btn btn-sm btn-success" data-toggle="modal" id="addBook" style="float: right;">
                 <i class=" "></i>
-                Add
+                Thêm
 
             </button>
         </div>
@@ -37,18 +37,18 @@
                     <tr>
                       <th class="text-center">ID</th>
 
-                      <th class="text-center">Title</th>
+                      <th class="text-center">Tên Sách</th>
 
-                      <th class="text-center">Author ID</th>
-                      <th class="text-center">Genre ID</th>
+                      <th class="text-center">Tác giả</th>
+                      <th class="text-center">Thể loại</th>
 
-                      <th class="text-center">Publisher ID</th>
-                      <th class="text-center">Published Year</th>
-                      <th class="text-center">Quantity</th>
+                      <th class="text-center">Nhà xuất bản</th>
+                      <th class="text-center">Năm xuất bản</th>
+                      <th class="text-center">Số lượng</th>
 
-                      <th class="text-center">Import</th>
-                      <th class="text-center">Edit</th>
-                      <th class="text-center">Delete</th>
+                      <th class="text-center">Thêm</th>
+                      <th class="text-center">Sửa</th>
+                      <th class="text-center">Xóa</th>
                     </tr>
                 </thead>
 
@@ -96,7 +96,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Add book</h4>
+                    <h4 class="modal-title">Thêm sách</h4>
 
                 </div>
                 <div class="modal-body">
@@ -106,7 +106,7 @@
 
                             <div class="col-sm-11">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Title: </label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Tên sách: </label>
 
                                     <div class="col-sm-9" style="margin-left: -15px; width: 380px;">
 
@@ -120,7 +120,7 @@
 
                             <div class="col-sm-11" style="margin-top: 15px;">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Author ID:</label>
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Tác giả:</label>
 
                                     <div class="input-group " style="width: 350px;" >
 
@@ -146,7 +146,7 @@
 
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Genre ID:</label>
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Thể loại:</label>
 
                                     <div class="input-group " style="width: 350px;" >
 
@@ -173,12 +173,12 @@
 
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Publisher ID:</label>
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Nhà xuất bản:</label>
 
                                     <div class="input-group " style="width: 350px;" >
 
                                         <div class="input-group-btn" style="margin-left: 30px;">
-                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
+                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Tùy chọn
                                               <span class="fa fa-caret-down"></span></button>
                                             <ul class="dropdown-menu dropdown_publisher">
                                                 @foreach($listP as $publisher)
@@ -200,7 +200,7 @@
                             </div>
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Published Year: </label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Năm xuất bản: </label>
 
                                     <div class="col-sm-9" style="margin-left: -15px; width: 380px;">
 
@@ -212,7 +212,7 @@
                             </div>
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Choose image: </label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Chọn ảnh: </label>
 
                                     <div class="col-sm-9" style="margin-left: -15px; width: 380px;">
 
@@ -243,7 +243,7 @@
                     <button class="btn btn-info" type="submit" id="add-book">
 
                         <i class="ace-icon fa fa-check bigger-110"></i>
-                        Add
+                        Thêm
                     </button>
                 </div>
                         </div>
@@ -276,7 +276,7 @@
 
 
 
-                    <h4 class="modal-title">Edit Book</h4>
+                    <h4 class="modal-title">Sửa thông tin sách</h4>
 
                 </div>
                 <div class="modal-body">
@@ -286,7 +286,7 @@
 
                             <div class="col-sm-11">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Title: </label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Tên sách: </label>
 
                                     <div class="col-sm-9" style="margin-left: -15px; width: 380px;">
                                         <input type="text" id="edit_title" placeholder="Enter data input ..." class="form-control" name="title-book"/>
@@ -298,7 +298,7 @@
 
                             <div class="col-sm-11" style="margin-top: 15px;">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Author ID:</label>
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Tác giả:</label>
 
                                     <div class="input-group " style="width: 350px;" >
 
@@ -324,7 +324,7 @@
 
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Genre ID:</label>
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Thể loại:</label>
 
                                     <div class="input-group " style="width: 350px;" >
 
@@ -351,12 +351,12 @@
 
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Publisher ID:</label>
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Nhà xuất bản:</label>
 
                                     <div class="input-group " style="width: 350px;" >
 
                                         <div class="input-group-btn" style="margin-left: 30px;">
-                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
+                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Tùy chọn
                                               <span class="fa fa-caret-down"></span></button>
                                             <ul class="dropdown-menu dropdown_publisher">
                                                 @foreach($listP as $publisher)
@@ -379,7 +379,7 @@
 
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Published Year: </label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Năm xuất bản: </label>
 
                                     <div class="col-sm-9" style="margin-left: -15px; width: 380px;">
                                         <input type="text" id="edit_published_year" placeholder="Enter data input ..." class="form-control" name="year_publisher"/>
@@ -391,7 +391,7 @@
 
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Choose image: </label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Chọn ảnh: </label>
 
                                     <div class="col-sm-9" style="margin-left: -15px; width: 380px;">
 
@@ -423,10 +423,10 @@
                     <input type="hidden" id="book-id" name="book-id" value="" />
 
 
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
                     <button class="btn btn-info" type="submit" id="edit-book" style="float: right;">
                         <i class="ace-icon fa fa-check bigger-110"></i>
-                        Edit
+                        Sửa
                     </button>
 
                 </div>
@@ -450,7 +450,7 @@
 
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Confirm</h4>
+                            <h4 class="modal-title">Xác nhận</h4>
                         </div>
                         <div class="modal-body">
 
@@ -458,7 +458,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <!-- PAGE CONTENT BEGINS -->
-                                    <h4>You may want to delete ?</h4>
+                                    <h4>Bạn có chắc chắn muốn xóa không ?</h4>
 
                                 </div>
                             </div>
@@ -493,7 +493,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"> Import Book</h4>
+                    <h4 class="modal-title"> Thêm sách</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -501,7 +501,7 @@
                             <!-- PAGE CONTENT BEGINS -->
                             <div class="col-sm-9" >
                                 <div class="form-group" >
-                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top: 22px;">Quantity:</label>
+                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top: 22px;">Số lượng:</label>
 
                                     <div class="col-sm-7">
                                         <input type="text" placeholder="Enter input data ..." class="form-control"  name="quantity" id="quantity_book" style="width: 350px; margin-top: 15px;"/>
@@ -517,7 +517,7 @@
                 <br/>
                 <div class="modal-footer">
                     <input type="hidden" name="import_book_id" id="import_book_id">
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
                     <button class="btn btn-info" type="submit" id="import_book">
                         <i class="ace-icon fa fa-check bigger-110"></i>
                         Ok
