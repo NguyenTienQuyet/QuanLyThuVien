@@ -24,7 +24,7 @@
             <h3 class="box-title"><b>Danh sách Sách</b></h3>
             <button class="btn btn-sm btn-success" data-toggle="modal" id="addBook" style="float: right;">
                 <i class=" "></i>
-                Thêm
+                Thêm mới
 
             </button>
         </div>
@@ -239,11 +239,11 @@
 
                             </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
                     <button class="btn btn-info" type="submit" id="add-book">
 
                         <i class="ace-icon fa fa-check bigger-110"></i>
-                        Thêm
+                        Thêm mới
                     </button>
                 </div>
                         </div>
@@ -469,11 +469,11 @@
                             <input type="hidden" id="book-delete" value="" />
                             <button class="btn btn-white btn-round pull-left" data-dismiss="modal">
                                 <i class="ace-icon fa fa-times red2"></i>
-                                No
+                                Không
                             </button>
                             <button class="btn btn-white btn-warning btn-bold" id="_delete-book">
                                 <i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
-                                Yes
+                                Có
                             </button>
 
                         </div>
