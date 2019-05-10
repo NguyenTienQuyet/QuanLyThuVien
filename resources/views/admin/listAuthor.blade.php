@@ -43,7 +43,7 @@
                 </tr>
                 </thead>
                 <tbody id="body_list_author">
-                    
+
                     @foreach($list as $author)
 
                         <tr>
@@ -54,7 +54,7 @@
                                     <i class="ace-icon fa fa-pencil bigger-130"></i>
                                 </a>
                             </td>
-                            
+
                             <td class="text-center">
                                 <a class="text-red" href="#" id="<?php echo $author->id; ?>" data-type="delete-author" data-toggle="modal">
                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
@@ -64,7 +64,7 @@
                         </tr>
 
                     @endforeach
-                
+
                 </tbody>
 
             </table>
@@ -76,7 +76,7 @@
     <!-- /.content -->
 
 
-    
+
 <div class="modal fade" id="myModal-author" role="dialog">
     <div class="modal-dialog">
 
@@ -106,7 +106,7 @@
                         </div>
                     </div>
 
-                </div>  
+                </div>
                 <br/>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
@@ -124,8 +124,8 @@
     <div class="modal-dialog">
 
         <!-- <form> -->
-                    
-            
+
+
             <!-- {{csrf_field()}} -->
             <!-- Modal content-->
             <div class="modal-content">
@@ -137,7 +137,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-xs-12">
-                           
+
                             <br>
 
                             <div class="col-sm-9">
@@ -154,11 +154,11 @@
                         </div>
                     </div>
 
-                </div>  
+                </div>
                 <br/>
                 <div class="modal-footer">
                     <input type="hidden" id="author-id" name="author-id" value="" />
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
                     <button class="btn btn-info" type="submit" id="edit-author">
                         <i class="ace-icon fa fa-check bigger-110"></i>
                         Sửa
@@ -171,20 +171,20 @@
 
 <div class="modal fade" id="deleteModal-author" role="dialog">
             <div class="modal-dialog">
-                
+
                 <div class="modal-content">
                     <!-- <form > -->
                         <input type="hidden" name="_method" value="delete">
                         <!-- {{csrf_field()}} -->
-                    
+
                 <!-- Modal content-->
-                
+
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <h4 class="modal-title">Xác nhận</h4>
                         </div>
                         <div class="modal-body">
-                            
+
                             <span id="form_output"></span>
                             <div class="row">
                                 <div class="col-xs-12">
@@ -194,23 +194,23 @@
                                 </div>
                             </div>
 
-                        </div>  
-                        
+                        </div>
+
                         <div class="modal-footer">
                             <input type="hidden" id="author-delete" value="" />
                             <button class="btn btn-white btn-round pull-left" data-dismiss="modal">
                                 <i class="ace-icon fa fa-times red2"></i>
-                                Có
+                                No
                             </button>
                             <button class="btn btn-white btn-warning btn-bold" id="_delete-author">
                                 <i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
-                                Không
+                                Yes
                             </button>
-                            
+
                         </div>
                     <!-- </form> -->
-                        
-                    
+
+
                 </div>
             </div>
 </div>

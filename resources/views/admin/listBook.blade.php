@@ -44,6 +44,7 @@
 
                       <th class="text-center">Nhà xuất bản</th>
                       <th class="text-center">Năm xuất bản</th>
+                      <th class="text-center">Số lượng</th>
 
                       <th class="text-center">Thêm</th>
                       <th class="text-center">Sửa</th>
@@ -177,7 +178,7 @@
                                     <div class="input-group " style="width: 350px;" >
 
                                         <div class="input-group-btn" style="margin-left: 30px;">
-                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
+                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Tùy chọn
                                               <span class="fa fa-caret-down"></span></button>
                                             <ul class="dropdown-menu dropdown_publisher">
                                                 @foreach($listP as $publisher)
@@ -275,7 +276,7 @@
 
 
 
-                    <h4 class="modal-title">Sửa sách</h4>
+                    <h4 class="modal-title">Sửa thông tin sách</h4>
 
                 </div>
                 <div class="modal-body">
@@ -355,7 +356,7 @@
                                     <div class="input-group " style="width: 350px;" >
 
                                         <div class="input-group-btn" style="margin-left: 30px;">
-                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Option
+                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Tùy chọn
                                               <span class="fa fa-caret-down"></span></button>
                                             <ul class="dropdown-menu dropdown_publisher">
                                                 @foreach($listP as $publisher)
@@ -383,6 +384,31 @@
                                     <div class="col-sm-9" style="margin-left: -15px; width: 380px;">
                                         <input type="text" id="edit_published_year" placeholder="Enter data input ..." class="form-control" name="year_publisher"/>
 
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm-11" style="margin-top: 5px;">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1" style="margin-top: 5px;">Chọn ảnh: </label>
+
+                                    <div class="col-sm-9" style="margin-left: -15px; width: 380px;">
+
+                                        <input type="file" id="edit_image_book" onchange="edit_PreviewImage();"  />
+                                        <img id="edit_uploadPreview" style="width: 50px; height: 50px;" />
+                                        <script type="text/javascript">
+
+                                            function edit_PreviewImage() {
+                                                var oFReader = new FileReader();
+                                                oFReader.readAsDataURL(document.getElementById("edit_image_book").files[0]);
+
+                                                oFReader.onload = function (oFREvent) {
+                                                    document.getElementById("edit_uploadPreview").src = oFREvent.target.result;
+                                                };
+                                            };
+
+                                        </script>
                                     </div>
                                 </div>
 
@@ -443,11 +469,11 @@
                             <input type="hidden" id="book-delete" value="" />
                             <button class="btn btn-white btn-round pull-left" data-dismiss="modal">
                                 <i class="ace-icon fa fa-times red2"></i>
-                                Không
+                                No
                             </button>
                             <button class="btn btn-white btn-warning btn-bold" id="_delete-book">
                                 <i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
-                                Có
+                                Yes
                             </button>
 
                         </div>
