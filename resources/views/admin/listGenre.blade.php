@@ -7,11 +7,11 @@
         <ul class="breadcrumb">
             <li>
                 <i class="ace-icon fa fa-home home-icon"></i>
-                <a href="">Home</a>
+                <a href="">Trang chủ</a>
             </li>
 
 
-            <li class="active">Genre</li>
+            <li class="active">Thể loại</li>
 
         </ul><!-- /.breadcrumb -->
 
@@ -22,7 +22,7 @@
 
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title"><b>List Genre</b></h3>
+            <h3 class="box-title"><b>Danh sách các Thể loại</b></h3>
             <button class="btn btn-sm btn-success" data-toggle="modal" id="addGenre" style="float: right;">
                 <i class=" "></i>
                 Add
@@ -35,10 +35,10 @@
                 <thead>
                 <tr>
                     <th class="text-center">ID</th>
-                    <th class="text-center">Genre Name</th>
+                    <th class="text-center">Tên thể loại</th>
 
-                    <th class="text-center">Edit</th>
-                    <th class="text-center">Delete</th>
+                    <th class="text-center">Sửa</th>
+                    <th class="text-center">Xóa</th>
                 </tr>
                 </thead>
                 <tbody id="body_list_genre">
@@ -84,7 +84,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"> Add Genre</h4>
+                        <h4 class="modal-title"> Thêm thể loại mới</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">
@@ -92,7 +92,7 @@
                                 <!-- PAGE CONTENT BEGINS -->
                                 <div class="col-sm-9" >
                                     <div class="form-group" id="form-genre">
-                                        <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top: 22px;">Genre Name:</label>
+                                        <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top: 22px;">Tên thể loại:</label>
 
                                         <div class="col-sm-7">
                                             <input type="text" placeholder="Enter input data ..." class="form-control"  name="type-genre" id="type-genre" style="width: 350px; margin-top: 15px;"/>
@@ -107,10 +107,10 @@
                     </div>
                     <br/>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
                         <button class="btn btn-info" type="submit" id="add-genre">
                             <i class="ace-icon fa fa-check bigger-110"></i>
-                            Add
+                            Thêm
                         </button>
                     </div>
                 </div>
@@ -129,7 +129,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"> Edit Genre</h4>
+                        <h4 class="modal-title"> Sửa Thể loại</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">
@@ -139,7 +139,7 @@
 
                                 <div class="col-sm-9">
                                     <div class="form-group">
-                                        <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top:  12px;">Genre Name: </label>
+                                        <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top:  12px;">Tên thể loại: </label>
 
                                         <div class="col-sm-8">
                                             <input type="text" placeholder="Enter input data ..." class="form-control" name="genre-type" id="genre-type" style="width: 350px; margin-top: 5px;" />
@@ -155,10 +155,10 @@
                     <br/>
                     <div class="modal-footer">
                         <input type="hidden" id="genre-id" name="genre-id" value="" />
-                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
                         <button class="btn btn-info" type="submit" id="edit-genre">
                             <i class="ace-icon fa fa-check bigger-110"></i>
-                            Edit
+                            Sửa
                         </button>
                     </div>
                 </div>
@@ -178,7 +178,7 @@
 
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Confirm</h4>
+                        <h4 class="modal-title">Xác nhận</h4>
                     </div>
                     <div class="modal-body">
 
@@ -186,7 +186,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <!-- PAGE CONTENT BEGINS -->
-                                <h4>You may want to delete ?</h4>
+                                <h4>Bạn có chắc chắn muốn xóa không?</h4>
 
                             </div>
                         </div>
