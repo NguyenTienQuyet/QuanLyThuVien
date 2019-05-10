@@ -200,11 +200,11 @@
                             <input type="hidden" id="author-delete" value="" />
                             <button class="btn btn-white btn-round pull-left" data-dismiss="modal">
                                 <i class="ace-icon fa fa-times red2"></i>
-                                No
+                                Có
                             </button>
                             <button class="btn btn-white btn-warning btn-bold" id="_delete-author">
                                 <i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
-                                Yes
+                                Không
                             </button>
 
                         </div>
