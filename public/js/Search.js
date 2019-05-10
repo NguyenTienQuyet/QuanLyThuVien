@@ -53,7 +53,7 @@ function runScript(e) {
                         "</div>" +
                         "</div>" +
                         "<div class='details'>" +
-                        "<a id=''{{$book->id}}' href='{{route('detailBook', $book->id)}}'>" +
+                        "<a id=''{{$book->id}}'  href='{{route('detailBook', $book->id)}}'>" +
                         "<h4>" +
                         "{{$book->title}}" +
                         "</h4>" +
