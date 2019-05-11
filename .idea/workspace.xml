@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2d85649-7a0e-4076-aa82-c47cf7d41904" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/listRole.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/listRole.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/listUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/listUser.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,10 +26,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/listUser.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="292" column="30" lean-forward="true" selection-start-line="292" selection-start-column="30" selection-end-line="292" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/listRole.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="457">
+              <caret line="218" lean-forward="true" selection-start-line="218" selection-end-line="218" />
             </state>
           </provider>
         </entry>
@@ -66,6 +75,7 @@
         <option value="$PROJECT_DIR$/resources/views/admin/listPublisher.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/listRentBook.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/listRole.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/listUser.blade.php" />
       </list>
     </option>
   </component>
@@ -231,12 +241,12 @@
       <workItem from="1557377690991" duration="195000" />
       <workItem from="1557401930692" duration="7252000" />
       <workItem from="1557503277191" duration="4888000" />
-      <workItem from="1557582081566" duration="2153000" />
+      <workItem from="1557582081566" duration="2570000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16028000" />
+    <option name="totallyTimeSpent" value="16445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -413,9 +423,6 @@
         <state relative-caret-position="-52" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/listUser.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/master.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -444,8 +451,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/listRole.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="457">
+          <caret line="218" lean-forward="true" selection-start-line="218" selection-end-line="218" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/listUser.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="292" column="30" lean-forward="true" selection-start-line="292" selection-start-column="30" selection-end-line="292" selection-end-column="30" />
         </state>
       </provider>
     </entry>

@@ -7,13 +7,13 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
-                    <a href="">Home</a>
+                    <a href="">Trang chủ</a>
                 </li>
 
                 <li>
-                    <a href="">Manage User</a>
+                    <a href="">Quản lý Người dùng</a>
                 </li>
-                <li class="active">List User</li>
+                <li class="active">Danh sách người dùng</li>
 
             </ul><!-- /.breadcrumb -->
 
@@ -22,7 +22,7 @@
 
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><b>List User</b></h3>
+                <h3 class="box-title"><b>Danh sách người dùng</b></h3>
                 <!-- <button class="btn btn-sm btn-success" data-toggle="modal" id="addUser" style="float: right;">
                     <i class=" "></i>
                     Add
@@ -35,12 +35,12 @@
                 <thead>
                     <tr>
                       <th class="text-center">ID</th>
-                      <th class="text-center">Name</th>
+                      <th class="text-center">Tên</th>
                       <th class="text-center">Email</th>
                       <!-- <th class="text-center">Password</th> -->
-                      <th class="text-center">Role</th>
-                      <th class="text-center">Edit</th>
-                      <th class="text-center">Delete</th>
+                      <th class="text-center">Vai trò</th>
+                      <th class="text-center">Sửa</th>
+                      <th class="text-center">Xóa</th>
                     </tr>
                 </thead>
                 <tbody id="body_list_user">
@@ -180,7 +180,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Edit User</h4>
+                    <h4 class="modal-title">Sửa thông tin Người dùng</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -221,7 +221,7 @@
 
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Role:</label>
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Vai trò:</label>
 
                                     <div class="input-group " style="width: 350px;" >
 
@@ -258,7 +258,7 @@
                     <input type="hidden" id="password" value="" />
                     <input type="hidden" id="role_id" value="" />
 
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
                     <input class="btn btn-info" type="submit" value="Edit" id="_edit-user" >
 
                 </div>
@@ -280,7 +280,7 @@
 
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Confirm</h4>
+                    <h4 class="modal-title">Xác nhận</h4>
                 </div>
                 <div class="modal-body">
 
@@ -288,7 +288,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <!-- PAGE CONTENT BEGINS -->
-                            <h4>You may want to delete ?</h4>
+                            <h4>Bạn có chắc chắn muốn xóa không?</h4>
 
                         </div>
                     </div>
