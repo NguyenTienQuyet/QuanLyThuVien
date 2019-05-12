@@ -11,7 +11,7 @@
                 </li>
 
                 
-                <li class="active">Thuê sách</li>
+                <li class="active">Sách cho Thuê</li>
 
             </ul><!-- /.breadcrumb -->
 
@@ -20,7 +20,7 @@
         
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><b>Thuê sách</b></h3>
+                <h3 class="box-title"><b>Sách cho Thuê</b></h3>
                 <!-- <button class="btn btn-sm btn-success" data-toggle="modal" id="addhistoryBook" style="float: right;">
                     <i class=" "></i>
                     Add
