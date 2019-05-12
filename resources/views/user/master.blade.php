@@ -251,7 +251,7 @@
 
 
 			<script type="text/javascript" src="../js/Home.js"></script>
-
+            <script type="text/javascript" src="../js/Search.js"></script>
 
 		</body>
 	</html>

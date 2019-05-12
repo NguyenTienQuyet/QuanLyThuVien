@@ -75,7 +75,7 @@ jQuery(function($) {
                                     +"</a>"
                                 +"</td>"
                                 +"<td class='text-center'>"
-                                    +"<a href='#' class='text-blue' data-toggle='modal' id_edit_book="+data[i].book.id+" data-type='update-book' title="+data[i].book.title+" publisher_id="+data[i].book.publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].book.publishedYear+" image="+img+">"
+                                    +"<a href='#' class='text-blue'  data-toggle='modal' id_edit_book="+data[i].book.id+" data-type='update-book' title="+data[i].book.title+" publisher_id="+data[i].book.publisher_id+" author_id="+k+" genre_id="+p+" publishedYear="+data[i].book.publishedYear+" image="+img+">"
                                         +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
                                     +"</a>"
                                 +"</td>"
