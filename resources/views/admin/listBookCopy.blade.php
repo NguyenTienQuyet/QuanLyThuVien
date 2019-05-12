@@ -7,13 +7,13 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
-                    <a href="">Home</a>
+                    <a href="">Trang chủ</a>
                 </li>
 
                 <li>
-                    <a href="">Manage Book</a>
+                    <a href="">Quản lý sách</a>
                 </li>
-                <li class="active">Book Copy</li>
+                <li class="active">Sách bản sao</li>
 
             </ul><!-- /.breadcrumb -->
 
@@ -22,10 +22,10 @@
         
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><b>List Book Copy</b></h3>
+                <h3 class="box-title"><b>Danh sách Sách bản sao</b></h3>
                 <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal-BookCopy" id="addBookCopy" style="float: right;">
                     <i class=" "></i>
-                    Add
+                    Thêm
                       
                 </button>
             </div>
@@ -36,9 +36,9 @@
                   <tr>
                     <th class="text-center">ID</th>
                     
-                    <th class="text-center">Book ID</th>
-                    <th class="text-center">Edit</th>
-                    <th class="text-center">Delete</th>
+                    <th class="text-center">Sách</th>
+                    <th class="text-center">Sửa</th>
+                    <th class="text-center">Xóa</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -79,7 +79,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Add Book Copy</h4>
+                    <h4 class="modal-title">Thêm Sách bản sao</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -89,18 +89,18 @@
                             
                              <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Book ID:</label>
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Sách:</label>
                                     
                                     <div class="input-group " style="width: 350px;" >
                                       <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Hành động
                                           <span class="fa fa-caret-down"></span></button>
                                         <ul class="dropdown-menu">
-                                          <li><a href="#">Action</a></li>
-                                          <li><a href="#">Another action</a></li>
-                                          <li><a href="#">Something else here</a></li>
+                                          <li><a href="#">Hành động</a></li>
+                                          <li><a href="#">Hành động khác</a></li>
+                                          <li><a href="#">Điều khác tại đây</a></li>
                                           <li class="divider"></li>
-                                          <li><a href="#">Separated link</a></li>
+                                          <li><a href="#">Liên kết riêng</a></li>
                                         </ul>
                                       </div>
                                       <!-- /btn-group -->
@@ -116,10 +116,10 @@
                 </div>  
                 <br/>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
                     <button class="btn btn-info" type="submit" id="add-member">
                         <i class="ace-icon fa fa-check bigger-110"></i>
-                        Add
+                        Thêm
                     </button>
                 </div>
             </div>
@@ -137,7 +137,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Edit Book Copy</h4>
+                    <h4 class="modal-title">Sửa Sách bản sao</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -146,18 +146,18 @@
 
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Book ID:</label>
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Sách:</label>
                                     
                                     <div class="input-group " style="width: 350px;" >
                                       <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Hành động
                                           <span class="fa fa-caret-down"></span></button>
                                         <ul class="dropdown-menu">
-                                          <li><a href="#">Action</a></li>
-                                          <li><a href="#">Another action</a></li>
-                                          <li><a href="#">Something else here</a></li>
+                                          <li><a href="#">Hành động</a></li>
+                                          <li><a href="#">Hành đọng khác</a></li>
+                                          <li><a href="#">Điều khác tại đây</a></li>
                                           <li class="divider"></li>
-                                          <li><a href="#">Separated link</a></li>
+                                          <li><a href="#">Liên kết riêng</a></li>
                                         </ul>
                                       </div>
                                       <!-- /btn-group -->
@@ -181,7 +181,7 @@
                     <input type="hidden" id="_phone" value="" />
                     <input type="hidden" id="_role-id" value="" />
                     <input type="hidden" id="_image-id" value="" />
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
                     <input class="btn btn-info" type="submit" value="Edit" id="_edit-member" >
 
                 </div>
@@ -203,7 +203,7 @@
         
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Confirm</h4>
+                    <h4 class="modal-title">Xác nhận</h4>
                 </div>
                 <div class="modal-body">
                     
@@ -211,7 +211,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <!-- PAGE CONTENT BEGINS -->
-                            <h4>You may want to delete ?</h4>
+                            <h4>Bạn có chắc chắn muốn xóa hay không?</h4>
 
                         </div>
                     </div>

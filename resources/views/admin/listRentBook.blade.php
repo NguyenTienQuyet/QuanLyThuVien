@@ -7,11 +7,11 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="ace-icon fa fa-home home-icon"></i>
-                    <a href="">Home</a>
+                    <a href="">Trang chủ</a>
                 </li>
 
                 
-                <li class="active">Rent Book</li>
+                <li class="active">Sách cho Thuê</li>
 
             </ul><!-- /.breadcrumb -->
 
@@ -20,7 +20,7 @@
         
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><b>Rent Book</b></h3>
+                <h3 class="box-title"><b>Sách cho Thuê</b></h3>
                 <!-- <button class="btn btn-sm btn-success" data-toggle="modal" id="addhistoryBook" style="float: right;">
                     <i class=" "></i>
                     Add
@@ -33,14 +33,14 @@
                 <thead>
                   <tr>
                     <th class="text-center">ID</th>
-                    <th class="text-center">Book Copy ID</th>
+                    <th class="text-center">Sách bản sao</th>
                     <!-- <th class="text-center">Book Title</th> -->
-                    <th class="text-center">User ID</th>
-                    <th class="text-center">Full Name</th>
-                    <th class="text-center">Detail</th>
-                    <th class="text-center">Rent</th>
+                    <th class="text-center">người dùng</th>
+                    <th class="text-center">Họ và Tên</th>
+                    <th class="text-center">Chi tiết</th>
+                    <th class="text-center">Thuê</th>
                     <!-- <th class="text-center">Return</th> -->
-                    <th class="text-center">State</th>
+                    <th class="text-center">Trạng thái</th>
                   </tr>
                 </thead>
                 <tbody id="body_rent_book">
@@ -66,7 +66,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Add Book History</h4>
+                    <h4 class="modal-title">Thêm mới Lịch sử Sách</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -76,18 +76,18 @@
                             
                              <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Book Copy ID:</label>
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Sách bản sao:</label>
                                     
                                     <div class="input-group " style="width: 350px;" >
                                       <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Hành động
                                           <span class="fa fa-caret-down"></span></button>
                                         <ul class="dropdown-menu">
-                                          <li><a href="#">Action</a></li>
-                                          <li><a href="#">Another action</a></li>
-                                          <li><a href="#">Something else here</a></li>
+                                          <li><a href="#">Hành động</a></li>
+                                          <li><a href="#">Hành động khác</a></li>
+                                          <li><a href="#">Điều khác tại đây</a></li>
                                           <li class="divider"></li>
-                                          <li><a href="#">Separated link</a></li>
+                                          <li><a href="#">Liên kết riêng</a></li>
                                         </ul>
                                       </div>
                                       <!-- /btn-group -->
@@ -99,18 +99,18 @@
 
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">User ID:</label>
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Người dùng:</label>
                                     
                                     <div class="input-group " style="width: 350px;" >
                                       <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Hành động
                                           <span class="fa fa-caret-down"></span></button>
                                         <ul class="dropdown-menu">
-                                          <li><a href="#">Action</a></li>
-                                          <li><a href="#">Another action</a></li>
-                                          <li><a href="#">Something else here</a></li>
+                                          <li><a href="#">Hành động</a></li>
+                                          <li><a href="#">Hành động khác</a></li>
+                                          <li><a href="#">Điều khác tại đây</a></li>
                                           <li class="divider"></li>
-                                          <li><a href="#">Separated link</a></li>
+                                          <li><a href="#">Liên kết riêng</a></li>
                                         </ul>
                                       </div>
                                       <!-- /btn-group -->
@@ -126,10 +126,10 @@
                 </div>  
                 <br/>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
                     <button class="btn btn-info" type="submit" id="add-member">
                         <i class="ace-icon fa fa-check bigger-110"></i>
-                        Add
+                        Thêm
                     </button>
                 </div>
             </div>
@@ -147,7 +147,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Edit Book History</h4>
+                    <h4 class="modal-title">Sửa Lịch sử của Sách</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -156,18 +156,18 @@
 
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Book Copy ID:</label>
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Sách Bản sao:</label>
                                     
                                     <div class="input-group " style="width: 350px;" >
                                       <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Hành động
                                           <span class="fa fa-caret-down"></span></button>
                                         <ul class="dropdown-menu">
-                                          <li><a href="#">Action</a></li>
-                                          <li><a href="#">Another action</a></li>
-                                          <li><a href="#">Something else here</a></li>
+                                          <li><a href="#">Hành động</a></li>
+                                          <li><a href="#">Hành động khác</a></li>
+                                          <li><a href="#">Điều khác tại đây</a></li>
                                           <li class="divider"></li>
-                                          <li><a href="#">Separated link</a></li>
+                                          <li><a href="#">Liên kết riêng</a></li>
                                         </ul>
                                       </div>
                                       <!-- /btn-group -->
@@ -179,18 +179,18 @@
 
                             <div class="col-sm-11" style="margin-top: 5px;">
                                 <div class="form-group">
-                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">User ID:</label>
+                                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2" style="margin-top: 5px;">Người dùng:</label>
                                     
                                     <div class="input-group " style="width: 350px;" >
                                       <div class="input-group-btn" style="margin-left: 30px;">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Hành động
                                           <span class="fa fa-caret-down"></span></button>
                                         <ul class="dropdown-menu">
-                                          <li><a href="#">Action</a></li>
-                                          <li><a href="#">Another action</a></li>
-                                          <li><a href="#">Something else here</a></li>
+                                          <li><a href="#">Hành động</a></li>
+                                          <li><a href="#">Hành động khác</a></li>
+                                          <li><a href="#">Điều khác tại đây</a></li>
                                           <li class="divider"></li>
-                                          <li><a href="#">Separated link</a></li>
+                                          <li><a href="#">Liên kết riêng</a></li>
                                         </ul>
                                       </div>
                                       <!-- /btn-group -->
@@ -214,7 +214,7 @@
                     <input type="hidden" id="_phone" value="" />
                     <input type="hidden" id="_role-id" value="" />
                     <input type="hidden" id="_image-id" value="" />
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
                     <input class="btn btn-info" type="submit" value="Edit" id="_edit-member" >
 
                 </div>
@@ -236,7 +236,7 @@
         
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Confirm</h4>
+                    <h4 class="modal-title">Xác nhận</h4>
                 </div>
                 <div class="modal-body">
                     
@@ -244,7 +244,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <!-- PAGE CONTENT BEGINS -->
-                            <h4>You may want to delete ?</h4>
+                            <h4>Bạn có chắc chắn muốn xóa không?</h4>
 
                         </div>
                     </div>
@@ -278,7 +278,7 @@
             <div class="modal-content" id="body_detail">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title center" id="detail_title">List Book</h4>
+                    <h4 class="modal-title center" id="detail_title">Danh sách Sách</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -291,11 +291,11 @@
                                     <table id="simple-table" class="table  table-bordered table-hover" style="margin-left:65px">
                                         <thead>
                                             <tr>
-                                                <th class="center">Book Copy ID</th>
-                                                <th class="center">Book ID</th>
-                                                <th class="center">Book Title</th>
-                                                <th class="center">Published Year</th>
-                                                <th class="center">State</th>
+                                                <th class="center">Sách bản sao</th>
+                                                <th class="center">Sách</th>
+                                                <th class="center">Tên Sách</th>
+                                                <th class="center">Năm xuất bản</th>
+                                                <th class="center">Trạng thái</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -346,7 +346,7 @@
             <div class="modal-content" id="body_detail">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title center" id="detail_title">List Book</h4>
+                    <h4 class="modal-title center" id="detail_title">Danh sách Sách</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -359,10 +359,10 @@
                                     <table id="simple-table" class="table  table-bordered table-hover" style="margin-left:65px">
                                         <thead>
                                             <tr>
-                                                <th class="center">Book Copy ID</th>
-                                                <th class="center">Book ID</th>
-                                                <th class="center">Book Title</th>
-                                                <th class="center">State</th>
+                                                <th class="center">Sách bản sao</th>
+                                                <th class="center">Sách</th>
+                                                <th class="center">Tên Sách</th>
+                                                <th class="center">Trạng thái</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -396,7 +396,7 @@
                     <input type="hidden" name="rent_bookCopy_id" id="rent_bookCopy_id" value="">
                     <button class="btn btn-info" type="submit" id="rent_id">
                         <i class="ace-icon fa fa-check bigger-110"></i>
-                        Rent
+                        Thuê
                     </button>
                 </div>
             </div>
@@ -412,7 +412,7 @@
             <div class="modal-content" id="body_detail">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title center" id="detail_title">List Book</h4>
+                    <h4 class="modal-title center" id="detail_title">Danh sách Sách</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -425,10 +425,10 @@
                                     <table id="simple-table" class="table  table-bordered table-hover" style="margin-left:65px">
                                         <thead>
                                             <tr>
-                                                <th class="center">Book Copy ID</th>
-                                                <th class="center">Book ID</th>
-                                                <th class="center">Book Title</th>
-                                                <th class="center">State</th>
+                                                <th class="center">Sách Bản sao</th>
+                                                <th class="center">Sách</th>
+                                                <th class="center">Tên sách</th>
+                                                <th class="center">Trạng thái</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -462,7 +462,7 @@
                     <input type="hidden" name="return_bookCopy_id" id="return_bookCopy_id" value="">
                     <button class="btn btn-info" type="submit" id="return_id">
                         <i class="ace-icon fa fa-check bigger-110"></i>
-                        Return
+                        Trả
                     </button>
                 </div>
             </div>
