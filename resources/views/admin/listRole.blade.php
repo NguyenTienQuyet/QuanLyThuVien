@@ -13,7 +13,7 @@
                 <li>
                     <a href="">Quản lý Người dùng</a>
                 </li>
-                <li class="active">Danh sách Vai trò Người dùng</li>
+                <li class="active">Danh sách Quyền Người dùng</li>
 
             </ul><!-- /.breadcrumb -->
 
@@ -21,7 +21,7 @@
 
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><b>Danh sách Vai trò Người dùng</b></h3>
+                <h3 class="box-title"><b>Danh sách Quyền Người dùng</b></h3>
                 <button class="btn btn-sm btn-success" data-toggle="modal" id="addRole" style="float: right;">
                     <i class=" "></i>
                     Thêm
@@ -35,7 +35,7 @@
                 <thead>
                   <tr>
                     <th class="text-center">ID</th>
-                    <th class="text-center">Vai trò</th>
+                    <th class="text-center">Quyền</th>
 
                     <th class="text-center">Sửa</th>
                     <th class="text-center">Xóa</th>
@@ -83,7 +83,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"> Thêm Vai trò mới</h4>
+                    <h4 class="modal-title"> Thêm Quyền mới</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -91,7 +91,7 @@
                             <!-- PAGE CONTENT BEGINS -->
                             <div class="col-sm-9" >
                                 <div class="form-group" >
-                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top: 22px;">Loại Vai trò:</label>
+                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top: 22px;">Loại Quyền:</label>
 
                                     <div class="col-sm-7">
                                         <input type="text" placeholder="Enter input data" class="form-control"  name="type-role" id="type-role" style="width: 350px; margin-top: 15px;"/>
@@ -128,7 +128,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"> Sửa Vai trò</h4>
+                    <h4 class="modal-title"> Sửa Quyền </h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -138,7 +138,7 @@
 
                             <div class="col-sm-9">
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top:  12px;">Loại Vai trò:</label>
+                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-1" style="margin-top:  12px;">Loại Quyền:</label>
 
                                     <div class="col-sm-8">
                                         <input type="text" placeholder="Nhập phân quyền" class="form-control" name="role-type" id="role-type" style="width: 350px; margin-top: 5px;" />
