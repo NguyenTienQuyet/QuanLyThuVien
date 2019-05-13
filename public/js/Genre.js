@@ -87,77 +87,7 @@ jQuery(function($) {
                 alert("error! Please, try again.");
                 // alert(mess);
                 $('#editModal-genre').modal('hide');
-                $.ajax({
-                    
-                    url: '/api/v1/genres/'+'all',
-                    type: 'get',
-                    dataType: 'json',
-                    success: function(data) {
-                        var output = "";
-                        for(var i = 0; i < data.length; i++){
-
-                            output +=   "<tr>"
-                                            +"<td class='text-center'>"+data[i].id+"</td>"
-                                            +"<td class='text-center'>"+data[i].genreType+"</td>"
-                                            
-                                            +"<td class='text-center'>"
-                                                +"<a href='' class='text-blue' data-toggle='modal' id_edit_genre="+data[i].id+" data-type='update-genre' name="+data[i].genreType+">"
-                                                    +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
-                                                +"</a>"
-                                            +"</td>"
-                                            +"<td class='text-center'>"
-                                                +"<a href='' class='text-red' data-toggle='modal' id_delete_genre="+data[i].id+" data-type='delete-genre'>"
-                                                    +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
-                                                +"</a>"
-                                            +"</td>"
-                                            
-                                        +"</tr>";
-
-                        }
-                        $('#body_list_genre').html(output);
-                        
-
-                        $('a[data-type=update-genre]').on('click', function(){
-
-
-                            var id = $(this).attr("id_edit_genre");
-                            var name = $(this).attr("name");
-
-                            $.ajax({
-                    
-                                url: '/api/v1/genres/get/'+id,
-                                type: 'get',
-                                dataType: 'json',
-                                success: function(data) {
-                                    name = data.genreType;
-                                    // alert(name);
-                                    $('#genre-type').val(name);
-                                },
-                                error: function(mess){
-                                    alert("Loi gi nay");
-                                    console.log(mess);
-                                }
-                            });
-
-                            
-                            $('#genre-id').val(id);
-                            $('#editModal-genre').modal('show');
-                        });
-
-                        $('a[data-type=delete-genre]').on('click', function(){
-
-                            var id = $(this).attr("id_delete_genre");
-                            alert(id);
-
-                            $('#genre-delete').val(id);
-                            $('#deleteModal-genre').modal('show');
-                            
-                        });
-                    },
-                    error: function(err){
-                        alert(err);
-                    }
-                });
+                load_data_genre();
             }
         });
     });
