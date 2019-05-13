@@ -36,75 +36,7 @@ jQuery(function($) {
             success: function () {
                 alert("success!");
                 $('#myModal-publisher').modal('hide');
-                $.ajax({
-                    
-                    url: '/api/v1/publishers/'+'all',
-                    type: 'get',
-                    dataType: 'json',
-                    success: function(data) {
-                        var output = "";
-                        for(var i = 0; i < data.length; i++){
-
-                            output +=   "<tr>"
-                                            +"<td class='text-center'>"+data[i].id+"</td>"
-                                            +"<td class='text-center'>"+data[i].publisherName+"</td>"
-                                            
-                                            +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' id_edit_publisher="+data[i].id+" data-type='update-publisher' name="+data[i].publisherName+">"
-                                                    +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
-                                                +"</a>"
-                                            +"</td>"
-                                            +"<td class='text-center'>"
-                                                +"<a href='#' class='text-red' id_delete_publisher="+data[i].id+" data-type='delete-publisher'>"
-                                                    +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
-                                                +"</a>"
-                                            +"</td>"
-                                            
-                                        +"</tr>";
-
-                        }
-                        $('#body_list_publisher').html(output);
-
-                        $('a[data-type=update-publisher]').on('click', function(){
-
-
-                            var id = $(this).attr("id_edit_publisher");
-                            var name = $(this).attr("name");
-                            // alert(name);
-
-                            $.ajax({
-                    
-                                url: '/api/v1/publishers/get/'+id,
-                                type: 'get',
-                                dataType: 'json',
-                                success: function(data) {
-                                    name = data.publisherName;
-                                    $('#publisher-type').val(name);
-                                },
-                                error: function(mess){
-                                    alert("Loi gi nay");
-                                    console.log(mess);
-                                }
-                            });
-
-                            
-                            $('#publisher-id').val(id);
-                            $('#editModal-publisher').modal('show');
-                        });
-
-                        $('a[data-type=delete-publisher]').on('click', function(){
-
-                            var id = $(this).attr("id_delete_publisher");
-
-                            $('#publisher-delete').val(id);
-                            $('#deleteModal-publisher').modal('show');
-                        });
-                        // alert('success');
-                    },
-                    error: function(err){
-                        alert(1);
-                    }
-                });
+                Load_data_Pulisher();
             },
             error: function(mess){
                 alert("error! Please, try again.");
@@ -148,141 +80,13 @@ jQuery(function($) {
             success: function () {
                 alert('success!');
                 $('#editModal-publisher').modal('hide');
-                $.ajax({
-                    
-                    url: '/api/v1/publishers/'+'all',
-                    type: 'get',
-                    dataType: 'json',
-                    success: function(data) {
-                        var output = "";
-                        for(var i = 0; i < data.length; i++){
-
-                            output +=   "<tr>"
-                                            +"<td class='text-center'>"+data[i].id+"</td>"
-                                            +"<td class='text-center'>"+data[i].publisherName+"</td>"
-                                            
-                                            +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' id_edit_publisher="+data[i].id+" data-type='update-publisher' name="+data[i].publisherName+">"
-                                                    +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
-                                                +"</a>"
-                                            +"</td>"
-                                            +"<td class='text-center'>"
-                                                +"<a href='#' class='text-red' id_delete_publisher="+data[i].id+" data-type='delete-publisher'>"
-                                                    +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
-                                                +"</a>"
-                                            +"</td>"
-                                            
-                                        +"</tr>";
-
-                        }
-                        $('#body_list_publisher').html(output);
-
-                        $('a[data-type=update-publisher]').on('click', function(){
-
-
-                            var id = $(this).attr("id_edit_publisher");
-                            var name = $(this).attr("name");
-                            $.ajax({
-                    
-                                url: '/api/v1/publishers/get/'+id,
-                                type: 'get',
-                                dataType: 'json',
-                                success: function(data) {
-                                    name = data.publisherName;
-                                    $('#publisher-type').val(name);
-                                },
-                                error: function(mess){
-                                    alert("Loi gi nay");
-                                    console.log(mess);
-                                }
-                            });
-                            $('#publisher-id').val(id);
-                            $('#editModal-publisher').modal('show');
-                        });
-
-                        $('a[data-type=delete-publisher]').on('click', function(){
-
-                            var id = $(this).attr("id_delete_publisher");
-
-                            $('#publisher-delete').val(id);
-                            $('#deleteModal-publisher').modal('show');
-                        });
-                        // alert('success');
-                    },
-                    error: function(err){
-                        alert(1);
-                    }
-                });
+                Load_data_Pulisher();
             },
             error: function(mess){
                 alert("error! Please, try again.");
                 // alert(mess);
                 $('#editModal-publisher').modal('hide');
-                $.ajax({
-                    
-                    url: '/api/v1/publishers/'+'all',
-                    type: 'get',
-                    dataType: 'json',
-                    success: function(data) {
-                        var output = "";
-                        for(var i = 0; i < data.length; i++){
-
-                            output +=   "<tr>"
-                                            +"<td class='text-center'>"+data[i].id+"</td>"
-                                            +"<td class='text-center'>"+data[i].publisherName+"</td>"
-                                            
-                                            +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' id_edit_publisher="+data[i].id+" data-type='update-publisher' name="+data[i].publisherName+">"
-                                                    +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
-                                                +"</a>"
-                                            +"</td>"
-                                            +"<td class='text-center'>"
-                                                +"<a href='#' class='text-red' id_delete_publisher="+data[i].id+" data-type='delete-publisher'>"
-                                                    +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
-                                                +"</a>"
-                                            +"</td>"
-                                            
-                                        +"</tr>";
-
-                        }
-                        $('#body_list_publisher').html(output);
-
-                        $('a[data-type=update-publisher]').on('click', function(){
-
-
-                            var id = $(this).attr("id_edit_publisher");
-                            var name = $(this).attr("name");
-                            $.ajax({
-                    
-                                url: '/api/v1/publishers/get/'+id,
-                                type: 'get',
-                                dataType: 'json',
-                                success: function(data) {
-                                    name = data.publisherName;
-                                    $('#publisher-type').val(name);
-                                },
-                                error: function(mess){
-                                    alert("Loi gi nay");
-                                    console.log(mess);
-                                }
-                            });
-                            $('#publisher-id').val(id);
-                            $('#editModal-publisher').modal('show');
-                        });
-
-                        $('a[data-type=delete-publisher]').on('click', function(){
-
-                            var id = $(this).attr("id_delete_publisher");
-
-                            $('#publisher-delete').val(id);
-                            $('#deleteModal-publisher').modal('show');
-                        });
-                        // alert('success');
-                    },
-                    error: function(err){
-                        alert(1);
-                    }
-                });
+                Load_data_Pulisher();
             }
         });
     });
@@ -326,71 +130,7 @@ jQuery(function($) {
             success: function () {
                 alert('success!');
                 $('#deleteModal-publisher').modal('hide');
-                $.ajax({
-                    
-                    url: '/api/v1/publishers/'+'all',
-                    type: 'get',
-                    dataType: 'json',
-                    success: function(data) {
-                        var output = "";
-                        for(var i = 0; i < data.length; i++){
-
-                            output +=   "<tr>"
-                                            +"<td class='text-center'>"+data[i].id+"</td>"
-                                            +"<td class='text-center'>"+data[i].publisherName+"</td>"
-                                            
-                                            +"<td class='text-center'>"
-                                                +"<a href='#' class='text-blue' id_edit_publisher="+data[i].id+" data-type='update-publisher' name="+data[i].publisherName+">"
-                                                    +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
-                                                +"</a>"
-                                            +"</td>"
-                                            +"<td class='text-center'>"
-                                                +"<a href='#' class='text-red' id_delete_publisher="+data[i].id+" data-type='delete-publisher'>"
-                                                    +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
-                                                +"</a>"
-                                            +"</td>"
-                                            
-                                        +"</tr>";
-
-                        }
-                        $('#body_list_publisher').html(output);
-
-                        $('a[data-type=update-publisher]').on('click', function(){
-
-
-                            var id = $(this).attr("id_edit_publisher");
-                            var name = $(this).attr("name");
-                            $.ajax({
-                    
-                                url: '/api/v1/publishers/get/'+id,
-                                type: 'get',
-                                dataType: 'json',
-                                success: function(data) {
-                                    name = data.publisherName;
-                                    $('#publisher-type').val(name);
-                                },
-                                error: function(mess){
-                                    alert("Loi gi nay");
-                                    console.log(mess);
-                                }
-                            });
-                            $('#publisher-id').val(id);
-                            $('#editModal-publisher').modal('show');
-                        });
-
-                        $('a[data-type=delete-publisher]').on('click', function(){
-
-                            var id = $(this).attr("id_delete_publisher");
-
-                            $('#publisher-delete').val(id);
-                            $('#deleteModal-publisher').modal('show');
-                        });
-                        // alert('success');
-                    },
-                    error: function(err){
-                        alert(1);
-                    }
-                });
+                Load_data_Pulisher();
             },
             error: function(mess){
                 alert("error! Please, try again.");
@@ -400,5 +140,71 @@ jQuery(function($) {
     	
 		
 	});
+    function Load_data_Pulisher() {
+        $.ajax({
 
+            url: '/api/v1/publishers/'+'all',
+            type: 'get',
+            dataType: 'json',
+            success: function(data) {
+                var output = "";
+                for(var i = 0; i < data.length; i++){
+
+                    output +=   "<tr>"
+                        +"<td class='text-center'>"+data[i].id+"</td>"
+                        +"<td class='text-center'>"+data[i].publisherName+"</td>"
+
+                        +"<td class='text-center'>"
+                        +"<a href='#' class='text-blue' id_edit_publisher="+data[i].id+" data-type='update-publisher' name="+data[i].publisherName+">"
+                        +"<i class='ace-icon fa fa-pencil bigger-130'></i>"
+                        +"</a>"
+                        +"</td>"
+                        +"<td class='text-center'>"
+                        +"<a href='#' class='text-red' id_delete_publisher="+data[i].id+" data-type='delete-publisher'>"
+                        +"<i class='ace-icon fa fa-trash-o bigger-130'></i>"
+                        +"</a>"
+                        +"</td>"
+
+                        +"</tr>";
+
+                }
+                $('#body_list_publisher').html(output);
+
+                $('a[data-type=update-publisher]').on('click', function(){
+
+
+                    var id = $(this).attr("id_edit_publisher");
+                    var name = $(this).attr("name");
+                    $.ajax({
+
+                        url: '/api/v1/publishers/get/'+id,
+                        type: 'get',
+                        dataType: 'json',
+                        success: function(data) {
+                            name = data.publisherName;
+                            $('#publisher-type').val(name);
+                        },
+                        error: function(mess){
+                            alert("Loi gi nay");
+                            console.log(mess);
+                        }
+                    });
+                    $('#publisher-id').val(id);
+                    $('#editModal-publisher').modal('show');
+                });
+
+                $('a[data-type=delete-publisher]').on('click', function(){
+
+                    var id = $(this).attr("id_delete_publisher");
+
+                    $('#publisher-delete').val(id);
+                    $('#deleteModal-publisher').modal('show');
+                });
+                // alert('success');
+            },
+            error: function(err){
+                alert(1);
+            }
+        });
+    }
 });
