@@ -18,4 +18,13 @@ class EloquentBookDecorator extends EloquentDecorator implements BookService
     {
         parent::__construct($service);
     }
+
+    public function searchBook(array $attributes)
+    {
+       /**
+        * @var BookService $service
+        */
+       $service = $this->getService();
+       return $service->searchBook($attributes);
+    }
 }
