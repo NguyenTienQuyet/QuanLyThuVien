@@ -11,7 +11,7 @@
                 </li>
 
                 
-                <li class="active">Sách cho Thuê</li>
+                <li class="active">Sách cho Mượn</li>
 
             </ul><!-- /.breadcrumb -->
 
@@ -20,7 +20,7 @@
         
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title"><b>Sách cho Thuê</b></h3>
+                <h3 class="box-title"><b>Sách cho Mượn</b></h3>
                 <!-- <button class="btn btn-sm btn-success" data-toggle="modal" id="addhistoryBook" style="float: right;">
                     <i class=" "></i>
                     Add
@@ -35,10 +35,10 @@
                     <th class="text-center">ID</th>
                     <th class="text-center">Sách bản sao</th>
                     <!-- <th class="text-center">Book Title</th> -->
-                    <th class="text-center">người dùng</th>
+                    <th class="text-center">Người dùng</th>
                     <th class="text-center">Họ và Tên</th>
                     <th class="text-center">Chi tiết</th>
-                    <th class="text-center">Thuê</th>
+                    <th class="text-center">Mượn</th>
                     <!-- <th class="text-center">Return</th> -->
                     <th class="text-center">Trạng thái</th>
                   </tr>

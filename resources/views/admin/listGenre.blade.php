@@ -25,7 +25,7 @@
             <h3 class="box-title"><b>Danh sách các Thể loại</b></h3>
             <button class="btn btn-sm btn-success" data-toggle="modal" id="addGenre" style="float: right;">
                 <i class=" "></i>
-                Add
+                Thêm
 
             </button>
         </div>

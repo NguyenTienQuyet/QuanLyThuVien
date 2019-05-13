@@ -24,7 +24,7 @@
             <h3 class="box-title"><b>Danh sách tác giả</b></h3>
             <button class="btn btn-sm btn-success" data-toggle="modal" id="addAuthor" style="float: right;">
                 <i class=" "></i>
-                Thêm mới
+                Thêm
 
             </button>
         </div>
