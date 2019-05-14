@@ -22,10 +22,10 @@ jQuery(function($) {
             success: function(data){
 
                 if(data.Role.id == 1){
-                    window.location.href="http://127.0.0.1:8000/homePage";
+                    window.location.href="/homeAdmin";
                 }
                 else if(data.Role.id == 2){
-                    window.location.href="http://127.0.0.1:8000/homeAdmin";
+                    window.location.href="/homePage";
                 }
                 else{
                     alert('You need register account');

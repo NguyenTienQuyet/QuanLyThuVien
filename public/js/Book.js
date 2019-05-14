@@ -244,7 +244,7 @@ jQuery(function($) {
             // alert('success');
         },
         error: function(err){
-            alert(1);
+            alert("Error load data book");
         }
     });
 

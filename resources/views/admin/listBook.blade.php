@@ -46,7 +46,7 @@
                       <th class="text-center">Năm xuất bản</th>
                       <th class="text-center">Số lượng</th>
 
-                      <th class="text-center">Thêm</th>
+                      <th class="text-center">Nhập sách</th>
                       <th class="text-center">Sửa</th>
                       <th class="text-center">Xóa</th>
                     </tr>
